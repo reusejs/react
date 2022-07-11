@@ -1,11 +1,17 @@
 {
   "pipeline": {
-    "docs#export": {
-      "cache": false
-    },
     "build": {
       "outputs": ["dist/**", ".next/**"],
       "dependsOn": ["^build"]
+    },
+    "docs#build": {
+      "cache": false,
+      "dependsOn": [
+        "^build",
+        "$NEXT_PUBLIC_API_URL",
+        "$NEXT_PUBLIC_ACCESS_URL"
+      ],
+      "outputs": ["dist/**", ".next/**"]
     },
     "test": {
       "outputs": ["coverage/**"],
