@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 3.0.0
+
+### Major Changes
+
+- 46d1803: Introduced theme, labels and a structure
+
 ## 2.2.0
 
 ### Minor Changes
