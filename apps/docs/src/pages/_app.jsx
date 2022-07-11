@@ -1,4 +1,5 @@
 import 'focus-visible'
+import { ThemeProvider as DarkLightThemeProvider } from 'next-themes'
 import { ThemeProvider, theme } from '@reusejs/react'
 import '@/styles/tailwind.css'
 
@@ -13,9 +14,11 @@ const newTheme = {
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider value={newTheme}>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <DarkLightThemeProvider attribute="class" defaultTheme="light">
+      <ThemeProvider value={newTheme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </DarkLightThemeProvider>
   )
 }
 

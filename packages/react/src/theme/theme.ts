@@ -9,7 +9,7 @@ const badgeClasses = {
 const labelClasses = {
   alignment: "block",
   font: "text-sm font-medium",
-  color: "text-gray-800",
+  color: "text-gray-800 dark:text-gray-100",
 };
 
 const theme = {
