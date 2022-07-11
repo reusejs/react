@@ -34,8 +34,8 @@ export default function Labels() {
           codePreview={`<LabelBase
   label="Email Me"
   htmlFor="email"
-  labelBaseClassNames="text-blue-200"
-  labelBaseStyles={{
+  labelClasses={{ color: 'text-red-600' }}
+  labelStyles={{
     backgroundColor: 'yellow',
   }}
 />`}
