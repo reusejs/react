@@ -1,0 +1,9 @@
+@tailwind base;
+
+pre[class*='language-'] {
+  margin: unset;
+  border-radius: unset;
+}
+
+@tailwind components;
+@tailwind utilities;

@@ -12,9 +12,6 @@ export interface LabelBaseProps {
 
 const LabelBase = (props: LabelBaseProps) => {
   const theme: any = useThemeContext();
-
-  // console.log("the", labelBaseClassNames);
-
   return (
     <label
       htmlFor={props.htmlFor}
