@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
       <Container>
         <h1 className="pt-16 font-display text-5xl font-extrabold text-slate-900 sm:text-6xl">
-          React and React Native Components
+          React Components
         </h1>
       </Container>
       <ReactTableOfContents />
