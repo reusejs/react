@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 5.0.1
+
+### Patch Changes
+
+- 82cb679: Patch
+
 ## 5.0.0
 
 ### Major Changes
