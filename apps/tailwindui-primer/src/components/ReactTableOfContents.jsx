@@ -4,20 +4,66 @@ import Link from 'next/link'
 const tableOfContents = {
   Atoms: {
     Labels: '/atoms/labels',
-    'Intro to Figma': '/atoms/label',
-    'Setting up your first artboard': '/atoms/label',
+    Arrows: '/atoms/labels',
+    Badges: '/atoms/labels', // https://tailwindui.com/components/application-ui/elements/badges
+    Breadcrumbs: '/atoms/labels', // https://tailwindui.com/components/application-ui/navigation/breadcrumbs
+    Buttons: '/atoms/labels', // https://tailwindui.com/components/application-ui/elements/buttons
+    Dividers: '/atoms/labels', // https://tailwindui.com/components/application-ui/elements/buttons
+    Headings: '/atoms/labels', // https://tailwindui.com/components/application-ui/elements/buttons
+    Images: '/atoms/labels', // https://tailwindui.com/components/application-ui/elements/buttons
+    TextInputs: '/atoms/labels', // https://tailwindui.com/components/application-ui/elements/buttons
+    Links: '/atoms/labels', // https://tailwindui.com/components/application-ui/elements/buttons
+    Loaders: '/atoms/labels', // https://tailwindui.com/components/application-ui/elements/buttons
+    Prices: '/atoms/labels', // https://tailwindui.com/components/application-ui/elements/buttons
+    Properties: '/atoms/labels', // https://tailwindui.com/components/application-ui/elements/buttons
+    QuantitySelectors: '/atoms/labels', // https://tailwindui.com/components/application-ui/elements/buttons
+    Ratings: '/atoms/labels', // https://tailwindui.com/components/application-ui/elements/buttons
+    Skeletons: '/atoms/labels', // https://tailwindui.com/components/application-ui/elements/buttons
+    TextAreas: '/atoms/labels', // https://tailwindui.com/components/application-ui/elements/buttons
   },
   Molecules: {
-    'Strokes and fills': '/atoms/label',
-    'End points': '/atoms/label',
-    'Bezier curves': '/atoms/label',
-    'Designing on a grid': '/atoms/label',
-    'Vector shapes': '/atoms/label',
+    Alerts: '/atoms/label',
+    Banners: '/atoms/label',
+    CTAs: '/atoms/label',
+    Cards: '/atoms/label',
+    CheckboxPickers: '/atoms/label',
+    SelectPickers: '/atoms/label',
+    Dropdowns: '/atoms/label',
+    Filters: '/atoms/label',
+    Galleries: '/atoms/label',
+    Modals: '/atoms/label',
+    Paginations: '/atoms/label',
+    RadioPickers: '/atoms/label',
+    RangePickers: '/atoms/label',
+    ReviewBoxes: '/atoms/label',
+    Scrollables: '/atoms/label',
+    SearchBars: '/atoms/label',
+    Sections: '/atoms/label',
+    Steppers: '/atoms/label',
   },
   Organisms: {
-    'Combining shapes': '/atoms/label',
-    'Subtracting shapes': '/atoms/label',
-    'Intersecting shapes': '/atoms/label',
+    Accordions: '/atoms/label',
+    BannerGrids: '/atoms/label',
+    Navigations: '/atoms/label', // Sidebar, Header
+    Carousels: '/atoms/label',
+    ContentPages: '/atoms/label',
+    Footers: '/atoms/label',
+    Heros: '/atoms/label',
+    Menus: '/atoms/label',
+    Tables: '/atoms/label',
+    Tabs: '/atoms/label',
+  },
+  Templates: {
+    Forms: '/atoms/label',
+    Invoices: '/atoms/label',
+    Dashboards: '/atoms/label',
+  },
+  Pages: {
+    HomePage: '/atoms/label',
+    BrowseProducts: '/atoms/label',
+    ProductDetail: '/atoms/label',
+    Login: '/atoms/label',
+    PersonalDetails: '/atoms/label',
   },
 }
 
