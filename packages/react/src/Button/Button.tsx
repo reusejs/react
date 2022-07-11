@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import "../../tailwind.css";
-import { useThemeContext } from "../utils/ThemeProvider";
+import { useThemeContext } from "../theme/ThemeProvider";
 
 export interface ButtonProps {
   children?: ReactNode;
@@ -9,10 +9,10 @@ export interface ButtonProps {
 const Button = () => {
   const theme = useThemeContext();
 
-  console.log("theme", theme);
+  // console.log("theme", theme);
 
   return (
-    <button className="bg-green-800 text-green-100 p-2 rounded-md">
+    <button className="rounded-md bg-green-800 p-2 text-green-100">
       I SHOULD BE HERE 1
     </button>
   );
