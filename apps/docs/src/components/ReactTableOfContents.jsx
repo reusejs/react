@@ -87,10 +87,14 @@ export function ReactTableOfContents() {
                 className="mt-8 divide-y divide-slate-300/30 rounded-2xl bg-slate-50 py-3 px-6 text-base tracking-tight sm:py-7 sm:px-8"
               >
                 {Object.entries(pages).map(([title, value]) => (
-                  <Link key={title} href={value.href}>
-                    <li
+                  <li
+                    key={title}
+                    className="flex cursor-pointer justify-between py-3"
+                  >
+                    <Link
                       key={title}
-                      className="flex cursor-pointer justify-between py-3"
+                      href={value.href}
+                      className="flex w-full cursor-pointer flex-row justify-between"
                     >
                       <span
                         className="font-medium text-slate-900 hover:text-blue-500"
@@ -98,9 +102,17 @@ export function ReactTableOfContents() {
                       >
                         {title}
                       </span>
-                      <BadgeBase label={value.status} />
-                    </li>
-                  </Link>
+                      <BadgeBase
+                        label={value.status}
+                        badgeClasses={{
+                          color:
+                            value.status === 'done'
+                              ? 'bg-green-100 text-green-800'
+                              : 'bg-gray-100 text-gray-800',
+                        }}
+                      />
+                    </Link>
+                  </li>
                 ))}
               </ol>
             </li>
