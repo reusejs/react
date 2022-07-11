@@ -1,5 +1,12 @@
 # @reusejs/react
 
+## 4.0.0
+
+### Major Changes
+
+- cc229ba: Introduce Badges
+- ab39d42: - Change classes names for labels and badges
+
 ## 3.0.0
 
 ### Major Changes

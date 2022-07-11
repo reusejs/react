@@ -1,6 +1,6 @@
 {
   "name": "@reusejs/react",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "author": "Rajiv Seelam",
   "license": "MIT",
   "main": "dist/index.cjs.js",
