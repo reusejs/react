@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import "../../tailwind.css";
 import { useThemeContext } from "../theme/ThemeProvider";
 
 export interface ButtonProps {

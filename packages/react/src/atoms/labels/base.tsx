@@ -1,12 +1,30 @@
 import React, { ReactNode } from "react";
 import "../../../tailwind.css";
 import { useThemeContext } from "../../theme/ThemeProvider";
+import classNames from "../../utils/classNames";
 
-const LabelBase = () => {
-  const theme = useThemeContext();
+export interface LabelBaseProps {
+  label: string;
+  htmlFor: string;
+  labelBaseClassNames?: any;
+  labelBaseStyles?: any;
+}
+
+const LabelBase = (props: LabelBaseProps) => {
+  const theme: any = useThemeContext();
+
+  // console.log("the", labelBaseClassNames);
+
   return (
-    <label htmlFor="email" className="block text-sm font-medium text-red-700">
-      Email
+    <label
+      htmlFor={props.htmlFor}
+      className={classNames(
+        theme.labelBaseClassNames,
+        props.labelBaseClassNames
+      )}
+      style={props.labelBaseStyles}
+    >
+      {props.label}
     </label>
   );
 };

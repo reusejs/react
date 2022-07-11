@@ -8,6 +8,7 @@
   "types": "dist/types",
   "sideEffects": false,
   "scripts": {
+    "tw": "npx tailwindcss -i ./input.css -o ./tailwind.css --watch",
     "build": "rollup -c rollup.config.ts"
   },
   "files": [

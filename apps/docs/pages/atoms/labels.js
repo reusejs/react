@@ -10,7 +10,14 @@ export default function Labels() {
       </Head>
 
       <main>
-        <LabelBase />
+        <LabelBase
+          label="Email Me"
+          htmlFor="email"
+          // labelBaseClassNames="text-blue-200"
+          // labelBaseStyles={{
+          //   backgroundColor: "yellow",
+          // }}
+        />
       </main>
     </div>
   );
