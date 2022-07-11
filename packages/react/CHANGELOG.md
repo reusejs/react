@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 5.0.0
+
+### Major Changes
+
+- 341b222: - Introduce Dark and Light Theme Styles for Labels
+
 ## 4.0.0
 
 ### Major Changes
