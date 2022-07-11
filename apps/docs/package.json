@@ -11,6 +11,7 @@
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
+    "@reusejs/react": "*",
     "@headlessui/react": "^1.6.5",
     "@tailwindcss/typography": "^0.5.3",
     "add": "^2.0.6",
