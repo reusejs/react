@@ -6,8 +6,12 @@ import classNames from "../../utils/classNames";
 export interface LabelBaseProps {
   label: string;
   htmlFor: string;
-  labelBaseClassNames?: any;
-  labelBaseStyles?: any;
+  labelStyles?: any;
+  labelClasses: {
+    alignment?: any;
+    color?: any;
+    font?: any;
+  };
 }
 
 const LabelBase = (props: LabelBaseProps) => {
@@ -16,10 +20,11 @@ const LabelBase = (props: LabelBaseProps) => {
     <label
       htmlFor={props.htmlFor}
       className={classNames(
-        theme.labelBaseClassNames,
-        props.labelBaseClassNames
+        props.labelClasses?.alignment || theme.labelClasses.alignment,
+        props.labelClasses?.color || theme.labelClasses.color,
+        props.labelClasses?.font || theme.labelClasses.font
       )}
-      style={props.labelBaseStyles}
+      style={props.labelStyles}
     >
       {props.label}
     </label>

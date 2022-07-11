@@ -21,41 +21,30 @@ export default function Labels() {
       <ContainerWithReactIndex>
         <UsagePreviewReact
           title="Label with default styles"
-          codePreview={`
-                <LabelBase
-                  label="Email Me"
-                  htmlFor="email"
-                />
-            `}
+          codePreview={`<LabelBase
+  label="Email Me"
+  htmlFor="email"
+/>`}
         >
-          <LabelBase
-            label="Email Me"
-            htmlFor="email"
-            // labelBaseClassNames="text-blue-200"
-            // labelBaseStyles={{
-            //   backgroundColor: "yellow",
-            // }}
-          />
+          <LabelBase label="Email Me" htmlFor="email" />
         </UsagePreviewReact>
 
         <UsagePreviewReact
           title="Label with overridden styles"
-          codePreview={`
-                <LabelBase
-                  label="Email Me"
-                  htmlFor="email"
-                  labelBaseClassNames="text-blue-200"
-                  labelBaseStyles={{
-                    backgroundColor: 'yellow',
-                  }}
-                />
-            `}
+          codePreview={`<LabelBase
+  label="Email Me"
+  htmlFor="email"
+  labelBaseClassNames="text-blue-200"
+  labelBaseStyles={{
+    backgroundColor: 'yellow',
+  }}
+/>`}
         >
           <LabelBase
             label="Email Me"
             htmlFor="email"
-            labelBaseClassNames="text-red-600"
-            labelBaseStyles={{
+            labelClasses={{ color: 'text-red-600' }}
+            labelStyles={{
               backgroundColor: 'yellow',
             }}
           />

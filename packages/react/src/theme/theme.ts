@@ -1,14 +1,20 @@
-const badgesClasses = {
-  badgeAlignment: "inline-flex items-center",
-  badgePadding: "px-2.5 py-0.5",
-  badgeBorderRadius: "rounded-full",
-  badgeColor: "bg-blue-100 text-blue-800",
-  badgeFont: "text-xs font-medium",
+const badgeClasses = {
+  alignment: "inline-flex items-center",
+  padding: "px-2.5 py-0.5",
+  borderRadius: "rounded-full",
+  color: "bg-blue-100 text-blue-800",
+  font: "text-xs font-medium",
+};
+
+const labelClasses = {
+  alignment: "block",
+  font: "text-sm font-medium",
+  color: "text-gray-800",
 };
 
 const theme = {
-  labelBaseClassNames: "block text-sm font-medium text-gray-800",
-  badge: badgesClasses,
+  labelClasses,
+  badgeClasses,
 };
 
 export default theme;

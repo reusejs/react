@@ -12,10 +12,10 @@ const BadgeGreen = (props: BadgeGreenProps) => {
   return (
     <BadgeBase
       {...props}
-      badge={{
-        badgeColor: "bg-green-100 text-green-800",
-        badgeFont: "text-sm font-medium",
-        badgeBorderRadius: "rounded-md",
+      badgeClasses={{
+        color: "bg-green-100 text-green-800",
+        font: "text-sm font-medium",
+        borderRadius: "rounded-md",
       }}
     />
   );

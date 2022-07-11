@@ -12,6 +12,7 @@ const BadgeSuffixBase = (props: BadgeSuffixBaseProps) => {
   return (
     <BadgeBase
       {...props}
+      badgeClasses={{}}
       badgeSuffix={
         <svg
           className="ml-1.5 h-2 w-2 text-indigo-400"

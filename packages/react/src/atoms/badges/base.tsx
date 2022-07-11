@@ -8,12 +8,12 @@ export interface BadgeBaseProps {
   badgeStyles?: any;
   badgeSuffix?: any;
   badgePrefix?: any;
-  badge: {
-    badgeAlignment?: any;
-    badgePadding?: any;
-    badgeColor?: any;
-    badgeFont?: any;
-    badgeBorderRadius?: any;
+  badgeClasses: {
+    alignment?: any;
+    padding?: any;
+    color?: any;
+    font?: any;
+    borderRadius?: any;
   };
 }
 
@@ -23,11 +23,11 @@ const BadgeBase = (props: BadgeBaseProps) => {
   return (
     <span
       className={classNames(
-        props.badge?.badgeAlignment || theme.badge.badgeAlignment,
-        props.badge?.badgePadding || theme.badge.badgePadding,
-        props.badge?.badgeColor || theme.badge.badgeColor,
-        props.badge?.badgeFont || theme.badge.badgeFont,
-        props.badge?.badgeBorderRadius || theme.badge.badgeBorderRadius
+        props.badgeClasses?.alignment || theme.badgeClasses.alignment,
+        props.badgeClasses?.padding || theme.badgeClasses.padding,
+        props.badgeClasses?.color || theme.badgeClasses.color,
+        props.badgeClasses?.font || theme.badgeClasses.font,
+        props.badgeClasses?.borderRadius || theme.badgeClasses.borderRadius
       )}
       style={props.badgeStyles}
     >

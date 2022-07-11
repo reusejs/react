@@ -31,21 +31,21 @@ export default function Labels() {
           title="Badge With Different Props overridden"
           codePreview={`<BadgeBase
   label={'Label'}
-  badge={{
-    badgePadding: 'px-3 py-0.5',
-    badgeColor: 'bg-green-100 text-green-800',
-    badgeFont: 'text-sm font-medium',
-    badgeBorderRadius: 'rounded-md',
+  badgeClasses={{
+    padding: 'px-3 py-0.5',
+    color: 'bg-green-100 text-green-800',
+    font: 'text-sm font-medium',
+    borderRadius: 'rounded-md',
   }}
 />`}
         >
           <BadgeBase
             label={'Label'}
-            badge={{
-              badgePadding: 'px-3 py-0.5',
-              badgeColor: 'bg-green-100 text-green-800',
-              badgeFont: 'text-sm font-medium',
-              badgeBorderRadius: 'rounded-md',
+            badgeClasses={{
+              padding: 'px-3 py-0.5',
+              color: 'bg-green-100 text-green-800',
+              font: 'text-sm font-medium',
+              borderRadius: 'rounded-md',
             }}
           />
         </UsagePreviewReact>

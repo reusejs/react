@@ -1,7 +1,7 @@
 export function UsagePreviewReact({ ...props }) {
   return (
     <div className="my-8 rounded-lg border">
-      <div className="bg-gray-100 p-4 font-bold text-gray-800">
+      <div className="bg-gray-100 p-4 font-semibold text-gray-800">
         {props.title}
       </div>
 
