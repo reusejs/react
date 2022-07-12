@@ -19,6 +19,7 @@
     "storybook#build-storybook": {
       "cache": false
     },
+    "storybook#chromatic": {},
     "test": {
       "outputs": ["coverage/**"],
       "dependsOn": []

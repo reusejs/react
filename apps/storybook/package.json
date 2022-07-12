@@ -18,7 +18,8 @@
     "push-release": "git push --follow-tags origin main",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "run": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --exit-zero-on-changes --auto-accept-changes"
   },
   "dependencies": {
     "@reusejs/react": "*",
@@ -51,6 +52,7 @@
     "@typescript-eslint/parser": "^5.30.5",
     "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.5",
+    "chromatic": "^6.7.0",
     "eslint": "^8.19.0",
     "eslint-config-next": "^12.2.1",
     "eslint-config-prettier": "^8.5.0",
@@ -80,5 +82,7 @@
   },
   "resolutions": {
     "webpack": "^5"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "storybook@0.1.0"
 }
