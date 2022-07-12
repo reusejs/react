@@ -32,7 +32,7 @@ export function Hero() {
     <header className="overflow-hidden bg-slate-100 lg:bg-transparent lg:px-5">
       <div className="mx-auto grid max-w-6xl grid-cols-1 grid-rows-[auto_1fr] gap-y-16 pt-16 md:pt-20 lg:grid-cols-12 lg:gap-y-20 lg:px-3 lg:pb-36 lg:pt-20 xl:py-32">
         <div className="relative hidden items-end lg:col-span-5 lg:row-span-2">
-          <div className="absolute -top-20 -bottom-12 left-0 right-1/2 z-10 rounded-br-6xl bg-blue-600 text-white/10 md:bottom-8 lg:-inset-y-32 lg:right-full lg:left-[-100vw] lg:-mr-40">
+          <div className="rounded-br-6xl absolute -top-20 -bottom-12 left-0 right-1/2 z-10 bg-blue-600 text-white/10 md:bottom-8 lg:-inset-y-32 lg:right-full lg:left-[-100vw] lg:-mr-40">
             <GridPattern
               x="100%"
               y="100%"
@@ -56,11 +56,11 @@ export function Hero() {
               UI Components, Utils to aid building projects faster
             </p>
             <div className="mt-8 flex gap-4">
-              <Button href="/react" color="blue">
-                Explore React
+              <Button href="https://react.reusejs.org" color="blue">
+                React Storybook
               </Button>
-              <Button href="#pricing" color="blue">
-                Explore React Native
+              <Button href="#" color="blue">
+                React Native (Soon)
               </Button>
             </div>
           </div>
