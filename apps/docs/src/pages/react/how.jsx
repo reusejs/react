@@ -38,14 +38,14 @@ export default function Home() {
             customise components.
             <ol>
               <li>
-                <b>Way 1: Pass Styles at each Component Level.</b> You can't
+                <b>Way 1: Pass Styles at each Component Level.</b> You cannot
                 reuse much, This way sucks. But if you want to override via
                 styles, just pass <code>labelStyles</code> or respective
                 components Styles prop
               </li>
               <li>
                 <b>Way 2: Pass Classes via various Props.</b> Might be good, but
-                again, it means you don't have good grip on your design. Less
+                again, it means you do not have good grip on your design. Less
                 Reusability
               </li>
               <li>
