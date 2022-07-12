@@ -4,67 +4,67 @@ import { BadgeBase } from '@reusejs/react'
 
 const tableOfContents = {
   Atoms: {
-    Labels: { status: 'done', href: '/atoms/labels' },
-    Arrows: { status: 'coming soon', href: '/atoms/labels' },
-    Badges: { status: 'done', href: '/atoms/badges' }, // https://tailwindui.com/components/application-ui/elements/badges
-    Breadcrumbs: { status: 'coming soon', href: '/atoms/labels' }, // https://tailwindui.com/components/application-ui/navigation/breadcrumbs
-    Buttons: { status: 'coming soon', href: '/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
-    Dividers: { status: 'coming soon', href: '/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
-    Headings: { status: 'coming soon', href: '/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
-    Images: { status: 'coming soon', href: '/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
-    TextInputs: { status: 'coming soon', href: '/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
-    Links: { status: 'coming soon', href: '/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
-    Loaders: { status: 'coming soon', href: '/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
-    Prices: { status: 'coming soon', href: '/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
-    Properties: { status: 'coming soon', href: '/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
-    QuantitySelectors: { status: 'coming soon', href: '/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
-    Ratings: { status: 'coming soon', href: '/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
-    Skeletons: { status: 'coming soon', href: '/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
-    TextAreas: { status: 'coming soon', href: '/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
+    Labels: { status: 'done', href: '/react/atoms/labels' },
+    Arrows: { status: 'coming soon', href: '/react/atoms/labels' },
+    Badges: { status: 'done', href: '/react/atoms/badges' }, // https://tailwindui.com/components/application-ui/elements/badges
+    Breadcrumbs: { status: 'coming soon', href: '/react/atoms/labels' }, // https://tailwindui.com/components/application-ui/navigation/breadcrumbs
+    Buttons: { status: 'coming soon', href: '/react/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
+    Dividers: { status: 'coming soon', href: '/react/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
+    Headings: { status: 'coming soon', href: '/react/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
+    Images: { status: 'coming soon', href: '/react/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
+    TextInputs: { status: 'coming soon', href: '/react/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
+    Links: { status: 'coming soon', href: '/react/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
+    Loaders: { status: 'coming soon', href: '/react/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
+    Prices: { status: 'coming soon', href: '/react/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
+    Properties: { status: 'coming soon', href: '/react/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
+    QuantitySelectors: { status: 'coming soon', href: '/react/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
+    Ratings: { status: 'coming soon', href: '/react/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
+    Skeletons: { status: 'coming soon', href: '/react/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
+    TextAreas: { status: 'coming soon', href: '/react/atoms/labels' }, // https://tailwindui.com/components/application-ui/elements/buttons
   },
   Molecules: {
-    Alerts: { status: 'coming soon', href: '/atoms/labels' },
-    Banners: { status: 'coming soon', href: '/atoms/labels' },
-    CTAs: { status: 'coming soon', href: '/atoms/labels' },
-    Cards: { status: 'coming soon', href: '/atoms/labels' },
-    CheckboxPickers: { status: 'coming soon', href: '/atoms/labels' },
-    SelectPickers: { status: 'coming soon', href: '/atoms/labels' },
-    Dropdowns: { status: 'coming soon', href: '/atoms/labels' },
-    Filters: { status: 'coming soon', href: '/atoms/labels' },
-    Galleries: { status: 'coming soon', href: '/atoms/labels' },
-    Modals: { status: 'coming soon', href: '/atoms/labels' },
-    Paginations: { status: 'coming soon', href: '/atoms/labels' },
-    RadioPickers: { status: 'coming soon', href: '/atoms/labels' },
-    RangePickers: { status: 'coming soon', href: '/atoms/labels' },
-    ReviewBoxes: { status: 'coming soon', href: '/atoms/labels' },
-    Scrollables: { status: 'coming soon', href: '/atoms/labels' },
-    SearchBars: { status: 'coming soon', href: '/atoms/labels' },
-    Sections: { status: 'coming soon', href: '/atoms/labels' },
-    Steppers: { status: 'coming soon', href: '/atoms/labels' },
+    Alerts: { status: 'coming soon', href: '/react/atoms/labels' },
+    Banners: { status: 'coming soon', href: '/react/atoms/labels' },
+    CTAs: { status: 'coming soon', href: '/react/atoms/labels' },
+    Cards: { status: 'coming soon', href: '/react/atoms/labels' },
+    CheckboxPickers: { status: 'coming soon', href: '/react/atoms/labels' },
+    SelectPickers: { status: 'coming soon', href: '/react/atoms/labels' },
+    Dropdowns: { status: 'coming soon', href: '/react/atoms/labels' },
+    Filters: { status: 'coming soon', href: '/react/atoms/labels' },
+    Galleries: { status: 'coming soon', href: '/react/atoms/labels' },
+    Modals: { status: 'coming soon', href: '/react/atoms/labels' },
+    Paginations: { status: 'coming soon', href: '/react/atoms/labels' },
+    RadioPickers: { status: 'coming soon', href: '/react/atoms/labels' },
+    RangePickers: { status: 'coming soon', href: '/react/atoms/labels' },
+    ReviewBoxes: { status: 'coming soon', href: '/react/atoms/labels' },
+    Scrollables: { status: 'coming soon', href: '/react/atoms/labels' },
+    SearchBars: { status: 'coming soon', href: '/react/atoms/labels' },
+    Sections: { status: 'coming soon', href: '/react/atoms/labels' },
+    Steppers: { status: 'coming soon', href: '/react/atoms/labels' },
   },
   Organisms: {
-    Accordions: { status: 'coming soon', href: '/atoms/labels' },
-    BannerGrids: { status: 'coming soon', href: '/atoms/labels' },
-    Navigations: { status: 'coming soon', href: '/atoms/labels' }, // Sidebar, Header
-    Carousels: { status: 'coming soon', href: '/atoms/labels' },
-    ContentPages: { status: 'coming soon', href: '/atoms/labels' },
-    Footers: { status: 'coming soon', href: '/atoms/labels' },
-    Heros: { status: 'coming soon', href: '/atoms/labels' },
-    Menus: { status: 'coming soon', href: '/atoms/labels' },
-    Tables: { status: 'coming soon', href: '/atoms/labels' },
-    Tabs: { status: 'coming soon', href: '/atoms/labels' },
+    Accordions: { status: 'coming soon', href: '/react/atoms/labels' },
+    BannerGrids: { status: 'coming soon', href: '/react/atoms/labels' },
+    Navigations: { status: 'coming soon', href: '/react/atoms/labels' }, // Sidebar, Header
+    Carousels: { status: 'coming soon', href: '/react/atoms/labels' },
+    ContentPages: { status: 'coming soon', href: '/react/atoms/labels' },
+    Footers: { status: 'coming soon', href: '/react/atoms/labels' },
+    Heros: { status: 'coming soon', href: '/react/atoms/labels' },
+    Menus: { status: 'coming soon', href: '/react/atoms/labels' },
+    Tables: { status: 'coming soon', href: '/react/atoms/labels' },
+    Tabs: { status: 'coming soon', href: '/react/atoms/labels' },
   },
   Templates: {
-    Forms: { status: 'coming soon', href: '/atoms/labels' },
-    Invoices: { status: 'coming soon', href: '/atoms/labels' },
-    Dashboards: { status: 'coming soon', href: '/atoms/labels' },
+    Forms: { status: 'coming soon', href: '/react/atoms/labels' },
+    Invoices: { status: 'coming soon', href: '/react/atoms/labels' },
+    Dashboards: { status: 'coming soon', href: '/react/atoms/labels' },
   },
   Pages: {
-    HomePage: { status: 'coming soon', href: '/atoms/labels' },
-    BrowseProducts: { status: 'coming soon', href: '/atoms/labels' },
-    ProductDetail: { status: 'coming soon', href: '/atoms/labels' },
-    Login: { status: 'coming soon', href: '/atoms/labels' },
-    PersonalDetails: { status: 'coming soon', href: '/atoms/labels' },
+    HomePage: { status: 'coming soon', href: '/react/atoms/labels' },
+    BrowseProducts: { status: 'coming soon', href: '/react/atoms/labels' },
+    ProductDetail: { status: 'coming soon', href: '/react/atoms/labels' },
+    Login: { status: 'coming soon', href: '/react/atoms/labels' },
+    PersonalDetails: { status: 'coming soon', href: '/react/atoms/labels' },
   },
 }
 
