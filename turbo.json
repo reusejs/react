@@ -13,6 +13,12 @@
       ],
       "outputs": ["dist/**", ".next/**"]
     },
+    "storybook#storybook": {
+      "cache": false
+    },
+    "storybook#build-storybook": {
+      "cache": false
+    },
     "test": {
       "outputs": ["coverage/**"],
       "dependsOn": []

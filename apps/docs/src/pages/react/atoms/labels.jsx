@@ -34,6 +34,7 @@ export default function Labels() {
           codePreview={`<LabelBase
   label="Email Me"
   htmlFor="email"
+  variant="primary"
 />`}
         >
           <LabelBase label="Email Me" htmlFor="email" variant="primary" />
