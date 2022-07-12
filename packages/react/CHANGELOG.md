@@ -1,5 +1,12 @@
 # @reusejs/react
 
+## 5.0.2
+
+### Patch Changes
+
+- d6d4a05: - Introduce Variants
+  - Add Hows page
+
 ## 5.0.1
 
 ### Patch Changes
