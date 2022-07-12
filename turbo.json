@@ -13,6 +13,15 @@
       ],
       "outputs": ["dist/**", ".next/**"]
     },
+    "@reusejs/react#build": {
+      "cache": false,
+      "dependsOn": [
+        "^build",
+        "$NEXT_PUBLIC_API_URL",
+        "$NEXT_PUBLIC_ACCESS_URL"
+      ],
+      "outputs": ["dist/**"]
+    },
     "storybook#run": {
       "cache": false
     },
