@@ -30,6 +30,16 @@ export default function Labels() {
         </UsagePreviewReact>
 
         <UsagePreviewReact
+          title="Label with variant"
+          codePreview={`<LabelBase
+  label="Email Me"
+  htmlFor="email"
+/>`}
+        >
+          <LabelBase label="Email Me" htmlFor="email" variant="primary" />
+        </UsagePreviewReact>
+
+        <UsagePreviewReact
           title="Label with overridden styles"
           codePreview={`<LabelBase
   label="Email Me"

@@ -1,14 +1,9 @@
 import React, { ReactNode } from "react";
 import "../../../tailwind.css";
 import BadgeBase from "./base";
+import BadgeBaseProps from "./types";
 
-export interface BadgeSuffixBaseProps {
-  label: string;
-  badgeStyles?: any;
-  badge: {};
-}
-
-const BadgeSuffixBase = (props: BadgeSuffixBaseProps) => {
+const BadgeSuffixBase = (props: BadgeBaseProps) => {
   return (
     <BadgeBase
       {...props}

@@ -3,14 +3,19 @@ import { ThemeProvider as DarkLightThemeProvider } from 'next-themes'
 import { ThemeProvider, theme } from '@reusejs/react'
 import '@/styles/tailwind.css'
 
-// import 'prismjs/themes/prism-okaidia.css'
-
 const newTheme = {
   ...theme,
-  ...{
-    // labelBaseClassNames: 'block text-sm font-medium text-green-800',
+}
+
+const variants = {
+  primary: {
+    labelClasses: {
+      color: 'text-cyan-200',
+    },
   },
 }
+
+newTheme['variants'] = variants
 
 function MyApp({ Component, pageProps }) {
   return (

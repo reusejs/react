@@ -1,14 +1,9 @@
 import React, { ReactNode } from "react";
 import "../../../tailwind.css";
 import BadgeBase from "./base";
+import BadgeBaseProps from "./types";
 
-export interface BadgeGreenProps {
-  label: string;
-  badgeStyles?: any;
-  badge: {};
-}
-
-const BadgeGreen = (props: BadgeGreenProps) => {
+const BadgeGreen = (props: BadgeBaseProps) => {
   return (
     <BadgeBase
       {...props}
