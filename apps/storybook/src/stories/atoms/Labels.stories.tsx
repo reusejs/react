@@ -25,9 +25,7 @@ export default {
 } as ComponentMeta<typeof LabelBase>;
 
 const Template: ComponentStory<typeof LabelBase> = (args) => (
-  <ThemeProvider value={newTheme}>
-    <LabelBase {...args} />
-  </ThemeProvider>
+  <LabelBase {...args} />
 );
 
 export const Default = Template.bind({});

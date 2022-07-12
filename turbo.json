@@ -13,7 +13,7 @@
       ],
       "outputs": ["dist/**", ".next/**"]
     },
-    "storybook#storybook": {
+    "storybook#run": {
       "cache": false
     },
     "storybook#build-storybook": {

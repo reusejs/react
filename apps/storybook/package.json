@@ -17,7 +17,7 @@
     "release": "standard-version",
     "push-release": "git push --follow-tags origin main",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
-    "storybook": "BROWSER=none start-storybook -p 6006",
+    "run": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "dependencies": {

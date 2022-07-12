@@ -1,5 +1,7 @@
 import '../src/styles/globals.css';
 import * as NextImage from 'next/image';
+import { ThemeProvider, theme } from '@reusejs/react';
+import newTheme from '../src/reusejsTheme';
 
 const OriginalNextImage = NextImage.default;
 
@@ -20,3 +22,11 @@ export const parameters = {
     'storybook/docs/panel': { index: -1 },
   },
 };
+
+export const decorators = [
+  (Story) => (
+    <ThemeProvider value={newTheme}>
+      <Story />
+    </ThemeProvider>
+  ),
+];
