@@ -27,5 +27,3 @@ Run `git push --follow-tags` for all tags to be pushed to Github
 
 - https://leerob.io/blog/turborepo-design-system-monorepo
 - https://github.com/LukasBombach/tree-shakable-component-library
-
-https://main--62cd742752b02b1186b36ca2.chromatic.com/?path=/story/atoms-labels--default
