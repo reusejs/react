@@ -27,19 +27,29 @@ export const parameters = {
       {
         name: 'light',
         value: '#fff',
+        class: 'light',
       },
       {
         name: 'dark',
         value: '#000',
+        class: 'dark',
       },
     ],
   },
 };
 
 export const decorators = [
-  (Story) => (
-    <ThemeProvider value={newTheme}>
-      <Story />
-    </ThemeProvider>
-  ),
+  (Story, context) => {
+    return (
+      <div
+        className={
+          context.globals.backgrounds?.value === '#000' ? 'dark' : 'light'
+        }
+      >
+        <ThemeProvider value={newTheme}>
+          <Story />
+        </ThemeProvider>
+      </div>
+    );
+  },
 ];

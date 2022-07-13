@@ -23,7 +23,7 @@ const buttonClasses = {
   padding: "px-4 py-2",
   border: "border border-transparent",
   width: "",
-  disabledClasses: "disabled:opacity-50",
+  disabledClasses: "disabled:opacity-50 dark:disabled:opacity-80",
 };
 
 const theme = {
