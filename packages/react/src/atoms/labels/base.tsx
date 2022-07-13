@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react";
 import "../../../tailwind.css";
 import { useThemeContext } from "../../theme/ThemeProvider";
-import classNames from "../../utils/classNames";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
 
 export interface LabelBaseProps {

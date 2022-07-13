@@ -13,9 +13,23 @@ const labelClasses = {
   color: "text-gray-800 dark:text-gray-100",
 };
 
+const buttonClasses = {
+  alignment: "inline-flex justify-center items-center",
+  focus: "focus:outline-none",
+  font: "font-normal text-sm",
+  backgroundColor: "bg-blue-500 hover:bg-blue-700",
+  textColor: "text-white",
+  borderRadius: "rounded-md",
+  padding: "px-4 py-2",
+  border: "border border-transparent",
+  width: "",
+  disabledClasses: "disabled:opacity-50",
+};
+
 const theme = {
   labelClasses,
   badgeClasses,
+  buttonClasses,
 };
 
 export default theme;

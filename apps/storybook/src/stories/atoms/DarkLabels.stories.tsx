@@ -3,13 +3,20 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { LabelBase } from '@reusejs/react';
 
 export default {
-  title: 'Atoms/Labels/Light',
+  title: 'Atoms/Labels/Dark',
   component: LabelBase,
   argTypes: {},
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+    },
+  },
 } as ComponentMeta<typeof LabelBase>;
 
 const Template: ComponentStory<typeof LabelBase> = (args) => (
-  <LabelBase {...args} />
+  <div className='dark'>
+    <LabelBase {...args} />
+  </div>
 );
 
 export const Default = Template.bind({});
