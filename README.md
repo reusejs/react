@@ -1,3 +1,8 @@
+[![NPM version][npm-version-image]][npm-url]
+[![NPM downloads][npm-downloads-image]][npm-downloads-url]
+[![MIT License][license-image]][license-url]
+[![NPM Publish][npm-publish-action-image]][npm-publish-action-url]
+
 ### How to Contribute?
 
 This repo consists of two packages:
@@ -27,3 +32,16 @@ Run `git push --follow-tags` for all tags to be pushed to Github
 
 - https://leerob.io/blog/turborepo-design-system-monorepo
 - https://github.com/LukasBombach/tree-shakable-component-library
+
+## License
+
+@reusejs/react is freely distributable under the terms of the [MIT license][license-url].
+
+[license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[license-url]: LICENSE
+[npm-url]: https://npmjs.org/package/@reusejs/react
+[npm-version-image]: https://img.shields.io/npm/v/@reusejs/react.svg?style=flat
+[npm-downloads-image]: https://img.shields.io/npm/dm/@reusejs/react.svg?style=flat
+[npm-downloads-url]: https://npmcharts.com/compare/@reusejs/react?minimal=true
+[npm-publish-action-image]: https://github.com/reusejs/react/actions/workflows/release.yml/badge.svg
+[npm-publish-action-url]: https://github.com/reusejs/react/actions/workflows/release.yml
