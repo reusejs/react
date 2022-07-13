@@ -18,12 +18,12 @@ export default function Home() {
             </h1>
           </div>
           <div>
-            <Link
+            {/* <Link
               href="/react/how"
               className="block w-32 rounded-md bg-gray-100 p-4 text-center font-semibold dark:bg-gray-800 dark:text-gray-100"
             >
               Hows
-            </Link>
+            </Link> */}
           </div>
         </div>
       </Container>
