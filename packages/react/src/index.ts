@@ -12,6 +12,10 @@ export { default as BadgeBase } from "./atoms/badges/base";
 
 export { default as ButtonBase } from "./atoms/buttons/base";
 
+// TextInputs
+
+export { default as TextInputBase } from "./atoms/textInputs/base";
+
 export {
   default as ThemeProvider,
   useThemeContext,

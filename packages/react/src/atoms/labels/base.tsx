@@ -8,7 +8,7 @@ export interface LabelBaseProps {
   htmlFor: string;
   labelStyles?: any;
   variant?: string;
-  labelClasses: {
+  labelClasses?: {
     alignment?: any;
     color?: any;
     font?: any;

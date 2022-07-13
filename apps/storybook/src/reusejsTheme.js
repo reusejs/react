@@ -15,6 +15,11 @@ const variants = {
       textColor: 'text-yellow-800',
     },
   },
+  suffixPrefix: {
+    textInputClasses: {
+      padding: 'pl-7 pr-12',
+    },
+  },
 };
 
 newTheme['variants'] = variants;

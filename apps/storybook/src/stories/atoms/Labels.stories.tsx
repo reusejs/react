@@ -8,17 +8,17 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof LabelBase>;
 
-const LightTemplate: ComponentStory<typeof LabelBase> = (args) => (
+const Template: ComponentStory<typeof LabelBase> = (args) => (
   <LabelBase {...args} />
 );
 
-export const Default = LightTemplate.bind({});
+export const Default = Template.bind({});
 Default.args = {
   label: 'Email Address',
   htmlFor: 'email',
 };
 
-export const Variant = LightTemplate.bind({});
+export const Variant = Template.bind({});
 Variant.args = {
   label: 'Email Address',
   htmlFor: 'email',
