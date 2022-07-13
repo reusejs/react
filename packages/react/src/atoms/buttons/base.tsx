@@ -11,6 +11,8 @@ export interface ButtonBaseProps {
   busyText?: any;
   buttonStyles?: any;
   variant?: string;
+  buttonSuffix?: any;
+  buttonPrefix?: any;
   buttonClasses: {
     alignment?: any;
     focus?: any;
@@ -57,8 +59,10 @@ const ButtonBase = (props: ButtonBaseProps) => {
       onClick={props.onClick}
       disabled={props.disabled || props.busy}
     >
+      {props.buttonPrefix && props.buttonPrefix}
       {props.busy && <>{props.busyText}</>}
       {!props.busy && props.label}
+      {props.buttonSuffix && props.buttonSuffix}
     </button>
   );
 };

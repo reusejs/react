@@ -35,3 +35,31 @@ Disabled.args = {
   label: 'Login',
   disabled: true,
 };
+
+export const WithSuffix = Template.bind({});
+WithSuffix.args = {
+  label: 'Email Address',
+  buttonSuffix: (
+    <svg
+      className='ml-1.5 h-2 w-2 text-white'
+      fill='currentColor'
+      viewBox='0 0 8 8'
+    >
+      <circle cx={4} cy={4} r={3} />
+    </svg>
+  ),
+};
+
+export const WithPrefix = Template.bind({});
+WithPrefix.args = {
+  label: 'Email Address',
+  buttonPrefix: (
+    <svg
+      className='mr-1.5 h-2 w-2 text-white'
+      fill='currentColor'
+      viewBox='0 0 8 8'
+    >
+      <circle cx={4} cy={4} r={3} />
+    </svg>
+  ),
+};
