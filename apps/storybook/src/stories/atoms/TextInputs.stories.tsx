@@ -4,7 +4,7 @@ import { TextInputBase } from '@reusejs/react';
 import { ExclamationCircleIcon } from '@heroicons/react/solid';
 
 export default {
-  title: 'Atoms/Text Inputs',
+  title: 'Atoms/Text Inputs/Simple',
   component: TextInputBase,
   argTypes: {},
 } as ComponentMeta<typeof TextInputBase>;
@@ -26,6 +26,15 @@ Default.args = {
   htmlFor: 'price',
   name: 'price',
   type: 'text',
+  placeholder: '0.00',
+};
+
+export const Password = Template.bind({});
+Password.args = {
+  label: 'Password',
+  htmlFor: 'password',
+  name: 'password',
+  type: 'password',
   placeholder: '0.00',
 };
 
