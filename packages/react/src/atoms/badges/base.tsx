@@ -24,7 +24,14 @@ const BadgeBase = (props: BadgeBaseProps) => {
 
   const finalClassNames = resolvedStyleProps(
     "badgeClasses",
-    ["alignment", "padding", "color", "font", "borderRadius"],
+    [
+      "alignment",
+      "padding",
+      "backgroundColor",
+      "textColor",
+      "font",
+      "borderRadius",
+    ],
     props,
     theme
   );
