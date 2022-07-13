@@ -8,7 +8,7 @@ import Plugin from './assets/plugin.svg';
 import Repo from './assets/repo.svg';
 import StackAlt from './assets/stackalt.svg';
 
-<Meta title="Example/Introduction" />
+<Meta title='Welcome/Introduction' />
 
 <style>
   {`
@@ -114,98 +114,56 @@ import StackAlt from './assets/stackalt.svg';
   `}
 </style>
 
-# Welcome to Storybook
+# Welcome to Reusejs React
 
-Storybook helps you build UI components in isolation from your app's business logic, data, and context.
-That makes it easy to develop hard-to-reach states. Save these UI states as **stories** to revisit during development, testing, or QA.
+Reusejs is created to abstract the components we develop at Betalectic and share with community. It's actively used and developed, as without it, we won't be able to do our work.
 
-Browse example stories now by navigating to them in the sidebar.
-View their code in the `stories` directory to learn how they work.
-We recommend building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with pages.
+We tried to follow "Atomic Design System", you can use left sidebar to explore components. We tried to share as many variations as possible, the props passed to them should give much better idea.
 
-<div className="subheading">Configure</div>
+<h2>How to Run?</h2>
 
-<div className="link-list">
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/addons/addon-types"
-    target="_blank"
-  >
-    <img src={Plugin} alt="plugin" />
-    <span>
-      <strong>Presets for popular tools</strong>
-      Easy setup for TypeScript, SCSS and more.
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/configure/webpack"
-    target="_blank"
-  >
-    <img src={StackAlt} alt="Build" />
-    <span>
-      <strong>Build configuration</strong>
-      How to customize webpack and Babel
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/configure/styling-and-css"
-    target="_blank"
-  >
-    <img src={Colors} alt="colors" />
-    <span>
-      <strong>Styling</strong>
-      How to load and configure CSS libraries
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/get-started/setup#configure-storybook-for-your-stack"
-    target="_blank"
-  >
-    <img src={Flow} alt="flow" />
-    <span>
-      <strong>Data</strong>
-      Providers and mocking for data libraries
-    </span>
-  </a>
-</div>
+<p>
+  <ol>
+    <li>
+      Install the Package: <code>yarn add @reusejs/react</code>
+    </li>
+    <li>Install Tailwind so that you can customize</li>
+    <li>
+      Install Theme Provider:{' '}
+      <a href='https://github.com/reusejs/react/blob/main/apps/docs/src/pages/_app.jsx'>
+        https://github.com/reusejs/react/blob/main/apps/docs/src/pages/_app.jsx
+      </a>
+    </li>
+    <li>
+      Explore <code>apps/docs/src/pages/react</code> folder for components and
+      their usage
+    </li>
+  </ol>
+</p>
 
-<div className="subheading">Learn</div>
+<h2>How to Customise?</h2>
 
-<div className="link-list">
-  <a className="link-item" href="https://storybook.js.org/docs" target="_blank">
-    <img src={Repo} alt="repo" />
-    <span>
-      <strong>Storybook documentation</strong>
-      Configure, customize, and extend
-    </span>
-  </a>
-  <a className="link-item" href="https://storybook.js.org/tutorials/" target="_blank">
-    <img src={Direction} alt="direction" />
-    <span>
-      <strong>In-depth guides</strong>
-      Best practices from leading teams
-    </span>
-  </a>
-  <a className="link-item" href="https://github.com/storybookjs/storybook" target="_blank">
-    <img src={Code} alt="code" />
-    <span>
-      <strong>GitHub project</strong>
-      View the source and add issues
-    </span>
-  </a>
-  <a className="link-item" href="https://discord.gg/storybook" target="_blank">
-    <img src={Comments} alt="comments" />
-    <span>
-      <strong>Discord chat</strong>
-      Chat with maintainers and the community
-    </span>
-  </a>
-</div>
-
-<div className="tip-wrapper">
-  <span className="tip">Tip</span>Edit the Markdown in{' '}
-  <code>stories/Introduction.stories.mdx</code>
-</div>
+<p>
+  What I love about Reusejs/React is various ways to override, customise
+  components.
+  <ol>
+    <li>
+      <b>Way 1: Pass Styles at each Component Level.</b> You cannot reuse much,
+      This way sucks. But if you want to override via styles, just pass{' '}
+      <code>labelStyles</code> or respective components Styles prop
+    </li>
+    <li>
+      <b>Way 2: Pass Classes via various Props.</b> Might be good, but again, it
+      means you do not have good grip on your design. Less Reusability
+    </li>
+    <li>
+      <b>Way 3: Introduce Variants.</b> Usually this is how you might go with
+      your components. Your app is usually made up of 3-4 variants of buttons
+      etc.,, configure them upfront, and use them.
+    </li>
+    <li>
+      <b>Way 4: Override Classes at Theme File.</b> Not as great as Variants
+      because you might have multiple variants of same basic component.
+    </li>
+  </ol>
+</p>

@@ -1,22 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ThemeProvider, theme } from '@reusejs/react';
 import { LabelBase } from '@reusejs/react';
-
-const newTheme = {
-  ...theme,
-  variants: {},
-};
-
-const variants = {
-  primary: {
-    labelClasses: {
-      color: 'text-cyan-200',
-    },
-  },
-};
-
-newTheme['variants'] = variants;
 
 export default {
   title: 'Atoms/Labels',

@@ -1,9 +1,23 @@
 import React, { ReactNode } from "react";
 import "../../../tailwind.css";
 import { useThemeContext } from "../../theme/ThemeProvider";
-import classNames from "../../utils/classNames";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
-import BadgeBaseProps from "./types";
+
+export interface BadgeBaseProps {
+  label: string;
+  badgeStyles?: any;
+  badgeSuffix?: any;
+  badgePrefix?: any;
+  variant?: string;
+  badgeClasses: {
+    alignment?: any;
+    padding?: any;
+    backgroundColor?: any;
+    textColor?: any;
+    font?: any;
+    borderRadius?: any;
+  };
+}
 
 const BadgeBase = (props: BadgeBaseProps) => {
   const theme: any = useThemeContext();

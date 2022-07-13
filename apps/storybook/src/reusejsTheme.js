@@ -10,6 +10,10 @@ const variants = {
     labelClasses: {
       color: 'text-cyan-200',
     },
+    badgeClasses: {
+      backgroundColor: 'bg-yellow-100',
+      textColor: 'text-yellow-800',
+    },
   },
 };
 
