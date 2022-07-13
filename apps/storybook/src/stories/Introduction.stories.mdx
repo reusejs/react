@@ -129,17 +129,32 @@ We tried to follow "Atomic Design System", you can use left sidebar to explore c
     </li>
     <li>Install Tailwind so that you can customize</li>
     <li>
-      Install Theme Provider:{' '}
-      <a href='https://github.com/reusejs/react/blob/main/apps/docs/src/pages/_app.jsx'>
-        https://github.com/reusejs/react/blob/main/apps/docs/src/pages/_app.jsx
-      </a>
+      Install Theme Provider (Refer Below)
     </li>
     <li>
       Explore <code>apps/docs/src/pages/react</code> folder for components and
       their usage
     </li>
+
   </ol>
 </p>
+
+<h2>Example Theme Provider</h2>
+
+```jsx
+import { ThemeProvider, theme } from '@reusejs/react';
+import '@/styles/tailwind.css';
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <ThemeProvider value={theme}>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
+}
+
+export default MyApp;
+```
 
 <h2>How to Customise?</h2>
 
