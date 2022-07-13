@@ -1,5 +1,15 @@
 # @reusejs/react
 
+## 6.0.0
+
+### Major Changes
+
+- 05b1460: Introduce Text Inputs
+
+### Minor Changes
+
+- b200b2c: Introduce Password field with show/hide password functionality
+
 ## 5.1.0
 
 ### Minor Changes
