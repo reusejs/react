@@ -1,17 +1,19 @@
 import React, { ReactNode } from "react";
 import "../../../tailwind.css";
 import { useThemeContext } from "../../theme/ThemeProvider";
-import classNames from "../../utils/classNames";
+import resolvedStyleProps from "../../utils/resolvedStyleProps";
 
 export interface BadgeBaseProps {
   label: string;
   badgeStyles?: any;
   badgeSuffix?: any;
   badgePrefix?: any;
+  variant?: string;
   badgeClasses: {
     alignment?: any;
     padding?: any;
-    color?: any;
+    backgroundColor?: any;
+    textColor?: any;
     font?: any;
     borderRadius?: any;
   };
@@ -20,17 +22,22 @@ export interface BadgeBaseProps {
 const BadgeBase = (props: BadgeBaseProps) => {
   const theme: any = useThemeContext();
 
+  const finalClassNames = resolvedStyleProps(
+    "badgeClasses",
+    [
+      "alignment",
+      "padding",
+      "backgroundColor",
+      "textColor",
+      "font",
+      "borderRadius",
+    ],
+    props,
+    theme
+  );
+
   return (
-    <span
-      className={classNames(
-        props.badgeClasses?.alignment || theme.badgeClasses.alignment,
-        props.badgeClasses?.padding || theme.badgeClasses.padding,
-        props.badgeClasses?.color || theme.badgeClasses.color,
-        props.badgeClasses?.font || theme.badgeClasses.font,
-        props.badgeClasses?.borderRadius || theme.badgeClasses.borderRadius
-      )}
-      style={props.badgeStyles}
-    >
+    <span className={finalClassNames} style={props.badgeStyles}>
       {props.badgePrefix && props.badgePrefix}
       {props.label}
       {props.badgeSuffix && props.badgeSuffix}

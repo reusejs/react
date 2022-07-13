@@ -1,12 +1,13 @@
 import React, { ReactNode } from "react";
 import "../../../tailwind.css";
 import { useThemeContext } from "../../theme/ThemeProvider";
-import classNames from "../../utils/classNames";
+import resolvedStyleProps from "../../utils/resolvedStyleProps";
 
 export interface LabelBaseProps {
   label: string;
   htmlFor: string;
   labelStyles?: any;
+  variant?: string;
   labelClasses: {
     alignment?: any;
     color?: any;
@@ -16,14 +17,18 @@ export interface LabelBaseProps {
 
 const LabelBase = (props: LabelBaseProps) => {
   const theme: any = useThemeContext();
+
+  const finalClassNames = resolvedStyleProps(
+    "labelClasses",
+    ["alignment", "color", "font"],
+    props,
+    theme
+  );
+
   return (
     <label
       htmlFor={props.htmlFor}
-      className={classNames(
-        props.labelClasses?.alignment || theme.labelClasses.alignment,
-        props.labelClasses?.color || theme.labelClasses.color,
-        props.labelClasses?.font || theme.labelClasses.font
-      )}
+      className={finalClassNames}
       style={props.labelStyles}
     >
       {props.label}

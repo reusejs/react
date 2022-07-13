@@ -1,4 +1,6 @@
 export function UsagePreviewReact({ ...props }) {
+  // console.log('props', props)
+
   return (
     <div className="my-8 rounded-lg border bg-white dark:bg-gray-900">
       <div className="bg-gray-100 p-4 font-semibold text-gray-800">

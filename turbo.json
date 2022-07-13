@@ -6,13 +6,25 @@
     },
     "docs#build": {
       "cache": false,
+      "dependsOn": ["$NEXT_PUBLIC_API_URL", "$NEXT_PUBLIC_ACCESS_URL"],
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "@reusejs/react#build": {
+      "cache": false,
       "dependsOn": [
         "^build",
         "$NEXT_PUBLIC_API_URL",
         "$NEXT_PUBLIC_ACCESS_URL"
       ],
-      "outputs": ["dist/**", ".next/**"]
+      "outputs": ["dist/**"]
     },
+    "storybook#run": {
+      "cache": false
+    },
+    "storybook#build-storybook": {
+      "cache": false
+    },
+    "storybook#chromatic": {},
     "test": {
       "outputs": ["coverage/**"],
       "dependsOn": []
