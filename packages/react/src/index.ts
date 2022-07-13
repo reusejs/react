@@ -15,6 +15,7 @@ export { default as ButtonBase } from "./atoms/buttons/base";
 // TextInputs
 
 export { default as TextInputBase } from "./atoms/textInputs/base";
+export { default as PasswordTextInputBase } from "./atoms/textInputs/password";
 
 export {
   default as ThemeProvider,

@@ -16,7 +16,7 @@ export default {
       format: "es",
     },
   ],
-  external: ["react"],
+  external: ["react", "react-dom"],
   plugins: [
     resolve(),
     commonjs(),

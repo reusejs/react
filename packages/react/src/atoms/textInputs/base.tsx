@@ -67,8 +67,6 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
     };
 
     allProps["textInputClasses"] = newTextInputClasses;
-
-    console.log(newTextInputClasses);
   }
 
   //   console.log("errorStyleProps", allProps);
@@ -97,6 +95,8 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
     props,
     theme
   );
+
+  // console.log(finalClassNames);
 
   const textInputRef = React.useRef(null);
 
