@@ -1,5 +1,33 @@
 # @reusejs/react
 
+## 6.0.1
+
+### Patch Changes
+
+- db7da97: Add readme
+
+## 6.0.0
+
+### Major Changes
+
+- 05b1460: Introduce Text Inputs
+
+### Minor Changes
+
+- b200b2c: Introduce Password field with show/hide password functionality
+
+## 5.1.0
+
+### Minor Changes
+
+- b41f665: Added buttons
+
+## 5.0.3
+
+### Patch Changes
+
+- b111563: Introduce more granular props for styling badges
+
 ## 5.0.2
 
 ### Patch Changes

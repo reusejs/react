@@ -1,0 +1,123 @@
+import { Meta } from '@storybook/addon-docs';
+import Code from './assets/code-brackets.svg';
+import Colors from './assets/colors.svg';
+import Comments from './assets/comments.svg';
+import Direction from './assets/direction.svg';
+import Flow from './assets/flow.svg';
+import Plugin from './assets/plugin.svg';
+import Repo from './assets/repo.svg';
+import StackAlt from './assets/stackalt.svg';
+
+<Meta title='Welcome/Variants' />
+
+# What are and how to use Variants?
+
+Variants are literally "variant" of a component
+
+Let's take a "Badge" for example, when you use it like following:
+
+```jsx
+<BadgeBase label='Email Address' />
+```
+
+You would get a default style. The default styling applied is coming from the theme File.
+
+Let's say you want to override some styles, you would have to pass props like following:
+
+```jsx
+<BadgeBase
+  badgeClasses={{
+    backgroundColor: 'bg-green-100',
+    borderRadius: 'rounded-md',
+    font: 'text-sm font-medium',
+    padding: 'px-3 py-0.5',
+    textColor: 'text-green-800',
+  }}
+  label='Email Address'
+/>
+```
+
+Let's say the above is the new default style you want to use with your theme, everywhere? You can just do something like:
+
+```jsx
+import { ThemeProvider, theme } from '@reusejs/react';
+import '@/styles/tailwind.css';
+
+const newTheme = {
+  ...theme,
+  badgeClasses: {
+    backgroundColor: 'bg-green-100',
+    borderRadius: 'rounded-md',
+    font: 'text-sm font-medium',
+    padding: 'px-3 py-0.5',
+    textColor: 'text-green-800',
+  },
+};
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <ThemeProvider value={newTheme}>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
+}
+
+export default MyApp;
+```
+
+But the above would solve only some part of the problem, what if you want to use two types of badges? Enter variants!
+
+```jsx
+import { ThemeProvider, theme } from '@reusejs/react';
+import '@/styles/tailwind.css';
+
+const newTheme = {
+  ...theme,
+  variants: {},
+};
+
+const variants = {
+  primary: {
+    badgeClasses: {
+      backgroundColor: 'bg-green-100',
+      borderRadius: 'rounded-md',
+      font: 'text-sm font-medium',
+      padding: 'px-3 py-0.5',
+      textColor: 'text-green-800',
+    },
+  },
+  secondary: {
+    badgeClasses: {
+      backgroundColor: 'bg-gray-100',
+      borderRadius: 'rounded-md',
+      font: 'text-sm font-medium',
+      padding: 'px-3 py-0.5',
+      textColor: 'text-gray-800',
+    },
+  },
+};
+
+newTheme['variants'] = variants;
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <ThemeProvider value={newTheme}>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
+}
+
+export default MyApp;
+```
+
+Now when you use your component, you can use like following:
+
+```jsx
+<BadgeBase label='Email Address' variant='primary' />
+```
+
+```jsx
+<BadgeBase label='Email Address' variant='secondary' />
+```
+
+> Think of variant as grouping your styles into buckets and using them at once.

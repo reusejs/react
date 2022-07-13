@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { LabelBase } from '@reusejs/react';
 
 export default {
-  title: 'Atoms/Labels/Light',
+  title: 'Atoms/Labels',
   component: LabelBase,
   argTypes: {},
 } as ComponentMeta<typeof LabelBase>;
