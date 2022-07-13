@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 5.0.3
+
+### Patch Changes
+
+- b111563: Introduce more granular props for styling badges
+
 ## 5.0.2
 
 ### Patch Changes
