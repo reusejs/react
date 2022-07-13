@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 5.1.0
+
+### Minor Changes
+
+- b41f665: Added buttons
+
 ## 5.0.3
 
 ### Patch Changes
