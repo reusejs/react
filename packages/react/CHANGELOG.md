@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.0.1
+
+### Patch Changes
+
+- db7da97: Add readme
+
 ## 6.0.0
 
 ### Major Changes
