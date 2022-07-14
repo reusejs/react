@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.1.1
+
+### Patch Changes
+
+- 92f392f: Add more styles
+
 ## 6.1.0
 
 ### Minor Changes
