@@ -179,44 +179,41 @@ const PickerSelectBase = React.forwardRef(
                 />
               )}
 
-              <div
-                className={classNames(
-                  "absolute z-50 block max-h-32 w-full overflow-auto rounded-md border-0 border-gray-300 bg-white shadow dark:border-gray-700 dark:bg-black"
-                )}
-              >
-                {options.length > 0 && (
-                  <ScrollableBase
-                    scrollableClasses={{
-                      position: "z-50 block overflow-auto absolute",
-                    }}
-                  >
-                    <>
-                      {options.map((option: any) => (
-                        <div
-                          className={""}
-                          onClick={() => {
-                            addOrRemove(props.multiple, option);
-                          }}
-                          key={`option${option.value}`}
-                        >
-                          {props.optionsRenderer && (
-                            <props.optionsRenderer
-                              value={option}
-                              selected={selected}
-                            />
-                          )}
-                        </div>
-                      ))}
-                    </>
-                  </ScrollableBase>
-                )}
-
-                {options.length === 0 && (
+              {options.length > 0 && (
+                <ScrollableBase
+                  scrollableClasses={{
+                    position: "z-50 block overflow-auto absolute",
+                  }}
+                >
                   <>
-                    <NoDataComponent />
+                    {options.map((option: any) => (
+                      <div
+                        onClick={() => {
+                          addOrRemove(props.multiple, option);
+                        }}
+                        key={`option${option.value}`}
+                      >
+                        {props.optionsRenderer && (
+                          <props.optionsRenderer
+                            value={option}
+                            selected={selected}
+                          />
+                        )}
+                      </div>
+                    ))}
                   </>
-                )}
-              </div>
+                </ScrollableBase>
+              )}
+
+              {options.length === 0 && (
+                <ScrollableBase
+                  scrollableClasses={{
+                    position: "z-50 block overflow-auto absolute",
+                  }}
+                >
+                  <NoDataComponent />
+                </ScrollableBase>
+              )}
             </div>
           )}
         </div>
