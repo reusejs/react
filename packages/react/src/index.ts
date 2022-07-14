@@ -3,6 +3,7 @@ export { default as theme } from "./theme/theme";
 // Start  ---- Atoms
 
 export { default as LabelBase } from "./atoms/labels/base";
+export { default as ScrollableBase } from "./atoms/scrollables/base";
 
 // Badges
 

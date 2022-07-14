@@ -102,7 +102,7 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
   const textInputRef = React.useRef(null);
 
   return (
-    <div>
+    <>
       {props.label !== "" && <LabelBase {...props} />}
       <div className={wrappersClassNames}>
         {props.textInputPrefix && props.textInputPrefix}
@@ -123,7 +123,7 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
       </div>
       {props.error && props.error}
       {!props.error && props.textInputBottom && props.textInputBottom}
-    </div>
+    </>
   );
 });
 

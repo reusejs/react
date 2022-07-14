@@ -13,6 +13,16 @@ const labelClasses = {
   color: "text-gray-800 dark:text-gray-100",
 };
 
+const scrollableClasses = {
+  position: "z-50 block overflow-auto",
+  maxHeight: "max-h-32",
+  width: "w-full",
+  padding: "",
+  borderRadius: "rounded-md",
+  border: "border border-gray-300 dark:border-gray-700",
+  background: "bg-white shadow dark:bg-black",
+};
+
 const buttonClasses = {
   alignment: "inline-flex justify-center items-center",
   focus: "focus:outline-none",
@@ -49,9 +59,17 @@ const textInputErrorClasses = {
 };
 
 const pickerSelectClasses = {
+  wrapper: "relative mt-1 rounded-md shadow-sm",
   alignment: "block",
-  font: "text-sm font-medium",
-  color: "text-gray-800 dark:text-gray-100",
+  width: "w-full",
+  borderRadius: "rounded-md",
+  border: "border-gray-300 dark:border-gray-600",
+  focus: "focus:border-gray-500 focus:ring-gray-500",
+  padding: "",
+  font: "font-normal sm:text-sm",
+  textColor: "text-gray-900 dark:text-white",
+  backgroundColor: "bg-white dark:bg-gray-900",
+  placeholderColor: "",
 };
 
 const theme = {
@@ -61,6 +79,7 @@ const theme = {
   textInputClasses,
   textInputErrorClasses,
   pickerSelectClasses,
+  scrollableClasses,
 };
 
 export default theme;

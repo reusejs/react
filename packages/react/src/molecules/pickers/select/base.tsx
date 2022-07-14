@@ -4,6 +4,7 @@ import { useThemeContext } from "../../../theme/ThemeProvider";
 import resolvedStyleProps from "../../../utils/resolvedStyleProps";
 import extractStyleProps from "../../../utils/extractStyleProps";
 import LabelBase from "../../../atoms/labels/base";
+import ScrollableBase from "../../../atoms/scrollables/base";
 import useOutsideClicker from "../../../hooks/useOutsideClicker";
 import useSelect from "../../../hooks/useSelect";
 import classNames from "../../../utils/classNames";
@@ -22,7 +23,6 @@ export interface PickerSelectBaseProps {
   textInputStyles?: any;
   variant?: string;
   placeholder?: string;
-  textInputSuffix?: any;
   textInputPrefix?: any;
   textInputBottom?: any;
   error?: any;
@@ -62,6 +62,8 @@ export interface PickerSelectBaseProps {
   selectedDataRenderer: any;
   searchRenderer: any;
   optionsRenderer: any;
+  closeComponent?: any;
+  clearComponent?: any;
 }
 
 const PickerSelectBase = React.forwardRef(
@@ -106,7 +108,7 @@ const PickerSelectBase = React.forwardRef(
     );
 
     const wrappersClassNames = resolvedStyleProps(
-      "textInputClasses",
+      "pickerSelectClasses",
       ["wrapper"],
       props,
       theme
@@ -140,24 +142,28 @@ const PickerSelectBase = React.forwardRef(
     });
 
     return (
-      <div>
+      <>
         <div className="flex justify-between">
           <LabelBase {...props} />
-          <div>Close/Clear</div>
+
+          {selected.length > 0 && !open && props.clearComponent && (
+            <span className="cursor-pointer" onClick={() => setSelected([])}>
+              <props.clearComponent />
+            </span>
+          )}
+
+          {open && props.closeComponent && (
+            <span className="cursor-pointer" onClick={() => setOpen(false)}>
+              <props.closeComponent />
+            </span>
+          )}
         </div>
         <div className={wrappersClassNames}>
           {open === false && (
-            <div
-              className={classNames(
-                "relative block w-full cursor-pointer rounded-md border border-gray-400 bg-white py-2 px-3 text-black focus:border-blue-500 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-white sm:text-sm"
-              )}
-              onClick={() => setOpen(true)}
-            >
+            <div onClick={() => setOpen(true)}>
               {props.selectedDataRenderer && (
                 <props.selectedDataRenderer selected={selected} />
               )}
-
-              {props.textInputSuffix && props.textInputSuffix}
             </div>
           )}
 
@@ -179,24 +185,30 @@ const PickerSelectBase = React.forwardRef(
                 )}
               >
                 {options.length > 0 && (
-                  <>
-                    {options.map((option: any) => (
-                      <div
-                        className={""}
-                        onClick={() => {
-                          addOrRemove(props.multiple, option);
-                        }}
-                        key={`option${option.value}`}
-                      >
-                        {props.optionsRenderer && (
-                          <props.optionsRenderer
-                            value={option}
-                            selected={selected}
-                          />
-                        )}
-                      </div>
-                    ))}
-                  </>
+                  <ScrollableBase
+                    scrollableClasses={{
+                      position: "z-50 block overflow-auto absolute",
+                    }}
+                  >
+                    <>
+                      {options.map((option: any) => (
+                        <div
+                          className={""}
+                          onClick={() => {
+                            addOrRemove(props.multiple, option);
+                          }}
+                          key={`option${option.value}`}
+                        >
+                          {props.optionsRenderer && (
+                            <props.optionsRenderer
+                              value={option}
+                              selected={selected}
+                            />
+                          )}
+                        </div>
+                      ))}
+                    </>
+                  </ScrollableBase>
                 )}
 
                 {options.length === 0 && (
@@ -210,7 +222,7 @@ const PickerSelectBase = React.forwardRef(
         </div>
         {props.error && props.error}
         {!props.error && props.textInputBottom && props.textInputBottom}
-      </div>
+      </>
     );
   }
 );

@@ -43,7 +43,19 @@ const SelectedDataRenderer = (props: any) => {
     }
   }, [props.selected]);
 
-  return <>{text}</>;
+  return (
+    <div className='relative block w-full cursor-pointer rounded-md border border-gray-300 bg-white py-2 px-3 text-black focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600  dark:text-white sm:text-sm'>
+      {text}
+    </div>
+  );
+};
+
+const CloseComponent = () => {
+  return 'Close';
+};
+
+const ClearComponent = () => {
+  return 'Clear';
 };
 
 const SearchRenderer = ({
@@ -140,6 +152,8 @@ Default.args = {
   selectedDataRenderer: SelectedDataRenderer,
   searchRenderer: SearchRenderer,
   optionsRenderer: OptionsRenderer,
+  clearComponent: ClearComponent,
+  closeComponent: CloseComponent,
 };
 
 export const Variant = Template.bind({});
