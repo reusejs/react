@@ -58,6 +58,10 @@ const ClearComponent = () => {
   return <span className='text-sm font-medium'>Clear</span>;
 };
 
+const NoDataComponent = () => {
+  return <div className='flex h-32 items-center justify-center'>No Data</div>;
+};
+
 const SearchRenderer = ({
   query,
   onSearch,
@@ -139,7 +143,9 @@ export default {
 } as ComponentMeta<typeof PickerSelectBase>;
 
 const Template: ComponentStory<typeof PickerSelectBase> = (args) => (
-  <PickerSelectBase {...args} />
+  <div className='w-1/2'>
+    <PickerSelectBase {...args} />
+  </div>
 );
 
 export const Default = Template.bind({});
@@ -153,13 +159,14 @@ Default.args = {
   },
   scrollableClasses: {
     position: 'z-50 block overflow-auto absolute',
-    maxHeight: 'max-h-64',
+    maxHeight: 'max-h-32',
   },
   selectedDataRenderer: SelectedDataRenderer,
   searchRenderer: SearchRenderer,
   optionsRenderer: OptionsRenderer,
   clearComponent: ClearComponent,
   closeComponent: CloseComponent,
+  noDataComponent: NoDataComponent,
 };
 
 export const Variant = Template.bind({});

@@ -60,16 +60,6 @@ const textInputErrorClasses = {
 
 const pickerSelectClasses = {
   wrapper: "relative mt-1 rounded-md shadow-sm",
-  alignment: "block",
-  width: "w-full",
-  borderRadius: "rounded-md",
-  border: "border-gray-300 dark:border-gray-600",
-  focus: "focus:border-gray-500 focus:ring-gray-500",
-  padding: "",
-  font: "font-normal sm:text-sm",
-  textColor: "text-gray-900 dark:text-white",
-  backgroundColor: "bg-white dark:bg-gray-900",
-  placeholderColor: "",
 };
 
 const theme = {

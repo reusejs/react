@@ -9,10 +9,6 @@ import useOutsideClicker from "../../../hooks/useOutsideClicker";
 import useSelect from "../../../hooks/useSelect";
 import { ScrollableBaseProps } from "../../../atoms/scrollables/base";
 
-const NoDataComponent = () => {
-  return <div className="flex h-32 items-center justify-center">No Data</div>;
-};
-
 export interface PickerSelectBaseProps {
   label: string;
   value?: string;
@@ -28,27 +24,11 @@ export interface PickerSelectBaseProps {
   error?: any;
   pickerSelectClasses?: {
     wrapper?: string;
-    alignment?: string;
-    width?: string;
-    borderRadius?: string;
-    border?: string;
-    focus?: string;
-    padding?: string;
-    font?: string;
-    textColor?: string;
-    backgroundColor?: string;
-    placeholderColor?: string;
   };
   scrollableClasses?: any;
   textInputErrorClasses?: {
-    wrapper?: string;
-    alignment?: string;
-    width?: string;
-    borderRadius?: string;
     border?: string;
     focus?: string;
-    padding?: string;
-    font?: string;
     textColor?: string;
     backgroundColor?: string;
     placeholderColor?: string;
@@ -65,6 +45,7 @@ export interface PickerSelectBaseProps {
   optionsRenderer: any;
   closeComponent?: any;
   clearComponent?: any;
+  noDataComponent?: any;
 }
 
 const PickerSelectBase = React.forwardRef(
@@ -87,26 +68,6 @@ const PickerSelectBase = React.forwardRef(
 
       allProps["pickerSelectClasses"] = newPickerSelectClasses;
     }
-
-    //   console.log("errorStyleProps", allProps);
-
-    const finalClassNames = resolvedStyleProps(
-      "pickerSelectClasses",
-      [
-        "alignment",
-        "width",
-        "borderRadius",
-        "border",
-        "focus",
-        "padding",
-        "font",
-        "textColor",
-        "backgroundColor",
-        "placeholderColor",
-      ],
-      allProps,
-      theme
-    );
 
     const wrappersClassNames = resolvedStyleProps(
       "pickerSelectClasses",
@@ -134,17 +95,13 @@ const PickerSelectBase = React.forwardRef(
       props.refresh
     );
 
-    // console.log(finalClassNames);
-
-    const textInputRef = React.useRef(null);
-
     const visRef = useOutsideClicker(() => {
       setOpen(false);
     });
 
     return (
       <>
-        <div className="flex items-center justify-between ">
+        <div className="flex items-center justify-between">
           {props.label !== "" && <LabelBase {...props} />}
 
           <span className="invisible">Placeholder to prevent Jerk</span>
@@ -206,7 +163,7 @@ const PickerSelectBase = React.forwardRef(
 
               {options.length === 0 && (
                 <ScrollableBase {...props}>
-                  <NoDataComponent />
+                  {props.noDataComponent && <props.noDataComponent />}
                 </ScrollableBase>
               )}
             </div>

@@ -35,14 +35,8 @@ export interface TextInputBaseProps {
     placeholderColor?: string;
   };
   textInputErrorClasses?: {
-    wrapper?: string;
-    alignment?: string;
-    width?: string;
-    borderRadius?: string;
     border?: string;
     focus?: string;
-    padding?: string;
-    font?: string;
     textColor?: string;
     backgroundColor?: string;
     placeholderColor?: string;
