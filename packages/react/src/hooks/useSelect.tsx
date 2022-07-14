@@ -17,17 +17,18 @@ export default function (
 
   const onTyping = async (query?: string) => {
     let dropdownOptions = await dataSource(query);
+    dropdownOptions = Object.assign([], dropdownOptions);
     setOptions(dropdownOptions);
   };
 
-  //   useDidMountEffect(() => {
-  //     setSelected([]);
-  //     onTyping();
-  //   }, [refresh]);
+  useDidMountEffect(() => {
+    setSelected([]);
+    onTyping();
+  }, [refresh]);
 
-  //   useEffect(() => {
-  //     setSelected(defaultSelected);
-  //   }, [defaultSelected.length]);
+  useEffect(() => {
+    setSelected(defaultSelected);
+  }, [defaultSelected.length]);
 
   useEffect(() => {
     const debounceTimer = setTimeout(() => {

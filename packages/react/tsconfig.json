@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": ["dom"],
+    "lib": ["dom", "dom.iterable"],
     "declaration": true,
     "declarationDir": "dist/types",
     "esModuleInterop": true,

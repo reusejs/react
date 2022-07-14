@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import "../../../../tailwind.css";
 import { useThemeContext } from "../../../theme/ThemeProvider";
 import resolvedStyleProps from "../../../utils/resolvedStyleProps";
@@ -98,6 +98,10 @@ const PickerSelectBase = React.forwardRef(
     const visRef = useOutsideClicker(() => {
       setOpen(false);
     });
+
+    useEffect(() => {
+      console.log("selected", selected);
+    }, [selected.length]);
 
     return (
       <>

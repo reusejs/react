@@ -25,6 +25,7 @@ export { default as PasswordTextInputBase } from "./atoms/textInputs/password";
 // Pickers - Select
 
 export { default as PickerSelectBase } from "./molecules/pickers/select/base";
+export { default as PickerSelectSimple } from "./molecules/pickers/select/simple";
 
 // ******************** End  ---- Molecules *************************
 
