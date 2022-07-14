@@ -9,8 +9,9 @@ export interface TextInputBaseProps {
   label: string;
   name: string;
   type: string;
+  autoComplete?: string;
   value?: string;
-  disabled: false;
+  disabled?: boolean;
   ariaDescribedby?: string;
   htmlFor: string;
   textInputStyles?: any;
@@ -102,10 +103,12 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
 
   return (
     <div>
-      <LabelBase {...props} />
+      {props.label !== "" && <LabelBase {...props} />}
       <div className={wrappersClassNames}>
         {props.textInputPrefix && props.textInputPrefix}
         <input
+          autoComplete={props.autoComplete}
+          role="presentation"
           value={props.value}
           ref={textInputRef}
           type={props.type}
