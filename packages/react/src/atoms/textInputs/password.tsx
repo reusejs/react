@@ -3,50 +3,6 @@ import "../../../tailwind.css";
 import { useThemeContext } from "../../theme/ThemeProvider";
 import TextInputBase, { TextInputBaseProps } from "./base";
 
-// export interface TextInputBaseProps {
-//   label: string;
-//   name: string;
-//   type: string;
-//   value?: string;
-//   disabled: false;
-//   ariaDescribedby?: string;
-//   htmlFor: string;
-//   textInputStyles?: any;
-//   variant?: string;
-//   placeholder?: string;
-//   textInputSuffix?: any;
-//   textInputPrefix?: any;
-//   textInputBottom?: any;
-//   error?: any;
-//   textInputClasses?: {
-//     wrapper?: string;
-//     alignment?: string;
-//     width?: string;
-//     borderRadius?: string;
-//     border?: string;
-//     focus?: string;
-//     padding?: string;
-//     font?: string;
-//     textColor?: string;
-//     backgroundColor?: string;
-//     placeholderColor?: string;
-//   };
-//   textInputErrorClasses?: {
-//     wrapper?: string;
-//     alignment?: string;
-//     width?: string;
-//     borderRadius?: string;
-//     border?: string;
-//     focus?: string;
-//     padding?: string;
-//     font?: string;
-//     textColor?: string;
-//     backgroundColor?: string;
-//     placeholderColor?: string;
-//   };
-//   onChange: (value?: string) => void;
-// }
-
 export interface PasswordTextInputBaseProps extends TextInputBaseProps {
   showPassword?: any;
 }

@@ -13,6 +13,16 @@ const labelClasses = {
   color: "text-gray-800 dark:text-gray-100",
 };
 
+const scrollableClasses = {
+  position: "z-50 block overflow-auto",
+  maxHeight: "max-h-32",
+  width: "w-full",
+  padding: "",
+  borderRadius: "rounded-md",
+  border: "border border-gray-300 dark:border-gray-700",
+  background: "bg-white shadow dark:bg-black",
+};
+
 const buttonClasses = {
   alignment: "inline-flex justify-center items-center",
   focus: "focus:outline-none",
@@ -48,12 +58,38 @@ const textInputErrorClasses = {
   placeholderColor: "placeholder-red-300",
 };
 
+const pickerSelectClasses = {
+  wrapper: "relative mt-1 rounded-md shadow-sm",
+};
+
+const simplePickerClasses = {
+  selectedDataClasses: {
+    alignment: "relative block cursor-pointer",
+    borderRadius: "rounded-md",
+    border: "border border-gray-300 dark:border-gray-600",
+    focus: "focus:border-blue-500 focus:ring-blue-500",
+    background: "bg-white dark:bg-gray-900",
+    padding: "py-2 px-3",
+    text: "text-black dark:text-white",
+    font: "sm:text-sm",
+    width: "w-full",
+  },
+  optionClasses: {
+    wrapper:
+      "relative flex cursor-pointer flex-row items-center p-2 hover:bg-gray-200 dark:hover:bg-gray-700",
+    label: "text-sm text-gray-900 dark:text-gray-200",
+  },
+};
+
 const theme = {
   labelClasses,
   badgeClasses,
   buttonClasses,
   textInputClasses,
   textInputErrorClasses,
+  pickerSelectClasses,
+  scrollableClasses,
+  simplePickerClasses,
 };
 
 export default theme;

@@ -9,8 +9,9 @@ export interface TextInputBaseProps {
   label: string;
   name: string;
   type: string;
+  autoComplete?: string;
   value?: string;
-  disabled: false;
+  disabled?: boolean;
   ariaDescribedby?: string;
   htmlFor: string;
   textInputStyles?: any;
@@ -34,14 +35,8 @@ export interface TextInputBaseProps {
     placeholderColor?: string;
   };
   textInputErrorClasses?: {
-    wrapper?: string;
-    alignment?: string;
-    width?: string;
-    borderRadius?: string;
     border?: string;
     focus?: string;
-    padding?: string;
-    font?: string;
     textColor?: string;
     backgroundColor?: string;
     placeholderColor?: string;
@@ -101,11 +96,13 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
   const textInputRef = React.useRef(null);
 
   return (
-    <div>
-      <LabelBase {...props} />
+    <>
+      {props.label !== "" && <LabelBase {...props} />}
       <div className={wrappersClassNames}>
         {props.textInputPrefix && props.textInputPrefix}
         <input
+          autoComplete={props.autoComplete}
+          role="presentation"
           value={props.value}
           ref={textInputRef}
           type={props.type}
@@ -120,7 +117,7 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
       </div>
       {props.error && props.error}
       {!props.error && props.textInputBottom && props.textInputBottom}
-    </div>
+    </>
   );
 });
 
