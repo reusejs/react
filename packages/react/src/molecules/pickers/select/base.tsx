@@ -7,7 +7,7 @@ import LabelBase from "../../../atoms/labels/base";
 import ScrollableBase from "../../../atoms/scrollables/base";
 import useOutsideClicker from "../../../hooks/useOutsideClicker";
 import useSelect from "../../../hooks/useSelect";
-import classNames from "../../../utils/classNames";
+import { ScrollableBaseProps } from "../../../atoms/scrollables/base";
 
 const NoDataComponent = () => {
   return <div className="flex h-32 items-center justify-center">No Data</div>;
@@ -39,6 +39,7 @@ export interface PickerSelectBaseProps {
     backgroundColor?: string;
     placeholderColor?: string;
   };
+  scrollableClasses?: any;
   textInputErrorClasses?: {
     wrapper?: string;
     alignment?: string;
@@ -143,8 +144,10 @@ const PickerSelectBase = React.forwardRef(
 
     return (
       <>
-        <div className="flex justify-between">
-          <LabelBase {...props} />
+        <div className="flex items-center justify-between ">
+          {props.label !== "" && <LabelBase {...props} />}
+
+          <span className="invisible">Placeholder to prevent Jerk</span>
 
           {selected.length > 0 && !open && props.clearComponent && (
             <span className="cursor-pointer" onClick={() => setSelected([])}>
@@ -180,11 +183,7 @@ const PickerSelectBase = React.forwardRef(
               )}
 
               {options.length > 0 && (
-                <ScrollableBase
-                  scrollableClasses={{
-                    position: "z-50 block overflow-auto absolute",
-                  }}
-                >
+                <ScrollableBase {...props}>
                   <>
                     {options.map((option: any) => (
                       <div
@@ -206,11 +205,7 @@ const PickerSelectBase = React.forwardRef(
               )}
 
               {options.length === 0 && (
-                <ScrollableBase
-                  scrollableClasses={{
-                    position: "z-50 block overflow-auto absolute",
-                  }}
-                >
+                <ScrollableBase {...props}>
                   <NoDataComponent />
                 </ScrollableBase>
               )}

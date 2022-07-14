@@ -51,11 +51,11 @@ const SelectedDataRenderer = (props: any) => {
 };
 
 const CloseComponent = () => {
-  return 'Close';
+  return <span className='text-sm font-medium'>Close</span>;
 };
 
 const ClearComponent = () => {
-  return 'Clear';
+  return <span className='text-sm font-medium'>Clear</span>;
 };
 
 const SearchRenderer = ({
@@ -73,12 +73,15 @@ const SearchRenderer = ({
         autoComplete='off'
         label=''
         htmlFor=''
-        name='price'
+        name='country'
         type='text'
         value={query}
         placeholder='Type someting...'
         onChange={(e) => {
           onSearch(e);
+        }}
+        textInputClasses={{
+          wrapper: 'relative mt-0 rounded-md shadow-sm',
         }}
       />
 
@@ -142,12 +145,15 @@ const Template: ComponentStory<typeof PickerSelectBase> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   label: 'Email Address',
-  htmlFor: 'email',
   dataSource: (q) => {
     return fetchContinents(q);
   },
   onChange: (v) => {
     console.log(v);
+  },
+  scrollableClasses: {
+    position: 'z-50 block overflow-auto absolute',
+    maxHeight: 'max-h-64',
   },
   selectedDataRenderer: SelectedDataRenderer,
   searchRenderer: SearchRenderer,

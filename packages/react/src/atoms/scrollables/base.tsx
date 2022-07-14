@@ -5,15 +5,17 @@ import resolvedStyleProps from "../../utils/resolvedStyleProps";
 
 export interface ScrollableBaseProps {
   children?: any;
-  scrollableClasses?: {
-    position?: any;
-    maxHeight?: any;
-    width?: any;
-    borderRadius?: any;
-    border?: any;
-    background?: any;
-    padding?: any;
-  };
+  scrollableClasses?:
+    | {
+        position?: any;
+        maxHeight?: any;
+        width?: any;
+        borderRadius?: any;
+        border?: any;
+        background?: any;
+        padding?: any;
+      }
+    | undefined;
 }
 
 const ScrollableBase = (props: ScrollableBaseProps) => {
