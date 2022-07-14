@@ -22,6 +22,10 @@ export interface PickerSelectBaseProps {
   textInputPrefix?: any;
   textInputBottom?: any;
   error?: any;
+  simplePickerClasses?: {
+    selectedDataClasses?: any;
+    optionClasses?: any;
+  };
   pickerSelectClasses?: {
     wrapper?: string;
   };
@@ -99,10 +103,6 @@ const PickerSelectBase = React.forwardRef(
       setOpen(false);
     });
 
-    useEffect(() => {
-      console.log("selected", selected);
-    }, [selected.length]);
-
     return (
       <>
         <div className="flex items-center justify-between">
@@ -126,7 +126,12 @@ const PickerSelectBase = React.forwardRef(
           {open === false && (
             <div onClick={() => setOpen(true)}>
               {props.selectedDataRenderer && (
-                <props.selectedDataRenderer selected={selected} />
+                <props.selectedDataRenderer
+                  selected={selected}
+                  selectedDataClasses={
+                    props.simplePickerClasses?.selectedDataClasses || {}
+                  }
+                />
               )}
             </div>
           )}
@@ -157,6 +162,9 @@ const PickerSelectBase = React.forwardRef(
                           <props.optionsRenderer
                             value={option}
                             selected={selected}
+                            optionsClasses={
+                              props.simplePickerClasses?.optionClasses || {}
+                            }
                           />
                         )}
                       </div>

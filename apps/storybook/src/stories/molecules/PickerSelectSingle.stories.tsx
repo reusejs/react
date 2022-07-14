@@ -83,3 +83,19 @@ Selected.args = {
   },
   defaultSelected: [{ label: 'Asia', value: 'asia' }],
 };
+
+export const Taller = Template.bind({});
+Taller.args = {
+  label: 'Country',
+  htmlFor: 'price',
+  valueKey: 'value',
+  multiple: false,
+  disabled: false,
+  scrollableClasses: {
+    position: 'z-50 block overflow-auto absolute',
+    maxHeight: 'max-h-64',
+  },
+  dataSource: (q: any) => {
+    return fetchContinents(q);
+  },
+};

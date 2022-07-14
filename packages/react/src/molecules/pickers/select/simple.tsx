@@ -2,6 +2,8 @@ import React from "react";
 import SelectBase, { PickerSelectBaseProps } from "./base";
 import { CheckIcon, XIcon } from "@heroicons/react/solid";
 import TextInputBase from "../../../atoms/textInputs/base";
+import { useThemeContext } from "../../../theme/ThemeProvider";
+import resolvedStyleProps from "../../../utils/resolvedStyleProps";
 
 const PickerSelectSimple = (props: PickerSelectBaseProps) => {
   return (
@@ -14,10 +16,12 @@ const PickerSelectSimple = (props: PickerSelectBaseProps) => {
       closeComponent={CloseComponent}
       noDataComponent={NoDataComponent}
       onChange={props.onChange}
-      scrollableClasses={{
-        position: "z-50 block overflow-auto absolute",
-        maxHeight: "max-h-32",
-      }}
+      scrollableClasses={
+        props.scrollableClasses || {
+          position: "z-50 block overflow-auto absolute",
+          maxHeight: "max-h-32",
+        }
+      }
       label={props.label}
       multiple={props.multiple}
       disabled={props.disabled}
@@ -26,14 +30,32 @@ const PickerSelectSimple = (props: PickerSelectBaseProps) => {
       defaultSelected={props.defaultSelected}
       defaultQuery={props.defaultQuery}
       defaultOpen={props.defaultOpen}
+      simplePickerClasses={props.simplePickerClasses}
     />
   );
 };
 
 const SelectedDataRenderer = (props: any) => {
+  const theme: any = useThemeContext();
+
   const [text, setText] = React.useState<string>("None Selected");
 
-  // console.log("selectedDataRender", props.selected);
+  const wrappersClassNames = resolvedStyleProps(
+    "selectedDataClasses",
+    [
+      "alignment",
+      "borderRadius",
+      "border",
+      "focus",
+      "background",
+      "padding",
+      "text",
+      "font",
+      "width",
+    ],
+    props,
+    theme.simplePickerClasses
+  );
 
   React.useEffect(() => {
     if (props.selected.length > 0) {
@@ -44,11 +66,7 @@ const SelectedDataRenderer = (props: any) => {
     }
   }, [props.selected]);
 
-  return (
-    <div className="relative block w-full cursor-pointer rounded-md border border-gray-300 bg-white py-2 px-3 text-black focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600  dark:text-white sm:text-sm">
-      {text}
-    </div>
-  );
+  return <div className={wrappersClassNames}>{text}</div>;
 };
 
 const CloseComponent = () => {
@@ -105,6 +123,7 @@ const SearchRenderer = ({
 const OptionsRenderer = ({
   value,
   selected,
+  ...props
 }: {
   value: any;
   selected: any;
@@ -118,16 +137,25 @@ const OptionsRenderer = ({
     setFound(localFound === false ? false : true);
   }, [selected]);
 
+  const theme: any = useThemeContext();
+
+  const wrappersClassNames = resolvedStyleProps(
+    "optionClasses",
+    ["wrapper"],
+    props,
+    theme.simplePickerClasses
+  );
+
+  const labelClassNames = resolvedStyleProps(
+    "optionClasses",
+    ["label"],
+    props,
+    theme.simplePickerClasses
+  );
+
   return (
-    <div className="relative flex cursor-pointer flex-row items-center p-2 hover:bg-gray-200 dark:hover:bg-gray-700">
-      <span className="flex flex-row items-center">
-        {value.avatar && (
-          <img className="mr-2 h-4" src={value.avatar} alt={value.label} />
-        )}
-        <span className="text-sm text-gray-900 dark:text-gray-200">
-          {value.label}
-        </span>
-      </span>
+    <div className={wrappersClassNames}>
+      <span className={labelClassNames}>{value.label}</span>
       {found === true && (
         <span className="absolute inset-y-0 right-0 flex items-center pr-4">
           <CheckIcon className="h-5 w-5 text-gray-900 dark:text-white" />
