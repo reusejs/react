@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.1.0
+
+### Minor Changes
+
+- 39a0571: Introduce Select Pickers - Multiple and Select
+
 ## 6.0.1
 
 ### Patch Changes
