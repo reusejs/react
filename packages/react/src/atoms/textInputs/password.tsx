@@ -19,7 +19,6 @@ const PasswordTextInputBase = React.forwardRef(
               type="button"
               className="pointer-cursor"
               onClick={() => {
-                console.log("On click doesn");
                 setInputType((prevInputType) => {
                   return prevInputType === "text" ? "password" : "text";
                 });

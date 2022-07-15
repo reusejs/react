@@ -30,7 +30,7 @@ const PickerSelectSimple = (props: PickerSelectBaseProps) => {
       defaultSelected={props.defaultSelected}
       defaultQuery={props.defaultQuery}
       defaultOpen={props.defaultOpen}
-      simplePickerClasses={props.simplePickerClasses}
+      simpleSelectPickerClasses={props.simpleSelectPickerClasses}
     />
   );
 };
@@ -54,7 +54,7 @@ const SelectedDataRenderer = (props: any) => {
       "width",
     ],
     props,
-    theme.simplePickerClasses
+    theme.simpleSelectPickerClasses
   );
 
   React.useEffect(() => {
@@ -143,14 +143,14 @@ const OptionsRenderer = ({
     "optionClasses",
     ["wrapper"],
     props,
-    theme.simplePickerClasses
+    theme.simpleSelectPickerClasses
   );
 
   const labelClassNames = resolvedStyleProps(
     "optionClasses",
     ["label"],
     props,
-    theme.simplePickerClasses
+    theme.simpleSelectPickerClasses
   );
 
   return (

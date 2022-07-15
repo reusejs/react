@@ -62,7 +62,21 @@ const pickerSelectClasses = {
   wrapper: "relative mt-1 rounded-md shadow-sm",
 };
 
-const simplePickerClasses = {
+const pickerRadioClasses = {
+  wrapper: "mt-4",
+};
+
+const simpleRadioPickerClasses = {
+  optionClasses: {
+    wrapper:
+      "relative flex cursor-pointer flex-row items-center p-2 hover:bg-gray-200 dark:hover:bg-gray-700",
+    labelClasses: {
+      alignment: "ml-3 block",
+    },
+  },
+};
+
+const simpleSelectPickerClasses = {
   selectedDataClasses: {
     alignment: "relative block cursor-pointer",
     borderRadius: "rounded-md",
@@ -89,7 +103,9 @@ const theme = {
   textInputErrorClasses,
   pickerSelectClasses,
   scrollableClasses,
-  simplePickerClasses,
+  simpleSelectPickerClasses,
+  pickerRadioClasses,
+  simpleRadioPickerClasses,
 };
 
 export default theme;
