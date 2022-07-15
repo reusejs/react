@@ -22,6 +22,7 @@ export interface PickerSelectBaseProps {
   textInputPrefix?: any;
   textInputBottom?: any;
   error?: any;
+  labelClasses?: any;
   simpleSelectPickerClasses?: {
     selectedDataClasses?: any;
     optionClasses?: any;
@@ -108,7 +109,9 @@ const PickerSelectBase = React.forwardRef(
         <div className="flex items-center justify-between">
           {props.label !== "" && <LabelBase {...props} />}
 
-          <span className="invisible">Placeholder to prevent Jerk</span>
+          {!props.clearComponent && !props.closeComponent && (
+            <span className="invisible">Placeholder to prevent Jerk</span>
+          )}
 
           {selected.length > 0 && !open && props.clearComponent && (
             <span className="cursor-pointer" onClick={() => setSelected([])}>

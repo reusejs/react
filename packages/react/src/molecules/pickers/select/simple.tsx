@@ -17,8 +17,8 @@ const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
       selectedDataRenderer={SelectedDataRenderer}
       searchRenderer={SearchRenderer}
       optionsRenderer={OptionsRenderer}
-      clearComponent={props.enableClear ? ClearComponent : null}
-      closeComponent={props.enableClose ? CloseComponent : null}
+      clearComponent={props.enableClear ? ClearComponent : undefined}
+      closeComponent={props.enableClose ? CloseComponent : undefined}
       noDataComponent={NoDataComponent}
       onChange={props.onChange}
       scrollableClasses={
@@ -36,6 +36,7 @@ const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
       defaultQuery={props.defaultQuery}
       defaultOpen={props.defaultOpen}
       simpleSelectPickerClasses={props.simpleSelectPickerClasses}
+      labelClasses={props.labelClasses}
     />
   );
 };
