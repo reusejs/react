@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.2.2
+
+### Patch Changes
+
+- dc65e74: Accept label classes
+
 ## 6.2.1
 
 ### Patch Changes
