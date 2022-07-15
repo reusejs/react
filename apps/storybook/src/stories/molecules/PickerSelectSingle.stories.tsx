@@ -66,9 +66,24 @@ Default.args = {
   valueKey: 'value',
   multiple: false,
   disabled: false,
+  enableClear: true,
+  enableClose: true,
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
+};
+
+export const DisableClearAndClose = Template.bind({});
+DisableClearAndClose.args = {
+  label: 'Country',
+  htmlFor: 'price',
+  valueKey: 'value',
+  multiple: false,
+  disabled: false,
+  dataSource: (q: any) => {
+    return fetchContinents(q);
+  },
+  defaultSelected: [{ label: 'Asia', value: 'asia' }],
 };
 
 export const Selected = Template.bind({});
@@ -81,6 +96,8 @@ Selected.args = {
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
+  enableClear: true,
+  enableClose: true,
   defaultSelected: [{ label: 'Asia', value: 'asia' }],
 };
 

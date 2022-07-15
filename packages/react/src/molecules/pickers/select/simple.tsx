@@ -1,19 +1,24 @@
 import React from "react";
 import SelectBase, { PickerSelectBaseProps } from "./base";
-import { CheckIcon, XIcon } from "@heroicons/react/solid";
+import { CheckIcon, XIcon, ArrowSmDownIcon } from "@heroicons/react/solid";
 import TextInputBase from "../../../atoms/textInputs/base";
 import { useThemeContext } from "../../../theme/ThemeProvider";
 import resolvedStyleProps from "../../../utils/resolvedStyleProps";
 
-const PickerSelectSimple = (props: PickerSelectBaseProps) => {
+export interface PickerSelectSimpleProps extends PickerSelectBaseProps {
+  enableClear: true;
+  enableClose: true;
+}
+
+const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
   return (
     <SelectBase
       dataSource={props.dataSource}
       selectedDataRenderer={SelectedDataRenderer}
       searchRenderer={SearchRenderer}
       optionsRenderer={OptionsRenderer}
-      clearComponent={ClearComponent}
-      closeComponent={CloseComponent}
+      clearComponent={props.enableClear ? ClearComponent : null}
+      closeComponent={props.enableClose ? CloseComponent : null}
       noDataComponent={NoDataComponent}
       onChange={props.onChange}
       scrollableClasses={
@@ -57,6 +62,20 @@ const SelectedDataRenderer = (props: any) => {
     theme.simpleSelectPickerClasses
   );
 
+  const arrowWrapperClasses = resolvedStyleProps(
+    "selectedDataClasses",
+    ["arrowWrapperClasses"],
+    props,
+    theme.simpleSelectPickerClasses
+  );
+
+  const arrowIconClasses = resolvedStyleProps(
+    "selectedDataClasses",
+    ["arrowIconClasses"],
+    props,
+    theme.simpleSelectPickerClasses
+  );
+
   React.useEffect(() => {
     if (props.selected.length > 0) {
       let tempText = props.selected.map((val: any) => val.label).join("; ");
@@ -66,7 +85,14 @@ const SelectedDataRenderer = (props: any) => {
     }
   }, [props.selected]);
 
-  return <div className={wrappersClassNames}>{text}</div>;
+  return (
+    <div className={wrappersClassNames}>
+      <span>{text}</span>
+      <span className={arrowWrapperClasses}>
+        <ArrowSmDownIcon className={arrowIconClasses} />
+      </span>
+    </div>
+  );
 };
 
 const CloseComponent = () => {
