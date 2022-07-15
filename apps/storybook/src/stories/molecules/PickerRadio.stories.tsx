@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { PickerSelectSimple } from '@reusejs/react';
+import { PickerRadioSimple } from '@reusejs/react';
 import { CheckIcon, XIcon } from '@heroicons/react/solid';
 import { TextInputBase } from '@reusejs/react';
 
@@ -32,28 +32,28 @@ const fetchContinents = (q = '') => {
 };
 
 export default {
-  title: 'Molecules/Pickers/Select Single',
-  component: PickerSelectSimple,
+  title: 'Molecules/Pickers/Radio',
+  component: PickerRadioSimple,
   argTypes: {},
-} as ComponentMeta<typeof PickerSelectSimple>;
+} as ComponentMeta<typeof PickerRadioSimple>;
 
-const Template: ComponentStory<typeof PickerSelectSimple> = (args) => {
+const Template: ComponentStory<typeof PickerRadioSimple> = (args) => {
   const [selected, setSelected] = useState<any>(args.defaultSelected || []);
   return (
-    <div className='flex w-full items-center'>
-      <div className='w-1/2'>
-        <PickerSelectSimple
+    <div className=''>
+      <div className='mb-4 bg-gray-50 p-4'>
+        <pre>
+          <code>{JSON.stringify(selected)}</code>
+        </pre>
+      </div>
+      <div>
+        <PickerRadioSimple
           {...args}
           defaultSelected={selected}
           onChange={(v: any) => {
             setSelected([v]);
           }}
         />
-      </div>
-      <div className='ml-4 w-1/2 bg-gray-50 p-4'>
-        <pre>
-          <code>{JSON.stringify(selected)}</code>
-        </pre>
       </div>
     </div>
   );
@@ -63,32 +63,19 @@ export const Default = Template.bind({});
 Default.args = {
   label: 'Country',
   htmlFor: 'price',
-  valueKey: 'value',
-  multiple: false,
-  disabled: false,
-  enableClear: true,
-  enableClose: true,
-  dataSource: (q: any) => {
-    return fetchContinents(q);
-  },
-};
-
-export const DisableClearAndClose = Template.bind({});
-DisableClearAndClose.args = {
-  label: 'Country',
-  htmlFor: 'price',
+  name: 'price',
   valueKey: 'value',
   multiple: false,
   disabled: false,
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
-  defaultSelected: [{ label: 'Asia', value: 'asia' }],
 };
 
 export const Selected = Template.bind({});
 Selected.args = {
   label: 'Country',
+  name: 'price',
   htmlFor: 'price',
   valueKey: 'value',
   multiple: false,
@@ -96,23 +83,27 @@ Selected.args = {
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
-  enableClear: true,
-  enableClose: true,
   defaultSelected: [{ label: 'Asia', value: 'asia' }],
 };
 
-export const Taller = Template.bind({});
-Taller.args = {
+export const Inline = Template.bind({});
+Inline.args = {
   label: 'Country',
+  name: 'price',
   htmlFor: 'price',
   valueKey: 'value',
   multiple: false,
   disabled: false,
-  scrollableClasses: {
-    position: 'z-50 block overflow-auto absolute',
-    maxHeight: 'max-h-64',
-  },
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
+  scrollableClasses: {
+    position:
+      'z-50 block space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10',
+    maxHeight: '',
+    border: 'border-0',
+    background: 'bg-white',
+    borderRadius: '',
+  },
+  defaultSelected: [{ label: 'Asia', value: 'asia' }],
 };

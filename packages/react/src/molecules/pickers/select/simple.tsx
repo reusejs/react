@@ -1,19 +1,24 @@
 import React from "react";
 import SelectBase, { PickerSelectBaseProps } from "./base";
-import { CheckIcon, XIcon } from "@heroicons/react/solid";
+import { CheckIcon, XIcon, ArrowSmDownIcon } from "@heroicons/react/solid";
 import TextInputBase from "../../../atoms/textInputs/base";
 import { useThemeContext } from "../../../theme/ThemeProvider";
 import resolvedStyleProps from "../../../utils/resolvedStyleProps";
 
-const PickerSelectSimple = (props: PickerSelectBaseProps) => {
+export interface PickerSelectSimpleProps extends PickerSelectBaseProps {
+  enableClear: true;
+  enableClose: true;
+}
+
+const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
   return (
     <SelectBase
       dataSource={props.dataSource}
       selectedDataRenderer={SelectedDataRenderer}
       searchRenderer={SearchRenderer}
       optionsRenderer={OptionsRenderer}
-      clearComponent={ClearComponent}
-      closeComponent={CloseComponent}
+      clearComponent={props.enableClear ? ClearComponent : null}
+      closeComponent={props.enableClose ? CloseComponent : null}
       noDataComponent={NoDataComponent}
       onChange={props.onChange}
       scrollableClasses={
@@ -30,7 +35,7 @@ const PickerSelectSimple = (props: PickerSelectBaseProps) => {
       defaultSelected={props.defaultSelected}
       defaultQuery={props.defaultQuery}
       defaultOpen={props.defaultOpen}
-      simplePickerClasses={props.simplePickerClasses}
+      simpleSelectPickerClasses={props.simpleSelectPickerClasses}
     />
   );
 };
@@ -54,7 +59,21 @@ const SelectedDataRenderer = (props: any) => {
       "width",
     ],
     props,
-    theme.simplePickerClasses
+    theme.simpleSelectPickerClasses
+  );
+
+  const arrowWrapperClasses = resolvedStyleProps(
+    "selectedDataClasses",
+    ["arrowWrapperClasses"],
+    props,
+    theme.simpleSelectPickerClasses
+  );
+
+  const arrowIconClasses = resolvedStyleProps(
+    "selectedDataClasses",
+    ["arrowIconClasses"],
+    props,
+    theme.simpleSelectPickerClasses
   );
 
   React.useEffect(() => {
@@ -66,7 +85,14 @@ const SelectedDataRenderer = (props: any) => {
     }
   }, [props.selected]);
 
-  return <div className={wrappersClassNames}>{text}</div>;
+  return (
+    <div className={wrappersClassNames}>
+      <span>{text}</span>
+      <span className={arrowWrapperClasses}>
+        <ArrowSmDownIcon className={arrowIconClasses} />
+      </span>
+    </div>
+  );
 };
 
 const CloseComponent = () => {
@@ -143,14 +169,14 @@ const OptionsRenderer = ({
     "optionClasses",
     ["wrapper"],
     props,
-    theme.simplePickerClasses
+    theme.simpleSelectPickerClasses
   );
 
   const labelClassNames = resolvedStyleProps(
     "optionClasses",
     ["label"],
     props,
-    theme.simplePickerClasses
+    theme.simpleSelectPickerClasses
   );
 
   return (

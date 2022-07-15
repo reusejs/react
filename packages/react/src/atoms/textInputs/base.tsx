@@ -11,7 +11,9 @@ export interface TextInputBaseProps {
   type: string;
   autoComplete?: string;
   value?: string;
+  id?: string;
   disabled?: boolean;
+  checked?: boolean;
   ariaDescribedby?: string;
   htmlFor: string;
   textInputStyles?: any;
@@ -103,6 +105,7 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
         <input
           autoComplete={props.autoComplete}
           role="presentation"
+          id={props.id}
           value={props.value}
           ref={textInputRef}
           type={props.type}
@@ -111,6 +114,7 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
           placeholder={props.placeholder}
           aria-describedby={props.ariaDescribedby}
           disabled={props.disabled}
+          checked={props.checked}
           onChange={(e) => props.onChange(e.target.value)}
         />
         {props.textInputSuffix && props.textInputSuffix}
