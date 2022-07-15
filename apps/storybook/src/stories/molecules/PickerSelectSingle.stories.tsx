@@ -66,20 +66,20 @@ Default.args = {
   valueKey: 'value',
   multiple: false,
   disabled: false,
-  enableClear: true,
-  enableClose: true,
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
 };
 
-export const DisableClearAndClose = Template.bind({});
-DisableClearAndClose.args = {
+export const EnableClearAndClose = Template.bind({});
+EnableClearAndClose.args = {
   label: 'Country',
   htmlFor: 'price',
   valueKey: 'value',
   multiple: false,
   disabled: false,
+  enableClear: true,
+  enableClose: true,
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
