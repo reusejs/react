@@ -8,16 +8,19 @@
 
 This repo consists of two packages:
 
-1. apps/docs
+1. apps/storybook
    - This is used heavily in local development to view/test components as a component is being developed
 2. packages/react
    - This contains all the utils/components and styles
 
 Follow these steps to run the code and start development:
 
-1. Run `yarn dev`
-2. Go into react directory: `cd packages/react` and run `yarn build -w`
-3. Carry on with your development
+1. Run `yarn install` at root
+1. Run `yarn sb` at root -> will run storybook
+1. Run `yarn build:watch` -> will build the react package
+1. Create a branch for yourself
+1. Carry on with your development
+1. Once you are done with development, raise a PR
 
 ### Publishing
 
