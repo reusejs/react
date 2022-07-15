@@ -15,11 +15,12 @@ This repo consists of two packages:
 
 Follow these steps to run the code and start development:
 
-1. Run `yarn sb`
-2. Go into react directory: `cd packages/react` and run `yarn build -w`
-3. Create a branch for yourself
-4. Carry on with your development
-5. Once you are done with development, raise a PR
+1. Run `yarn install` at root
+1. Run `yarn sb` at root -> will run storybook
+1. Run `yarn build:watch` -> will build the react package
+1. Create a branch for yourself
+1. Carry on with your development
+1. Once you are done with development, raise a PR
 
 ### Publishing
 
