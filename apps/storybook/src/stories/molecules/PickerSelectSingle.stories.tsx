@@ -69,6 +69,9 @@ Default.args = {
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
+  labelClasses: {
+    color: 'text-blue-800 dark:text-blue-100',
+  },
 };
 
 export const EnableClearAndClose = Template.bind({});

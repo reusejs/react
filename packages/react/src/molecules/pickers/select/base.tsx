@@ -104,14 +104,22 @@ const PickerSelectBase = React.forwardRef(
       setOpen(false);
     });
 
+    console.log(
+      "!props.clearComponent && !props.closeComponent",
+      !props.clearComponent && !props.closeComponent,
+      props.clearComponent,
+      !props.clearComponent
+    );
+
     return (
       <>
         <div className="flex items-center justify-between">
           {props.label !== "" && <LabelBase {...props} />}
 
-          {!props.clearComponent && !props.closeComponent && (
-            <span className="invisible">Placeholder to prevent Jerk</span>
-          )}
+          {props.clearComponent !== undefined &&
+            props.closeComponent !== undefined && (
+              <span className="invisible">Placeholder to prevent Jerk</span>
+            )}
 
           {selected.length > 0 && !open && props.clearComponent && (
             <span className="cursor-pointer" onClick={() => setSelected([])}>
