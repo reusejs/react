@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.2.0
+
+### Minor Changes
+
+- 1214ddd: Introduce radio buttons, more options for select picker
+
 ## 6.1.1
 
 ### Patch Changes
