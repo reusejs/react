@@ -1,5 +1,17 @@
 # @reusejs/react
 
+## 6.2.2
+
+### Patch Changes
+
+- dc65e74: Accept label classes
+
+## 6.2.1
+
+### Patch Changes
+
+- cf25cfc: Fix issue with tailwind forms
+
 ## 6.2.0
 
 ### Minor Changes
