@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.5.0
+
+### Minor Changes
+
+- f9a8ad8: Introduce file upload components and storybook, readme file
+
 ## 6.4.0
 
 ### Minor Changes
