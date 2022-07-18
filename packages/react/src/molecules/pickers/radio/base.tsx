@@ -24,11 +24,11 @@ export interface PickerRadioBaseProps {
   simpleRadioPickerClasses?: {
     optionClasses?: any;
   };
-  pickerRadioClasses?: {
+  pickerRadioBaseClasses?: {
     wrapper?: string;
   };
-  scrollableClasses?: any;
-  textInputErrorClasses?: {
+  scrollableBaseClasses?: any;
+  textInputBaseErrorClasses?: {
     border?: string;
     focus?: string;
     textColor?: string;
@@ -51,22 +51,22 @@ const PickerRadioBase = React.forwardRef((props: PickerRadioBaseProps, ref) => {
 
   if (props.error) {
     const errorStyleProps = extractStyleProps(
-      "textInputErrorClasses",
+      "textInputBaseErrorClasses",
       ["border", "focus", "textColor", "backgroundColor", "placeholderColor"],
       allProps,
       theme
     );
 
-    let newPickerSelectClasses = {
-      ...allProps["pickerRadioClasses"],
+    let newpickerSelectBaseClasses = {
+      ...allProps["pickerRadioBaseClasses"],
       ...errorStyleProps,
     };
 
-    allProps["pickerRadioClasses"] = newPickerSelectClasses;
+    allProps["pickerRadioBaseClasses"] = newpickerSelectBaseClasses;
   }
 
   const wrappersClassNames = resolvedStyleProps(
-    "pickerRadioClasses",
+    "pickerRadioBaseClasses",
     ["wrapper"],
     props,
     theme

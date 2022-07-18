@@ -21,22 +21,21 @@ const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
       closeComponent={props.enableClose ? CloseComponent : undefined}
       noDataComponent={NoDataComponent}
       onChange={props.onChange}
-      scrollableClasses={
-        props.scrollableClasses || {
-          position: "z-50 block overflow-auto absolute",
-          maxHeight: "max-h-32",
+      scrollableBaseProps={
+        props.scrollableBaseProps || {
+          scrollableBaseClasses: {
+            position: "z-50 block overflow-auto absolute",
+            maxHeight: "max-h-32",
+          },
         }
       }
-      label={props.label}
+      labelBaseProps={props.labelBaseProps}
       multiple={props.multiple}
-      disabled={props.disabled}
-      htmlFor={props.htmlFor}
       valueKey={props.valueKey}
       defaultSelected={props.defaultSelected}
       defaultQuery={props.defaultQuery}
       defaultOpen={props.defaultOpen}
       simpleSelectPickerClasses={props.simpleSelectPickerClasses}
-      labelClasses={props.labelClasses}
     />
   );
 };
@@ -130,7 +129,7 @@ const SearchRenderer = ({
         onChange={(e) => {
           onSearch(e);
         }}
-        textInputClasses={{
+        textInputBaseClasses={{
           wrapper: "relative mt-0 rounded-md shadow-sm",
         }}
       />

@@ -14,8 +14,8 @@ const PickerRadioSimple = (props: PickerRadioBaseProps) => {
       dataSource={props.dataSource}
       optionsRenderer={OptionsRenderer}
       onChange={props.onChange}
-      scrollableClasses={
-        props.scrollableClasses || {
+      scrollableBaseClasses={
+        props.scrollableBaseClasses || {
           position: "z-50 block space-y-4",
           maxHeight: "",
           border: "border-0",
@@ -29,7 +29,7 @@ const PickerRadioSimple = (props: PickerRadioBaseProps) => {
       htmlFor={props.htmlFor}
       valueKey={props.valueKey}
       defaultSelected={props.defaultSelected}
-      pickerRadioClasses={props.pickerRadioClasses}
+      pickerRadioBaseClasses={props.pickerRadioBaseClasses}
     />
   );
 };
@@ -63,7 +63,7 @@ const OptionsRenderer = ({
         type="radio"
         checked={found === true}
         onChange={() => {}}
-        textInputClasses={{
+        textInputBaseClasses={{
           wrapper: "mt-0",
           alignment: "",
           width: "h-4 w-4",
@@ -90,7 +90,9 @@ const OptionsRenderer = ({
       <LabelBase
         htmlFor={value.value}
         label={value.label}
-        labelClasses={theme.simpleRadioPickerClasses.optionClasses.labelClasses}
+        labelBaseClasses={
+          theme.simpleRadioPickerClasses.optionClasses.labelBaseClasses
+        }
       />
     </div>
   );

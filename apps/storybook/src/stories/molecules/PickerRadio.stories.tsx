@@ -97,7 +97,7 @@ Inline.args = {
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
-  scrollableClasses: {
+  scrollableBaseClasses: {
     position:
       'z-50 block space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10',
     maxHeight: '',

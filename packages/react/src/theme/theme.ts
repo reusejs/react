@@ -1,4 +1,4 @@
-const badgeClasses = {
+const badgeBaseClasses = {
   alignment: "inline-flex items-center",
   padding: "px-2.5 py-0.5",
   borderRadius: "rounded-full",
@@ -7,13 +7,13 @@ const badgeClasses = {
   textColor: "text-blue-800",
 };
 
-const labelClasses = {
+const labelBaseClasses = {
   alignment: "block",
   font: "text-sm font-medium",
   color: "text-gray-800 dark:text-gray-100",
 };
 
-const scrollableClasses = {
+const scrollableBaseClasses = {
   position: "z-50 block overflow-auto",
   maxHeight: "max-h-32",
   width: "w-full",
@@ -23,7 +23,7 @@ const scrollableClasses = {
   background: "bg-white shadow dark:bg-black",
 };
 
-const buttonClasses = {
+const buttonBaseClasses = {
   alignment: "inline-flex justify-center items-center",
   focus: "focus:outline-none",
   font: "font-normal text-sm",
@@ -36,8 +36,9 @@ const buttonClasses = {
   disabledClasses: "disabled:opacity-50 dark:disabled:opacity-80",
 };
 
-const textInputClasses = {
+const textInputBaseClasses = {
   wrapper: "relative mt-1 rounded-md shadow-sm",
+  formInput: "form-input",
   alignment: "block",
   width: "w-full",
   borderRadius: "rounded-md",
@@ -50,7 +51,7 @@ const textInputClasses = {
   placeholderColor: "",
 };
 
-const textInputErrorClasses = {
+const textInputBaseErrorClasses = {
   border: "border-red-300 dark:border-red-600",
   focus: "focus:ring-red-500 focus:border-red-500",
   textColor: "text-red-900 dark:text-red-300",
@@ -58,11 +59,11 @@ const textInputErrorClasses = {
   placeholderColor: "placeholder-red-300",
 };
 
-const pickerSelectClasses = {
+const pickerSelectBaseClasses = {
   wrapper: "relative mt-1 rounded-md shadow-sm",
 };
 
-const pickerRadioClasses = {
+const pickerRadioBaseClasses = {
   wrapper: "mt-4",
 };
 
@@ -70,7 +71,7 @@ const simpleRadioPickerClasses = {
   optionClasses: {
     wrapper:
       "relative flex cursor-pointer flex-row items-center p-2 hover:bg-gray-200 dark:hover:bg-gray-700",
-    labelClasses: {
+    labelBaseClasses: {
       alignment: "ml-3 block",
     },
   },
@@ -99,15 +100,15 @@ const simpleSelectPickerClasses = {
 };
 
 const theme = {
-  labelClasses,
-  badgeClasses,
-  buttonClasses,
-  textInputClasses,
-  textInputErrorClasses,
-  pickerSelectClasses,
-  scrollableClasses,
+  labelBaseClasses,
+  badgeBaseClasses,
+  buttonBaseClasses,
+  textInputBaseClasses,
+  textInputBaseErrorClasses,
+  pickerSelectBaseClasses,
+  scrollableBaseClasses,
   simpleSelectPickerClasses,
-  pickerRadioClasses,
+  pickerRadioBaseClasses,
   simpleRadioPickerClasses,
 };
 

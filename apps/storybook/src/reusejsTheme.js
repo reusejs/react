@@ -7,16 +7,16 @@ const newTheme = {
 
 const variants = {
   primary: {
-    labelClasses: {
+    labelBaseClasses: {
       color: 'text-cyan-200',
     },
-    badgeClasses: {
+    badgeBaseClasses: {
       backgroundColor: 'bg-yellow-100',
       textColor: 'text-yellow-800',
     },
   },
   suffixPrefix: {
-    textInputClasses: {
+    textInputBaseClasses: {
       padding: 'pl-7 pr-12',
     },
   },

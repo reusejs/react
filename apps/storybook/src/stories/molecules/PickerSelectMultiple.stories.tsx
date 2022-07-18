@@ -63,11 +63,11 @@ const Template: ComponentStory<typeof PickerSelectSimple> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  label: 'Country',
-  htmlFor: 'price',
+  labelBaseProps: {
+    label: 'Country',
+  },
   valueKey: 'value',
   multiple: true,
-  disabled: false,
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
@@ -75,11 +75,11 @@ Default.args = {
 
 export const Selected = Template.bind({});
 Selected.args = {
-  label: 'Country',
-  htmlFor: 'price',
+  labelBaseProps: {
+    label: 'Country',
+  },
   valueKey: 'value',
   multiple: true,
-  disabled: false,
   dataSource: (q: any) => {
     return fetchContinents(q);
   },

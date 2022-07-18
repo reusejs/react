@@ -61,41 +61,40 @@ const Template: ComponentStory<typeof PickerSelectSimple> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  label: 'Country',
-  htmlFor: 'price',
+  labelBaseProps: {
+    label: 'Country',
+    labelBaseClasses: {
+      color: 'text-yellow-800 dark:text-yellow-100',
+    },
+  },
   valueKey: 'value',
   multiple: false,
-  disabled: false,
   dataSource: (q: any) => {
     return fetchContinents(q);
-  },
-  labelClasses: {
-    color: 'text-blue-800 dark:text-blue-100',
   },
 };
 
 export const EnableClearAndClose = Template.bind({});
 EnableClearAndClose.args = {
-  label: 'Country',
-  htmlFor: 'price',
+  labelBaseProps: {
+    label: 'Country',
+  },
   valueKey: 'value',
   multiple: false,
-  disabled: false,
   enableClear: true,
   enableClose: true,
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
-  defaultSelected: [{ label: 'Asia', value: 'asia' }],
 };
 
 export const Selected = Template.bind({});
 Selected.args = {
-  label: 'Country',
-  htmlFor: 'price',
+  labelBaseProps: {
+    label: 'Country',
+  },
   valueKey: 'value',
   multiple: false,
-  disabled: false,
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
@@ -106,14 +105,16 @@ Selected.args = {
 
 export const Taller = Template.bind({});
 Taller.args = {
-  label: 'Country',
-  htmlFor: 'price',
+  labelBaseProps: {
+    label: 'Country',
+  },
   valueKey: 'value',
   multiple: false,
-  disabled: false,
-  scrollableClasses: {
-    position: 'z-50 block overflow-auto absolute',
-    maxHeight: 'max-h-64',
+  scrollableBaseProps: {
+    scrollableBaseClasses: {
+      position: 'z-50 block overflow-auto absolute',
+      maxHeight: 'max-h-64',
+    },
   },
   dataSource: (q: any) => {
     return fetchContinents(q);

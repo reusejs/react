@@ -53,7 +53,7 @@ WithErrorText.args = {
   name: 'price',
   type: 'text',
   placeholder: '0.00',
-  textInputClasses: {
+  textInputBaseClasses: {
     wrapper: 'relative mt-1',
   },
   error: <ErrorText />,
@@ -75,7 +75,7 @@ WithHelperText.args = {
   name: 'price',
   type: 'text',
   placeholder: '0.00',
-  textInputClasses: {
+  textInputBaseClasses: {
     wrapper: 'relative mt-1',
   },
   textInputBottom: <HelperText />,

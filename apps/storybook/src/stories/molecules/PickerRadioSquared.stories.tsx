@@ -53,14 +53,14 @@ const OptionsRenderer = ({
         type='radio'
         checked={found === true}
         onChange={() => {}}
-        textInputClasses={{
+        textInputBaseClasses={{
           wrapper: 'hidden',
         }}
       />
       <LabelBase
         htmlFor={value.value}
         label={value.label}
-        labelClasses={{
+        labelBaseClasses={{
           alignment: `cursor-pointer w-full text-center py-2`,
           font: 'text-base font-medium',
           color: `${
@@ -113,7 +113,7 @@ Default.args = {
     return fetchContinents(q);
   },
   optionsRenderer: OptionsRenderer,
-  scrollableClasses: {
+  scrollableBaseClasses: {
     position: 'grid grid-cols-2 gap-0',
     maxHeight: 'none',
     border: 'border-0',
@@ -134,7 +134,7 @@ Selected.args = {
     return fetchContinents(q);
   },
   optionsRenderer: OptionsRenderer,
-  scrollableClasses: {
+  scrollableBaseClasses: {
     position: 'grid grid-cols-2 gap-0',
     maxHeight: 'none',
     border: 'border-2 border-blue-400',
