@@ -43,7 +43,7 @@ export { default as FileUploaderBase } from "./molecules/fileUploader/base";
 
 // File Modals
 
-export { default as ModalClosable } from "./molecules/modals/simple";
+export { default as ModalBase } from "./molecules/modals/base";
 export { default as ModalConfirm } from "./molecules/modals/confirm";
 
 // ******************** End  ---- Molecules *************************

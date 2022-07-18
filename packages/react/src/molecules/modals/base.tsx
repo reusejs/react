@@ -1,19 +1,45 @@
-import React, { ReactNode } from "react";
+import { CheckIcon } from "@heroicons/react/solid";
+import React, { useRef } from "react";
 import "../../../tailwind.css";
-import { useThemeContext } from "../../theme/ThemeProvider";
-import resolvedStyleProps from "../../utils/resolvedStyleProps";
+import ButtonBase from "../../atoms/buttons/base.js";
+import theme from "../../theme/theme.js";
+import Closable from "../../utils/closable";
+import mountComponent from "../../utils/mountComponent.js";
+import ModalWrapper from "./wrapper";
+import useOutsideClicker from "../../hooks/useOutsideClicker";
 
 export interface ModalBaseProps {
-  label?: string;
-  htmlFor?: string;
-  labelStyles?: any;
-  variant?: string;
+  visible?: any;
+  onAction?: any;
+  content?: any;
 }
 
 const ModalBase = (props: ModalBaseProps) => {
-  const theme: any = useThemeContext();
+  const cancelButtonRef = useRef(null);
 
-  return <></>;
+  const visRef = useOutsideClicker(() => {
+    props.onAction(false);
+  });
+
+  return (
+    <ModalWrapper showModal={props.visible} resolveModal={props.onAction}>
+      <div
+        className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6"
+        ref={visRef}
+      >
+        {props.content && (
+          <props.content visible={props.visible} onAction={props.onAction} />
+        )}
+      </div>
+    </ModalWrapper>
+  );
 };
 
-export default ModalBase;
+export const canBeClosed = mountComponent(Closable(ModalBase), 1000);
+
+function Exportable(config: any, options = {}) {
+  config.timeout = 0;
+  return canBeClosed({ ...config, ...options });
+}
+
+export default Exportable;
