@@ -37,6 +37,10 @@ export { default as PickerRadioSimple } from "./molecules/pickers/radio/simple";
 export { default as PickerCheckboxBase } from "./molecules/pickers/checkbox/base";
 export { default as PickerCheckboxSimple } from "./molecules/pickers/checkbox/simple";
 
+// File Uploaders
+
+export { default as FileUploaderBase } from "./molecules/fileUploader/base";
+
 // ******************** End  ---- Molecules *************************
 
 export {
