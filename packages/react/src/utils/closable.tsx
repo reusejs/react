@@ -6,10 +6,10 @@ const Closable =
     const [visible, setVisible] = useState(true);
 
     useEffect(() => {
-      if (props.config.timeout !== 0) {
+      if (props.timeout !== 0) {
         setTimeout(() => {
           onAction(true);
-        }, props.config.timeout || 3000);
+        }, props.timeout || 3000);
       }
     });
 

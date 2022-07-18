@@ -13,15 +13,15 @@ export default {
 const Template: ComponentStory<typeof ModalConfirm> = (args) => {
   const openModal = async () => {
     let result = await ModalConfirm({
-      proceedText: 'Remove Environment',
       heading: 'Remove Environment',
-      message: 'Are you sure you want to remove?',
+      description: 'Are you sure you want to remove?',
+      yesText: 'Go Ahead',
     });
     console.log('Result', result);
   };
 
   return (
-    <div className='flex min-h-screen w-full items-center justify-center bg-gray-50'>
+    <div className='flex min-h-screen w-full items-center justify-center '>
       <button
         className='bg-blue-600 p-2 text-white hover:bg-gray-700'
         onClick={() => {

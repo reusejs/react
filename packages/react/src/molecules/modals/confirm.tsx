@@ -1,72 +1,65 @@
-import React from "react";
-import { useRef } from "react";
-import { Dialog } from "@headlessui/react";
-import { ExclamationIcon } from "@heroicons/react/outline";
-import mountComponent from "../../utils/mountComponent.js";
-import Closable from "../../utils/closable";
+import { CheckIcon } from "@heroicons/react/solid";
+import React, { useRef } from "react";
 import "../../../tailwind.css";
+import ButtonBase from "../../atoms/buttons/base.js";
+import theme from "../../theme/theme.js";
+import Closable from "../../utils/closable";
+import mountComponent from "../../utils/mountComponent.js";
 import ModalWrapper from "./wrapper";
 
-export interface ModalSimpleProps {
+export interface ModalConfirmProps {
   visible?: any;
   onAction?: any;
-  config?: any;
+  yesText?: string;
+  noText?: string;
+  heading?: string;
+  description?: string;
 }
 
-function ClosableModal(props: ModalSimpleProps) {
+const ModalConfirm = (props: ModalConfirmProps) => {
   const cancelButtonRef = useRef(null);
 
   return (
     <ModalWrapper showModal={props.visible} resolveModal={props.onAction}>
-      <div className="inline-block transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left align-bottom shadow-xl transition-all dark:bg-gray-900 sm:my-8 sm:w-full sm:max-w-lg sm:p-6 sm:align-middle">
-        <div className="sm:flex sm:items-start">
-          <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-            <ExclamationIcon
-              className="h-6 w-6 text-red-600"
-              aria-hidden="true"
-            />
+      <div className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
+        <div>
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
+            <CheckIcon className="h-6 w-6 text-green-600" aria-hidden="true" />
           </div>
-          <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-            <Dialog.Title
-              as="h3"
-              className="text-lg font-medium leading-6 text-gray-900 dark:text-white"
-            >
-              {props.config.heading}
-            </Dialog.Title>
+          <div className="mt-3 text-center sm:mt-5">
+            <div className="text-lg font-medium leading-6 text-gray-900">
+              {props.heading}
+            </div>
             <div className="mt-2">
-              <p className="text-sm text-gray-500 dark:text-gray-300">
-                {props.config.message}
-              </p>
+              <p className="text-sm text-gray-500">{props.description}</p>
             </div>
           </div>
         </div>
-        <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
-          <button
+        <div className="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
+          <ButtonBase
+            label={props.yesText || "Yes"}
             type="button"
-            className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-0 focus:ring-red-500 focus:ring-offset-0 sm:ml-3 sm:w-auto sm:text-sm"
             onClick={() => props.onAction(true)}
-          >
-            {props.config.yesText || "Yes, Continue"}
-          </button>
-          <button
+            buttonBaseClasses={theme.modalConfirmClasses.yesButtonClasses}
+          />
+          <ButtonBase
+            label={props.noText || "No"}
             type="button"
-            className="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:w-auto sm:text-sm"
             onClick={() => props.onAction(false)}
+            buttonBaseClasses={theme.modalConfirmClasses.noButtonClasses}
             ref={cancelButtonRef}
-          >
-            {props.config.noText || "No, Cancel"}
-          </button>
+          />
         </div>
       </div>
     </ModalWrapper>
   );
-}
+};
 
-export const canBeClosed = mountComponent(Closable(ClosableModal), 0);
+export const canBeClosed = mountComponent(Closable(ModalConfirm), 1000);
 
 function Exportable(config: any, options = {}) {
   config.timeout = 0;
-  return canBeClosed({ config, options });
+  return canBeClosed({ ...config, ...options });
 }
 
 export default Exportable;
