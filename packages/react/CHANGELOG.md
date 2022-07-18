@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.3.0
+
+### Minor Changes
+
+- 76da7ee: Change Props for Select Pickers, Rename all Classes for consistency
+
 ## 6.2.3
 
 ### Patch Changes
