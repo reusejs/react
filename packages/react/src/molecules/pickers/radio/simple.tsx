@@ -14,19 +14,18 @@ const PickerRadioSimple = (props: PickerRadioBaseProps) => {
       dataSource={props.dataSource}
       optionsRenderer={OptionsRenderer}
       onChange={props.onChange}
-      scrollableBaseClasses={
-        props.scrollableBaseClasses || {
-          position: "z-50 block space-y-4",
-          maxHeight: "",
-          border: "border-0",
-          background: "bg-white",
-          borderRadius: "",
+      scrollableBaseProps={
+        props.scrollableBaseProps || {
+          scrollableBaseClasses: {
+            position: "z-50 block space-y-4",
+            maxHeight: "",
+            border: "border-0",
+            background: "bg-white",
+            borderRadius: "",
+          },
         }
       }
-      label={props.label}
-      multiple={props.multiple}
-      disabled={props.disabled}
-      htmlFor={props.htmlFor}
+      labelBaseProps={props.labelBaseProps}
       valueKey={props.valueKey}
       defaultSelected={props.defaultSelected}
       pickerRadioBaseClasses={props.pickerRadioBaseClasses}

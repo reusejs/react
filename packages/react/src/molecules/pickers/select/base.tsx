@@ -97,17 +97,12 @@ const PickerSelectBase = React.forwardRef(
       setOpen(false);
     });
 
-    console.log(
-      "!props.clearComponent && !props.closeComponent",
-      !props.clearComponent && !props.closeComponent,
-      props.clearComponent,
-      !props.clearComponent
-    );
-
     return (
       <>
         <div className="flex items-center justify-between">
-          {<LabelBase {...props.labelBaseProps} />}
+          {props.labelBaseProps !== undefined && (
+            <LabelBase {...props.labelBaseProps} />
+          )}
 
           {props.clearComponent !== undefined &&
             props.closeComponent !== undefined && (

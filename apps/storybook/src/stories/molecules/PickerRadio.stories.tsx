@@ -61,12 +61,23 @@ const Template: ComponentStory<typeof PickerRadioSimple> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  label: 'Country',
-  htmlFor: 'price',
+  labelBaseProps: {
+    label: 'Country',
+    labelBaseClasses: {
+      color: 'text-yellow-800 dark:text-yellow-100',
+    },
+  },
   name: 'price',
   valueKey: 'value',
-  multiple: false,
-  disabled: false,
+  dataSource: (q: any) => {
+    return fetchContinents(q);
+  },
+};
+
+export const NoLabel = Template.bind({});
+NoLabel.args = {
+  name: 'price',
+  valueKey: 'value',
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
@@ -74,12 +85,14 @@ Default.args = {
 
 export const Selected = Template.bind({});
 Selected.args = {
-  label: 'Country',
+  labelBaseProps: {
+    label: 'Country',
+    labelBaseClasses: {
+      color: 'text-yellow-800 dark:text-yellow-100',
+    },
+  },
   name: 'price',
-  htmlFor: 'price',
   valueKey: 'value',
-  multiple: false,
-  disabled: false,
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
@@ -88,22 +101,26 @@ Selected.args = {
 
 export const Inline = Template.bind({});
 Inline.args = {
-  label: 'Country',
+  labelBaseProps: {
+    label: 'Country',
+    labelBaseClasses: {
+      color: 'text-yellow-800 dark:text-yellow-100',
+    },
+  },
   name: 'price',
-  htmlFor: 'price',
   valueKey: 'value',
-  multiple: false,
-  disabled: false,
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
-  scrollableBaseClasses: {
-    position:
-      'z-50 block space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10',
-    maxHeight: '',
-    border: 'border-0',
-    background: 'bg-white',
-    borderRadius: '',
+  scrollableBaseProps: {
+    scrollableBaseClasses: {
+      position:
+        'z-50 block space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10',
+      maxHeight: '',
+      border: 'border-0',
+      background: 'bg-white',
+      borderRadius: '',
+    },
   },
   defaultSelected: [{ label: 'Asia', value: 'asia' }],
 };

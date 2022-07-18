@@ -6,20 +6,14 @@ import resolvedStyleProps from "../../../utils/resolvedStyleProps";
 import extractStyleProps from "../../../utils/extractStyleProps";
 import LabelBase from "../../../atoms/labels/base";
 import ScrollableBase from "../../../atoms/scrollables/base";
+import { ScrollableBaseProps } from "../../../atoms/scrollables/base";
+import { LabelBaseProps } from "../../../atoms/labels/base";
 
 export interface PickerRadioBaseProps {
-  label: string;
+  labelBaseProps?: LabelBaseProps;
+  scrollableBaseProps?: ScrollableBaseProps;
   name: string;
-  value?: string;
-  disabled: false;
-  multiple: false;
-  ariaDescribedby?: string;
-  htmlFor: string;
-  textInputStyles?: any;
   variant?: string;
-  placeholder?: string;
-  textInputPrefix?: any;
-  textInputBottom?: any;
   error?: any;
   pickerRadioSimpleClasses?: {
     optionClasses?: any;
@@ -27,7 +21,6 @@ export interface PickerRadioBaseProps {
   pickerRadioBaseClasses?: {
     wrapper?: string;
   };
-  scrollableBaseClasses?: any;
   textInputBaseErrorClasses?: {
     border?: string;
     focus?: string;
@@ -42,7 +35,6 @@ export interface PickerRadioBaseProps {
   defaultOpen?: boolean;
   defaultQuery?: string;
   optionsRenderer: any;
-  noDataComponent?: any;
 }
 
 const PickerRadioBase = React.forwardRef((props: PickerRadioBaseProps, ref) => {
@@ -78,12 +70,16 @@ const PickerRadioBase = React.forwardRef((props: PickerRadioBaseProps, ref) => {
     props.defaultSelected
   );
 
+  console.log("labelBaseProps", props.labelBaseProps);
+
   return (
     <div>
-      {props.label !== "" && <LabelBase {...props} />}
+      {props.labelBaseProps !== undefined && (
+        <LabelBase {...props.labelBaseProps} />
+      )}
       <div className={wrappersClassNames}>
         {options.length > 0 && (
-          <ScrollableBase {...props}>
+          <ScrollableBase {...props.scrollableBaseProps}>
             <>
               {options.map((option: any) => (
                 <div
