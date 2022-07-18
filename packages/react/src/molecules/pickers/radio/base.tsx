@@ -70,8 +70,6 @@ const PickerRadioBase = React.forwardRef((props: PickerRadioBaseProps, ref) => {
     props.defaultSelected
   );
 
-  console.log("labelBaseProps", props.labelBaseProps);
-
   return (
     <div>
       {props.labelBaseProps !== undefined && (

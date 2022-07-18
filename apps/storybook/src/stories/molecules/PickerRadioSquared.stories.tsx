@@ -104,43 +104,41 @@ const Template: ComponentStory<typeof PickerRadioBase> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  htmlFor: 'price',
   name: 'price',
   valueKey: 'value',
-  multiple: false,
-  disabled: false,
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
   optionsRenderer: OptionsRenderer,
-  scrollableBaseClasses: {
-    position: 'grid grid-cols-2 gap-0',
-    maxHeight: 'none',
-    border: 'border-0',
-    background: 'bg-transparent',
-    borderRadius: '',
-    width: 'w-none',
+  scrollableBaseProps: {
+    scrollableBaseClasses: {
+      position: 'grid grid-cols-2 gap-0',
+      maxHeight: 'none',
+      border: 'border-0',
+      background: 'bg-transparent',
+      borderRadius: '',
+      width: 'w-none',
+    },
   },
 };
 
 export const Selected = Template.bind({});
 Selected.args = {
-  htmlFor: 'price',
   name: 'price',
   valueKey: 'value',
-  multiple: false,
-  disabled: false,
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
   optionsRenderer: OptionsRenderer,
-  scrollableBaseClasses: {
-    position: 'grid grid-cols-2 gap-0',
-    maxHeight: 'none',
-    border: 'border-2 border-blue-400',
-    background: 'bg-transparent',
-    borderRadius: 'rounded-none',
-    width: 'w-none',
+  scrollableBaseProps: {
+    scrollableBaseClasses: {
+      position: 'grid grid-cols-2 gap-0',
+      maxHeight: 'none',
+      border: 'border-2 border-blue-400',
+      background: 'bg-transparent',
+      borderRadius: 'rounded-none',
+      width: 'w-none',
+    },
   },
   defaultSelected: [{ label: 'Buying', value: 'buying' }],
 };
