@@ -53,16 +53,16 @@ const OptionsRenderer = ({
         type='radio'
         checked={found === true}
         onChange={() => {}}
-        textInputClasses={{
+        textInputBaseClasses={{
           wrapper: 'hidden',
         }}
       /> */}
       <LabelBase
         htmlFor={value.value}
         label={value.label}
-        labelClasses={{
-          alignment: `px-4 py-1 w-32 z-10 text-center rounded-full cursor-pointer`,
-          font: 'font-medium',
+        labelBaseClasses={{
+          alignment: `px-4 py-1 rounded-full cursor-pointer`,
+          font: 'text-base font-medium',
           color: `${
             found === true
               ? 'text-rose-700 font-bold transition-all'
@@ -104,45 +104,49 @@ const Template: ComponentStory<typeof PickerRadioBase> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  htmlFor: 'price',
   name: 'price',
   valueKey: 'value',
-  multiple: false,
-  disabled: false,
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
   optionsRenderer: OptionsRenderer,
-  scrollableClasses: {
-    position:
-      'sm:flex sm:items-center sm:space-y-0 sm:space-x-1 justify-center',
-    maxHeight: 'none',
-    border: 'border-0',
-    background: 'bg-yellow-800 py-2 px-6',
-    borderRadius: 'rounded-full',
-    width: 'w-none',
+  scrollableBaseProps: {
+    scrollableBaseClasses: {
+      position:
+        'sm:flex sm:items-center sm:space-y-0 sm:space-x-1 justify-center',
+      maxHeight: 'none',
+      border: 'border-0',
+      background: 'bg-gray-800 py-2 px-6',
+      borderRadius: 'rounded-full',
+      width: 'w-none',
+    },
   },
 };
 
 export const Selected = Template.bind({});
 Selected.args = {
-  htmlFor: 'price',
+  labelBaseProps: {
+    label: 'Country',
+    labelBaseClasses: {
+      color: 'text-yellow-800 dark:text-yellow-100',
+    },
+  },
   name: 'price',
   valueKey: 'value',
-  multiple: false,
-  disabled: false,
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
   optionsRenderer: OptionsRenderer,
-  scrollableClasses: {
-    position:
-      'sm:flex sm:items-center sm:space-y-0 sm:space-x-1 justify-center',
-    maxHeight: 'none',
-    border: 'border-0',
-    background: 'bg-teal-400 py-2 px-6',
-    borderRadius: 'rounded-full',
-    width: 'w-none',
+  scrollableBaseProps: {
+    scrollableBaseClasses: {
+      position:
+        'sm:flex sm:items-center sm:space-y-0 sm:space-x-1 justify-center',
+      maxHeight: 'none',
+      border: 'border-0',
+      background: 'bg-red-800 py-2 px-6',
+      borderRadius: 'rounded-full',
+      width: 'w-none',
+    },
   },
   defaultSelected: [{ label: 'Buying', value: 'buying' }],
 };

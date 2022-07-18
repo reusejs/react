@@ -40,7 +40,7 @@ const Template: ComponentStory<typeof ScrollableBase> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  scrollableClasses: {
+  scrollableBaseClasses: {
     padding: 'p-4',
   },
 };

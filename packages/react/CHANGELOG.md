@@ -1,5 +1,53 @@
 # @reusejs/react
 
+## 6.5.0
+
+### Minor Changes
+
+- f9a8ad8: Introduce file upload components and storybook, readme file
+
+## 6.4.0
+
+### Minor Changes
+
+- db49a45: Introduce checkbox components
+
+## 6.3.1
+
+### Patch Changes
+
+- 0e99a24: Change props for radio select
+
+## 6.3.0
+
+### Minor Changes
+
+- 76da7ee: Change Props for Select Pickers, Rename all Classes for consistency
+
+## 6.2.3
+
+### Patch Changes
+
+- be68b6d: Fix issue with span
+
+## 6.2.2
+
+### Patch Changes
+
+- dc65e74: Accept label classes
+
+## 6.2.1
+
+### Patch Changes
+
+- cf25cfc: Fix issue with tailwind forms
+
+## 6.2.0
+
+### Minor Changes
+
+- 1214ddd: Introduce radio buttons, more options for select picker
+
 ## 6.1.1
 
 ### Patch Changes

@@ -1,4 +1,6 @@
-const badgeClasses = {
+// Badge
+
+const badgeBaseClasses = {
   alignment: "inline-flex items-center",
   padding: "px-2.5 py-0.5",
   borderRadius: "rounded-full",
@@ -7,13 +9,17 @@ const badgeClasses = {
   textColor: "text-blue-800",
 };
 
-const labelClasses = {
+// Label
+
+const labelBaseClasses = {
   alignment: "block",
   font: "text-sm font-medium",
   color: "text-gray-800 dark:text-gray-100",
 };
 
-const scrollableClasses = {
+// Scrollable
+
+const scrollableBaseClasses = {
   position: "z-50 block overflow-auto",
   maxHeight: "max-h-32",
   width: "w-full",
@@ -23,7 +29,9 @@ const scrollableClasses = {
   background: "bg-white shadow dark:bg-black",
 };
 
-const buttonClasses = {
+// Button
+
+const buttonBaseClasses = {
   alignment: "inline-flex justify-center items-center",
   focus: "focus:outline-none",
   font: "font-normal text-sm",
@@ -36,8 +44,11 @@ const buttonClasses = {
   disabledClasses: "disabled:opacity-50 dark:disabled:opacity-80",
 };
 
-const textInputClasses = {
+// Text Input
+
+const textInputBaseClasses = {
   wrapper: "relative mt-1 rounded-md shadow-sm",
+  formInput: "form-input",
   alignment: "block",
   width: "w-full",
   borderRadius: "rounded-md",
@@ -50,7 +61,7 @@ const textInputClasses = {
   placeholderColor: "",
 };
 
-const textInputErrorClasses = {
+const textInputBaseErrorClasses = {
   border: "border-red-300 dark:border-red-600",
   focus: "focus:ring-red-500 focus:border-red-500",
   textColor: "text-red-900 dark:text-red-300",
@@ -58,25 +69,13 @@ const textInputErrorClasses = {
   placeholderColor: "placeholder-red-300",
 };
 
-const pickerSelectClasses = {
+// Picket Select
+
+const pickerSelectBaseClasses = {
   wrapper: "relative mt-1 rounded-md shadow-sm",
 };
 
-const pickerRadioClasses = {
-  wrapper: "mt-4",
-};
-
-const simpleRadioPickerClasses = {
-  optionClasses: {
-    wrapper:
-      "relative flex cursor-pointer flex-row items-center p-2 hover:bg-gray-200 dark:hover:bg-gray-700",
-    labelClasses: {
-      alignment: "ml-3 block",
-    },
-  },
-};
-
-const simpleSelectPickerClasses = {
+const pickerSelectSimpleClasses = {
   selectedDataClasses: {
     alignment: "relative block cursor-pointer",
     borderRadius: "rounded-md",
@@ -98,17 +97,49 @@ const simpleSelectPickerClasses = {
   },
 };
 
+// Picker Radio
+
+const pickerRadioBaseClasses = {
+  wrapper: "mt-4",
+};
+
+const pickerRadioSimpleClasses = {
+  optionClasses: {
+    wrapper:
+      "relative flex cursor-pointer flex-row items-center p-2 hover:bg-gray-200 dark:hover:bg-gray-700",
+    labelBaseClasses: {
+      alignment: "ml-3 block",
+    },
+  },
+};
+
+const pickerCheckboxBaseClasses = {
+  wrapper: "mt-4",
+};
+
+const pickerCheckboxSimpleClasses = {
+  optionClasses: {
+    wrapper:
+      "relative flex cursor-pointer flex-row items-center p-2 hover:bg-gray-200 dark:hover:bg-gray-700",
+    labelBaseClasses: {
+      alignment: "ml-3 block",
+    },
+  },
+};
+
 const theme = {
-  labelClasses,
-  badgeClasses,
-  buttonClasses,
-  textInputClasses,
-  textInputErrorClasses,
-  pickerSelectClasses,
-  scrollableClasses,
-  simpleSelectPickerClasses,
-  pickerRadioClasses,
-  simpleRadioPickerClasses,
+  labelBaseClasses,
+  badgeBaseClasses,
+  buttonBaseClasses,
+  textInputBaseClasses,
+  textInputBaseErrorClasses,
+  pickerSelectBaseClasses,
+  scrollableBaseClasses,
+  pickerSelectSimpleClasses,
+  pickerRadioBaseClasses,
+  pickerRadioSimpleClasses,
+  pickerCheckboxBaseClasses,
+  pickerCheckboxSimpleClasses,
 };
 
 export default theme;

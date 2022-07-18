@@ -26,7 +26,7 @@ Let's say you want to override some styles, you would have to pass props like fo
 
 ```jsx
 <BadgeBase
-  badgeClasses={{
+  badgeBaseClasses={{
     backgroundColor: 'bg-green-100',
     borderRadius: 'rounded-md',
     font: 'text-sm font-medium',
@@ -45,7 +45,7 @@ import '@/styles/tailwind.css';
 
 const newTheme = {
   ...theme,
-  badgeClasses: {
+  badgeBaseClasses: {
     backgroundColor: 'bg-green-100',
     borderRadius: 'rounded-md',
     font: 'text-sm font-medium',
@@ -78,7 +78,7 @@ const newTheme = {
 
 const variants = {
   primary: {
-    badgeClasses: {
+    badgeBaseClasses: {
       backgroundColor: 'bg-green-100',
       borderRadius: 'rounded-md',
       font: 'text-sm font-medium',
@@ -87,7 +87,7 @@ const variants = {
     },
   },
   secondary: {
-    badgeClasses: {
+    badgeBaseClasses: {
       backgroundColor: 'bg-gray-100',
       borderRadius: 'rounded-md',
       font: 'text-sm font-medium',

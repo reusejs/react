@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { PickerRadioSimple } from '@reusejs/react';
+import { PickerCheckboxSimple } from '@reusejs/react';
 import { CheckIcon, XIcon } from '@heroicons/react/solid';
 import { TextInputBase } from '@reusejs/react';
 
@@ -32,12 +32,12 @@ const fetchContinents = (q = '') => {
 };
 
 export default {
-  title: 'Molecules/Pickers/Radio',
-  component: PickerRadioSimple,
+  title: 'Molecules/Pickers/Checkbox Multiple',
+  component: PickerCheckboxSimple,
   argTypes: {},
-} as ComponentMeta<typeof PickerRadioSimple>;
+} as ComponentMeta<typeof PickerCheckboxSimple>;
 
-const Template: ComponentStory<typeof PickerRadioSimple> = (args) => {
+const Template: ComponentStory<typeof PickerCheckboxSimple> = (args) => {
   const [selected, setSelected] = useState<any>(args.defaultSelected || []);
   return (
     <div className=''>
@@ -47,7 +47,7 @@ const Template: ComponentStory<typeof PickerRadioSimple> = (args) => {
         </pre>
       </div>
       <div>
-        <PickerRadioSimple
+        <PickerCheckboxSimple
           {...args}
           defaultSelected={selected}
           onChange={(v: any) => {
@@ -67,15 +67,7 @@ Default.args = {
       color: 'text-yellow-800 dark:text-yellow-100',
     },
   },
-  name: 'price',
-  valueKey: 'value',
-  dataSource: (q: any) => {
-    return fetchContinents(q);
-  },
-};
-
-export const NoLabel = Template.bind({});
-NoLabel.args = {
+  multiple: true,
   name: 'price',
   valueKey: 'value',
   dataSource: (q: any) => {
@@ -96,31 +88,8 @@ Selected.args = {
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
-  defaultSelected: [{ label: 'Asia', value: 'asia' }],
-};
-
-export const Inline = Template.bind({});
-Inline.args = {
-  labelBaseProps: {
-    label: 'Country',
-    labelBaseClasses: {
-      color: 'text-yellow-800 dark:text-yellow-100',
-    },
-  },
-  name: 'price',
-  valueKey: 'value',
-  dataSource: (q: any) => {
-    return fetchContinents(q);
-  },
-  scrollableBaseProps: {
-    scrollableBaseClasses: {
-      position:
-        'z-50 block space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10',
-      maxHeight: '',
-      border: 'border-0',
-      background: 'bg-white',
-      borderRadius: '',
-    },
-  },
-  defaultSelected: [{ label: 'Asia', value: 'asia' }],
+  defaultSelected: [
+    { label: 'Europe', value: 'europe' },
+    { label: 'Asia', value: 'asia' },
+  ],
 };

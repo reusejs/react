@@ -6,29 +6,22 @@ import resolvedStyleProps from "../../../utils/resolvedStyleProps";
 import extractStyleProps from "../../../utils/extractStyleProps";
 import LabelBase from "../../../atoms/labels/base";
 import ScrollableBase from "../../../atoms/scrollables/base";
+import { ScrollableBaseProps } from "../../../atoms/scrollables/base";
+import { LabelBaseProps } from "../../../atoms/labels/base";
 
 export interface PickerRadioBaseProps {
-  label: string;
+  labelBaseProps?: LabelBaseProps;
+  scrollableBaseProps?: ScrollableBaseProps;
   name: string;
-  value?: string;
-  disabled: false;
-  multiple: false;
-  ariaDescribedby?: string;
-  htmlFor: string;
-  textInputStyles?: any;
   variant?: string;
-  placeholder?: string;
-  textInputPrefix?: any;
-  textInputBottom?: any;
   error?: any;
-  simpleRadioPickerClasses?: {
+  pickerRadioSimpleClasses?: {
     optionClasses?: any;
   };
-  pickerRadioClasses?: {
+  pickerRadioBaseClasses?: {
     wrapper?: string;
   };
-  scrollableClasses?: any;
-  textInputErrorClasses?: {
+  textInputBaseErrorClasses?: {
     border?: string;
     focus?: string;
     textColor?: string;
@@ -42,7 +35,6 @@ export interface PickerRadioBaseProps {
   defaultOpen?: boolean;
   defaultQuery?: string;
   optionsRenderer: any;
-  noDataComponent?: any;
 }
 
 const PickerRadioBase = React.forwardRef((props: PickerRadioBaseProps, ref) => {
@@ -58,22 +50,22 @@ const PickerRadioBase = React.forwardRef((props: PickerRadioBaseProps, ref) => {
 
   if (props.error) {
     const errorStyleProps = extractStyleProps(
-      "textInputErrorClasses",
+      "textInputBaseErrorClasses",
       ["border", "focus", "textColor", "backgroundColor", "placeholderColor"],
       allProps,
       theme
     );
 
-    let newPickerSelectClasses = {
-      ...allProps["pickerRadioClasses"],
+    let newpickerSelectBaseClasses = {
+      ...allProps["pickerRadioBaseClasses"],
       ...errorStyleProps,
     };
 
-    allProps["pickerRadioClasses"] = newPickerSelectClasses;
+    allProps["pickerRadioBaseClasses"] = newpickerSelectBaseClasses;
   }
 
   const wrappersClassNames = resolvedStyleProps(
-    "pickerRadioClasses",
+    "pickerRadioBaseClasses",
     ["wrapper"],
     props,
     theme
@@ -86,12 +78,20 @@ const PickerRadioBase = React.forwardRef((props: PickerRadioBaseProps, ref) => {
   );
 
   return (
+<<<<<<< HEAD
     <div className="relative">
       {props.label !== "" && <LabelBase {...props} />}
+=======
+    <div>
+      {props.labelBaseProps !== undefined && (
+        <LabelBase {...props.labelBaseProps} />
+      )}
+>>>>>>> f083541747777dd4fd2542a0a2324cc3ea9d4f2a
       <div className={wrappersClassNames}>
         {options.length > 0 && (
-          <ScrollableBase {...props}>
+          <ScrollableBase {...props.scrollableBaseProps}>
             <>
+<<<<<<< HEAD
               <div className="relative flex">
                 <div className={selectedDivStyle}>{''}</div>
                   {options.map((option: any, index: number) => (
@@ -115,6 +115,27 @@ const PickerRadioBase = React.forwardRef((props: PickerRadioBaseProps, ref) => {
                   </div>
                 ))}
               </div>
+=======
+              {options.map((option: any) => (
+                <div
+                  onClick={() => {
+                    addOrRemove(false, option);
+                  }}
+                  key={`option${option.value}`}
+                >
+                  {props.optionsRenderer && (
+                    <props.optionsRenderer
+                      value={option}
+                      selected={selected}
+                      name={props.name}
+                      optionsClasses={
+                        props.pickerRadioSimpleClasses?.optionClasses || {}
+                      }
+                    />
+                  )}
+                </div>
+              ))}
+>>>>>>> f083541747777dd4fd2542a0a2324cc3ea9d4f2a
             </>
           </ScrollableBase>
         )}

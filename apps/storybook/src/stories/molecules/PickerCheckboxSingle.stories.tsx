@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { PickerRadioSimple } from '@reusejs/react';
+import { PickerCheckboxSimple } from '@reusejs/react';
 import { CheckIcon, XIcon } from '@heroicons/react/solid';
 import { TextInputBase } from '@reusejs/react';
 
@@ -32,12 +32,12 @@ const fetchContinents = (q = '') => {
 };
 
 export default {
-  title: 'Molecules/Pickers/Radio',
-  component: PickerRadioSimple,
+  title: 'Molecules/Pickers/Checkbox Single',
+  component: PickerCheckboxSimple,
   argTypes: {},
-} as ComponentMeta<typeof PickerRadioSimple>;
+} as ComponentMeta<typeof PickerCheckboxSimple>;
 
-const Template: ComponentStory<typeof PickerRadioSimple> = (args) => {
+const Template: ComponentStory<typeof PickerCheckboxSimple> = (args) => {
   const [selected, setSelected] = useState<any>(args.defaultSelected || []);
   return (
     <div className=''>
@@ -47,7 +47,7 @@ const Template: ComponentStory<typeof PickerRadioSimple> = (args) => {
         </pre>
       </div>
       <div>
-        <PickerRadioSimple
+        <PickerCheckboxSimple
           {...args}
           defaultSelected={selected}
           onChange={(v: any) => {

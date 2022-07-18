@@ -17,25 +17,25 @@ const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
       selectedDataRenderer={SelectedDataRenderer}
       searchRenderer={SearchRenderer}
       optionsRenderer={OptionsRenderer}
-      clearComponent={props.enableClear ? ClearComponent : null}
-      closeComponent={props.enableClose ? CloseComponent : null}
+      clearComponent={props.enableClear ? ClearComponent : undefined}
+      closeComponent={props.enableClose ? CloseComponent : undefined}
       noDataComponent={NoDataComponent}
       onChange={props.onChange}
-      scrollableClasses={
-        props.scrollableClasses || {
-          position: "z-50 block overflow-auto absolute",
-          maxHeight: "max-h-32",
+      scrollableBaseProps={
+        props.scrollableBaseProps || {
+          scrollableBaseClasses: {
+            position: "z-50 block overflow-auto absolute",
+            maxHeight: "max-h-32",
+          },
         }
       }
-      label={props.label}
+      labelBaseProps={props.labelBaseProps}
       multiple={props.multiple}
-      disabled={props.disabled}
-      htmlFor={props.htmlFor}
       valueKey={props.valueKey}
       defaultSelected={props.defaultSelected}
       defaultQuery={props.defaultQuery}
       defaultOpen={props.defaultOpen}
-      simpleSelectPickerClasses={props.simpleSelectPickerClasses}
+      pickerSelectSimpleClasses={props.pickerSelectSimpleClasses}
     />
   );
 };
@@ -59,21 +59,21 @@ const SelectedDataRenderer = (props: any) => {
       "width",
     ],
     props,
-    theme.simpleSelectPickerClasses
+    theme.pickerSelectSimpleClasses
   );
 
   const arrowWrapperClasses = resolvedStyleProps(
     "selectedDataClasses",
     ["arrowWrapperClasses"],
     props,
-    theme.simpleSelectPickerClasses
+    theme.pickerSelectSimpleClasses
   );
 
   const arrowIconClasses = resolvedStyleProps(
     "selectedDataClasses",
     ["arrowIconClasses"],
     props,
-    theme.simpleSelectPickerClasses
+    theme.pickerSelectSimpleClasses
   );
 
   React.useEffect(() => {
@@ -129,7 +129,7 @@ const SearchRenderer = ({
         onChange={(e) => {
           onSearch(e);
         }}
-        textInputClasses={{
+        textInputBaseClasses={{
           wrapper: "relative mt-0 rounded-md shadow-sm",
         }}
       />
@@ -169,14 +169,14 @@ const OptionsRenderer = ({
     "optionClasses",
     ["wrapper"],
     props,
-    theme.simpleSelectPickerClasses
+    theme.pickerSelectSimpleClasses
   );
 
   const labelClassNames = resolvedStyleProps(
     "optionClasses",
     ["label"],
     props,
-    theme.simpleSelectPickerClasses
+    theme.pickerSelectSimpleClasses
   );
 
   return (

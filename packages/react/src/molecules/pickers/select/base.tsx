@@ -8,29 +8,23 @@ import ScrollableBase from "../../../atoms/scrollables/base";
 import useOutsideClicker from "../../../hooks/useOutsideClicker";
 import useSelect from "../../../hooks/useSelect";
 import { ScrollableBaseProps } from "../../../atoms/scrollables/base";
+import { LabelBaseProps } from "../../../atoms/labels/base";
 
 export interface PickerSelectBaseProps {
-  label: string;
-  value?: string;
-  disabled: false;
+  labelBaseProps?: LabelBaseProps;
+  scrollableBaseProps?: ScrollableBaseProps;
   multiple: false;
-  ariaDescribedby?: string;
-  htmlFor: string;
-  textInputStyles?: any;
   variant?: string;
-  placeholder?: string;
-  textInputPrefix?: any;
-  textInputBottom?: any;
+  selectInputBottom?: any;
   error?: any;
-  simpleSelectPickerClasses?: {
+  pickerSelectSimpleClasses?: {
     selectedDataClasses?: any;
     optionClasses?: any;
   };
-  pickerSelectClasses?: {
+  pickerSelectBaseClasses?: {
     wrapper?: string;
   };
-  scrollableClasses?: any;
-  textInputErrorClasses?: {
+  textInputBaseErrorClasses?: {
     border?: string;
     focus?: string;
     textColor?: string;
@@ -59,22 +53,22 @@ const PickerSelectBase = React.forwardRef(
 
     if (props.error) {
       const errorStyleProps = extractStyleProps(
-        "textInputErrorClasses",
+        "textInputBaseErrorClasses",
         ["border", "focus", "textColor", "backgroundColor", "placeholderColor"],
         allProps,
         theme
       );
 
-      let newPickerSelectClasses = {
-        ...allProps["pickerSelectClasses"],
+      let newpickerSelectBaseClasses = {
+        ...allProps["pickerSelectBaseClasses"],
         ...errorStyleProps,
       };
 
-      allProps["pickerSelectClasses"] = newPickerSelectClasses;
+      allProps["pickerSelectBaseClasses"] = newpickerSelectBaseClasses;
     }
 
     const wrappersClassNames = resolvedStyleProps(
-      "pickerSelectClasses",
+      "pickerSelectBaseClasses",
       ["wrapper"],
       props,
       theme
@@ -106,9 +100,14 @@ const PickerSelectBase = React.forwardRef(
     return (
       <>
         <div className="flex items-center justify-between">
-          {props.label !== "" && <LabelBase {...props} />}
+          {props.labelBaseProps !== undefined && (
+            <LabelBase {...props.labelBaseProps} />
+          )}
 
-          <span className="invisible">Placeholder to prevent Jerk</span>
+          {props.clearComponent !== undefined &&
+            props.closeComponent !== undefined && (
+              <span className="invisible">Placeholder to prevent Jerk</span>
+            )}
 
           {selected.length > 0 && !open && props.clearComponent && (
             <span className="cursor-pointer" onClick={() => setSelected([])}>
@@ -129,7 +128,7 @@ const PickerSelectBase = React.forwardRef(
                 <props.selectedDataRenderer
                   selected={selected}
                   selectedDataClasses={
-                    props.simpleSelectPickerClasses?.selectedDataClasses || {}
+                    props.pickerSelectSimpleClasses?.selectedDataClasses || {}
                   }
                 />
               )}
@@ -149,7 +148,7 @@ const PickerSelectBase = React.forwardRef(
               )}
 
               {options.length > 0 && (
-                <ScrollableBase {...props}>
+                <ScrollableBase {...props.scrollableBaseProps}>
                   <>
                     {options.map((option: any) => (
                       <div
@@ -163,7 +162,7 @@ const PickerSelectBase = React.forwardRef(
                             value={option}
                             selected={selected}
                             optionsClasses={
-                              props.simpleSelectPickerClasses?.optionClasses ||
+                              props.pickerSelectSimpleClasses?.optionClasses ||
                               {}
                             }
                           />
@@ -175,7 +174,7 @@ const PickerSelectBase = React.forwardRef(
               )}
 
               {options.length === 0 && (
-                <ScrollableBase {...props}>
+                <ScrollableBase {...props.scrollableBaseProps}>
                   {props.noDataComponent && <props.noDataComponent />}
                 </ScrollableBase>
               )}
@@ -183,7 +182,7 @@ const PickerSelectBase = React.forwardRef(
           )}
         </div>
         {props.error && props.error}
-        {!props.error && props.textInputBottom && props.textInputBottom}
+        {!props.error && props.selectInputBottom && props.selectInputBottom}
       </>
     );
   }

@@ -104,7 +104,7 @@ export function ReactTableOfContents() {
                       </span>
                       <BadgeBase
                         label={value.status}
-                        badgeClasses={{
+                        badgeBaseClasses={{
                           color:
                             value.status === 'done'
                               ? 'bg-green-100 text-green-800'
