@@ -17,7 +17,7 @@ export interface PickerSelectBaseProps {
   variant?: string;
   selectInputBottom?: any;
   error?: any;
-  simpleSelectPickerClasses?: {
+  pickerSelectSimpleClasses?: {
     selectedDataClasses?: any;
     optionClasses?: any;
   };
@@ -133,7 +133,7 @@ const PickerSelectBase = React.forwardRef(
                 <props.selectedDataRenderer
                   selected={selected}
                   selectedDataClasses={
-                    props.simpleSelectPickerClasses?.selectedDataClasses || {}
+                    props.pickerSelectSimpleClasses?.selectedDataClasses || {}
                   }
                 />
               )}
@@ -167,7 +167,7 @@ const PickerSelectBase = React.forwardRef(
                             value={option}
                             selected={selected}
                             optionsClasses={
-                              props.simpleSelectPickerClasses?.optionClasses ||
+                              props.pickerSelectSimpleClasses?.optionClasses ||
                               {}
                             }
                           />

@@ -1,3 +1,5 @@
+// Badge
+
 const badgeBaseClasses = {
   alignment: "inline-flex items-center",
   padding: "px-2.5 py-0.5",
@@ -7,11 +9,15 @@ const badgeBaseClasses = {
   textColor: "text-blue-800",
 };
 
+// Label
+
 const labelBaseClasses = {
   alignment: "block",
   font: "text-sm font-medium",
   color: "text-gray-800 dark:text-gray-100",
 };
+
+// Scrollable
 
 const scrollableBaseClasses = {
   position: "z-50 block overflow-auto",
@@ -22,6 +28,8 @@ const scrollableBaseClasses = {
   border: "border border-gray-300 dark:border-gray-700",
   background: "bg-white shadow dark:bg-black",
 };
+
+// Button
 
 const buttonBaseClasses = {
   alignment: "inline-flex justify-center items-center",
@@ -35,6 +43,8 @@ const buttonBaseClasses = {
   width: "",
   disabledClasses: "disabled:opacity-50 dark:disabled:opacity-80",
 };
+
+// Text Input
 
 const textInputBaseClasses = {
   wrapper: "relative mt-1 rounded-md shadow-sm",
@@ -59,25 +69,13 @@ const textInputBaseErrorClasses = {
   placeholderColor: "placeholder-red-300",
 };
 
+// Picket Select
+
 const pickerSelectBaseClasses = {
   wrapper: "relative mt-1 rounded-md shadow-sm",
 };
 
-const pickerRadioBaseClasses = {
-  wrapper: "mt-4",
-};
-
-const simpleRadioPickerClasses = {
-  optionClasses: {
-    wrapper:
-      "relative flex cursor-pointer flex-row items-center p-2 hover:bg-gray-200 dark:hover:bg-gray-700",
-    labelBaseClasses: {
-      alignment: "ml-3 block",
-    },
-  },
-};
-
-const simpleSelectPickerClasses = {
+const pickerSelectSimpleClasses = {
   selectedDataClasses: {
     alignment: "relative block cursor-pointer",
     borderRadius: "rounded-md",
@@ -99,6 +97,22 @@ const simpleSelectPickerClasses = {
   },
 };
 
+// Picker Radio
+
+const pickerRadioBaseClasses = {
+  wrapper: "mt-4",
+};
+
+const pickerRadioSimpleClasses = {
+  optionClasses: {
+    wrapper:
+      "relative flex cursor-pointer flex-row items-center p-2 hover:bg-gray-200 dark:hover:bg-gray-700",
+    labelBaseClasses: {
+      alignment: "ml-3 block",
+    },
+  },
+};
+
 const theme = {
   labelBaseClasses,
   badgeBaseClasses,
@@ -107,9 +121,9 @@ const theme = {
   textInputBaseErrorClasses,
   pickerSelectBaseClasses,
   scrollableBaseClasses,
-  simpleSelectPickerClasses,
+  pickerSelectSimpleClasses,
   pickerRadioBaseClasses,
-  simpleRadioPickerClasses,
+  pickerRadioSimpleClasses,
 };
 
 export default theme;

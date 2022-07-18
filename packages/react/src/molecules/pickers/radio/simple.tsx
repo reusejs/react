@@ -91,7 +91,7 @@ const OptionsRenderer = ({
         htmlFor={value.value}
         label={value.label}
         labelBaseClasses={
-          theme.simpleRadioPickerClasses.optionClasses.labelBaseClasses
+          theme.pickerRadioSimpleClasses.optionClasses.labelBaseClasses
         }
       />
     </div>

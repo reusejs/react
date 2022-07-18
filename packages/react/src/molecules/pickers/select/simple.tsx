@@ -35,7 +35,7 @@ const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
       defaultSelected={props.defaultSelected}
       defaultQuery={props.defaultQuery}
       defaultOpen={props.defaultOpen}
-      simpleSelectPickerClasses={props.simpleSelectPickerClasses}
+      pickerSelectSimpleClasses={props.pickerSelectSimpleClasses}
     />
   );
 };
@@ -59,21 +59,21 @@ const SelectedDataRenderer = (props: any) => {
       "width",
     ],
     props,
-    theme.simpleSelectPickerClasses
+    theme.pickerSelectSimpleClasses
   );
 
   const arrowWrapperClasses = resolvedStyleProps(
     "selectedDataClasses",
     ["arrowWrapperClasses"],
     props,
-    theme.simpleSelectPickerClasses
+    theme.pickerSelectSimpleClasses
   );
 
   const arrowIconClasses = resolvedStyleProps(
     "selectedDataClasses",
     ["arrowIconClasses"],
     props,
-    theme.simpleSelectPickerClasses
+    theme.pickerSelectSimpleClasses
   );
 
   React.useEffect(() => {
@@ -169,14 +169,14 @@ const OptionsRenderer = ({
     "optionClasses",
     ["wrapper"],
     props,
-    theme.simpleSelectPickerClasses
+    theme.pickerSelectSimpleClasses
   );
 
   const labelClassNames = resolvedStyleProps(
     "optionClasses",
     ["label"],
     props,
-    theme.simpleSelectPickerClasses
+    theme.pickerSelectSimpleClasses
   );
 
   return (

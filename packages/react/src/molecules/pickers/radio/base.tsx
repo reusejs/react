@@ -21,7 +21,7 @@ export interface PickerRadioBaseProps {
   textInputPrefix?: any;
   textInputBottom?: any;
   error?: any;
-  simpleRadioPickerClasses?: {
+  pickerRadioSimpleClasses?: {
     optionClasses?: any;
   };
   pickerRadioBaseClasses?: {
@@ -98,7 +98,7 @@ const PickerRadioBase = React.forwardRef((props: PickerRadioBaseProps, ref) => {
                       selected={selected}
                       name={props.name}
                       optionsClasses={
-                        props.simpleRadioPickerClasses?.optionClasses || {}
+                        props.pickerRadioSimpleClasses?.optionClasses || {}
                       }
                     />
                   )}
