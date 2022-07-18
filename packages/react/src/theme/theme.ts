@@ -113,6 +113,20 @@ const pickerRadioSimpleClasses = {
   },
 };
 
+const pickerCheckboxBaseClasses = {
+  wrapper: "mt-4",
+};
+
+const pickerCheckboxSimpleClasses = {
+  optionClasses: {
+    wrapper:
+      "relative flex cursor-pointer flex-row items-center p-2 hover:bg-gray-200 dark:hover:bg-gray-700",
+    labelBaseClasses: {
+      alignment: "ml-3 block",
+    },
+  },
+};
+
 const theme = {
   labelBaseClasses,
   badgeBaseClasses,
@@ -124,6 +138,8 @@ const theme = {
   pickerSelectSimpleClasses,
   pickerRadioBaseClasses,
   pickerRadioSimpleClasses,
+  pickerCheckboxBaseClasses,
+  pickerCheckboxSimpleClasses,
 };
 
 export default theme;
