@@ -27,7 +27,5 @@ Give you complete control over how you want to handle this functionality
 2. beforeUpload -> Is a hook which gives you the list of files selected
 3. afterUpload -> Is a book which gives you the list of files after uploaded
 4. upload -> Is the actual function where you can handle upload of the function
-
-### How it works
-
-### How to use
+   - In your upload function, you can track upload progress and show to users accordingly
+   - Ex: Axios - https://github.com/axios/axios/blob/main/examples/upload/index.html
