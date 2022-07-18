@@ -48,6 +48,13 @@ export interface PickerRadioBaseProps {
 const PickerRadioBase = React.forwardRef((props: PickerRadioBaseProps, ref) => {
   const theme: any = useThemeContext();
   let allProps = Object.assign({}, props);
+  const styleArray = [
+    "absolute w-32 h-8 rounded-full bg-amber-400 transition-all",
+    "absolute w-32 h-8 rounded-full bg-lime-400 translate-x-32 transition-all",
+    "absolute w-32 h-8 rounded-full bg-indigo-400 translate-x-64 transition-all",
+  ];
+
+  const [selectedDivStyle, setSelectedDivStyle] = React.useState<string>(styleArray[0]);
 
   if (props.error) {
     const errorStyleProps = extractStyleProps(
@@ -79,31 +86,35 @@ const PickerRadioBase = React.forwardRef((props: PickerRadioBaseProps, ref) => {
   );
 
   return (
-    <div>
+    <div className="relative">
       {props.label !== "" && <LabelBase {...props} />}
       <div className={wrappersClassNames}>
         {options.length > 0 && (
           <ScrollableBase {...props}>
             <>
-              {options.map((option: any) => (
-                <div
-                  onClick={() => {
-                    addOrRemove(false, option);
-                  }}
-                  key={`option${option.value}`}
-                >
-                  {props.optionsRenderer && (
-                    <props.optionsRenderer
-                      value={option}
-                      selected={selected}
-                      name={props.name}
-                      optionsClasses={
-                        props.simpleRadioPickerClasses?.optionClasses || {}
-                      }
-                    />
-                  )}
-                </div>
-              ))}
+              <div className="relative flex">
+                <div className={selectedDivStyle}>{''}</div>
+                  {options.map((option: any, index: number) => (
+                  <div
+                    onClick={() => {
+                      addOrRemove(false, option);
+                      setSelectedDivStyle(styleArray[index]);
+                    }}
+                    key={`option${option.value}`}
+                  >
+                    {props.optionsRenderer && (
+                      <props.optionsRenderer
+                        value={option}
+                        selected={selected}
+                        name={props.name}
+                        optionsClasses={
+                          props.simpleRadioPickerClasses?.optionClasses || {}
+                        }
+                      />
+                    )}
+                  </div>
+                ))}
+              </div>
             </>
           </ScrollableBase>
         )}

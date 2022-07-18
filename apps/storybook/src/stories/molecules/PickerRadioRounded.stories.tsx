@@ -4,7 +4,7 @@ import { PickerRadioBase, LabelBase, TextInputBase } from '@reusejs/react';
 import { CheckIcon, XIcon } from '@heroicons/react/solid';
 
 const fetchContinents = (q = '') => {
-  let continents = ['Buying', 'Selling', 'Dying'];
+  let continents = ['Buying', 'Selling', 'Bidding'];
   let newContinents = continents.map((c) => {
     return {
       value: c.toLowerCase(),
@@ -41,11 +41,11 @@ const OptionsRenderer = ({
     setFound(localFound === false ? false : true);
   }, [selected]);
 
-  //   console.log('selected', selected, value);
+  // console.log('selected', selected, "|||", value,"|||", name);
 
   return (
     <div className='flex items-center'>
-      <TextInputBase
+      {/* <TextInputBase
         label=''
         htmlFor=''
         id={value.value}
@@ -56,17 +56,17 @@ const OptionsRenderer = ({
         textInputClasses={{
           wrapper: 'hidden',
         }}
-      />
+      /> */}
       <LabelBase
         htmlFor={value.value}
         label={value.label}
         labelClasses={{
-          alignment: `px-4 py-1 rounded-full cursor-pointer`,
-          font: 'text-base font-medium',
+          alignment: `px-4 py-1 w-32 z-10 text-center rounded-full cursor-pointer`,
+          font: 'font-medium',
           color: `${
             found === true
-              ? 'text-cyan-200 bg-gray-700 font-bold border border-gray-800'
-              : 'text-white'
+              ? 'text-rose-700 font-bold transition-all'
+              : 'text-white transition-all'
           }`,
         }}
       />
@@ -83,7 +83,7 @@ export default {
 const Template: ComponentStory<typeof PickerRadioBase> = (args) => {
   const [selected, setSelected] = useState<any>(args.defaultSelected || []);
   return (
-    <div className='w-1/2'>
+    <div className='w-fit'>
       <div className='mb-4 bg-gray-50 p-4'>
         <pre>
           <code>{JSON.stringify(selected)}</code>
@@ -118,7 +118,7 @@ Default.args = {
       'sm:flex sm:items-center sm:space-y-0 sm:space-x-1 justify-center',
     maxHeight: 'none',
     border: 'border-0',
-    background: 'bg-gray-800 py-2 px-6',
+    background: 'bg-yellow-800 py-2 px-6',
     borderRadius: 'rounded-full',
     width: 'w-none',
   },
@@ -140,7 +140,7 @@ Selected.args = {
       'sm:flex sm:items-center sm:space-y-0 sm:space-x-1 justify-center',
     maxHeight: 'none',
     border: 'border-0',
-    background: 'bg-red-800 py-2 px-6',
+    background: 'bg-teal-400 py-2 px-6',
     borderRadius: 'rounded-full',
     width: 'w-none',
   },
