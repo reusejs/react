@@ -20,7 +20,7 @@ Default.args = {
 export const FullWidth = Template.bind({});
 FullWidth.args = {
   label: 'Login',
-  buttonClasses: { width: 'w-full' },
+  buttonBaseClasses: { width: 'w-full' },
 };
 
 export const Busy = Template.bind({});

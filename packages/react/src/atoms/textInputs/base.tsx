@@ -23,7 +23,7 @@ export interface TextInputBaseProps {
   textInputPrefix?: any;
   textInputBottom?: any;
   error?: any;
-  textInputClasses?: {
+  textInputBaseClasses?: {
     wrapper?: string;
     alignment?: string;
     width?: string;
@@ -36,7 +36,7 @@ export interface TextInputBaseProps {
     backgroundColor?: string;
     placeholderColor?: string;
   };
-  textInputErrorClasses?: {
+  textInputBaseErrorClasses?: {
     border?: string;
     focus?: string;
     textColor?: string;
@@ -52,25 +52,26 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
 
   if (props.error) {
     const errorStyleProps = extractStyleProps(
-      "textInputErrorClasses",
+      "textInputBaseErrorClasses",
       ["border", "focus", "textColor", "backgroundColor", "placeholderColor"],
       allProps,
       theme
     );
 
-    let newTextInputClasses = {
-      ...allProps["textInputClasses"],
+    let newtextInputBaseClasses = {
+      ...allProps["textInputBaseClasses"],
       ...errorStyleProps,
     };
 
-    allProps["textInputClasses"] = newTextInputClasses;
+    allProps["textInputBaseClasses"] = newtextInputBaseClasses;
   }
 
   //   console.log("errorStyleProps", allProps);
 
   const finalClassNames = resolvedStyleProps(
-    "textInputClasses",
+    "textInputBaseClasses",
     [
+      "formInput",
       "alignment",
       "width",
       "borderRadius",
@@ -87,7 +88,7 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
   );
 
   const wrappersClassNames = resolvedStyleProps(
-    "textInputClasses",
+    "textInputBaseClasses",
     ["wrapper"],
     props,
     theme

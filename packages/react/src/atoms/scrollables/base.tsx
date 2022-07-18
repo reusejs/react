@@ -5,7 +5,7 @@ import resolvedStyleProps from "../../utils/resolvedStyleProps";
 
 export interface ScrollableBaseProps {
   children?: any;
-  scrollableClasses?:
+  scrollableBaseClasses?:
     | {
         position?: any;
         maxHeight?: any;
@@ -22,7 +22,7 @@ const ScrollableBase = (props: ScrollableBaseProps) => {
   const theme: any = useThemeContext();
 
   const finalClassNames = resolvedStyleProps(
-    "scrollableClasses",
+    "scrollableBaseClasses",
     [
       "position",
       "maxHeight",

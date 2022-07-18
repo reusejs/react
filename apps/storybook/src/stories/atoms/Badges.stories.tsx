@@ -26,7 +26,7 @@ Variant.args = {
 export const WithProps = Template.bind({});
 WithProps.args = {
   label: 'Email Address',
-  badgeClasses: {
+  badgeBaseClasses: {
     padding: 'px-3 py-0.5',
     backgroundColor: 'bg-green-100',
     textColor: 'text-green-800',

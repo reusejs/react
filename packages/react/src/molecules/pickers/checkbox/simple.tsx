@@ -1,5 +1,5 @@
 import React from "react";
-import RadioBase, { PickerRadioBaseProps } from "./base";
+import CheckboxBase, { PickerCheckboxBaseProps } from "./base";
 import { CheckIcon, XIcon } from "@heroicons/react/solid";
 import TextInputBase from "../../../atoms/textInputs/base";
 import { useThemeContext } from "../../../theme/ThemeProvider";
@@ -7,9 +7,9 @@ import resolvedStyleProps from "../../../utils/resolvedStyleProps";
 import LabelBase from "../../../atoms/labels/base";
 import theme from "../../../theme/theme";
 
-const PickerRadioSimple = (props: PickerRadioBaseProps) => {
+const PickerCheckboxSimple = (props: PickerCheckboxBaseProps) => {
   return (
-    <RadioBase
+    <CheckboxBase
       name={props.name}
       dataSource={props.dataSource}
       optionsRenderer={OptionsRenderer}
@@ -27,8 +27,9 @@ const PickerRadioSimple = (props: PickerRadioBaseProps) => {
       }
       labelBaseProps={props.labelBaseProps}
       valueKey={props.valueKey}
+      multiple={props.multiple}
       defaultSelected={props.defaultSelected}
-      pickerRadioBaseClasses={props.pickerRadioBaseClasses}
+      pickerCheckboxBaseClasses={props.pickerCheckboxBaseClasses}
     />
   );
 };
@@ -59,7 +60,7 @@ const OptionsRenderer = ({
         htmlFor=""
         id={value.value}
         name={name}
-        type="radio"
+        type="checkbox"
         checked={found === true}
         onChange={() => {}}
         textInputBaseClasses={{
@@ -90,11 +91,11 @@ const OptionsRenderer = ({
         htmlFor={value.value}
         label={value.label}
         labelBaseClasses={
-          theme.pickerRadioSimpleClasses.optionClasses.labelBaseClasses
+          theme.pickerCheckboxSimpleClasses.optionClasses.labelBaseClasses
         }
       />
     </div>
   );
 };
 
-export default PickerRadioSimple;
+export default PickerCheckboxSimple;

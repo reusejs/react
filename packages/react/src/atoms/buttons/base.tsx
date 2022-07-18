@@ -13,7 +13,7 @@ export interface ButtonBaseProps {
   variant?: string;
   buttonSuffix?: any;
   buttonPrefix?: any;
-  buttonClasses: {
+  buttonBaseClasses: {
     alignment?: any;
     focus?: any;
     font?: any;
@@ -32,7 +32,7 @@ const ButtonBase = (props: ButtonBaseProps) => {
   const theme: any = useThemeContext();
 
   const finalClassNames = resolvedStyleProps(
-    "buttonClasses",
+    "buttonBaseClasses",
     [
       "alignment",
       "focus",

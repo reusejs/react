@@ -4,11 +4,11 @@ import { useThemeContext } from "../../theme/ThemeProvider";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
 
 export interface LabelBaseProps {
-  label: string;
-  htmlFor: string;
+  label?: string;
+  htmlFor?: string;
   labelStyles?: any;
   variant?: string;
-  labelClasses?: {
+  labelBaseClasses?: {
     alignment?: any;
     color?: any;
     font?: any;
@@ -19,7 +19,7 @@ const LabelBase = (props: LabelBaseProps) => {
   const theme: any = useThemeContext();
 
   const finalClassNames = resolvedStyleProps(
-    "labelClasses",
+    "labelBaseClasses",
     ["alignment", "color", "font"],
     props,
     theme
