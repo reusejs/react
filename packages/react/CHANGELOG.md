@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.2.3
+
+### Patch Changes
+
+- be68b6d: Fix issue with span
+
 ## 6.2.2
 
 ### Patch Changes
