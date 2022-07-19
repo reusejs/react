@@ -25,7 +25,7 @@ OnLeft.args = {
     labelBaseClasses: {
       font:"font-bold",
       color:"text-cyan-700",
-      alignment: "mx-2"
+      alignment: "mr-2"
     }
   },
   dividerBaseClasses: {
