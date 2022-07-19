@@ -41,4 +41,9 @@ OnRight.args = {
   }
 };
 
+export const WithIcon = Template.bind({});
+WithIcon.args = {
+  label: <BsPlusLg size={15} color="blue"/>,
+};
+
 

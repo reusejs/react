@@ -13,6 +13,7 @@ export interface DividerBaseProps {
   //   margin?: string;
   //   color?: string;
   // };
+  icon?: JSX.Element;
   dividerBaseClasses?: {
     dividerColor?: string;
     dividerHeight?: string;
@@ -40,6 +41,9 @@ const DividerBase = (props: DividerBaseProps) => {
       )}
       {props.label !== undefined && props?.labelBaseProps === undefined && (
         <p className="mx-2">{props?.label}</p>
+      )}
+      {props.icon !== undefined && props?.labelBaseProps === undefined && props.label ===undefined && (
+        <div className="m-2">{props.icon}</div>
       )}
       {props?.dividerBaseClasses?.labelAlign === "right" ? null : (
         <div className={finaldividerClass}>{""}</div>
