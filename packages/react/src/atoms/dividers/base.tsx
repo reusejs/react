@@ -1,31 +1,47 @@
 import React, { ReactNode } from "react";
 import "../../../tailwind.css";
 import { useThemeContext } from "../../theme/ThemeProvider";
-import classNames from "../../utils/classNames";
+import resolvedDividerClassName from "../../utils/resolveDividerClassName";
+import resolvedStyleProps from "../../utils/resolvedStyleProps";
 
 export interface DividerBaseProps {
+  //String which will be displayed as divider text
   label: string;
-  htmlFor: string;
-  labelBaseClassNames?: any;
-  labelBaseStyles?: any;
+  //To create Varient of the Divider
+  variant?: string;
+  //Pass True if you want to display the label at the right of the divider
+  showAsSuffix?: boolean;
+  //Pass True if you want to display the label at the left of the divider
+  showAsPrefix?: boolean;
+  dividerBaseClasses?: {
+    //Margin for Label between the label
+    labelMargin?: any;
+    //Text color for label
+    textColor?: any;
+  };
 }
 
-const DividerBase = (props: DividerBaseProps) => {
+const DividerBase= (props:DividerBaseProps) => {
   const theme: any = useThemeContext();
-  return (
-    <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-gray-300 after:mt-0.5 after:flex-1 after:border-t after:border-gray-300">
-      <label
-        htmlFor={props.htmlFor}
-        className={classNames(
-          theme.labelBaseClassNames,
-          props.labelBaseClassNames
-        )}
-        style={props.labelBaseStyles}
-      >
-        {props.label}
-      </label>
-    </div>
+
+  const dividerClassName = resolvedDividerClassName(props);
+
+  const finalClassNames = resolvedStyleProps(
+    "dividerBaseClasses",
+    [
+      "labelMargin",
+      "textColor"
+    ],
+    props,
+    theme
   );
+
+  
+  return (
+    <div className={dividerClassName}>
+      <p className={finalClassNames}>{props.label}</p>
+    </div>
+  ) 
 };
 
 export default DividerBase;

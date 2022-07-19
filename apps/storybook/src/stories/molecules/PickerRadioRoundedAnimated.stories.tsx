@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { PickerRadioBase, LabelBase, TextInputBase } from '@reusejs/react';
+import { PickerRadioAnimated, LabelBase, TextInputBase } from '@reusejs/react';
 import { CheckIcon, XIcon } from '@heroicons/react/solid';
 
 const fetchContinents = (q = '') => {
-  let continents = ['Buying', 'Selling', 'Dying'];
-  let newContinents = continents.map((c) => {
+  const options = ['Buying', 'Selling', 'Bidding', "Marketing", "Swiming", "Running", "Dancing"];
+  let newOptions = options.map((c) => {
     return {
       value: c.toLowerCase(),
       label: c,
@@ -13,13 +13,13 @@ const fetchContinents = (q = '') => {
   });
 
   if (q != '') {
-    newContinents = newContinents.filter((c) => {
+    newOptions = newOptions.filter((c) => {
       if (c.value.search(q.toLocaleLowerCase()) > -1) {
         return c;
       }
     });
   }
-  return newContinents;
+  return newOptions;
 };
 
 const OptionsRenderer = ({
@@ -35,38 +35,26 @@ const OptionsRenderer = ({
   const [found, setFound] = React.useState<boolean>(false);
 
   React.useEffect(() => {
-    let localFound = selected.some(
+    const localFound = selected.some(
       (current: any) => current.value === value.value
     );
     setFound(localFound === false ? false : true);
   }, [selected]);
 
-  //   console.log('selected', selected, value);
+  // console.log('selected', selected, "|||", value,"|||", name);
 
   return (
     <div className='flex items-center'>
-      <TextInputBase
-        label=''
-        htmlFor=''
-        id={value.value}
-        name={name}
-        type='radio'
-        checked={found === true}
-        onChange={() => {}}
-        textInputBaseClasses={{
-          wrapper: 'hidden',
-        }}
-      />
       <LabelBase
         htmlFor={value.value}
         label={value.label}
         labelBaseClasses={{
-          alignment: `px-4 py-1 rounded-full cursor-pointer`,
+          alignment: `px-4 py-1 w-32  rounded-full cursor-pointer`,
           font: 'text-base font-medium',
           color: `${
             found === true
-              ? 'text-cyan-200 bg-gray-700 font-bold border border-gray-800'
-              : 'text-white'
+              ? 'text-amber-600 font-bold transition-all'
+              : 'text-white transition-all'
           }`,
         }}
       />
@@ -74,23 +62,82 @@ const OptionsRenderer = ({
   );
 };
 
-export default {
-  title: 'Molecules/Pickers/Radio Buttons/Rounded',
-  component: PickerRadioBase,
-  argTypes: {},
-} as ComponentMeta<typeof PickerRadioBase>;
+const fetchContinents1 = (q = '') => {
+    const options = ['Buying', 'Selling', 'Bidding', "Marketing"];
+    let newOptions = options.map((c) => {
+      return {
+        value: c.toLowerCase(),
+        label: c,
+      };
+    });
+  
+    if (q != '') {
+      newOptions = newOptions.filter((c) => {
+        if (c.value.search(q.toLocaleLowerCase()) > -1) {
+          return c;
+        }
+      });
+    }
+    return newOptions;
+  };
 
-const Template: ComponentStory<typeof PickerRadioBase> = (args) => {
+const OptionsRenderer1 = ({
+    value,
+    selected,
+    name,
+    ...props
+  }: {
+    value: any;
+    name: any;
+    selected: any;
+  }) => {
+    const [found, setFound] = React.useState<boolean>(false);
+  
+    React.useEffect(() => {
+      const localFound = selected.some(
+        (current: any) => current.value === value.value
+      );
+      setFound(localFound === false ? false : true);
+    }, [selected]);
+  
+    // console.log('selected', selected, "|||", value,"|||", name);
+  
+    return (
+      <div className='flex items-center'>
+        <LabelBase
+          htmlFor={value.value}
+          label={value.label}
+          labelBaseClasses={{
+            alignment: `px-4 py-1 w-32  rounded-full cursor-pointer`,
+            font: 'text-base font-medium',
+            color: `${
+              found === true
+                ? 'text-green-600 font-bold transition-all'
+                : 'text-white transition-all'
+            }`,
+          }}
+        />
+      </div>
+    );
+  };
+
+export default {
+  title: 'Molecules/Pickers/Radio Buttons/Animated',
+  component: PickerRadioAnimated,
+  argTypes: {},
+} as ComponentMeta<typeof PickerRadioAnimated>;
+
+const Template: ComponentStory<typeof PickerRadioAnimated> = (args) => {
   const [selected, setSelected] = useState<any>(args.defaultSelected || []);
   return (
-    <div className='w-1/2'>
+    <div className='w-fit'>
       <div className='mb-4 bg-gray-50 p-4'>
         <pre>
           <code>{JSON.stringify(selected)}</code>
         </pre>
       </div>
       <div>
-        <PickerRadioBase
+        <PickerRadioAnimated
           {...args}
           defaultSelected={selected}
           onChange={(v: any) => {
@@ -106,6 +153,7 @@ export const Default = Template.bind({});
 Default.args = {
   name: 'price',
   valueKey: 'value',
+  selectorColor: "bg-blue-700",
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
@@ -132,11 +180,12 @@ Selected.args = {
     },
   },
   name: 'price',
+  selectorColor: "bg-red-400",
   valueKey: 'value',
   dataSource: (q: any) => {
-    return fetchContinents(q);
+    return fetchContinents1(q);
   },
-  optionsRenderer: OptionsRenderer,
+  optionsRenderer: OptionsRenderer1,
   scrollableBaseProps: {
     scrollableBaseClasses: {
       position:

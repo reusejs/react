@@ -17,4 +17,16 @@ Default.args = {
   label: 'OR',
 };
 
+export const Prefix = Template.bind({});
+Prefix.args = {
+  label: 'OR',
+  showAsPrefix: true,
+};
+
+export const Suffix = Template.bind({});
+Suffix.args = {
+  label: 'OR',
+  showAsSuffix: true,
+};
+
 
