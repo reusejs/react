@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { DividerBase } from '@reusejs/react';
+import { BsPlusLg } from "react-icons/bs";
 
 export default {
   title: 'Atoms/Divider',
@@ -17,16 +18,27 @@ Default.args = {
   label: 'OR',
 };
 
-export const Prefix = Template.bind({});
-Prefix.args = {
-  label: 'OR',
-  showAsPrefix: true,
+export const OnLeft = Template.bind({});
+OnLeft.args = {
+  labelBaseProps: {
+    label:"Title",
+    labelBaseClasses: {
+      font:"font-bold",
+      color:"text-cyan-700",
+      alignment: "mx-2"
+    }
+  },
+  dividerBaseClasses: {
+    labelAlign:"left"
+  }
 };
 
-export const Suffix = Template.bind({});
-Suffix.args = {
+export const OnRight = Template.bind({});
+OnRight.args = {
   label: 'OR',
-  showAsSuffix: true,
+  dividerBaseClasses: {
+    labelAlign:"right"
+  }
 };
 
 

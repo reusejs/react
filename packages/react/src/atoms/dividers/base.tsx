@@ -1,47 +1,51 @@
 import React, { ReactNode } from "react";
 import "../../../tailwind.css";
 import { useThemeContext } from "../../theme/ThemeProvider";
-import resolvedDividerClassName from "../../utils/resolveDividerClassName";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
+import LabelBase from "../labels/base";
+import { LabelBaseProps } from "../labels/base";
 
 export interface DividerBaseProps {
-  //String which will be displayed as divider text
-  label: string;
-  //To create Varient of the Divider
   variant?: string;
-  //Pass True if you want to display the label at the right of the divider
-  showAsSuffix?: boolean;
-  //Pass True if you want to display the label at the left of the divider
-  showAsPrefix?: boolean;
+  label?: string;
+  labelBaseProps?: LabelBaseProps;
+  // dividerLabelClasses?: {
+  //   margin?: string;
+  //   color?: string;
+  // };
   dividerBaseClasses?: {
-    //Margin for Label between the label
-    labelMargin?: any;
-    //Text color for label
-    textColor?: any;
+    dividerColor?: string;
+    dividerHeight?: string;
+    labelAlign?: "left" | "right" | undefined;
   };
 }
 
-const DividerBase= (props:DividerBaseProps) => {
+const DividerBase = (props: DividerBaseProps) => {
   const theme: any = useThemeContext();
 
-  const dividerClassName = resolvedDividerClassName(props);
-
-  const finalClassNames = resolvedStyleProps(
+  const finaldividerClass = resolvedStyleProps(
     "dividerBaseClasses",
-    [
-      "labelMargin",
-      "textColor"
-    ],
+    ["dividerColor", "dividerHeight"],
     props,
     theme
   );
 
-  
   return (
-    <div className={dividerClassName}>
-      <p className={finalClassNames}>{props.label}</p>
+    <div className="flex items-center justify-center">
+      {props?.dividerBaseClasses?.labelAlign === "left" ? null : (
+        <div className={finaldividerClass}>{""}</div>
+      )}
+      {props.labelBaseProps !== undefined && (
+        <LabelBase {...props.labelBaseProps} />
+      )}
+      {props.label !== undefined && props?.labelBaseProps === undefined && (
+        <p className="mx-2">{props?.label}</p>
+      )}
+      {props?.dividerBaseClasses?.labelAlign === "right" ? null : (
+        <div className={finaldividerClass}>{""}</div>
+      )}
     </div>
-  ) 
+  );
 };
 
 export default DividerBase;
