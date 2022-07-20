@@ -4,10 +4,17 @@ import { createRoot } from "react-dom/client";
 const createConfirmation = (
   Component: any,
   unmountDelay = 1000,
-  mountingNode = document.body
+  mountingNode: any
 ) => {
   return (props: any) => {
-    const wrapper = mountingNode.appendChild(document.createElement("div"));
+    let wrapper: any;
+
+    if (mountingNode === undefined) {
+      wrapper = document.body.appendChild(document.createElement("div"));
+    } else {
+      wrapper = mountingNode.appendChild(document.createElement("div"));
+    }
+
     const root = createRoot(wrapper);
 
     const promise = new Promise((resolve, reject) => {

@@ -10,9 +10,13 @@ export default function useOutsideClicker(callback: () => void) {
   };
 
   React.useEffect(() => {
-    document.addEventListener("click", handleClickOutside, true);
+    if (document !== undefined) {
+      document.addEventListener("click", handleClickOutside, true);
+    }
     return () => {
-      document.removeEventListener("click", handleClickOutside, true);
+      if (document !== undefined) {
+        document.removeEventListener("click", handleClickOutside, true);
+      }
     };
   });
 
