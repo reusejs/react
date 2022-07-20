@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.7.1
+
+### Patch Changes
+
+- f0b5b56: Fix bug with document object in nextjs
+
 ## 6.7.0
 
 ### Minor Changes
