@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.6.0
+
+### Minor Changes
+
+- 69d0e37: Introduce modals
+
 ## 6.5.0
 
 ### Minor Changes
