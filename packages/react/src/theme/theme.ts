@@ -9,6 +9,12 @@ const badgeBaseClasses = {
   textColor: "text-blue-800",
 };
 
+//Divider
+const dividerBaseClasses = {
+  color: "bg-gray-500 w-full",
+  height: "h-[1px]",
+};
+
 // Label
 
 const labelBaseClasses = {
@@ -103,6 +109,10 @@ const pickerRadioBaseClasses = {
   wrapper: "mt-4",
 };
 
+// const pickerRadioAnimatedClasses = {
+//   wrapper: "mt-4",
+// };
+
 const pickerRadioSimpleClasses = {
   optionClasses: {
     wrapper:
@@ -161,6 +171,7 @@ const modalConfirmClasses = {
 };
 
 const theme = {
+  dividerBaseClasses,
   labelBaseClasses,
   badgeBaseClasses,
   buttonBaseClasses,
@@ -170,6 +181,7 @@ const theme = {
   scrollableBaseClasses,
   pickerSelectSimpleClasses,
   pickerRadioBaseClasses,
+  // pickerRadioAnimatedClasses,
   pickerRadioSimpleClasses,
   pickerCheckboxBaseClasses,
   pickerCheckboxSimpleClasses,

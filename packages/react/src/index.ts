@@ -3,6 +3,8 @@ export { default as theme } from "./theme/theme";
 // Start  ---- Atoms
 
 export { default as LabelBase } from "./atoms/labels/base";
+export { default as DividerBase } from "./atoms/dividers/base";
+
 export { default as ScrollableBase } from "./atoms/scrollables/base";
 
 // Badges
@@ -30,6 +32,8 @@ export { default as PickerSelectSimple } from "./molecules/pickers/select/simple
 // Pickers - Radio
 
 export { default as PickerRadioBase } from "./molecules/pickers/radio/base";
+// export { default as PickerRadioAnimated } from "./molecules/pickers/radio/animated";
+
 export { default as PickerRadioSimple } from "./molecules/pickers/radio/simple";
 
 // Pickers - Checkbox

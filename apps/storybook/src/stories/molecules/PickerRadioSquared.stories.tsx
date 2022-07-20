@@ -45,7 +45,7 @@ const OptionsRenderer = ({
 
   return (
     <div className='flex items-center'>
-      <TextInputBase
+      {/* <TextInputBase
         label=''
         htmlFor=''
         id={value.value}
@@ -56,7 +56,7 @@ const OptionsRenderer = ({
         textInputBaseClasses={{
           wrapper: 'hidden',
         }}
-      />
+      /> */}
       <LabelBase
         htmlFor={value.value}
         label={value.label}
