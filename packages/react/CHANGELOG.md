@@ -1,5 +1,29 @@
 # @reusejs/react
 
+## 6.7.2
+
+### Patch Changes
+
+- f1cf47e: Fix mountingNode issue
+
+## 6.7.1
+
+### Patch Changes
+
+- f0b5b56: Fix bug with document object in nextjs
+
+## 6.7.0
+
+### Minor Changes
+
+- 8623fd6: Introduce dividers
+
+## 6.6.0
+
+### Minor Changes
+
+- 69d0e37: Introduce modals
+
 ## 6.5.0
 
 ### Minor Changes

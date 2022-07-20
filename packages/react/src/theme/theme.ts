@@ -11,9 +11,9 @@ const badgeBaseClasses = {
 
 //Divider
 const dividerBaseClasses = {
-  dividerColor: "bg-gray-500 w-full",
-  dividerHeight: "h-[1px]",
-}
+  color: "bg-gray-500 w-full",
+  height: "h-[1px]",
+};
 
 // Label
 
@@ -79,7 +79,7 @@ const textInputBaseErrorClasses = {
 
 const pickerSelectBaseClasses = {
   wrapper: "relative mt-1 rounded-md shadow-sm",
-}
+};
 
 const pickerSelectSimpleClasses = {
   selectedDataClasses: {
@@ -137,6 +137,39 @@ const pickerCheckboxSimpleClasses = {
   },
 };
 
+// Modals - Confirm
+
+const modalConfirmClasses = {
+  yesButtonClasses: {
+    alignment:
+      "inline-flex justify-center items-center  sm:col-start-2 sm:text-sm",
+    focus:
+      "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2",
+    font: "font-medium text-base",
+    backgroundColor: "bg-blue-600 shadow-sm hover:bg-blue-700",
+    textColor: "text-white",
+    borderRadius: "rounded-md",
+    padding: "px-4 py-2 ",
+    border: "border border-transparent",
+    width: "w-full",
+    disabledClasses: "disabled:opacity-50 dark:disabled:opacity-80",
+  },
+  noButtonClasses: {
+    alignment:
+      "mt-3 inline-flex justify-center items-center sm:mt-0 sm:col-start-1",
+    focus:
+      "focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2",
+    font: "text-base font-medium",
+    backgroundColor: "bg-red-600 shadow-sm hover:bg-red-700",
+    textColor: "text-white",
+    borderRadius: "rounded-md",
+    padding: "px-4 py-2 ",
+    border: "border border-transparent",
+    width: "w-full",
+    disabledClasses: "disabled:opacity-50 dark:disabled:opacity-80",
+  },
+};
+
 const theme = {
   dividerBaseClasses,
   labelBaseClasses,
@@ -152,6 +185,7 @@ const theme = {
   pickerRadioSimpleClasses,
   pickerCheckboxBaseClasses,
   pickerCheckboxSimpleClasses,
+  modalConfirmClasses,
 };
 
 export default theme;

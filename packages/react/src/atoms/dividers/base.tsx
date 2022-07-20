@@ -9,31 +9,27 @@ export interface DividerBaseProps {
   variant?: string;
   label?: string;
   labelBaseProps?: LabelBaseProps;
-  // dividerLabelClasses?: {
-  //   margin?: string;
-  //   color?: string;
-  // };
+  labelAlign?: "left" | "right" | undefined;
   dividerBaseClasses?: {
-    dividerColor?: string;
-    dividerHeight?: string;
-    labelAlign?: "left" | "right" | undefined;
+    color?: string;
+    height?: string;
   };
 }
 
 const DividerBase = (props: DividerBaseProps) => {
   const theme: any = useThemeContext();
 
-  const finaldividerClass = resolvedStyleProps(
+  const finalDividerClasses = resolvedStyleProps(
     "dividerBaseClasses",
-    ["dividerColor", "dividerHeight"],
+    ["color", "height"],
     props,
     theme
   );
 
   return (
     <div className="flex items-center justify-center">
-      {props?.dividerBaseClasses?.labelAlign === "left" ? null : (
-        <div className={finaldividerClass}>{""}</div>
+      {props?.labelAlign === "left" ? null : (
+        <div className={finalDividerClasses}>{""}</div>
       )}
       {props.labelBaseProps !== undefined && (
         <LabelBase {...props.labelBaseProps} />
@@ -41,8 +37,8 @@ const DividerBase = (props: DividerBaseProps) => {
       {props.label !== undefined && props?.labelBaseProps === undefined && (
         <p className="mx-2">{props?.label}</p>
       )}
-      {props?.dividerBaseClasses?.labelAlign === "right" ? null : (
-        <div className={finaldividerClass}>{""}</div>
+      {props?.labelAlign === "right" ? null : (
+        <div className={finalDividerClasses}>{""}</div>
       )}
     </div>
   );

@@ -6,8 +6,8 @@ import resolvedStyleProps from "../../utils/resolvedStyleProps";
 export interface ButtonBaseProps {
   label: string;
   type?: "submit" | "reset" | "button";
-  disabled: false;
-  busy: false;
+  disabled?: false;
+  busy?: false;
   busyText?: any;
   buttonStyles?: any;
   variant?: string;
@@ -28,7 +28,7 @@ export interface ButtonBaseProps {
   onClick: () => void;
 }
 
-const ButtonBase = (props: ButtonBaseProps) => {
+const ButtonBase = React.forwardRef((props: ButtonBaseProps, ref) => {
   const theme: any = useThemeContext();
 
   const finalClassNames = resolvedStyleProps(
@@ -49,8 +49,6 @@ const ButtonBase = (props: ButtonBaseProps) => {
     theme
   );
 
-  console.log("finalClassNames", finalClassNames);
-
   return (
     <button
       type={props.type}
@@ -65,6 +63,6 @@ const ButtonBase = (props: ButtonBaseProps) => {
       {props.buttonSuffix && props.buttonSuffix}
     </button>
   );
-};
+});
 
 export default ButtonBase;
