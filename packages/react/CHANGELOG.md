@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.7.0
+
+### Minor Changes
+
+- 8623fd6: Introduce dividers
+
 ## 6.6.0
 
 ### Minor Changes
