@@ -9,14 +9,10 @@ export interface DividerBaseProps {
   variant?: string;
   label?: string;
   labelBaseProps?: LabelBaseProps;
-  // dividerLabelClasses?: {
-  //   margin?: string;
-  //   color?: string;
-  // };
+  labelAlign?: "left" | "right" | undefined;
   dividerBaseClasses?: {
-    dividerColor?: string;
-    dividerHeight?: string;
-    labelAlign?: "left" | "right" | undefined;
+    color?: string;
+    height?: string;
   };
 }
 
