@@ -11,9 +11,9 @@ const badgeBaseClasses = {
 
 //Divider
 const dividerBaseClasses = {
-  dividerColor: "bg-gray-500 w-full",
-  dividerHeight: "h-[1px]",
-}
+  color: "bg-gray-500 w-full",
+  height: "h-[1px]",
+};
 
 // Label
 
@@ -79,7 +79,7 @@ const textInputBaseErrorClasses = {
 
 const pickerSelectBaseClasses = {
   wrapper: "relative mt-1 rounded-md shadow-sm",
-}
+};
 
 const pickerSelectSimpleClasses = {
   selectedDataClasses: {
