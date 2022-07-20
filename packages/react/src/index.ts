@@ -45,6 +45,11 @@ export { default as PickerCheckboxSimple } from "./molecules/pickers/checkbox/si
 
 export { default as FileUploaderBase } from "./molecules/fileUploader/base";
 
+// File Modals
+
+export { default as ModalBase } from "./molecules/modals/base";
+export { default as ModalConfirm } from "./molecules/modals/confirm";
+
 // ******************** End  ---- Molecules *************************
 
 export {
