@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.7.2
+
+### Patch Changes
+
+- f1cf47e: Fix mountingNode issue
+
 ## 6.7.1
 
 ### Patch Changes
