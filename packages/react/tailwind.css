@@ -1,12 +1,13 @@
 @tailwind base;
 @tailwind components;
 
-li > ul {
-  transform: translatex(100%) scale(0);
+/* li > ul {
+  transform: translatex(100%) scale(1);
 }
+
 li:hover > ul {
   transform: translatex(101%) scale(1);
-}
+} */
 
 li > button svg {
   transform: rotate(-90deg);

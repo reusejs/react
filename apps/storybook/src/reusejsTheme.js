@@ -20,6 +20,19 @@ const variants = {
       padding: 'pl-7 pr-12',
     },
   },
+  slow: {
+    dropdownBaseClasses: {
+      wrapper: 'relative inline-block text-left',
+      transition: {
+        enter: 'transition ease-out duration-500',
+        enterFrom: 'transform opacity-0 scale-95',
+        enterTo: 'transform opacity-100 scale-100',
+        leave: 'transition ease-in duration-75',
+        leaveFrom: 'transform opacity-100 scale-500',
+        leaveTo: 'transform opacity-0 scale-95',
+      },
+    },
+  },
   dark: {
     pickerSelectSimpleClasses: {
       selectedDataClasses: {

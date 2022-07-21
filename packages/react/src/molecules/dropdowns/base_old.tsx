@@ -36,7 +36,7 @@ const DropdownBase = (props: DropdownBaseProps) => {
         <span>
           <svg
             className="h-4 w-4 transform fill-current transition
-  duration-150 ease-in-out group-hover:-rotate-180"
+        duration-150 ease-in-out group-hover:-rotate-180"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
           >
@@ -47,12 +47,11 @@ const DropdownBase = (props: DropdownBaseProps) => {
       <ul
         id="menu"
         aria-hidden="true"
-        className="absolute min-w-32 origin-top scale-0 transform rounded-sm border 
-  bg-white transition duration-150 ease-in-out group-hover:scale-100"
+        className="absolute min-w-32 origin-top scale-0 transform rounded-sm border bg-white transition duration-150 ease-in-out group-hover:scale-100"
       >
         <li className="rounded-sm px-3 py-1 hover:bg-gray-100">Programming</li>
         <li className="rounded-sm px-3 py-1 hover:bg-gray-100">DevOps</li>
-        <li className="relative rounded-sm px-3 py-1 hover:bg-gray-100">
+        <li className="group relative rounded-sm px-3 py-1 hover:bg-gray-100">
           <button
             aria-haspopup="true"
             aria-controls="menu-lang"
@@ -62,7 +61,7 @@ const DropdownBase = (props: DropdownBaseProps) => {
             <span className="mr-auto">
               <svg
                 className="h-4 w-4 fill-current
-      transition duration-150 ease-in-out"
+            transition duration-150 ease-in-out"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
               >
@@ -73,10 +72,7 @@ const DropdownBase = (props: DropdownBaseProps) => {
           <ul
             id="menu-lang"
             aria-hidden="true"
-            className="absolute top-0 right-0 min-w-32 origin-top-left rounded-sm 
-  border bg-white transition duration-150
-  ease-in-out
-  "
+            className="absolute top-0 right-0 min-w-32 origin-top-left translate-x-full scale-0 rounded-sm border bg-white transition duration-150 ease-in-out group-hover:scale-100"
           >
             <li className="px-3 py-1 hover:bg-gray-100">Javascript</li>
             <li className="relative rounded-sm px-3 py-1 hover:bg-gray-100">
@@ -88,7 +84,8 @@ const DropdownBase = (props: DropdownBaseProps) => {
                 <span className="flex-1 pr-1">Python</span>
                 <span className="mr-auto">
                   <svg
-                    className="h-4 w-4 fill-current transition duration-150 ease-in-out"
+                    className="h-4 w-4 fill-current
+                transition duration-150 ease-in-out"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                   >
@@ -99,10 +96,7 @@ const DropdownBase = (props: DropdownBaseProps) => {
               <ul
                 id="menu-lang-python"
                 aria-hidden="true"
-                className="absolute top-0 right-0 min-w-32 origin-top-left rounded-sm 
-border bg-white transition duration-150
-ease-in-out
-"
+                className="absolute top-0 right-0 min-w-32 origin-top-left translate-x-full rounded-sm border bg-white transition duration-150 ease-in-out"
               >
                 <li className="px-3 py-1 hover:bg-gray-100">2.7</li>
                 <li className="px-3 py-1 hover:bg-gray-100">3+</li>
