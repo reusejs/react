@@ -2,8 +2,15 @@ export { default as theme } from "./theme/theme";
 
 // Start  ---- Atoms
 
+// Labels
+
 export { default as LabelBase } from "./atoms/labels/base";
+
+// Dividers
+
 export { default as DividerBase } from "./atoms/dividers/base";
+
+// Scrollables
 
 export { default as ScrollableBase } from "./atoms/scrollables/base";
 
@@ -49,6 +56,10 @@ export { default as FileUploaderBase } from "./molecules/fileUploader/base";
 
 export { default as ModalBase } from "./molecules/modals/base";
 export { default as ModalConfirm } from "./molecules/modals/confirm";
+
+// File Modals
+
+export { default as DropdownBase } from "./molecules/dropdowns/base";
 
 // ******************** End  ---- Molecules *************************
 

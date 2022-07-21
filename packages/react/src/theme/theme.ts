@@ -170,6 +170,14 @@ const modalConfirmClasses = {
   },
 };
 
+// Dropdowns
+
+const dropdownBaseClasses = {
+  alignment: "block",
+  font: "text-sm font-medium",
+  color: "text-gray-800 dark:text-gray-100",
+};
+
 const theme = {
   dividerBaseClasses,
   labelBaseClasses,
@@ -186,6 +194,7 @@ const theme = {
   pickerCheckboxBaseClasses,
   pickerCheckboxSimpleClasses,
   modalConfirmClasses,
+  dropdownBaseClasses,
 };
 
 export default theme;

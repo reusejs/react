@@ -20,6 +20,18 @@ const variants = {
       padding: 'pl-7 pr-12',
     },
   },
+  dark: {
+    pickerSelectSimpleClasses: {
+      selectedDataClasses: {
+        background: 'bg-red-500',
+      },
+      optionClasses: {
+        wrapper:
+          'relative flex cursor-pointer flex-row items-center p-2 hover:bg-yellow-200 dark:hover:bg-yellow-700',
+        label: 'text-sm text-yellow-900 dark:text-yellow-200',
+      },
+    },
+  },
 };
 
 newTheme['variants'] = variants;

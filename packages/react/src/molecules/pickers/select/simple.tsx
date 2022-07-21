@@ -4,18 +4,25 @@ import { CheckIcon, XIcon, ArrowSmDownIcon } from "@heroicons/react/solid";
 import TextInputBase from "../../../atoms/textInputs/base";
 import { useThemeContext } from "../../../theme/ThemeProvider";
 import resolvedStyleProps from "../../../utils/resolvedStyleProps";
+import pickAndMergeVariants from "../../../utils/pickAndMergeVariants";
 
 export interface PickerSelectSimpleProps extends PickerSelectBaseProps {
   enableClear: true;
   enableClose: true;
+  enableSearch: true;
 }
 
 const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
+  // console.log("props....", props);
+
   return (
     <SelectBase
+      variant={props.variant}
       dataSource={props.dataSource}
       selectedDataRenderer={SelectedDataRenderer}
-      searchRenderer={SearchRenderer}
+      searchRenderer={
+        props.enableSearch ? SearchRenderer : SelectedDataRenderer
+      }
       optionsRenderer={OptionsRenderer}
       clearComponent={props.enableClear ? ClearComponent : undefined}
       closeComponent={props.enableClose ? CloseComponent : undefined}
@@ -45,6 +52,12 @@ const SelectedDataRenderer = (props: any) => {
 
   const [text, setText] = React.useState<string>("None Selected");
 
+  const pickerSelectSimpleClasses = pickAndMergeVariants(
+    "pickerSelectSimpleClasses",
+    props,
+    theme
+  );
+
   const wrappersClassNames = resolvedStyleProps(
     "selectedDataClasses",
     [
@@ -59,21 +72,21 @@ const SelectedDataRenderer = (props: any) => {
       "width",
     ],
     props,
-    theme.pickerSelectSimpleClasses
+    pickerSelectSimpleClasses
   );
 
   const arrowWrapperClasses = resolvedStyleProps(
     "selectedDataClasses",
     ["arrowWrapperClasses"],
     props,
-    theme.pickerSelectSimpleClasses
+    pickerSelectSimpleClasses
   );
 
   const arrowIconClasses = resolvedStyleProps(
     "selectedDataClasses",
     ["arrowIconClasses"],
     props,
-    theme.pickerSelectSimpleClasses
+    pickerSelectSimpleClasses
   );
 
   React.useEffect(() => {
@@ -105,6 +118,45 @@ const ClearComponent = () => {
 
 const NoDataComponent = () => {
   return <div className="flex h-32 items-center justify-center">No Data</div>;
+};
+
+const NoSearchRenderer = ({
+  query,
+  onSearch,
+  cancelSearch,
+}: {
+  query: any;
+  onSearch: any;
+  cancelSearch: any;
+}) => {
+  return (
+    <div>
+      <TextInputBase
+        autoComplete="off"
+        label=""
+        htmlFor=""
+        name="country"
+        type="text"
+        value={query}
+        placeholder="Type someting..."
+        onChange={(e) => {
+          onSearch(e);
+        }}
+        textInputBaseClasses={{
+          wrapper: "relative mt-0 rounded-md shadow-sm",
+        }}
+      />
+
+      <span
+        className="absolute inset-y-0 right-0 flex cursor-pointer items-center pr-2"
+        onClick={() => {
+          cancelSearch();
+        }}
+      >
+        <XIcon className="h-5 w-5 text-gray-400" />
+      </span>
+    </div>
+  );
 };
 
 const SearchRenderer = ({
@@ -165,18 +217,24 @@ const OptionsRenderer = ({
 
   const theme: any = useThemeContext();
 
+  const pickerSelectSimpleClasses = pickAndMergeVariants(
+    "pickerSelectSimpleClasses",
+    props,
+    theme
+  );
+
   const wrappersClassNames = resolvedStyleProps(
     "optionClasses",
     ["wrapper"],
     props,
-    theme.pickerSelectSimpleClasses
+    pickerSelectSimpleClasses
   );
 
   const labelClassNames = resolvedStyleProps(
     "optionClasses",
     ["label"],
     props,
-    theme.pickerSelectSimpleClasses
+    pickerSelectSimpleClasses
   );
 
   return (

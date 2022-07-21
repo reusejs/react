@@ -74,6 +74,22 @@ Default.args = {
   },
 };
 
+export const Variant = Template.bind({});
+Variant.args = {
+  variant: 'dark',
+  labelBaseProps: {
+    label: 'Country',
+    labelBaseClasses: {
+      color: 'text-yellow-800 dark:text-yellow-100',
+    },
+  },
+  valueKey: 'value',
+  multiple: false,
+  dataSource: (q: any) => {
+    return fetchContinents(q);
+  },
+};
+
 export const EnableClearAndClose = Template.bind({});
 EnableClearAndClose.args = {
   labelBaseProps: {
@@ -83,6 +99,22 @@ EnableClearAndClose.args = {
   multiple: false,
   enableClear: true,
   enableClose: true,
+  dataSource: (q: any) => {
+    return fetchContinents(q);
+  },
+};
+
+export const DisableSearch = Template.bind({});
+DisableSearch.args = {
+  labelBaseProps: {
+    label: 'Country',
+    labelBaseClasses: {
+      color: 'text-yellow-800 dark:text-yellow-100',
+    },
+  },
+  valueKey: 'value',
+  multiple: false,
+  enableSearch: false,
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
