@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.7.4
+
+### Patch Changes
+
+- c1b13fe: Introduce dropdowns, single level
+
 ## 6.7.3
 
 ### Patch Changes
