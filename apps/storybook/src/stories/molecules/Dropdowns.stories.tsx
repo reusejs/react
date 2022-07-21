@@ -22,8 +22,6 @@ function classNames(...classes: any) {
 }
 
 const ItemRenderer = (props: any) => {
-  console.log('ITem', props);
-
   let { href, label, active } = props.item;
 
   return (
