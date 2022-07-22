@@ -118,7 +118,11 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
           disabled={props.disabled}
           checked={props.checked}
           onChange={(e) => props.onChange(e.target.value)}
-          onBlur={(e) => props.onBlur(e.target.value)}
+          onBlur={(e) => {
+            if (props.onBlur) {
+              props.onBlur(e.target.value);
+            }
+          }}
         />
         {props.textInputSuffix && props.textInputSuffix}
       </div>
