@@ -126,6 +126,7 @@ const PickerSelectBase = React.forwardRef(
             <div onClick={() => setOpen(true)}>
               {props.selectedDataRenderer && (
                 <props.selectedDataRenderer
+                  variant={props.variant}
                   selected={selected}
                   selectedDataClasses={
                     props.pickerSelectSimpleClasses?.selectedDataClasses || {}
@@ -139,11 +140,16 @@ const PickerSelectBase = React.forwardRef(
             <div className="relative" ref={visRef}>
               {props.searchRenderer && (
                 <props.searchRenderer
+                  variant={props.variant}
                   query={query}
                   onSearch={(v: any) => {
                     setQuery(v);
                   }}
                   cancelSearch={() => setOpen(false)}
+                  selected={selected}
+                  selectedDataClasses={
+                    props.pickerSelectSimpleClasses?.selectedDataClasses || {}
+                  }
                 />
               )}
 
@@ -159,6 +165,7 @@ const PickerSelectBase = React.forwardRef(
                       >
                         {props.optionsRenderer && (
                           <props.optionsRenderer
+                            variant={props.variant}
                             value={option}
                             selected={selected}
                             optionsClasses={

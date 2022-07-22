@@ -1,5 +1,18 @@
 # @reusejs/react
 
+## 6.7.4
+
+### Patch Changes
+
+- c1b13fe: Introduce dropdowns, single level
+
+## 6.7.3
+
+### Patch Changes
+
+- 20cfe9f: Fix issue with variants and select picker, introduce enableSearch prop
+- 390dd48: Make mountingNode optional
+
 ## 6.7.2
 
 ### Patch Changes

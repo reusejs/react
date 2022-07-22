@@ -2,4 +2,4 @@
 "@reusejs/react": patch
 ---
 
-Make mountingNode optional
+Introduce checkIcon Classes
