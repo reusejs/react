@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.7.6
+
+### Patch Changes
+
+- 3b86a90: Make onBlur optional
+
 ## 6.7.5
 
 ### Patch Changes
