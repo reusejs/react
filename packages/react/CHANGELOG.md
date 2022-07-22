@@ -1,5 +1,12 @@
 # @reusejs/react
 
+## 6.7.5
+
+### Patch Changes
+
+- bbcca83: Introduce checkIcon Classes
+- 11e3c6c: Add onBlur for text input
+
 ## 6.7.4
 
 ### Patch Changes
