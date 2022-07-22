@@ -44,6 +44,7 @@ export interface TextInputBaseProps {
     placeholderColor?: string;
   };
   onChange: (value?: string) => void;
+  onBlur: (value?: string)=> void;
 }
 
 const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
@@ -117,6 +118,7 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
           disabled={props.disabled}
           checked={props.checked}
           onChange={(e) => props.onChange(e.target.value)}
+          onBlur={(e)=> props.onBlur(e.target.value)}
         />
         {props.textInputSuffix && props.textInputSuffix}
       </div>
