@@ -29,6 +29,18 @@ Default.args = {
   placeholder: '0.00',
 };
 
+export const OnBlur = Template.bind({});
+OnBlur.args = {
+  label: 'Price',
+  htmlFor: 'price',
+  name: 'price',
+  type: 'text',
+  placeholder: '0.00',
+  onBlur: () => {
+    alert('Called onBlur');
+  },
+};
+
 export const Password = Template.bind({});
 Password.args = {
   label: 'Password',
