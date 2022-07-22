@@ -1,5 +1,18 @@
 # @reusejs/react
 
+## 6.7.6
+
+### Patch Changes
+
+- 3b86a90: Make onBlur optional
+
+## 6.7.5
+
+### Patch Changes
+
+- bbcca83: Introduce checkIcon Classes
+- 11e3c6c: Add onBlur for text input
+
 ## 6.7.4
 
 ### Patch Changes
