@@ -45,6 +45,7 @@ export interface TextInputBaseProps {
   };
   onChange: (value?: string) => void;
   onBlur?: (value?: string) => void;
+  onFocus?: (value?: string) => void;
 }
 
 const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
@@ -66,8 +67,6 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
 
     allProps["textInputBaseClasses"] = newtextInputBaseClasses;
   }
-
-  //   console.log("errorStyleProps", allProps);
 
   const finalClassNames = resolvedStyleProps(
     "textInputBaseClasses",
@@ -95,8 +94,6 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
     theme
   );
 
-  // console.log(finalClassNames);
-
   const textInputRef = React.useRef(null);
 
   return (
@@ -121,6 +118,11 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
           onBlur={(e) => {
             if (props.onBlur) {
               props.onBlur(e.target.value);
+            }
+          }}
+          onFocus={(e) => {
+            if (props.onFocus) {
+              props.onFocus(e.target.value);
             }
           }}
         />
