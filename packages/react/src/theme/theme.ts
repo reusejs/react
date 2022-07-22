@@ -100,6 +100,7 @@ const pickerSelectSimpleClasses = {
     wrapper:
       "relative flex cursor-pointer flex-row items-center p-2 hover:bg-gray-200 dark:hover:bg-gray-700",
     label: "text-sm text-gray-900 dark:text-gray-200",
+    checkIcon: "h-5 w-5 text-gray-900 dark:text-white",
   },
 };
 

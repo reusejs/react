@@ -237,12 +237,19 @@ const OptionsRenderer = ({
     pickerSelectSimpleClasses
   );
 
+  const checkIconClassNames = resolvedStyleProps(
+    "optionClasses",
+    ["checkIcon"],
+    props,
+    pickerSelectSimpleClasses
+  );
+
   return (
     <div className={wrappersClassNames}>
       <span className={labelClassNames}>{value.label}</span>
       {found === true && (
         <span className="absolute inset-y-0 right-0 flex items-center pr-4">
-          <CheckIcon className="h-5 w-5 text-gray-900 dark:text-white" />
+          <CheckIcon className={checkIconClassNames} />
         </span>
       )}
     </div>
