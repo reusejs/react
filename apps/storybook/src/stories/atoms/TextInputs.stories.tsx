@@ -37,7 +37,19 @@ OnBlur.args = {
   type: 'text',
   placeholder: '0.00',
   onBlur: () => {
-    alert('Called onBlur');
+    console.log("Called on Blur");
+  },
+};
+
+export const onFocus = Template.bind({});
+onFocus.args = {
+  label: 'Price',
+  htmlFor: 'price',
+  name: 'price',
+  type: 'text',
+  placeholder: '0.00',
+  onFocus: () => {
+    console.log("Called on Focus");
   },
 };
 
