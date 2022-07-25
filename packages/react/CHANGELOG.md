@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.7.8
+
+### Patch Changes
+
+- 3046c76: Make changes to select component
+
 ## 6.7.7
 
 ### Patch Changes
