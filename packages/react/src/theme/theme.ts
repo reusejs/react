@@ -102,6 +102,9 @@ const pickerSelectSimpleClasses = {
     label: "text-sm text-gray-900 dark:text-gray-200",
     checkIcon: "h-5 w-5 text-gray-900 dark:text-white",
   },
+  noData: {
+    wrapper: "flex h-32 items-center justify-center bg-white dark:bg-gray-900",
+  },
 };
 
 // Picker Radio
