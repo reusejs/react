@@ -1,5 +1,12 @@
 # @reusejs/react
 
+## 6.7.7
+
+### Patch Changes
+
+- 07f5da3: Add onFocus to TextInput
+- d9acd73: Fix onBlur issue
+
 ## 6.7.6
 
 ### Patch Changes
