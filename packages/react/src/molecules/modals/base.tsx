@@ -14,7 +14,7 @@ export interface ModalBaseProps {
   onAction?: any;
   content?: any;
   backgroundColor?: string;
-  opacity ?: string;
+  backgroundOpacity ?: string;
   modalBaseClasses ?: {
     background?: string,
     font?: string,
@@ -47,7 +47,7 @@ const ModalBase = (props: ModalBaseProps) => {
   );
 
   return (
-    <ModalWrapper showModal={props.visible} resolveModal={props.onAction} backgroundColor={props.backgroundColor} opacity={props.opacity}>
+    <ModalWrapper showModal={props.visible} resolveModal={props.onAction} backgroundColor={props.backgroundColor} backgroundOpacity={props.backgroundOpacity}>
       <div
         className={"relative transform overflow-hidden transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6 " + modalClassNames}
         ref={visRef}

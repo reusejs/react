@@ -51,8 +51,6 @@ const Template: ComponentStory<typeof ModalBase> = (args) => {
   const openModal = async () => {
     let result = await ModalBase({
       content: Content,
-      // backgroundColor: "bg-cyan-200",
-      // opacity: "opacity-40",
     });
     console.log('Result', result);
   };
