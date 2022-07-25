@@ -13,7 +13,7 @@ export interface ButtonBaseProps {
   variant?: string;
   buttonSuffix?: any;
   buttonPrefix?: any;
-  buttonBaseClasses: {
+  buttonBaseClasses?: {
     alignment?: any;
     focus?: any;
     font?: any;
