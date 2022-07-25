@@ -44,6 +44,15 @@ const variants = {
         label: 'text-sm text-yellow-900 dark:text-yellow-200',
         checkIcon: 'h-5 w-5 text-blue-400 dark:text-white',
       },
+      noData: {
+        wrapper: 'flex h-32 items-center justify-center bg-red-200',
+      },
+    },
+    textInputBaseClasses: {
+      backgroundColor: 'bg-red-500',
+      borderRadius: 'rounded',
+      textColor: 'text-white',
+      border: 'border-none',
     },
   },
 };
