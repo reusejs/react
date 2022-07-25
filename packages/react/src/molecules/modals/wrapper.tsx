@@ -6,6 +6,8 @@ export interface ModalWrapperProps {
   children?: any;
   showModal?: any;
   resolveModal?: any;
+  backgroundColor?: any;
+  opacity ?: any;
 }
 
 function ModalWrapper(props: ModalWrapperProps) {
@@ -25,12 +27,12 @@ function ModalWrapper(props: ModalWrapperProps) {
           as={Fragment}
           enter="ease-out duration-300"
           enterFrom="opacity-0"
-          enterTo="opacity-100"
+          enterTo={props.opacity ? props.opacity : "opacity-100"}
           leave="ease-in duration-200"
-          leaveFrom="opacity-100"
+          leaveFrom={props.opacity ? props.opacity : "opacity-100"}
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-red-500 bg-opacity-75 transition-opacity" />
+          <div className={"fixed inset-0 transition-opacity " + (props.backgroundColor === undefined ? " bg-red-300 " : props.backgroundColor+" " )} />
         </Transition.Child>
 
         <div className="fixed inset-0 z-10 overflow-y-auto">

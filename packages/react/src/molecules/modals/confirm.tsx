@@ -20,7 +20,7 @@ const ModalConfirm = (props: ModalConfirmProps) => {
   const cancelButtonRef = useRef(null);
 
   return (
-    <ModalWrapper showModal={props.visible} resolveModal={props.onAction}>
+    <ModalWrapper showModal={props.visible} resolveModal={props.onAction} backgroundColor={props.backgroundColor} opacity={props.opacity}>
       <div className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
         {props.content && <props.content />}
         <div className="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">

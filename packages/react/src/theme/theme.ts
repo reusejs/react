@@ -140,6 +140,15 @@ const pickerCheckboxSimpleClasses = {
 
 // Modals - Confirm
 
+const modalBaseClasses = {
+  background: "bg-white",
+    font: "",
+    border: "rounded-lg",
+    padding: "px-4 pt-5 pb-4",
+    alignment: "text-left",
+    shadow: "shadow-xl", 
+}
+
 const modalConfirmClasses = {
   yesButtonClasses: {
     alignment:
@@ -204,6 +213,7 @@ const theme = {
   pickerRadioSimpleClasses,
   pickerCheckboxBaseClasses,
   pickerCheckboxSimpleClasses,
+  modalBaseClasses,
   modalConfirmClasses,
   dropdownBaseClasses,
 };
