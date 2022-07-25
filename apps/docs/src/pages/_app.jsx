@@ -8,11 +8,7 @@ const newTheme = {
 }
 
 const variants = {
-  primary: {
-    labelClasses: {
-      color: 'text-cyan-200',
-    },
-  },
+  primary: {},
 }
 
 newTheme['variants'] = variants

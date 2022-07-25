@@ -17,12 +17,14 @@
     "release": "standard-version",
     "push-release": "git push --follow-tags origin main",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
-    "run": "start-storybook -p 6006",
+    "run": "start-storybook --no-manager-cache -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --exit-zero-on-changes --auto-accept-changes"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.6",
     "@reusejs/react": "*",
+    "@storybook/react": "^6.5.9",
     "clsx": "^1.2.1",
     "next": "^12.2.1",
     "react": "^18.2.0",
