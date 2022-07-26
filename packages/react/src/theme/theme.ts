@@ -54,6 +54,7 @@ const buttonBaseClasses = {
 
 const textInputBaseClasses = {
   wrapper: "relative mt-1 rounded-md shadow-sm",
+  backgroundColor: "bg-white dark:bg-gray-900",
   formInput: "form-input",
   alignment: "block",
   width: "w-full",
@@ -63,7 +64,6 @@ const textInputBaseClasses = {
   padding: "",
   font: "font-normal sm:text-sm",
   textColor: "text-gray-900 dark:text-white",
-  backgroundColor: "bg-white dark:bg-gray-900",
   placeholderColor: "",
 };
 
@@ -145,12 +145,12 @@ const pickerCheckboxSimpleClasses = {
 
 const modalBaseClasses = {
   background: "bg-white",
-    font: "",
-    border: "rounded-lg",
-    padding: "px-4 pt-5 pb-4",
-    alignment: "text-left",
-    shadow: "shadow-xl", 
-}
+  font: "",
+  border: "rounded-lg",
+  padding: "px-4 pt-5 pb-4",
+  alignment: "text-left",
+  shadow: "shadow-xl",
+};
 
 const modalConfirmClasses = {
   yesButtonClasses: {
