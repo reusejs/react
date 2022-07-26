@@ -13,7 +13,7 @@ export interface PickerSelectSimpleProps extends PickerSelectBaseProps {
 }
 
 const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
-  console.log("props....", props);
+  // console.log("props....", props);
 
   return (
     <SelectBase
@@ -52,7 +52,7 @@ const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
 
 const SelectedDataRenderer = (props: any) => {
   const theme: any = useThemeContext();
-  console.log("props are>>>",props);
+  // console.log("props are>>>",props);
   const [text, setText] = React.useState<string>(props.defaultString ? props.defaultString : "None Selected");
 
   const pickerSelectSimpleClasses = pickAndMergeVariants(
