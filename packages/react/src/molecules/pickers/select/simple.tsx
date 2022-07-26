@@ -13,7 +13,7 @@ export interface PickerSelectSimpleProps extends PickerSelectBaseProps {
 }
 
 const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
-  // console.log("props....", props);
+  console.log("props....", props);
 
   return (
     <SelectBase
@@ -40,6 +40,7 @@ const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
       multiple={props.multiple}
       valueKey={props.valueKey}
       defaultSelected={props.defaultSelected}
+      defaultString={props.defaultString}
       defaultQuery={props.defaultQuery}
       defaultOpen={props.defaultOpen}
       pickerSelectSimpleClasses={props.pickerSelectSimpleClasses}
@@ -49,8 +50,8 @@ const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
 
 const SelectedDataRenderer = (props: any) => {
   const theme: any = useThemeContext();
-
-  const [text, setText] = React.useState<string>("None Selected");
+  console.log("props are>>>",props);
+  const [text, setText] = React.useState<string>(props.defaultString ? props.defaultString : "None Selected");
 
   const pickerSelectSimpleClasses = pickAndMergeVariants(
     "pickerSelectSimpleClasses",
@@ -94,7 +95,7 @@ const SelectedDataRenderer = (props: any) => {
       let tempText = props.selected.map((val: any) => val.label).join("; ");
       setText(tempText);
     } else {
-      setText("None Selected");
+      setText(props.defaultString ? props.defaultString : "None Selected");
     }
   }, [props.selected]);
 
