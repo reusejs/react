@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.7.12
+
+### Patch Changes
+
+- 786b2e6: Fix theme issue
+
 ## 6.7.11
 
 ### Patch Changes
