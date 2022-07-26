@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.7.9
+
+### Patch Changes
+
+- b23c04b: Extract CSS
+
 ## 6.7.8
 
 ### Patch Changes
