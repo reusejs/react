@@ -1,5 +1,12 @@
 # @reusejs/react
 
+## 6.7.11
+
+### Patch Changes
+
+- f903e88: Add terser
+- 87609be: Remove base classes
+
 ## 6.7.10
 
 ### Patch Changes
