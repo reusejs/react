@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.7.10
+
+### Patch Changes
+
+- 36fe61d: Extract css to single styles.css file
+
 ## 6.7.9
 
 ### Patch Changes
