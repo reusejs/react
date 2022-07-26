@@ -44,6 +44,8 @@ const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
       defaultQuery={props.defaultQuery}
       defaultOpen={props.defaultOpen}
       pickerSelectSimpleClasses={props.pickerSelectSimpleClasses}
+      refresh={props.refresh}
+      error={props.error}
     />
   );
 };
@@ -117,10 +119,24 @@ const ClearComponent = () => {
   return <span className="text-sm font-medium">Clear</span>;
 };
 
-const NoDataComponent = () => {
-  return <div className="flex h-32 items-center justify-center">No Data</div>;
-};
+const NoDataComponent = (props: any) => {
+  const theme: any = useThemeContext();
 
+  const pickerSelectSimpleClasses = pickAndMergeVariants(
+    "pickerSelectSimpleClasses",
+    props,
+    theme
+  );
+
+  const wrappersClassNames = resolvedStyleProps(
+    "noData",
+    ["wrapper"],
+    props,
+    pickerSelectSimpleClasses
+  );
+
+  return <div className={`${wrappersClassNames}`}>No Data</div>;
+}
 const NoSearchRenderer = ({
   query,
   onSearch,
@@ -164,10 +180,12 @@ const SearchRenderer = ({
   query,
   onSearch,
   cancelSearch,
+  variant
 }: {
   query: any;
   onSearch: any;
   cancelSearch: any;
+  variant: any;
 }) => {
   return (
     <div>
@@ -182,6 +200,7 @@ const SearchRenderer = ({
         onChange={(e) => {
           onSearch(e);
         }}
+        variant={variant}
         textInputBaseClasses={{
           wrapper: "relative mt-0 rounded-md shadow-sm",
         }}

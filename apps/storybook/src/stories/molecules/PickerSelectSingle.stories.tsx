@@ -78,6 +78,7 @@ Default.args = {
 export const Variant = Template.bind({});
 Variant.args = {
   variant: 'dark',
+  enableSearch: true,
   labelBaseProps: {
     label: 'Country',
     labelBaseClasses: {

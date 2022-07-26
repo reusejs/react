@@ -184,7 +184,10 @@ const PickerSelectBase = React.forwardRef(
 
               {options.length === 0 && (
                 <ScrollableBase {...props.scrollableBaseProps}>
-                  {props.noDataComponent && <props.noDataComponent />}
+                  {props.noDataComponent && (
+                    <props.noDataComponent variant={props.variant} />
+                  )}
+
                 </ScrollableBase>
               )}
             </div>

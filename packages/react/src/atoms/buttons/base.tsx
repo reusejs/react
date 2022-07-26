@@ -28,7 +28,7 @@ export interface ButtonBaseProps {
   onClick: () => void;
 }
 
-const ButtonBase = React.forwardRef((props: ButtonBaseProps, ref) => {
+const ButtonBase = (props: ButtonBaseProps) => {
   const theme: any = useThemeContext();
 
   const finalClassNames = resolvedStyleProps(
@@ -49,6 +49,8 @@ const ButtonBase = React.forwardRef((props: ButtonBaseProps, ref) => {
     theme
   );
 
+  console.log("This is button component");
+
   return (
     <button
       type={props.type}
@@ -63,6 +65,6 @@ const ButtonBase = React.forwardRef((props: ButtonBaseProps, ref) => {
       {props.buttonSuffix && props.buttonSuffix}
     </button>
   );
-});
+};
 
 export default ButtonBase;

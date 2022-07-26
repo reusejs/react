@@ -27,6 +27,9 @@ Default.args = {
   name: 'price',
   type: 'text',
   placeholder: '0.00',
+  textInputBaseClasses: {
+    backgroundColor: 'bg-red-500 dark:bg-gray-900',
+  },
 };
 
 export const OnBlur = Template.bind({});
@@ -37,7 +40,7 @@ OnBlur.args = {
   type: 'text',
   placeholder: '0.00',
   onBlur: () => {
-    console.log("Called on Blur");
+    console.log('Called on Blur');
   },
 };
 
@@ -49,7 +52,7 @@ onFocus.args = {
   type: 'text',
   placeholder: '0.00',
   onFocus: () => {
-    console.log("Called on Focus");
+    console.log('Called on Focus');
   },
 };
 

@@ -54,6 +54,7 @@ const buttonBaseClasses = {
 
 const textInputBaseClasses = {
   wrapper: "relative mt-1 rounded-md shadow-sm",
+  backgroundColor: "bg-white dark:bg-gray-900",
   formInput: "form-input",
   alignment: "block",
   width: "w-full",
@@ -63,7 +64,6 @@ const textInputBaseClasses = {
   padding: "",
   font: "font-normal sm:text-sm",
   textColor: "text-gray-900 dark:text-white",
-  backgroundColor: "bg-white dark:bg-gray-900",
   placeholderColor: "",
 };
 
@@ -101,6 +101,9 @@ const pickerSelectSimpleClasses = {
       "relative flex cursor-pointer flex-row items-center p-2 hover:bg-gray-200 dark:hover:bg-gray-700",
     label: "text-sm text-gray-900 dark:text-gray-200",
     checkIcon: "h-5 w-5 text-gray-900 dark:text-white",
+  },
+  noData: {
+    wrapper: "flex h-32 items-center justify-center bg-white dark:bg-gray-900",
   },
 };
 
@@ -142,12 +145,12 @@ const pickerCheckboxSimpleClasses = {
 
 const modalBaseClasses = {
   background: "bg-white",
-    font: "",
-    border: "rounded-lg",
-    padding: "px-4 pt-5 pb-4",
-    alignment: "text-left",
-    shadow: "shadow-xl", 
-}
+  font: "",
+  border: "rounded-lg",
+  padding: "px-4 pt-5 pb-4",
+  alignment: "text-left",
+  shadow: "shadow-xl",
+};
 
 const modalConfirmClasses = {
   yesButtonClasses: {
