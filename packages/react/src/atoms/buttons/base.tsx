@@ -49,6 +49,8 @@ const ButtonBase = React.forwardRef((props: ButtonBaseProps, ref) => {
     theme
   );
 
+  console.log("This is button component");
+
   return (
     <button
       type={props.type}

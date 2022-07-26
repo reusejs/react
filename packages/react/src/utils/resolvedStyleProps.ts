@@ -8,11 +8,12 @@ const resolvedStyleProps = (
     return (
       (componentProps[propName] && componentProps[propName][s]) ||
       (componentProps.variant &&
+        theme &&
         theme.variants &&
         theme.variants[componentProps.variant] &&
         theme.variants[componentProps.variant][propName] &&
         theme.variants[componentProps.variant][propName][s]) ||
-      theme[propName][s]
+      (theme && theme[propName] && theme[propName][s])
     );
   });
 

@@ -36,6 +36,8 @@ const BadgeBase = (props: BadgeBaseProps) => {
     theme
   );
 
+  console.log("This is badge component");
+
   return (
     <span className={finalClassNames} style={props.badgeStyles}>
       {props.badgePrefix && props.badgePrefix}
