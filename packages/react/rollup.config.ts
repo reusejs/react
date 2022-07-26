@@ -21,6 +21,7 @@ export default {
     resolve(),
     commonjs(),
     postcss({
+      extract: true,
       config: {
         path: "./postcss.config.js",
       },
