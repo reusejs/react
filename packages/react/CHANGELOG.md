@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.7.13
+
+### Patch Changes
+
+- 83c45d2: Fix
+
 ## 6.7.12
 
 ### Patch Changes
