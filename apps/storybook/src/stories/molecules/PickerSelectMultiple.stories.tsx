@@ -63,6 +63,7 @@ const Template: ComponentStory<typeof PickerSelectSimple> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
+  defaultString: 'Select Countries',
   labelBaseProps: {
     label: 'Country',
   },

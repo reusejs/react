@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { PickerSelectSimple } from '@reusejs/react';
-import { CheckIcon, XIcon } from '@heroicons/react/solid';
-import { TextInputBase } from '@reusejs/react';
+// import { CheckIcon, XIcon } from '@heroicons/react/solid';
+// import { TextInputBase } from '@reusejs/react';
 
 const fetchContinents = (q = '') => {
   let continents = [
@@ -77,6 +77,7 @@ Default.args = {
 
 export const Variant = Template.bind({});
 Variant.args = {
+  defaultString: 'List of codes',
   variant: 'dark',
   enableSearch: true,
   labelBaseProps: {
