@@ -53,6 +53,7 @@ const SelectedDataRenderer = (props: any) => {
   const theme: any = useThemeContext();
 
   const [text, setText] = React.useState<string>(props.defaultString ? props.defaultString : "None Selected");
+  // console.log("Props here are>>", props);
 
   const pickerSelectSimpleClasses = pickAndMergeVariants(
     "pickerSelectSimpleClasses",
@@ -91,6 +92,13 @@ const SelectedDataRenderer = (props: any) => {
     pickerSelectSimpleClasses
   );
 
+  const spanFinalClases = resolvedStyleProps(
+    "selectedDataClasses",
+    ["spanBaseClasses"],
+    props,
+    pickerSelectSimpleClasses
+  );
+
   React.useEffect(() => {
     if (props.selected.length > 0) {
       let tempText = props.selected.map((val: any) => val.label).join("; ");
@@ -102,7 +110,7 @@ const SelectedDataRenderer = (props: any) => {
 
   return (
     <div className={wrappersClassNames}>
-      <span>{text}</span>
+      <span className={spanFinalClases}>{text}</span>
       <span className={arrowWrapperClasses}>
         <ArrowSmDownIcon className={arrowIconClasses} />
       </span>

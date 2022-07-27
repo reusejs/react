@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { PickerSelectSimple } from '@reusejs/react';
-import { CheckIcon, XIcon } from '@heroicons/react/solid';
-import { TextInputBase } from '@reusejs/react';
+// import { CheckIcon, XIcon } from '@heroicons/react/solid';
+// import { TextInputBase } from '@reusejs/react';
 
 const fetchContinents = (q = '') => {
   let continents = [
@@ -13,6 +13,14 @@ const fetchContinents = (q = '') => {
     'Europe',
     'North America',
     'South America',
+    "Japan",
+    "Korea",
+    "Spain",
+    "France",
+    "England",
+    "India",
+    "China",
+    "SomeRandomCountry",
   ];
   let newContinents = continents.map((c) => {
     return {
@@ -88,4 +96,9 @@ Selected.args = {
     { label: 'Europe', value: 'europe' },
     { label: 'Asia', value: 'asia' },
   ],
+  pickerSelectSimpleClasses: {
+    selectedDataClasses: {
+      spanBaseClasses: " ",
+    }
+  }
 };
