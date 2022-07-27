@@ -1,5 +1,12 @@
 # @reusejs/react
 
+## 6.7.14
+
+### Patch Changes
+
+- 13d4a23: Remove ref from confirm
+- eb32f75: Remove forwardRef from Button
+
 ## 6.7.13
 
 ### Patch Changes
