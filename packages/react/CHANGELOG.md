@@ -1,5 +1,55 @@
 # @reusejs/react
 
+## 6.7.15
+
+### Patch Changes
+
+- b480aea: Add spanBaseClasses
+
+## 6.7.14
+
+### Patch Changes
+
+- 13d4a23: Remove ref from confirm
+- eb32f75: Remove forwardRef from Button
+
+## 6.7.13
+
+### Patch Changes
+
+- 83c45d2: Fix
+
+## 6.7.12
+
+### Patch Changes
+
+- 786b2e6: Fix theme issue
+
+## 6.7.11
+
+### Patch Changes
+
+- f903e88: Add terser
+- 87609be: Remove base classes
+
+## 6.7.10
+
+### Patch Changes
+
+- 36fe61d: Extract css to single styles.css file
+
+## 6.7.9
+
+### Patch Changes
+
+- b23c04b: Extract CSS
+
+## 6.7.8
+
+### Patch Changes
+
+- 3046c76: Make changes to select component
+
 ## 6.7.7
 
 ### Patch Changes

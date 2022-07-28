@@ -54,6 +54,7 @@ const buttonBaseClasses = {
 
 const textInputBaseClasses = {
   wrapper: "relative mt-1 rounded-md shadow-sm",
+  backgroundColor: "bg-white dark:bg-gray-900",
   formInput: "form-input",
   alignment: "block",
   width: "w-full",
@@ -63,7 +64,6 @@ const textInputBaseClasses = {
   padding: "",
   font: "font-normal sm:text-sm",
   textColor: "text-gray-900 dark:text-white",
-  backgroundColor: "bg-white dark:bg-gray-900",
   placeholderColor: "",
 };
 
@@ -95,6 +95,7 @@ const pickerSelectSimpleClasses = {
     arrowWrapperClasses:
       "pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2",
     arrowIconClasses: "h-5 w-5 text-gray-400",
+    spanBaseClasses:"inline-block overflow-hidden text-ellipsis whitespace-nowrap w-11/12"
   },
   optionClasses: {
     wrapper:
@@ -142,6 +143,15 @@ const pickerCheckboxSimpleClasses = {
 };
 
 // Modals - Confirm
+
+const modalBaseClasses = {
+  background: "bg-white",
+  font: "",
+  border: "rounded-lg",
+  padding: "px-4 pt-5 pb-4",
+  alignment: "text-left",
+  shadow: "shadow-xl",
+};
 
 const modalConfirmClasses = {
   yesButtonClasses: {
@@ -235,6 +245,7 @@ const theme = {
   pickerRadioSimpleClasses,
   pickerCheckboxBaseClasses,
   pickerCheckboxSimpleClasses,
+  modalBaseClasses,
   modalConfirmClasses,
   dropdownBaseClasses,
   tagInputBaseClasses,

@@ -73,7 +73,6 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
   const finalClassNames = resolvedStyleProps(
     "textInputBaseClasses",
     [
-      "formInput",
       "alignment",
       "width",
       "borderRadius",
@@ -84,10 +83,13 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
       "textColor",
       "backgroundColor",
       "placeholderColor",
+      "formInput",
     ],
     allProps,
     theme
   );
+
+  console.log("finalClassNames", finalClassNames);
 
   const wrappersClassNames = resolvedStyleProps(
     "textInputBaseClasses",
