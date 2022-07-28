@@ -21,7 +21,9 @@ const Template: ComponentStory<typeof TagInputBase> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  placeholder: 'Enter Tag and Press Enter',
+  textInputBaseProps: {
+    placeholder: 'Enter Tag..',
+  },
   badgeBaseProps: {
     badgeBaseClasses: {
       borderRadius: 'rounded-md',
@@ -34,18 +36,24 @@ Default.args = {
 
 export const Styled = Template.bind({});
 Styled.args = {
-  placeholder: 'Enter Tag',
+  textInputBaseProps: {
+    placeholder: 'Enter Tag..',
+  },
 };
 
 export const variant = Template.bind({});
 variant.args = {
-  placeholder: 'Enter Tag',
+  textInputBaseProps: {
+    placeholder: 'Enter Tag..',
+  },
   variant: 'dark',
 };
 
 export const defaultSelected = Template.bind({});
 defaultSelected.args = {
-  placeholder: 'Enter Tag',
+  textInputBaseProps: {
+    placeholder: 'Enter Tag..',
+  },
   badgeBaseProps: {
     badgeBaseClasses: {
       borderRadius: 'rounded-md',

@@ -118,7 +118,6 @@ const TagInputBase = (props: TagInputBaseProps) => {
             htmlFor=""
             name="tag-input"
             type="text"
-            placeholder={props.placeholder}
             onChange={(e) => {}}
             onKeyDown={(e) => inputKeyDown(e)}
             variant={props.variant}
