@@ -54,6 +54,34 @@ const variants = {
       textColor: 'text-white',
       border: 'border-none',
     },
+
+    tagInputBaseClasses: {
+      wrapper: {
+        background: 'bg-red-200',
+        border: 'rounded	border-2 border-black',
+        display: 'flex flex-wrap',
+      },
+      list: {
+        display: 'inline-flex w-full flex-wrap',
+      },
+      listItem: {
+        margin: 'm-1',
+        display: 'flex list-none items-center',
+        height: 'h-8',
+        background: 'bg-cyan-400',
+        padding: 'p-1',
+        color: 'text-white',
+        font: 'font-light ',
+        border: 'rounded',
+      },
+      closeIcon: {
+        margin: 'm-1',
+        height: 'h-4',
+        width: 'w-4',
+        color: 'text-grey-400',
+        font: 'cursor-pointer',
+      },
+    },
   },
 };
 
