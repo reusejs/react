@@ -192,6 +192,34 @@ const dropdownBaseClasses = {
     "absolute left-0 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none",
 };
 
+const tagInputBaseClasses = {
+  wrapper: {
+    background: "bg-blue-200",
+    border: "rounded	border-2 border-black",
+    display: "flex flex-wrap",
+  },
+  list: {
+    display: "inline-flex w-full flex-wrap",
+  },
+  listItem: {
+    margin: "m-1",
+    display: "flex list-none items-center",
+    height: "h-8",
+    background: "bg-cyan-400",
+    padding: "p-1",
+    color: "text-white",
+    font: "font-light ",
+    border: "rounded",
+  },
+  closeIcon: {
+    margin: "m-1",
+    height: "h-4",
+    width: "w-4",
+    color: "text-white",
+    font: "cursor-pointer",
+  },
+};
+
 const theme = {
   dividerBaseClasses,
   labelBaseClasses,
@@ -209,6 +237,7 @@ const theme = {
   pickerCheckboxSimpleClasses,
   modalConfirmClasses,
   dropdownBaseClasses,
+  tagInputBaseClasses,
 };
 
 export default theme;

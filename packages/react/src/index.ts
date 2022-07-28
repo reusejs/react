@@ -27,6 +27,10 @@ export { default as ButtonBase } from "./atoms/buttons/base";
 export { default as TextInputBase } from "./atoms/textInputs/base";
 export { default as PasswordTextInputBase } from "./atoms/textInputs/password";
 
+// Tags
+
+export { default as TagInputBase } from "./atoms/tags/base";
+
 // ******************** End  ---- Atoms *************************
 
 // Start  ---- Molecules
