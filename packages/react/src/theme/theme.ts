@@ -53,7 +53,8 @@ const buttonBaseClasses = {
 // Text Input
 
 const textInputBaseClasses = {
-  wrapper: "relative mt-1 rounded-md shadow-sm",
+  wrapper: "relative rounded-md shadow-sm",
+  margin: "mt-1",
   backgroundColor: "bg-white dark:bg-gray-900",
   formInput: "form-input",
   alignment: "block",
@@ -95,7 +96,8 @@ const pickerSelectSimpleClasses = {
     arrowWrapperClasses:
       "pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2",
     arrowIconClasses: "h-5 w-5 text-gray-400",
-    spanBaseClasses:"inline-block overflow-hidden text-ellipsis whitespace-nowrap w-11/12"
+    spanBaseClasses:
+      "inline-block overflow-hidden text-ellipsis whitespace-nowrap w-11/12",
   },
   optionClasses: {
     wrapper:
@@ -204,28 +206,21 @@ const dropdownBaseClasses = {
 
 const tagInputBaseClasses = {
   wrapper: {
-    background: "bg-blue-200",
-    border: "rounded	border-2 border-black",
+    padding: "px-2 py-2",
+    background: "bg-white",
+    border: "rounded border border-gray-500",
     display: "flex flex-wrap",
   },
   list: {
-    display: "inline-flex w-full flex-wrap",
+    display: "inline-flex w-full flex-wrap items-center",
   },
-  listItem: {
-    margin: "m-1",
-    display: "flex list-none items-center",
-    height: "h-8",
-    background: "bg-cyan-400",
-    padding: "p-1",
-    color: "text-white",
-    font: "font-light ",
-    border: "rounded",
+  textInputWrapper: {
+    alignment: "",
   },
   closeIcon: {
-    margin: "m-1",
-    height: "h-4",
     width: "w-4",
-    color: "text-white",
+    spacing: "ml-2",
+    color: "text-blue-500",
     font: "cursor-pointer",
   },
 };

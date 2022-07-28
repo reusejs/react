@@ -4,6 +4,7 @@ import { useThemeContext } from "../../theme/ThemeProvider";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
 import extractStyleProps from "../../utils/extractStyleProps";
 import LabelBase from "../labels/base";
+import classNames from "../../utils/classNames";
 
 export interface TextInputBaseProps {
   label: string;
@@ -98,6 +99,13 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
     theme
   );
 
+  const wrappersMarginClassNames = resolvedStyleProps(
+    "textInputBaseClasses",
+    ["margin"],
+    props,
+    theme
+  );
+
   const textInputRef = React.useRef<any>(null);
 
   useEffect(() => {
@@ -108,7 +116,12 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
   return (
     <>
       {props.label !== "" && <LabelBase {...props} />}
-      <div className={wrappersClassNames}>
+      <div
+        className={classNames(
+          wrappersClassNames,
+          props.label !== "" ? wrappersMarginClassNames : ""
+        )}
+      >
         {props.textInputPrefix && props.textInputPrefix}
         <input
           autoComplete={props.autoComplete}

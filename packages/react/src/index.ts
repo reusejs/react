@@ -29,7 +29,7 @@ export { default as PasswordTextInputBase } from "./atoms/textInputs/password";
 
 // Tags
 
-export { default as TagInputBase } from "./atoms/tags/base";
+export { default as TagInputBase } from "./molecules/tags/base";
 
 // ******************** End  ---- Atoms *************************
 
