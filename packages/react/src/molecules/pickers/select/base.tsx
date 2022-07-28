@@ -34,6 +34,7 @@ export interface PickerSelectBaseProps {
   onChange: (value?: string) => void;
   dataSource: (query?: string) => void;
   defaultSelected?: any;
+  defaultString?: string;
   valueKey: "value";
   defaultOpen?: boolean;
   defaultQuery?: string;
@@ -127,6 +128,7 @@ const PickerSelectBase = React.forwardRef(
               {props.selectedDataRenderer && (
                 <props.selectedDataRenderer
                   variant={props.variant}
+                  defaultString={props.defaultString}
                   selected={selected}
                   selectedDataClasses={
                     props.pickerSelectSimpleClasses?.selectedDataClasses || {}

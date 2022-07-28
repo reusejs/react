@@ -3,8 +3,11 @@ import "../../../tailwind.css";
 import { useThemeContext } from "../../theme/ThemeProvider";
 import { XIcon } from "@heroicons/react/solid";
 import TextInputBase from "../../atoms/textInputs/base";
+import BadgeBase from "../../atoms/badges/base";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
 import pickAndMergeVariants from "../../utils/pickAndMergeVariants";
+import { TextInputBaseProps } from "../../atoms/textInputs/base";
+import { BadgeBaseProps } from "../../atoms/badges/base";
 
 export interface TagInputBaseProps {
   placeholder?: string;
@@ -12,6 +15,8 @@ export interface TagInputBaseProps {
   variant?: string;
   textInputBaseClasses?: any;
   onChange: (value: string[]) => void;
+  textInputBaseProps?: TextInputBaseProps;
+  badgeBaseProps?: BadgeBaseProps;
 }
 
 const TagInputBase = (props: TagInputBaseProps) => {
@@ -26,7 +31,7 @@ const TagInputBase = (props: TagInputBaseProps) => {
 
   const wrapperClassNames = resolvedStyleProps(
     "wrapper",
-    ["display", "border", "background"],
+    ["padding", "display", "border", "background"],
     allProps,
     tagInputBaseClasses
   );
@@ -38,32 +43,16 @@ const TagInputBase = (props: TagInputBaseProps) => {
     tagInputBaseClasses
   );
 
-  const listItemClassNames = resolvedStyleProps(
-    "listItem",
-    [
-      "margin",
-      "display",
-      "height",
-      "background",
-      "padding",
-      "color",
-      "font",
-      "border",
-    ],
-    allProps,
-    tagInputBaseClasses
-  );
-
-  const textInputListItemClassNames = resolvedStyleProps(
-    "listItem",
-    ["margin", "display", "height", "padding"],
+  const textInputWrapperClassNames = resolvedStyleProps(
+    "textInputWrapper",
+    ["alignment"],
     allProps,
     tagInputBaseClasses
   );
 
   const closeIconClassNames = resolvedStyleProps(
     "closeIcon",
-    ["margin", "height", "width", "color", "font"],
+    ["spacing", "width", "color", "font"],
     allProps,
     tagInputBaseClasses
   );
@@ -102,41 +91,39 @@ const TagInputBase = (props: TagInputBaseProps) => {
         setFocus(Date.now().toString());
       }}
     >
-      <ul className={listClassNames}>
+      <div className={listClassNames}>
         {tags.map((tag: string, index: number) => (
-          <li className={listItemClassNames} key={index}>
-            {tag}
-            <XIcon
-              className={closeIconClassNames}
-              onClick={(e) => {
-                e.stopPropagation();
-                removeTag(index);
-              }}
-            />
-          </li>
+          <BadgeBase
+            key={index}
+            {...props.badgeBaseProps}
+            label={tag}
+            badgeSuffix={
+              <XIcon
+                className={closeIconClassNames}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  removeTag(index);
+                }}
+              />
+            }
+          />
         ))}
 
-        <li className={textInputListItemClassNames}>
+        <div className={textInputWrapperClassNames}>
           <TextInputBase
+            {...props.textInputBaseProps}
             forceFocus={focus}
             autoComplete="off"
             label=""
             htmlFor=""
             name="tag-input"
             type="text"
-            placeholder={props.placeholder}
             onChange={(e) => {}}
             onKeyDown={(e) => inputKeyDown(e)}
             variant={props.variant}
-            textInputBaseClasses={
-              props.textInputBaseClasses || {
-                wrapper: "relative mt-0 rounded-md shadow-sm h-8",
-                width: "border-none bg-white grow p-0 h-8 outline-transparent	",
-              }
-            }
           />
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   );
 };

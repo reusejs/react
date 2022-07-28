@@ -29,7 +29,7 @@ export { default as PasswordTextInputBase } from "./atoms/textInputs/password";
 
 // Tags
 
-export { default as TagInputBase } from "./atoms/tags/base";
+export { default as TagInputBase } from "./molecules/tags/base";
 
 // TextArea
 
@@ -70,6 +70,8 @@ export { default as ModalConfirm } from "./molecules/modals/confirm";
 export { default as DropdownBase } from "./molecules/dropdowns/base";
 
 // ******************** End  ---- Molecules *************************
+
+export { default as BetaForm } from "./utils/form";
 
 export {
   default as ThemeProvider,

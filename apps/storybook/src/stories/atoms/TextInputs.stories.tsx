@@ -37,7 +37,7 @@ OnBlur.args = {
   type: 'text',
   placeholder: '0.00',
   onBlur: () => {
-    console.log("Called on Blur");
+    console.log('Called on Blur');
   },
 };
 
@@ -49,7 +49,7 @@ onFocus.args = {
   type: 'text',
   placeholder: '0.00',
   onFocus: () => {
-    console.log("Called on Focus");
+    console.log('Called on Focus');
   },
 };
 

@@ -4,6 +4,7 @@ import { useThemeContext } from "../../theme/ThemeProvider";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
 import extractStyleProps from "../../utils/extractStyleProps";
 import LabelBase from "../labels/base";
+import classNames from "../../utils/classNames";
 
 export interface TextInputBaseProps {
   label: string;
@@ -73,7 +74,6 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
   const finalClassNames = resolvedStyleProps(
     "textInputBaseClasses",
     [
-      "formInput",
       "alignment",
       "width",
       "borderRadius",
@@ -84,14 +84,24 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
       "textColor",
       "backgroundColor",
       "placeholderColor",
+      "formInput",
     ],
     allProps,
     theme
   );
 
+  console.log("finalClassNames", finalClassNames);
+
   const wrappersClassNames = resolvedStyleProps(
     "textInputBaseClasses",
     ["wrapper"],
+    props,
+    theme
+  );
+
+  const wrappersMarginClassNames = resolvedStyleProps(
+    "textInputBaseClasses",
+    ["margin"],
     props,
     theme
   );
@@ -106,7 +116,12 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
   return (
     <>
       {props.label !== "" && <LabelBase {...props} />}
-      <div className={wrappersClassNames}>
+      <div
+        className={classNames(
+          wrappersClassNames,
+          props.label !== "" ? wrappersMarginClassNames : ""
+        )}
+      >
         {props.textInputPrefix && props.textInputPrefix}
         <input
           autoComplete={props.autoComplete}
