@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.7.15
+
+### Patch Changes
+
+- b480aea: Add spanBaseClasses
+
 ## 6.7.14
 
 ### Patch Changes
