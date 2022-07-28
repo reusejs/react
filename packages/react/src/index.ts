@@ -63,6 +63,8 @@ export { default as DropdownBase } from "./molecules/dropdowns/base";
 
 // ******************** End  ---- Molecules *************************
 
+export { default as BetaForm } from "./utils/form";
+
 export {
   default as ThemeProvider,
   useThemeContext,
