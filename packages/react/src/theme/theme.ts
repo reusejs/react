@@ -220,6 +220,17 @@ const tagInputBaseClasses = {
   },
 };
 
+const textAreaBaseClasses = {
+  wrapper: {
+    background: " outline-none bg-white dark:bg-gray-900	",
+    border: "rounded	border-2 border-black",
+    display: "flex ",
+    width: "w-full",
+    color: "text-gray-900 dark:text-white",
+    font: "font-light",
+  },
+};
+
 const theme = {
   dividerBaseClasses,
   labelBaseClasses,
@@ -238,6 +249,7 @@ const theme = {
   modalConfirmClasses,
   dropdownBaseClasses,
   tagInputBaseClasses,
+  textAreaBaseClasses,
 };
 
 export default theme;

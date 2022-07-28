@@ -82,6 +82,18 @@ const variants = {
         font: 'cursor-pointer',
       },
     },
+    textAreaBaseClasses: {
+      wrapper: {
+        background: 'bg-gray-700 outline-none	',
+        border: 'rounded	border-2 border-black',
+        display: 'flex ',
+        width: 'w-full',
+        color: 'text-white',
+        font: 'font-light',
+        padding: 'p-1',
+        margin: 'm-1',
+      },
+    },
   },
 };
 
