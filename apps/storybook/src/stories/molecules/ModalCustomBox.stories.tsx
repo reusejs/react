@@ -7,7 +7,7 @@ import { Dialog, Transition } from '@headlessui/react';
 const Content = React.forwardRef((props: any, ref) => {
   console.log('base props', props);
   return (
-    <div ref={ref}>
+    <div className=' w-[900px] h-[900px] '>
       <div className='absolute top-0 right-0 hidden pt-4 pr-4 sm:block'>
         <button
           type='button'
@@ -56,7 +56,8 @@ const Template: ComponentStory<typeof ModalBase> = (args) => {
       modalBaseClasses: {
         background: "bg-[#242645]",
         border: "border-white rounded-lg",
-        font: "text-white"
+        font: "text-white",
+        small:" ",
       },
     });
     console.log('Result', result);

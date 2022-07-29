@@ -153,6 +153,8 @@ const modalBaseClasses = {
   padding: "px-4 pt-5 pb-4",
   alignment: "text-left",
   shadow: "shadow-xl",
+  small:"sm:my-8 sm:w-full sm:max-w-lg sm:p-6",
+  animation: "relative transform overflow-hidden transition-all",
 };
 
 const modalConfirmClasses = {
