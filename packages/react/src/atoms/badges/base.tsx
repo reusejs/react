@@ -9,7 +9,7 @@ export interface BadgeBaseProps {
   badgeSuffix?: any;
   badgePrefix?: any;
   variant?: string;
-  badgeBaseClasses: {
+  badgeBaseClasses?: {
     alignment?: any;
     padding?: any;
     backgroundColor?: any;
@@ -21,6 +21,8 @@ export interface BadgeBaseProps {
 
 const BadgeBase = (props: BadgeBaseProps) => {
   const theme: any = useThemeContext();
+
+  console.log("badge", props);
 
   const finalClassNames = resolvedStyleProps(
     "badgeBaseClasses",

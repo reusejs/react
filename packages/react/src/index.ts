@@ -27,6 +27,10 @@ export { default as ButtonBase } from "./atoms/buttons/base";
 export { default as TextInputBase } from "./atoms/textInputs/base";
 export { default as PasswordTextInputBase } from "./atoms/textInputs/password";
 
+// Tags
+
+export { default as TagInputBase } from "./molecules/tags/base";
+
 // ******************** End  ---- Atoms *************************
 
 // Start  ---- Molecules
@@ -62,6 +66,8 @@ export { default as ModalConfirm } from "./molecules/modals/confirm";
 export { default as DropdownBase } from "./molecules/dropdowns/base";
 
 // ******************** End  ---- Molecules *************************
+
+export { default as BetaForm } from "./utils/form";
 
 export {
   default as ThemeProvider,

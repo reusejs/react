@@ -1,9 +1,10 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import "../../../tailwind.css";
 import { useThemeContext } from "../../theme/ThemeProvider";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
 import extractStyleProps from "../../utils/extractStyleProps";
 import LabelBase from "../labels/base";
+import classNames from "../../utils/classNames";
 
 export interface TextInputBaseProps {
   label: string;
@@ -46,6 +47,8 @@ export interface TextInputBaseProps {
   onChange: (value?: string) => void;
   onBlur?: (value?: string) => void;
   onFocus?: (value?: string) => void;
+  onKeyDown?: (e: any) => void;
+  forceFocus?: string;
 }
 
 const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
@@ -96,12 +99,29 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
     theme
   );
 
-  const textInputRef = React.useRef(null);
+  const wrappersMarginClassNames = resolvedStyleProps(
+    "textInputBaseClasses",
+    ["margin"],
+    props,
+    theme
+  );
+
+  const textInputRef = React.useRef<any>(null);
+
+  useEffect(() => {
+    if (textInputRef.current && textInputRef.current.focus)
+      textInputRef.current.focus();
+  }, [props.forceFocus]);
 
   return (
     <>
       {props.label !== "" && <LabelBase {...props} />}
-      <div className={wrappersClassNames}>
+      <div
+        className={classNames(
+          wrappersClassNames,
+          props.label !== "" ? wrappersMarginClassNames : ""
+        )}
+      >
         {props.textInputPrefix && props.textInputPrefix}
         <input
           autoComplete={props.autoComplete}
@@ -126,6 +146,9 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
             if (props.onFocus) {
               props.onFocus(e.target.value);
             }
+          }}
+          onKeyDown={(e) => {
+            props.onKeyDown?.(e);
           }}
         />
         {props.textInputSuffix && props.textInputSuffix}

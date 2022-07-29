@@ -53,7 +53,8 @@ const buttonBaseClasses = {
 // Text Input
 
 const textInputBaseClasses = {
-  wrapper: "relative mt-1 rounded-md shadow-sm",
+  wrapper: "relative rounded-md shadow-sm",
+  margin: "mt-1",
   backgroundColor: "bg-white dark:bg-gray-900",
   formInput: "form-input",
   alignment: "block",
@@ -95,7 +96,8 @@ const pickerSelectSimpleClasses = {
     arrowWrapperClasses:
       "pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2",
     arrowIconClasses: "h-5 w-5 text-gray-400",
-    spanBaseClasses:"inline-block overflow-hidden text-ellipsis whitespace-nowrap w-11/12"
+    spanBaseClasses:
+      "inline-block overflow-hidden text-ellipsis whitespace-nowrap w-11/12",
   },
   optionClasses: {
     wrapper:
@@ -202,6 +204,27 @@ const dropdownBaseClasses = {
     "absolute left-0 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none",
 };
 
+const tagInputBaseClasses = {
+  wrapper: {
+    padding: "px-2 py-2",
+    background: "bg-white",
+    border: "rounded border border-gray-500",
+    display: "flex flex-wrap",
+  },
+  list: {
+    display: "inline-flex w-full flex-wrap items-center",
+  },
+  textInputWrapper: {
+    alignment: "",
+  },
+  closeIcon: {
+    width: "w-4",
+    spacing: "ml-2",
+    color: "text-blue-500",
+    font: "cursor-pointer",
+  },
+};
+
 const theme = {
   dividerBaseClasses,
   labelBaseClasses,
@@ -220,6 +243,7 @@ const theme = {
   modalBaseClasses,
   modalConfirmClasses,
   dropdownBaseClasses,
+  tagInputBaseClasses,
 };
 
 export default theme;

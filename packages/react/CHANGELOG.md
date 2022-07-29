@@ -1,5 +1,22 @@
 # @reusejs/react
 
+## 6.8.0
+
+### Minor Changes
+
+- c5daf80: Introduce tags component
+
+### Patch Changes
+
+- 680913f: Add betaform
+- cd93bf7: Remove placeholder props to pass to textinput
+
+## 6.7.15
+
+### Patch Changes
+
+- b480aea: Add spanBaseClasses
+
 ## 6.7.14
 
 ### Patch Changes
