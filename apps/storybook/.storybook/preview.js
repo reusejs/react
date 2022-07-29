@@ -1,6 +1,6 @@
+import '../../../node_modules/@reusejs/react/dist/styles.css';
 import '../src/styles/globals.css';
 import * as NextImage from 'next/image';
-import '../../../node_modules/@reusejs/react/dist/styles.css';
 import { ThemeProvider, theme } from '@reusejs/react';
 import newTheme from '../src/reusejsTheme';
 
