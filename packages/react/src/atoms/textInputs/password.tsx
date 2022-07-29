@@ -38,6 +38,9 @@ const PasswordTextInputBase = React.forwardRef(
     return (
       <TextInputBase
         {...props}
+        textInputBaseClasses={{
+          padding: "pr-12",
+        }}
         type={inputType}
         textInputSuffix={<ShowHidePasswordIcon />}
       />
