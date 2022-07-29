@@ -76,6 +76,7 @@ const OptionsRenderer = ({
           textColor: "text-gray-900 dark:text-white",
           backgroundColor: "bg-white dark:bg-gray-900",
           placeholderColor: "",
+          formInput: "none",
         }}
       />
 
