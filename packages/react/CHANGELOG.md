@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.8.2
+
+### Patch Changes
+
+- 9a57722: Fix formInput styling
+
 ## 6.8.1
 
 ### Patch Changes
