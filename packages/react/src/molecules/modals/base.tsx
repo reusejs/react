@@ -22,6 +22,8 @@ export interface ModalBaseProps {
     padding?: string,
     alignment?: string,
     shadow?: string, 
+    small?: string,
+    animation?: string,
   }
 }
 
@@ -41,6 +43,8 @@ const ModalBase = (props: ModalBaseProps) => {
       "padding",
       "alignment",
       "shadow",
+      "small",
+      "animation",
     ],
     props,
     theme
@@ -49,7 +53,7 @@ const ModalBase = (props: ModalBaseProps) => {
   return (
     <ModalWrapper showModal={props.visible} resolveModal={props.onAction} backgroundColor={props.backgroundColor} backgroundOpacity={props.backgroundOpacity}>
       <div
-        className={"relative transform overflow-hidden transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6 " + modalClassNames}
+        className={modalClassNames}
         ref={visRef}
       >
         {props.content && (
