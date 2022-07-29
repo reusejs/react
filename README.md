@@ -51,3 +51,9 @@ Run `git push --follow-tags` for all tags to be pushed to Github
 [npm-publish-action-url]: https://github.com/reusejs/react/actions/workflows/release.yml
 [view-storybook-image]: https://img.shields.io/badge/View-Storybook-F59E0B.svg
 [view-storybook-url]: https://react.reusejs.org
+
+## Contributors
+
+<a href="https://github.com/reusejs/react/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=reusejs/react" />
+</a>
