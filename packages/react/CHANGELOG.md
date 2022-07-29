@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.8.1
+
+### Patch Changes
+
+- cc07bb3: Fix issues with Modal
+
 ## 6.8.0
 
 ### Minor Changes
