@@ -38,6 +38,7 @@ export interface TextInputBaseProps {
     textColor?: string;
     backgroundColor?: string;
     placeholderColor?: string;
+    formInput?: string;
   };
   textInputBaseErrorClasses?: {
     border?: string;

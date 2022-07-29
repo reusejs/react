@@ -51,7 +51,7 @@ const Template: ComponentStory<typeof PickerCheckboxSimple> = (args) => {
           {...args}
           defaultSelected={selected}
           onChange={(v: any) => {
-            setSelected([v]);
+            setSelected(v);
           }}
         />
       </div>
