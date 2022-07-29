@@ -4,6 +4,24 @@
 [![MIT License][license-image]][license-url]
 [![NPM Publish][npm-publish-action-image]][npm-publish-action-url]
 
+### Disclaimer
+
+We are contributing to this repo heavily on a daily basis. As we are developing components, we are learning new things and updating the spec constantly. So, in case you opt to use some of the components in your projects, please keep yourself updated with the changes. We haven't yet even arrived at code of conduct or guidelines. The documentation is almost non-existent for the components. Having said that, we can't live without this library!
+
+### Why another component library?
+
+1. The components here are built from scratch
+2. We (@betalectic)[https://twitter.com/betalectic] advocate reusability and abstraction (mostly for fun apart from all the reasons)
+3. The applications we build have drastically different UIs, that means we can't pick one "design" based library and stick to that "look"
+4. But, the functionality is common across the applications. So, we wanted a component library which doesn't come in our way when it comes to **styling**
+5. And almost all the libraries we explored, advocate "design guidelines" more than functionality of the components
+6. The first reason why we did this is to abstract functionality! And at the same time, give ourselves a change the look/feel drastically. That's why we have four ways to style our components.
+
+### Where is this library going?
+
+1. To Places for sure
+2. We don't know which all places, but we forsee that this library is not going to be just about components, but also about utilities like BetaForm hook (which you will love!), Form Builder (upcoming) and some abstractions which might sound like magic (but they are not for sure)
+
 ### How to Contribute?
 
 This repo consists of two packages:
