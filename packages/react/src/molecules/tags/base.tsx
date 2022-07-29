@@ -114,7 +114,10 @@ const TagInputBase = (props: TagInputBaseProps) => {
             {...props.textInputBaseProps}
             forceFocus={focus}
             autoComplete="off"
-            label=""
+            // label=""
+            labelBaseProps={{
+              label:""
+            }}
             htmlFor=""
             name="tag-input"
             type="text"

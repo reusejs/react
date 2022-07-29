@@ -22,7 +22,10 @@ const Template: ComponentStory<typeof TextInputBase> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  label: 'Price',
+  // label: 'Price',
+  labelBaseProps:{
+    label:"Price",
+  },
   htmlFor: 'price',
   name: 'price',
   type: 'text',
@@ -31,7 +34,10 @@ Default.args = {
 
 export const OnBlur = Template.bind({});
 OnBlur.args = {
-  label: 'Price',
+  // label: 'Price',
+  labelBaseProps:{
+    label:"Price",
+  },
   htmlFor: 'price',
   name: 'price',
   type: 'text',
@@ -43,7 +49,10 @@ OnBlur.args = {
 
 export const onFocus = Template.bind({});
 onFocus.args = {
-  label: 'Price',
+  // label: 'Price',
+  labelBaseProps:{
+    label:"Price",
+  },
   htmlFor: 'price',
   name: 'price',
   type: 'text',
@@ -55,7 +64,10 @@ onFocus.args = {
 
 export const Password = Template.bind({});
 Password.args = {
-  label: 'Password',
+  // label: 'Password',
+  labelBaseProps:{
+    label:"Password",
+  },
   htmlFor: 'password',
   name: 'password',
   type: 'password',
@@ -72,7 +84,10 @@ const HelperText = () => (
 
 export const WithErrorText = Template.bind({});
 WithErrorText.args = {
-  label: 'Price',
+  // label: 'Price',
+  labelBaseProps:{
+    label:"Price",
+  },
   htmlFor: 'price',
   name: 'price',
   type: 'text',
@@ -94,7 +109,10 @@ WithErrorText.args = {
 
 export const WithHelperText = Template.bind({});
 WithHelperText.args = {
-  label: 'Price',
+  // label: 'Price',
+  labelBaseProps:{
+    label:"Price",
+  },
   htmlFor: 'price',
   name: 'price',
   type: 'text',
@@ -107,7 +125,10 @@ WithHelperText.args = {
 
 export const WithSuffixPrefix = Template.bind({});
 WithSuffixPrefix.args = {
-  label: 'Price',
+  // label: 'Price',
+  labelBaseProps:{
+    label:"Price",
+  },
   htmlFor: 'price',
   name: 'price',
   type: 'text',

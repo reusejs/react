@@ -31,7 +31,10 @@ const ShowPassword = (props: any) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  label: 'Password',
+  // label: 'Password',
+  labelBaseProps:{
+    label:"Password",
+  },
   htmlFor: 'password',
   name: 'password',
   type: 'text',
@@ -39,7 +42,10 @@ Default.args = {
 
 export const ShowHide = Template.bind({});
 ShowHide.args = {
-  label: 'Password',
+  // label: 'Password',
+  labelBaseProps:{
+    label:"Password",
+  },
   htmlFor: 'password',
   name: 'password',
   type: 'password',

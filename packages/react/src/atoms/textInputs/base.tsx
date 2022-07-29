@@ -3,13 +3,15 @@ import "../../../tailwind.css";
 import { useThemeContext } from "../../theme/ThemeProvider";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
 import extractStyleProps from "../../utils/extractStyleProps";
-import LabelBase from "../labels/base";
 import classNames from "../../utils/classNames";
+import LabelBase from "../labels/base";
+import { LabelBaseProps } from "../labels/base";
 
 export interface TextInputBaseProps {
-  label: string;
+  // label: string;
   name: string;
   type: string;
+  labelBaseProps?: LabelBaseProps,
   autoComplete?: string;
   value?: string;
   id?: string;
@@ -74,6 +76,7 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
   const finalClassNames = resolvedStyleProps(
     "textInputBaseClasses",
     [
+      "formInput",
       "alignment",
       "width",
       "borderRadius",
@@ -84,7 +87,6 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
       "textColor",
       "backgroundColor",
       "placeholderColor",
-      "formInput",
     ],
     allProps,
     theme
@@ -115,11 +117,14 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
 
   return (
     <>
-      {props.label !== "" && <LabelBase {...props} />}
+      {/* {props.label !== "" && <LabelBase {...props} />} */}
+      {props?.labelBaseProps !== undefined && (
+        <LabelBase {...props.labelBaseProps} />
+      )}
       <div
         className={classNames(
           wrappersClassNames,
-          props.label !== "" ? wrappersMarginClassNames : ""
+          props?.labelBaseProps?.label !== "" ? wrappersMarginClassNames : ""
         )}
       >
         {props.textInputPrefix && props.textInputPrefix}
