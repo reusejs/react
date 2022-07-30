@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.8.4
+
+### Patch Changes
+
+- d218846: Change labelbaseprops for TextInput
+
 ## 6.8.3
 
 ### Patch Changes
