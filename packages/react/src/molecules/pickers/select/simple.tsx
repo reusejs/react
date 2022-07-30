@@ -157,7 +157,10 @@ const NoSearchRenderer = ({
     <div>
       <TextInputBase
         autoComplete="off"
-        label=""
+        // label=""
+        labelBaseProps={{
+          label:""
+        }}
         htmlFor=""
         name="country"
         type="text"
@@ -198,7 +201,10 @@ const SearchRenderer = ({
     <div>
       <TextInputBase
         autoComplete="off"
-        label=""
+        // label=""
+        labelBaseProps={{
+          label:"",
+        }}
         htmlFor=""
         name="country"
         type="text"

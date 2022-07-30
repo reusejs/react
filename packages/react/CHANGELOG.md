@@ -1,5 +1,29 @@
 # @reusejs/react
 
+## 6.8.4
+
+### Patch Changes
+
+- d218846: Change labelbaseprops for TextInput
+
+## 6.8.3
+
+### Patch Changes
+
+- 4ae01c4: Fix issue with password input
+
+## 6.8.2
+
+### Patch Changes
+
+- 9a57722: Fix formInput styling
+
+## 6.8.1
+
+### Patch Changes
+
+- cc07bb3: Fix issues with Modal
+
 ## 6.8.0
 
 ### Minor Changes

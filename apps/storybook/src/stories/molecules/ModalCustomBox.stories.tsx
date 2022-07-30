@@ -7,11 +7,11 @@ import { Dialog, Transition } from '@headlessui/react';
 const Content = React.forwardRef((props: any, ref) => {
   console.log('base props', props);
   return (
-    <div ref={ref}>
+    <div className=' w-[900px] h-[500px] '>
       <div className='absolute top-0 right-0 hidden pt-4 pr-4 sm:block'>
         <button
           type='button'
-          className='rounded-md bg-red-500 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:ring-offset-2'
+          className='rounded-md bg-blue-500 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:ring-offset-2'
           onClick={() => props.onAction('no')}
         >
           <span className='sr-only'>Close</span>
@@ -56,7 +56,8 @@ const Template: ComponentStory<typeof ModalBase> = (args) => {
       modalBaseClasses: {
         background: "bg-[#242645]",
         border: "border-white rounded-lg",
-        font: "text-white"
+        font: "text-white",
+        small:" ",
       },
     });
     console.log('Result', result);
@@ -77,6 +78,4 @@ const Template: ComponentStory<typeof ModalBase> = (args) => {
 };
 
 export const Default = Template.bind({});
-Default.args = {
-  backgroundColor: "bg-blue-300"
-};
+Default.args = {};

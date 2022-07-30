@@ -56,7 +56,10 @@ const OptionsRenderer = ({
   return (
     <div className="flex items-center">
       <TextInputBase
-        label=""
+        // label=""
+        labelBaseProps={{
+          label:""
+        }}
         htmlFor=""
         id={value.value}
         name={name}
@@ -76,6 +79,7 @@ const OptionsRenderer = ({
           textColor: "text-gray-900 dark:text-white",
           backgroundColor: "bg-white dark:bg-gray-900",
           placeholderColor: "",
+          formInput: "none",
         }}
       />
 
