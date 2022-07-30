@@ -8,7 +8,6 @@ import LabelBase from "../labels/base";
 import { LabelBaseProps } from "../labels/base";
 
 export interface TextInputBaseProps {
-  // label: string;
   name: string;
   type: string;
   labelBaseProps?: LabelBaseProps,
@@ -118,7 +117,6 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
 
   return (
     <>
-      {/* {props.label !== "" && <LabelBase {...props} />} */}
       {props?.labelBaseProps !== undefined && (
         <LabelBase {...props.labelBaseProps} />
       )}

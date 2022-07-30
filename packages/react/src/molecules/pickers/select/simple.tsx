@@ -157,7 +157,6 @@ const NoSearchRenderer = ({
     <div>
       <TextInputBase
         autoComplete="off"
-        // label=""
         labelBaseProps={{
           label:""
         }}
@@ -201,7 +200,6 @@ const SearchRenderer = ({
     <div>
       <TextInputBase
         autoComplete="off"
-        // label=""
         labelBaseProps={{
           label:"",
         }}

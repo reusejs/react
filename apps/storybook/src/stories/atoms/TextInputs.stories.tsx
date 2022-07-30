@@ -22,7 +22,6 @@ const Template: ComponentStory<typeof TextInputBase> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  // label: 'Price',
   labelBaseProps:{
     label:"Price",
   },
@@ -34,7 +33,6 @@ Default.args = {
 
 export const OnBlur = Template.bind({});
 OnBlur.args = {
-  // label: 'Price',
   labelBaseProps:{
     label:"Price",
   },
@@ -49,7 +47,6 @@ OnBlur.args = {
 
 export const onFocus = Template.bind({});
 onFocus.args = {
-  // label: 'Price',
   labelBaseProps:{
     label:"Price",
   },
@@ -64,7 +61,6 @@ onFocus.args = {
 
 export const Password = Template.bind({});
 Password.args = {
-  // label: 'Password',
   labelBaseProps:{
     label:"Password",
   },
@@ -84,7 +80,6 @@ const HelperText = () => (
 
 export const WithErrorText = Template.bind({});
 WithErrorText.args = {
-  // label: 'Price',
   labelBaseProps:{
     label:"Price",
   },
@@ -109,7 +104,6 @@ WithErrorText.args = {
 
 export const WithHelperText = Template.bind({});
 WithHelperText.args = {
-  // label: 'Price',
   labelBaseProps:{
     label:"Price",
   },
@@ -125,7 +119,6 @@ WithHelperText.args = {
 
 export const WithSuffixPrefix = Template.bind({});
 WithSuffixPrefix.args = {
-  // label: 'Price',
   labelBaseProps:{
     label:"Price",
   },
