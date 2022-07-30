@@ -1,5 +1,17 @@
 # @reusejs/react
 
+## 6.8.4
+
+### Patch Changes
+
+- d218846: Change labelbaseprops for TextInput
+
+## 6.8.3
+
+### Patch Changes
+
+- 4ae01c4: Fix issue with password input
+
 ## 6.8.2
 
 ### Patch Changes
