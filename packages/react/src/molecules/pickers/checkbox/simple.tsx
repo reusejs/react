@@ -56,7 +56,10 @@ const OptionsRenderer = ({
   return (
     <div className="flex items-center">
       <TextInputBase
-        label=""
+        // label=""
+        labelBaseProps={{
+          label:""
+        }}
         htmlFor=""
         id={value.value}
         name={name}

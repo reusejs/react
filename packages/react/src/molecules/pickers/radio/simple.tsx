@@ -55,7 +55,10 @@ const OptionsRenderer = ({
   return (
     <div className="flex items-center">
       <TextInputBase
-        label=""
+        // label=""
+        labelBaseProps={{
+          label:"",
+        }}
         htmlFor=""
         id={value.value}
         name={name}
@@ -93,6 +96,9 @@ const OptionsRenderer = ({
           theme.pickerRadioSimpleClasses.optionClasses.labelBaseClasses
         }
       />
+      {/* {props.labelBaseProps !== undefined && (
+        <LabelBase {...props.labelBaseProps} />
+      )} */}
     </div>
   );
 };
