@@ -2,13 +2,14 @@ import React from "react";
 import "../../../tailwind.css";
 import { useThemeContext } from "../../theme/ThemeProvider";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
+import extractStyleProps from "../../utils/extractStyleProps";
 import LabelBase from "../labels/base";
 import pickAndMergeVariants from "../../utils/pickAndMergeVariants";
+import { LabelBaseProps } from "../labels/base";
+import classNames from "../../utils/classNames";
 
 export interface TextAreaBaseProps {
-  label?: any;
-  error?: any;
-  htmlFor?: string;
+  labelBaseProps?: LabelBaseProps;
   defaultValue?: string;
   variant?: string;
   placeholder?: string;
@@ -16,6 +17,8 @@ export interface TextAreaBaseProps {
   cols?: number;
   name?: string;
   id?: string;
+  error?: any;
+  textInputBottom?: any;
   onChange?: (value?: string) => void;
   textAreaBaseClasses?: {
     display: string;
@@ -28,29 +31,62 @@ export interface TextAreaBaseProps {
     margin: string;
     shadow: string;
   };
+  textInputBaseErrorClasses?: {
+    border?: string;
+    focus?: string;
+    textColor?: string;
+    backgroundColor?: string;
+    placeholderColor?: string;
+  };
 }
 
 const TextAreaBase = (props: TextAreaBaseProps) => {
   const theme: any = useThemeContext();
   let allProps = Object.assign({}, props);
 
+  if (props.error) {
+    const errorStyleProps = extractStyleProps(
+      "textInputBaseErrorClasses",
+      ["border", "focus", "textColor", "backgroundColor", "placeholderColor"],
+      allProps,
+      theme
+    );
+
+    let newtextInputBaseClasses = {
+      ...allProps["textAreaBaseClasses"],
+      ...errorStyleProps,
+    };
+
+    allProps["textAreaBaseClasses"] = newtextInputBaseClasses;
+  }
+
   const finalClassNames = resolvedStyleProps(
     "textAreaBaseClasses",
     [
-      "display",
-      "border",
-      "background",
+      "formInput",
+      "alignment",
       "width",
-      "color",
-      "font",
+      "borderRadius",
+      "border",
+      "focus",
       "padding",
-      "shadow",
+      "font",
+      "textColor",
+      "backgroundColor",
+      "placeholderColor",
     ],
     allProps,
     theme
   );
 
-  const marginClassNames = resolvedStyleProps(
+  const wrappersClassNames = resolvedStyleProps(
+    "textAreaBaseClasses",
+    ["wrapper"],
+    props,
+    theme
+  );
+
+  const wrappersMarginClassNames = resolvedStyleProps(
     "textAreaBaseClasses",
     ["margin"],
     props,
@@ -59,10 +95,15 @@ const TextAreaBase = (props: TextAreaBaseProps) => {
 
   return (
     <>
-      {props.label && props.label !== "" && <LabelBase {...props} />}
+      {props?.labelBaseProps !== undefined && (
+        <LabelBase {...props.labelBaseProps} />
+      )}
 
       <div
-        className={props.label && props.label !== "" ? marginClassNames : ""}
+        className={classNames(
+          wrappersClassNames,
+          props?.labelBaseProps?.label !== "" ? wrappersMarginClassNames : ""
+        )}
       >
         <textarea
           placeholder={props.placeholder}
@@ -77,6 +118,7 @@ const TextAreaBase = (props: TextAreaBaseProps) => {
       </div>
 
       {props.error && props.error}
+      {!props.error && props.textInputBottom && props.textInputBottom}
     </>
   );
 };

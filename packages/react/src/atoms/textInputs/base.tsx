@@ -8,10 +8,9 @@ import LabelBase from "../labels/base";
 import { LabelBaseProps } from "../labels/base";
 
 export interface TextInputBaseProps {
-  // label: string;
   name: string;
   type: string;
-  labelBaseProps?: LabelBaseProps,
+  labelBaseProps?: LabelBaseProps;
   autoComplete?: string;
   value?: string;
   id?: string;
@@ -92,8 +91,6 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
     allProps,
     theme
   );
-
-  console.log("finalClassNames", finalClassNames);
 
   const wrappersClassNames = resolvedStyleProps(
     "textInputBaseClasses",
