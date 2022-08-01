@@ -206,6 +206,8 @@ const dropdownBaseClasses = {
     "absolute left-0 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none",
 };
 
+// Tags
+
 const tagInputBaseClasses = {
   wrapper: {
     padding: "px-2 py-2",
@@ -227,6 +229,20 @@ const tagInputBaseClasses = {
   },
 };
 
+// Text Area
+
+const textAreaBaseClasses = {
+  margin: "mt-2",
+  background: "outline-none bg-white dark:bg-gray-900",
+  border: "rounded-md border-2 border-gray-300",
+  display: "block ",
+  width: "w-full",
+  color: "text-gray-900 dark:text-white",
+  font: "font-light",
+  padding: "p-1",
+  shadow: "shadow-sm",
+};
+
 const theme = {
   dividerBaseClasses,
   labelBaseClasses,
@@ -246,6 +262,7 @@ const theme = {
   modalConfirmClasses,
   dropdownBaseClasses,
   tagInputBaseClasses,
+  textAreaBaseClasses,
 };
 
 export default theme;
