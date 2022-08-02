@@ -19,6 +19,7 @@ export interface TextAreaBaseProps {
   id?: string;
   error?: any;
   textInputBottom?: any;
+  disabled?: boolean;
   onChange?: (value?: string) => void;
   textAreaBaseClasses?: {
     display: string;
@@ -107,13 +108,14 @@ const TextAreaBase = (props: TextAreaBaseProps) => {
       >
         <textarea
           placeholder={props.placeholder}
-          className={finalClassNames}
+          className={finalClassNames + (props.disabled ? " opacity-70 text-slate-600" : "")}
           rows={props.rows || 4}
           cols={props.cols || 50}
           name={props.name || "Textarea input"}
           id={props.id || "Textarea input"}
           onChange={(e) => props.onChange?.(e.target.value)}
           defaultValue={props.defaultValue || ""}
+          disabled={props.disabled}
         />
       </div>
 
