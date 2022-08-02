@@ -10,7 +10,7 @@ import classNames from "../../utils/classNames";
 
 export interface TextAreaBaseProps {
   labelBaseProps?: LabelBaseProps;
-  defaultValue?: string;
+  value?: string;
   variant?: string;
   placeholder?: string;
   rows?: number;
@@ -113,7 +113,7 @@ const TextAreaBase = (props: TextAreaBaseProps) => {
           name={props.name || "Textarea input"}
           id={props.id || "Textarea input"}
           onChange={(e) => props.onChange?.(e.target.value)}
-          defaultValue={props.defaultValue || ""}
+          value={props.value}
         />
       </div>
 

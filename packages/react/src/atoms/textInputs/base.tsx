@@ -109,8 +109,13 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
   const textInputRef = React.useRef<any>(null);
 
   useEffect(() => {
-    if (textInputRef.current && textInputRef.current.focus)
+    if (
+      props.forceFocus &&
+      textInputRef.current &&
+      textInputRef.current.focus
+    ) {
       textInputRef.current.focus();
+    }
   }, [props.forceFocus]);
 
   return (

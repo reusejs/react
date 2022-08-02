@@ -13,7 +13,6 @@ export interface PickerSelectSimpleProps extends PickerSelectBaseProps {
 }
 
 const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
-
   return (
     <SelectBase
       variant={props.variant}
@@ -52,7 +51,9 @@ const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
 const SelectedDataRenderer = (props: any) => {
   const theme: any = useThemeContext();
 
-  const [text, setText] = React.useState<string>(props.defaultString ? props.defaultString : "None Selected");
+  const [text, setText] = React.useState<string>(
+    props.defaultString ? props.defaultString : "None Selected"
+  );
   // console.log("Props here are>>", props);
 
   const pickerSelectSimpleClasses = pickAndMergeVariants(
@@ -143,7 +144,7 @@ const NoDataComponent = (props: any) => {
   );
 
   return <div className={`${wrappersClassNames}`}>No Data</div>;
-}
+};
 const NoSearchRenderer = ({
   query,
   onSearch,
@@ -159,7 +160,7 @@ const NoSearchRenderer = ({
         autoComplete="off"
         // label=""
         labelBaseProps={{
-          label:""
+          label: "",
         }}
         htmlFor=""
         name="country"
@@ -190,7 +191,7 @@ const SearchRenderer = ({
   query,
   onSearch,
   cancelSearch,
-  variant
+  variant,
 }: {
   query: any;
   onSearch: any;
@@ -203,7 +204,7 @@ const SearchRenderer = ({
         autoComplete="off"
         // label=""
         labelBaseProps={{
-          label:"",
+          label: "",
         }}
         htmlFor=""
         name="country"
@@ -217,6 +218,7 @@ const SearchRenderer = ({
         textInputBaseClasses={{
           wrapper: "relative mt-0 rounded-md shadow-sm",
         }}
+        forceFocus="true"
       />
 
       <span
