@@ -120,7 +120,6 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
 
   return (
     <>
-      {/* {props.label !== "" && <LabelBase {...props} />} */}
       {props?.labelBaseProps !== undefined && (
         <LabelBase {...props.labelBaseProps} />
       )}

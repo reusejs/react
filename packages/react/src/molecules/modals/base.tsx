@@ -57,7 +57,7 @@ const ModalBase = (props: ModalBaseProps) => {
         ref={visRef}
       >
         {props.content && (
-          <props.content visible={props.visible} onAction={props.onAction} />
+          <props.content visible={props.visible} onAction={props.onAction}/>
         )}
       </div>
     </ModalWrapper>
