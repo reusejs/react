@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.8.6
+
+### Patch Changes
+
+- ffba288: Fix issues in textarea
+
 ## 6.8.5
 
 ### Patch Changes
