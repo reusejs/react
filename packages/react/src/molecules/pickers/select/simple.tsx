@@ -37,6 +37,7 @@ const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
       }
       labelBaseProps={props.labelBaseProps}
       multiple={props.multiple}
+      disabled={props.disabled}
       valueKey={props.valueKey}
       defaultSelected={props.defaultSelected}
       defaultString={props.defaultString}
@@ -53,7 +54,6 @@ const SelectedDataRenderer = (props: any) => {
   const theme: any = useThemeContext();
 
   const [text, setText] = React.useState<string>(props.defaultString ? props.defaultString : "None Selected");
-  // console.log("Props here are>>", props);
 
   const pickerSelectSimpleClasses = pickAndMergeVariants(
     "pickerSelectSimpleClasses",
@@ -63,6 +63,23 @@ const SelectedDataRenderer = (props: any) => {
 
   const wrappersClassNames = resolvedStyleProps(
     "selectedDataClasses",
+    [
+      "alignment",
+      "borderRadius",
+      "border",
+      "focus",
+      "background",
+      "padding",
+      "text",
+      "font",
+      "width",
+    ],
+    props,
+    pickerSelectSimpleClasses
+  );
+
+  const disabledStyleClasses = resolvedStyleProps(
+    "disabledStyleClasses",
     [
       "alignment",
       "borderRadius",
@@ -109,7 +126,7 @@ const SelectedDataRenderer = (props: any) => {
   }, [props.selected]);
 
   return (
-    <div className={wrappersClassNames}>
+    <div className={props.disabled ? disabledStyleClasses : wrappersClassNames}>
       <span className={spanFinalClases}>{text}</span>
       <span className={arrowWrapperClasses}>
         <ArrowSmDownIcon className={arrowIconClasses} />

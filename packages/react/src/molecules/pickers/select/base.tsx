@@ -14,11 +14,13 @@ export interface PickerSelectBaseProps {
   labelBaseProps?: LabelBaseProps;
   scrollableBaseProps?: ScrollableBaseProps;
   multiple: false;
+  disabled?: boolean;
   variant?: string;
   selectInputBottom?: any;
   error?: any;
   pickerSelectSimpleClasses?: {
     selectedDataClasses?: any;
+    disabledStyleClasses?: any;
     optionClasses?: any;
   };
   pickerSelectBaseClasses?: {
@@ -124,11 +126,12 @@ const PickerSelectBase = React.forwardRef(
         </div>
         <div className={wrappersClassNames}>
           {open === false && (
-            <div onClick={() => setOpen(true)}>
+            <div onClick={() => setOpen(props.disabled ? false : true)}>
               {props.selectedDataRenderer && (
                 <props.selectedDataRenderer
                   variant={props.variant}
                   defaultString={props.defaultString}
+                  disabled={props.disabled}
                   selected={selected}
                   selectedDataClasses={
                     props.pickerSelectSimpleClasses?.selectedDataClasses || {}
@@ -187,7 +190,6 @@ const PickerSelectBase = React.forwardRef(
                   {props.noDataComponent && (
                     <props.noDataComponent variant={props.variant} />
                   )}
-
                 </ScrollableBase>
               )}
             </div>

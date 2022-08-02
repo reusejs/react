@@ -155,3 +155,22 @@ Taller.args = {
     return fetchContinents(q);
   },
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  labelBaseProps: {
+    label: 'Country',
+  },
+  disabled: true,
+  valueKey: 'value',
+  multiple: false,
+  scrollableBaseProps: {
+    scrollableBaseClasses: {
+      position: 'z-50 block overflow-auto absolute',
+      maxHeight: 'max-h-64',
+    },
+  },
+  dataSource: (q: any) => {
+    return fetchContinents(q);
+  },
+};

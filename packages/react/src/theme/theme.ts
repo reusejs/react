@@ -117,6 +117,22 @@ const pickerSelectSimpleClasses = {
     spanBaseClasses:
       "inline-block overflow-hidden text-ellipsis whitespace-nowrap w-11/12",
   },
+  disabledStyleClasses:{
+    alignment: "relative block",
+    borderRadius: "rounded-md",
+    border: "border border-gray-300 dark:border-gray-600",
+    focus: "focus:border-blue-500 focus:ring-blue-500",
+    background: "bg-slate-300 dark:bg-gray-900",
+    padding: "py-2 px-3",
+    text: "text-slate-700 dark:text-white",
+    font: "sm:text-sm",
+    width: "w-full",
+    arrowWrapperClasses:
+      "pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2",
+    arrowIconClasses: "h-5 w-5 text-gray-400",
+    spanBaseClasses:
+      "inline-block overflow-hidden text-ellipsis whitespace-nowrap w-11/12",
+  },
   optionClasses: {
     wrapper:
       "relative flex cursor-pointer flex-row items-center p-2 hover:bg-gray-200 dark:hover:bg-gray-700",
