@@ -76,6 +76,24 @@ const textInputBaseErrorClasses = {
   placeholderColor: "placeholder-red-300",
 };
 
+// Text Area
+
+const textAreaBaseClasses = {
+  wrapper: "relative rounded-md shadow-sm",
+  margin: "mt-1",
+  backgroundColor: "bg-white dark:bg-gray-900",
+  formInput: "form-input",
+  alignment: "block",
+  width: "w-full",
+  borderRadius: "rounded-md",
+  border: "border-gray-300 dark:border-gray-600",
+  focus: "focus:border-gray-500 focus:ring-gray-500",
+  padding: "",
+  font: "font-normal sm:text-sm",
+  textColor: "text-gray-900 dark:text-white",
+  placeholderColor: "",
+};
+
 // Picket Select
 
 const pickerSelectBaseClasses = {
@@ -153,7 +171,7 @@ const modalBaseClasses = {
   padding: "px-4 pt-5 pb-4",
   alignment: "text-left",
   shadow: "shadow-xl",
-  small:"sm:my-8 sm:w-full sm:max-w-lg sm:p-6",
+  small: "sm:my-8 sm:w-full sm:max-w-lg sm:p-6",
   animation: "relative transform overflow-hidden transition-all",
 };
 
@@ -206,6 +224,8 @@ const dropdownBaseClasses = {
     "absolute left-0 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none",
 };
 
+// Tags
+
 const tagInputBaseClasses = {
   wrapper: {
     padding: "px-2 py-2",
@@ -246,6 +266,7 @@ const theme = {
   modalConfirmClasses,
   dropdownBaseClasses,
   tagInputBaseClasses,
+  textAreaBaseClasses,
 };
 
 export default theme;

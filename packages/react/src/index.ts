@@ -31,6 +31,10 @@ export { default as PasswordTextInputBase } from "./atoms/textInputs/password";
 
 export { default as TagInputBase } from "./molecules/tags/base";
 
+// TextArea
+
+export { default as TextAreaBase } from "./atoms/textArea/base";
+
 // ******************** End  ---- Atoms *************************
 
 // Start  ---- Molecules

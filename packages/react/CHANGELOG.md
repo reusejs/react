@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.8.5
+
+### Patch Changes
+
+- 17877da: Introduce textarea
+
 ## 6.8.4
 
 ### Patch Changes
