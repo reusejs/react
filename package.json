@@ -5,6 +5,7 @@
     "apps/*"
   ],
   "scripts": {
+    "start": "concurrently 'yarn sb' 'yarn build:watch'",
     "build": "turbo run build",
     "build:watch": "cd packages/react && yarn build -w",
     "docs:dev": "turbo run docs#dev",
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.22.0",
+    "concurrently": "^7.3.0",
     "eslint": "^8.15.0",
     "eslint-config-acme": "*",
     "prettier": "^2.5.1",
