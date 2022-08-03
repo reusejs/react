@@ -94,6 +94,23 @@ const textAreaBaseClasses = {
   placeholderColor: "",
 };
 
+const disabledTextAreaStylesClasses = {
+  wrapper: "relative rounded-md shadow-sm",
+  margin: "mt-1",
+  backgroundColor: "bg-slate-300 dark:bg-gray-900",
+  formInput: "form-input",
+  alignment: "block",
+  width: "w-full",
+  borderRadius: "rounded-md",
+  border: "border-gray-300 dark:border-gray-600",
+  focus: "focus:border-gray-500 focus:ring-gray-500",
+  padding: "",
+  font: "font-normal sm:text-sm",
+  textColor: "text-slate-700 dark:text-white",
+  placeholderColor: "",
+  opacity: "opacity-70",
+};
+
 // Picket Select
 
 const pickerSelectBaseClasses = {
@@ -283,6 +300,7 @@ const theme = {
   dropdownBaseClasses,
   tagInputBaseClasses,
   textAreaBaseClasses,
+  disabledTextAreaStylesClasses,
 };
 
 export default theme;
