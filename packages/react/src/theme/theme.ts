@@ -263,6 +263,16 @@ const tagInputBaseClasses = {
   },
 };
 
+// Footer
+
+const footerBaseCalsses = {
+  width: "w-full",
+  backgroundColor: "bg-white",
+  padding:"py-10 px-4 sm:px-6 lg:px-8",
+  alignment: "mx-auto md:flex md:items-center md:justify-between"
+
+}
+
 const theme = {
   dividerBaseClasses,
   labelBaseClasses,
@@ -283,6 +293,7 @@ const theme = {
   dropdownBaseClasses,
   tagInputBaseClasses,
   textAreaBaseClasses,
+  footerBaseCalsses
 };
 
 export default theme;
