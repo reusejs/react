@@ -19,7 +19,7 @@ export interface TextAreaBaseProps {
   id?: string;
   error?: any;
   textInputBottom?: any;
-  defaultValue?: any;
+  defaultValue?: string;
   disabled?: boolean;
   disabledTextAreaStylesClasses?: {
     display: string;
@@ -149,7 +149,7 @@ const TextAreaBase = (props: TextAreaBaseProps) => {
           onChange={(e) => props.onChange?.(e.target.value)}
           disabled={props.disabled}
           value={props.value}
-          defaultValue={props.defaultValue}
+          // defaultValue={props.defaultValue}
         />
       </div>
 
