@@ -21,7 +21,7 @@ export interface DropdownMultiProps {
     wrapper?: any;
     transition?: any;
     itemsWrapper?: any;
-    menuButton?: any;
+    containerClasses?: any;
   };
   onClick?: (item: any) => void;
 }
