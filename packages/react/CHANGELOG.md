@@ -1,5 +1,15 @@
 # @reusejs/react
 
+## 6.10.0
+
+### Minor Changes
+
+- e8f9610: Introduce navigation bar
+
+### Patch Changes
+
+- 5140051: Fix issues with select picker
+
 ## 6.9.0
 
 ### Minor Changes
