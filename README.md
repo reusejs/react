@@ -6,7 +6,7 @@
 
 ### Disclaimer
 
-We are contributing to this repo heavily on a daily basis. As we are developing components, we are learning new things and updating the spec constantly. So, in case you opt to use some of the components in your projects, please keep yourself updated with the changes. We haven't yet even arrived at code of conduct or guidelines. The documentation is almost non-existent for the components. Having said that, we can't live without this library!
+We are contributing to this repo heavily on a daily basis. As we are developing components, we are learning new things and updating the spec constantly. So, in case you opt to use some of the components in your projects, please keep yourself updated with the changes. We haven't yet even arrived at code of conduct or guidelines. The documentation is almost non-existent for the components. Having said that, we can't live without this library..!
 
 ### Why another component library?
 
