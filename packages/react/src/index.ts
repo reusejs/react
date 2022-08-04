@@ -68,6 +68,7 @@ export { default as ModalConfirm } from "./molecules/modals/confirm";
 // File Modals
 
 export { default as DropdownBase } from "./molecules/dropdowns/base";
+export { default as DropdownMulti } from "./molecules/dropdowns/multi";
 
 // ******************** End  ---- Molecules *************************
 
