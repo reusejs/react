@@ -65,14 +65,23 @@ export { default as FileUploaderBase } from "./molecules/fileUploader/base";
 export { default as ModalBase } from "./molecules/modals/base";
 export { default as ModalConfirm } from "./molecules/modals/confirm";
 
-// File Modals
+// Dropdowns
 
 export { default as DropdownBase } from "./molecules/dropdowns/base";
 export { default as DropdownMulti } from "./molecules/dropdowns/multi";
 
 // ******************** End  ---- Molecules *************************
 
+// Start  ---- Organisms
+export { default as NavigationBase } from "./organisms/navigations/base";
+
+// ******************** End  ---- Organisms *************************
+
+// Start  ---- Utils
+
 export { default as BetaForm } from "./utils/form";
+
+// ******************** End  ---- Utils *************************
 
 export {
   default as ThemeProvider,
