@@ -14,17 +14,18 @@ export interface ModalBaseProps {
   onAction?: any;
   content?: any;
   backgroundColor?: string;
-  backgroundOpacity ?: string;
-  modalBaseClasses ?: {
-    background?: string,
-    font?: string,
-    border?: string,
-    padding?: string,
-    alignment?: string,
-    shadow?: string, 
-    small?: string,
-    animation?: string,
-  }
+  backgroundOpacity?: string;
+  modalBaseClasses?: {
+    background?: string;
+    font?: string;
+    border?: string;
+    padding?: string;
+    alignment?: string;
+    shadow?: string;
+    small?: string;
+    animation?: string;
+  };
+  contentProps?: any;
 }
 
 const ModalBase = (props: ModalBaseProps) => {
@@ -51,13 +52,19 @@ const ModalBase = (props: ModalBaseProps) => {
   );
 
   return (
-    <ModalWrapper showModal={props.visible} resolveModal={props.onAction} backgroundColor={props.backgroundColor} backgroundOpacity={props.backgroundOpacity}>
-      <div
-        className={modalClassNames}
-        ref={visRef}
-      >
+    <ModalWrapper
+      showModal={props.visible}
+      resolveModal={props.onAction}
+      backgroundColor={props.backgroundColor}
+      backgroundOpacity={props.backgroundOpacity}
+    >
+      <div className={modalClassNames} ref={visRef}>
         {props.content && (
-          <props.content visible={props.visible} onAction={props.onAction}/>
+          <props.content
+            visible={props.visible}
+            onAction={props.onAction}
+            {...props.contentProps}
+          />
         )}
       </div>
     </ModalWrapper>
