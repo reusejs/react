@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.10.1
+
+### Patch Changes
+
+- 008a94c: Fix modal
+
 ## 6.10.0
 
 ### Minor Changes
