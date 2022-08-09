@@ -94,6 +94,23 @@ const textAreaBaseClasses = {
   placeholderColor: "",
 };
 
+const disabledTextAreaStylesClasses = {
+  wrapper: "relative rounded-md shadow-sm",
+  margin: "mt-1",
+  backgroundColor: "bg-slate-300 dark:bg-gray-900",
+  formInput: "form-input",
+  alignment: "block",
+  width: "w-full",
+  borderRadius: "rounded-md",
+  border: "border-gray-300 dark:border-gray-600",
+  focus: "focus:border-gray-500 focus:ring-gray-500",
+  padding: "",
+  font: "font-normal sm:text-sm",
+  textColor: "text-slate-700 dark:text-white",
+  placeholderColor: "",
+  opacity: "opacity-70",
+};
+
 // Picket Select
 
 const pickerSelectBaseClasses = {
@@ -115,9 +132,9 @@ const pickerSelectSimpleClasses = {
       "pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2",
     arrowIconClasses: "h-5 w-5 text-gray-400",
     spanBaseClasses:
-      "inline-block overflow-hidden text-ellipsis whitespace-nowrap w-11/12",
+      "block overflow-hidden text-ellipsis whitespace-nowrap w-11/12",
   },
-  disabledStyleClasses:{
+  disabledStyleClasses: {
     alignment: "relative block",
     borderRadius: "rounded-md",
     border: "border border-gray-300 dark:border-gray-600",
@@ -131,7 +148,7 @@ const pickerSelectSimpleClasses = {
       "pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2",
     arrowIconClasses: "h-5 w-5 text-gray-400",
     spanBaseClasses:
-      "inline-block overflow-hidden text-ellipsis whitespace-nowrap w-11/12",
+      "block overflow-hidden text-ellipsis whitespace-nowrap w-11/12",
   },
   optionClasses: {
     wrapper:
@@ -240,6 +257,25 @@ const dropdownBaseClasses = {
     "absolute left-0 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none",
 };
 
+const dropdownMultiClasses = {
+  wrapper: "relative cursor-pointer",
+  transition: {
+    enter: "transition ease-out duration-200",
+    enterFrom: "transform opacity-0 scale-95",
+    enterTo: "transform opacity-100 scale-100",
+    leave: "transition ease-in duration-75",
+    leaveFrom: "transform opacity-100 scale-100",
+    leaveTo: "transform opacity-0 scale-95",
+  },
+  containerClasses:
+    "absolute left-0 mt-2 w-40 origin-top-left border dark:border-gray-800 bg-white dark:bg-gray-900 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none  rounded-md",
+  childContainerClasses:
+    "absolute top-0 left-1 w-40 origin-top-left translate-x-full border dark:border-gray-800 bg-white dark:bg-gray-900 py-1 rounded-md",
+  itemClasses:
+    "relative block w-full cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-gray-700",
+  activeItemClasses: "text-blue-500 font-semibold",
+};
+
 // Tags
 
 const tagInputBaseClasses = {
@@ -281,8 +317,10 @@ const theme = {
   modalBaseClasses,
   modalConfirmClasses,
   dropdownBaseClasses,
+  dropdownMultiClasses,
   tagInputBaseClasses,
   textAreaBaseClasses,
+  disabledTextAreaStylesClasses,
 };
 
 export default theme;

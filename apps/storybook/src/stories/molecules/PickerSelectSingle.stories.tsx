@@ -162,6 +162,7 @@ Disabled.args = {
     label: 'Country',
   },
   disabled: true,
+  defaultSelected: [{ label: 'Asia', value: 'asia' }],
   valueKey: 'value',
   multiple: false,
   scrollableBaseProps: {

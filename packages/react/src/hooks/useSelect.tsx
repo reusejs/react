@@ -28,7 +28,7 @@ export default function (
 
   useEffect(() => {
     setSelected(defaultSelected);
-  }, [defaultSelected.length]);
+  }, [defaultSelected]);
 
   useEffect(() => {
     const debounceTimer = setTimeout(() => {

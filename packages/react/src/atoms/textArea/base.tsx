@@ -19,6 +19,19 @@ export interface TextAreaBaseProps {
   id?: string;
   error?: any;
   textInputBottom?: any;
+  disabled?: boolean;
+  disabledTextAreaStylesClasses?: {
+    display: string;
+    border: string;
+    background: string;
+    width: string;
+    color: string;
+    font: string;
+    padding: string;
+    margin: string;
+    shadow: string;
+    opacity?: string;
+  };
   onChange?: (value?: string) => void;
   textAreaBaseClasses?: {
     display: string;
@@ -79,6 +92,26 @@ const TextAreaBase = (props: TextAreaBaseProps) => {
     theme
   );
 
+  const disableStyleAddons = resolvedStyleProps(
+    "disabledTextAreaStylesClasses",
+    [
+      "formInput",
+      "alignment",
+      "width",
+      "borderRadius",
+      "border",
+      "focus",
+      "padding",
+      "font",
+      "textColor",
+      "backgroundColor",
+      "placeholderColor",
+      "opacity",
+    ],
+    allProps,
+    theme
+  );
+
   const wrappersClassNames = resolvedStyleProps(
     "textAreaBaseClasses",
     ["wrapper"],
@@ -107,12 +140,13 @@ const TextAreaBase = (props: TextAreaBaseProps) => {
       >
         <textarea
           placeholder={props.placeholder}
-          className={finalClassNames}
+          className={props.disabled ? disableStyleAddons : finalClassNames}
           rows={props.rows || 4}
           cols={props.cols || 50}
           name={props.name || "Textarea input"}
           id={props.id || "Textarea input"}
           onChange={(e) => props.onChange?.(e.target.value)}
+          disabled={props.disabled}
           value={props.value}
         />
       </div>

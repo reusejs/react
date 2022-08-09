@@ -1,5 +1,32 @@
 # @reusejs/react
 
+## 6.10.1
+
+### Patch Changes
+
+- 008a94c: Fix modal
+
+## 6.10.0
+
+### Minor Changes
+
+- e8f9610: Introduce navigation bar
+
+### Patch Changes
+
+- 5140051: Fix issues with select picker
+
+## 6.9.0
+
+### Minor Changes
+
+- e628dc0: Introduce dropdown multi
+
+### Patch Changes
+
+- 7c47682: Fix textarea issues
+- ace260c: Add disabled prop to select picker
+
 ## 6.8.6
 
 ### Patch Changes
