@@ -7,9 +7,9 @@ import resolvedStyleProps from "../../../utils/resolvedStyleProps";
 import pickAndMergeVariants from "../../../utils/pickAndMergeVariants";
 
 export interface PickerSelectSimpleProps extends PickerSelectBaseProps {
-  enableClear: true;
-  enableClose: true;
-  enableSearch: true;
+  enableClear: boolean;
+  enableClose: boolean;
+  enableSearch: boolean;
 }
 
 const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
