@@ -69,8 +69,6 @@ export { default as ModalConfirm } from "./molecules/modals/confirm";
 
 export { default as DropdownBase } from "./molecules/dropdowns/base";
 
-export { default as FooterBase } from "./molecules/footer/footerBase";
-
 // ******************** End  ---- Molecules *************************
 
 export { default as BetaForm } from "./utils/form";
