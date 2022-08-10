@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.10.2
+
+### Patch Changes
+
+- 55e999d: Fix type props in select
+
 ## 6.10.1
 
 ### Patch Changes
