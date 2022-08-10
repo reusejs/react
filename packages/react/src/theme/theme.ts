@@ -195,6 +195,20 @@ const pickerCheckboxSimpleClasses = {
   },
 };
 
+const radioBoxStyleClasses = {
+  wrapper: "mt-0",
+  alignment: "",
+  width: "h-4 w-4",
+  borderRadius: "",
+  border: "border-gray-300 dark:border-gray-600",
+  focus: "focus:border-gray-500 focus:ring-gray-500 checked:bg-gray-500",
+  padding: "",
+  font: "",
+  textColor: "text-gray-900 dark:text-white",
+  backgroundColor: "bg-white dark:bg-gray-900",
+  placeholderColor: "",
+}
+
 // Modals - Confirm
 
 const modalBaseClasses = {
@@ -310,6 +324,7 @@ const theme = {
   scrollableBaseClasses,
   pickerSelectSimpleClasses,
   pickerRadioBaseClasses,
+  radioBoxStyleClasses,
   // pickerRadioAnimatedClasses,
   pickerRadioSimpleClasses,
   pickerCheckboxBaseClasses,

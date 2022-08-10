@@ -35,11 +35,26 @@ export interface PickerRadioBaseProps {
   defaultOpen?: boolean;
   defaultQuery?: string;
   optionsRenderer: any;
+  radioBoxStyleClasses?: {
+    wrapper: string;
+    alignment: string;
+    width: string;
+    borderRadius: string;
+    border: string;
+    focus: string;
+    padding: string;
+    font: string;
+    textColor: string;
+    backgroundColor: string;
+    placeholderColor: string;
+  };
 }
 
 const PickerRadioBase = React.forwardRef((props: PickerRadioBaseProps, ref) => {
   const theme: any = useThemeContext();
   let allProps = Object.assign({}, props);
+
+  console.log("Props In base picker are", props);
 
   if (props.error) {
     const errorStyleProps = extractStyleProps(
@@ -94,6 +109,7 @@ const PickerRadioBase = React.forwardRef((props: PickerRadioBaseProps, ref) => {
                       optionsClasses={
                         props.pickerRadioSimpleClasses?.optionClasses || {}
                       }
+                      radioBoxStyleClasses={props.radioBoxStyleClasses}
                     />
                   )}
                 </div>
