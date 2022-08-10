@@ -35,7 +35,7 @@ export interface PickerSelectBaseProps {
   };
   onChange: (value?: string) => void;
   dataSource: (query?: string) => void;
-  defaultSelected?: any;
+  defaultSelected: any;
   defaultString?: string;
   valueKey: "value";
   defaultOpen?: boolean;

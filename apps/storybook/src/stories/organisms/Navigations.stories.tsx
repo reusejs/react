@@ -293,7 +293,7 @@ Thin.args = {
             <option>EUR</option>
             <option>GBP</option>
           </select>
-          <div className='pointer-events-none absolute inset-y-0 right-0 flex items-center'>
+          {/* <div className='pointer-events-none absolute inset-y-0 right-0 flex items-center'>
             <svg
               aria-hidden='true'
               xmlns='http://www.w3.org/2000/svg'
@@ -309,7 +309,7 @@ Thin.args = {
                 d='M6 8l4 4 4-4'
               />
             </svg>
-          </div>
+          </div> */}
         </div>
       </div>
     </form>

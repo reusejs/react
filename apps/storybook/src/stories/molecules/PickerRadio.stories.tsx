@@ -122,5 +122,9 @@ Inline.args = {
       borderRadius: '',
     },
   },
+  //Properties to customize radio button refer to theme.radioBoxStyleClasses to override any exiting styling
+  radioBoxStyleClasses: {
+    focus: "focus:border-gray-500 focus:ring-gray-500 checked:bg-blue-500",
+  },
   defaultSelected: [{ label: 'Asia', value: 'asia' }],
 };
