@@ -41,9 +41,9 @@ export interface PickerSelectBaseProps {
   defaultOpen?: boolean;
   defaultQuery?: string;
   refresh?: string;
-  selectedDataRenderer: any;
-  searchRenderer: any;
-  optionsRenderer: any;
+  selectedDataRenderer?: any;
+  searchRenderer?: any;
+  optionsRenderer?: any;
   closeComponent?: any;
   clearComponent?: any;
   noDataComponent?: any;
