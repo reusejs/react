@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.10.3
+
+### Patch Changes
+
+- ec94d13: Make changes to styles
+
 ## 6.10.2
 
 ### Patch Changes
