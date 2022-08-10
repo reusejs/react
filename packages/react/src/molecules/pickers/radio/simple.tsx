@@ -48,7 +48,6 @@ const OptionsRenderer = ({
 }) => {
   const [found, setFound] = React.useState<boolean>(false);
 
-
   React.useEffect(() => {
     let localFound = selected.some(
       (current: any) => current.value === value.value
@@ -60,7 +59,7 @@ const OptionsRenderer = ({
     <div className="flex items-center">
       <TextInputBase
         labelBaseProps={{
-          label:"",
+          label: "",
         }}
         htmlFor=""
         id={value.value}
@@ -68,14 +67,24 @@ const OptionsRenderer = ({
         type="radio"
         checked={found === true}
         onChange={() => {}}
-        textInputBaseClasses={radioBoxStyleClasses ? { ...theme.radioBoxStyleClasses, ...radioBoxStyleClasses} : theme.radioBoxStyleClasses}
+        textInputBaseClasses={
+          radioBoxStyleClasses
+            ? { ...theme.radioBoxStyleClasses, ...radioBoxStyleClasses }
+            : theme.radioBoxStyleClasses
+        }
       />
 
       <LabelBase
         htmlFor={value.value}
         label={value.label}
         labelBaseClasses={
-          theme.pickerRadioSimpleClasses.optionClasses.labelBaseClasses
+          radioBoxStyleClasses?.labelBaseClasses
+            ? {
+                ...theme.pickerRadioSimpleClasses.optionClasses
+                  .labelBaseClasses,
+                ...radioBoxStyleClasses.labelBaseClasses,
+              }
+            : theme.pickerRadioSimpleClasses.optionClasses.labelBaseClasses
         }
       />
     </div>

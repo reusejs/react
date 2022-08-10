@@ -47,6 +47,7 @@ export interface PickerRadioBaseProps {
     textColor: string;
     backgroundColor: string;
     placeholderColor: string;
+    labelBaseClasses?: LabelBaseProps;
   };
 }
 
