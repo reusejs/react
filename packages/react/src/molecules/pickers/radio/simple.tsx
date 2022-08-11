@@ -30,6 +30,7 @@ const PickerRadioSimple = (props: PickerRadioBaseProps) => {
       defaultSelected={props.defaultSelected}
       pickerRadioBaseClasses={props.pickerRadioBaseClasses}
       radioBoxStyleClasses={props.radioBoxStyleClasses}
+      radioOptionLabelClasses={props.radioOptionLabelClasses}
     />
   );
 };
@@ -39,12 +40,14 @@ const OptionsRenderer = ({
   selected,
   name,
   radioBoxStyleClasses,
+  radioOptionLabelClasses,
   ...props
 }: {
   value: any;
   name: any;
   selected: any;
   radioBoxStyleClasses: any;
+  radioOptionLabelClasses: any;
 }) => {
   const [found, setFound] = React.useState<boolean>(false);
 
@@ -54,6 +57,15 @@ const OptionsRenderer = ({
     );
     setFound(localFound === false ? false : true);
   }, [selected]);
+
+  const getLabelClasses = () => {
+    return radioOptionLabelClasses
+      ? {
+          ...theme.radioOptionLabelClasses,
+          ...radioOptionLabelClasses,
+        }
+      : theme.radioOptionLabelClasses;
+  };
 
   return (
     <div className="flex items-center">
@@ -73,19 +85,10 @@ const OptionsRenderer = ({
             : theme.radioBoxStyleClasses
         }
       />
-
       <LabelBase
         htmlFor={value.value}
         label={value.label}
-        labelBaseClasses={
-          radioBoxStyleClasses?.labelBaseClasses
-            ? {
-                ...theme.pickerRadioSimpleClasses.optionClasses
-                  .labelBaseClasses,
-                ...radioBoxStyleClasses.labelBaseClasses,
-              }
-            : theme.pickerRadioSimpleClasses.optionClasses.labelBaseClasses
-        }
+        labelBaseClasses={getLabelClasses()}
       />
     </div>
   );

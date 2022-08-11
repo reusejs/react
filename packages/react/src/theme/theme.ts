@@ -207,7 +207,13 @@ const radioBoxStyleClasses = {
   textColor: "text-gray-900 dark:text-white",
   backgroundColor: "bg-white dark:bg-gray-900",
   placeholderColor: "",
-}
+};
+
+const radioOptionLabelClasses = {
+  alignment: "ml-3 block",
+  font: "text-sm font-medium",
+  color: "text-orange-800 dark:text-gray-100",
+};
 
 // Modals - Confirm
 
@@ -325,6 +331,7 @@ const theme = {
   pickerSelectSimpleClasses,
   pickerRadioBaseClasses,
   radioBoxStyleClasses,
+  radioOptionLabelClasses,
   // pickerRadioAnimatedClasses,
   pickerRadioSimpleClasses,
   pickerCheckboxBaseClasses,

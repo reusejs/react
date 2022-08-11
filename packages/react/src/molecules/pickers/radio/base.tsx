@@ -11,6 +11,7 @@ import { LabelBaseProps } from "../../../atoms/labels/base";
 
 export interface PickerRadioBaseProps {
   labelBaseProps?: LabelBaseProps;
+  radioOptionLabelClasses?: any;
   scrollableBaseProps?: ScrollableBaseProps;
   name: string;
   variant?: string;
@@ -47,7 +48,6 @@ export interface PickerRadioBaseProps {
     textColor: string;
     backgroundColor: string;
     placeholderColor: string;
-    labelBaseClasses?: LabelBaseProps;
   };
 }
 
@@ -111,6 +111,7 @@ const PickerRadioBase = React.forwardRef((props: PickerRadioBaseProps, ref) => {
                         props.pickerRadioSimpleClasses?.optionClasses || {}
                       }
                       radioBoxStyleClasses={props.radioBoxStyleClasses}
+                      radioOptionLabelClasses={props.radioOptionLabelClasses}
                     />
                   )}
                 </div>
