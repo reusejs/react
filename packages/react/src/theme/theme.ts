@@ -212,18 +212,11 @@ const radioBoxStyleClasses = {
   wrapper: "mt-0",
   alignment: "appearance-none",
   width: "h-4 w-4",
-  borderRadius: "rounded-full border-slate-500 border bg-red-100 focus:ring-blue-500 checked:bg-white checked:border-4 checked:border-blue-500",
+  borderRadius: "rounded-full border-slate-500 border bg-white focus:ring-blue-500 checked:bg-white checked:border-4 checked:border-blue-500",
   border: " ",
   focus: " ",
   padding: "",
-<<<<<<< HEAD
-  font: " ",
   formInput: " ",
-  textColor: " ",
-  backgroundColor: " ",
-  placeholderColor: " ",
-}
-=======
   font: "",
   textColor: "text-gray-900 dark:text-white",
   backgroundColor: "bg-white dark:bg-gray-900",
@@ -235,7 +228,6 @@ const radioOptionLabelClasses = {
   font: "text-sm font-medium",
   color: "text-orange-800 dark:text-gray-100",
 };
->>>>>>> 0fbbd54c52014e83f80bc94034e11ee7d7f6442e
 
 // Modals - Confirm
 
@@ -354,11 +346,8 @@ const theme = {
   pickerSelectSimpleClasses,
   pickerRadioBaseClasses,
   radioBoxStyleClasses,
-<<<<<<< HEAD
-=======
   radioOptionLabelClasses,
   // pickerRadioAnimatedClasses,
->>>>>>> 0fbbd54c52014e83f80bc94034e11ee7d7f6442e
   pickerRadioSimpleClasses,
   pickerCheckboxBaseClasses,
   pickerCheckboxSimpleClasses,
