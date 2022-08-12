@@ -1,5 +1,17 @@
 # @reusejs/react
 
+## 6.10.4
+
+### Patch Changes
+
+- f7837a1: Improve default classes
+
+## 6.10.3
+
+### Patch Changes
+
+- ec94d13: Make changes to styles
+
 ## 6.10.2
 
 ### Patch Changes
