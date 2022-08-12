@@ -123,9 +123,6 @@ Inline.args = {
     },
   },
   //Properties to customize radio button refer to theme.radioBoxStyleClasses to override any exiting styling
-  radioBoxStyleClasses: {
-    focus: 'focus:border-gray-500 focus:ring-gray-500 checked:bg-blue-500',
-  },
   radioOptionLabelClasses: {
     color: 'text-blue-800 dark:text-yellow-100',
     alignment: 'ml-3 block',
