@@ -6,10 +6,6 @@ export { default as theme } from "./theme/theme";
 
 export { default as LabelBase } from "./atoms/labels/base";
 
-// Dividers
-
-export { default as DividerBase } from "./atoms/dividers/base";
-
 // Scrollables
 
 export { default as ScrollableBase } from "./atoms/scrollables/base";
@@ -21,6 +17,13 @@ export { default as BadgeBase } from "./atoms/badges/base";
 // Buttons
 
 export { default as ButtonBase } from "./atoms/buttons/base";
+
+// Dividers
+
+export { default as DividerBase } from "./atoms/dividers/base";
+
+// Grid Base
+export { default as GridBase } from "./atoms/grid/base";
 
 // TextInputs
 
