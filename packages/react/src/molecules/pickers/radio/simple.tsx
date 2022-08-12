@@ -30,6 +30,7 @@ const PickerRadioSimple = (props: PickerRadioBaseProps) => {
       defaultSelected={props.defaultSelected}
       pickerRadioBaseClasses={props.pickerRadioBaseClasses}
       radioBoxStyleClasses={props.radioBoxStyleClasses}
+      radioOptionLabelClasses={props.radioOptionLabelClasses}
     />
   );
 };
@@ -39,15 +40,16 @@ const OptionsRenderer = ({
   selected,
   name,
   radioBoxStyleClasses,
+  radioOptionLabelClasses,
   ...props
 }: {
   value: any;
   name: any;
   selected: any;
   radioBoxStyleClasses: any;
+  radioOptionLabelClasses: any;
 }) => {
   const [found, setFound] = React.useState<boolean>(false);
-
 
   React.useEffect(() => {
     let localFound = selected.some(
@@ -56,11 +58,20 @@ const OptionsRenderer = ({
     setFound(localFound === false ? false : true);
   }, [selected]);
 
+  const getLabelClasses = () => {
+    return radioOptionLabelClasses
+      ? {
+          ...theme.radioOptionLabelClasses,
+          ...radioOptionLabelClasses,
+        }
+      : theme.radioOptionLabelClasses;
+  };
+
   return (
     <div className="flex items-center">
       <TextInputBase
         labelBaseProps={{
-          label:"",
+          label: "",
         }}
         htmlFor=""
         id={value.value}
@@ -68,15 +79,16 @@ const OptionsRenderer = ({
         type="radio"
         checked={found === true}
         onChange={() => {}}
-        textInputBaseClasses={radioBoxStyleClasses ? { ...theme.radioBoxStyleClasses, ...radioBoxStyleClasses} : theme.radioBoxStyleClasses}
+        textInputBaseClasses={
+          radioBoxStyleClasses
+            ? { ...theme.radioBoxStyleClasses, ...radioBoxStyleClasses }
+            : theme.radioBoxStyleClasses
+        }
       />
-
       <LabelBase
         htmlFor={value.value}
         label={value.label}
-        labelBaseClasses={
-          theme.pickerRadioSimpleClasses.optionClasses.labelBaseClasses
-        }
+        labelBaseClasses={getLabelClasses()}
       />
     </div>
   );

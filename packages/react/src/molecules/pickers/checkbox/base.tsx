@@ -35,7 +35,7 @@ export interface PickerCheckboxBaseProps {
   valueKey: "value";
   defaultOpen?: boolean;
   defaultQuery?: string;
-  optionsRenderer: any;
+  optionsRenderer?: any;
 }
 
 const PickerCheckboxBase = React.forwardRef(

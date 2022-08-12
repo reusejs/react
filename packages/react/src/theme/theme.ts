@@ -216,12 +216,26 @@ const radioBoxStyleClasses = {
   border: " ",
   focus: " ",
   padding: "",
+<<<<<<< HEAD
   font: " ",
   formInput: " ",
   textColor: " ",
   backgroundColor: " ",
   placeholderColor: " ",
 }
+=======
+  font: "",
+  textColor: "text-gray-900 dark:text-white",
+  backgroundColor: "bg-white dark:bg-gray-900",
+  placeholderColor: "",
+};
+
+const radioOptionLabelClasses = {
+  alignment: "ml-3 block",
+  font: "text-sm font-medium",
+  color: "text-orange-800 dark:text-gray-100",
+};
+>>>>>>> 0fbbd54c52014e83f80bc94034e11ee7d7f6442e
 
 // Modals - Confirm
 
@@ -340,6 +354,11 @@ const theme = {
   pickerSelectSimpleClasses,
   pickerRadioBaseClasses,
   radioBoxStyleClasses,
+<<<<<<< HEAD
+=======
+  radioOptionLabelClasses,
+  // pickerRadioAnimatedClasses,
+>>>>>>> 0fbbd54c52014e83f80bc94034e11ee7d7f6442e
   pickerRadioSimpleClasses,
   pickerCheckboxBaseClasses,
   pickerCheckboxSimpleClasses,
