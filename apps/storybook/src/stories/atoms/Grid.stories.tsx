@@ -36,7 +36,10 @@ const CardArrayColored = SAMPLEDATA.map((values, index) => {
   });
 
 const Template: ComponentStory<typeof GridBase> = (args) => (
+  <>
+  <div className='font-bold text-2xl'>This is a Grid Base</div>
   <GridBase {...args} />
+  </>
 );
 
 export const Default = Template.bind({});
