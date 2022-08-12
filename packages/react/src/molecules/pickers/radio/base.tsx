@@ -55,8 +55,6 @@ const PickerRadioBase = React.forwardRef((props: PickerRadioBaseProps, ref) => {
   const theme: any = useThemeContext();
   let allProps = Object.assign({}, props);
 
-  console.log("Props In base picker are", props);
-
   if (props.error) {
     const errorStyleProps = extractStyleProps(
       "textInputBaseErrorClasses",
