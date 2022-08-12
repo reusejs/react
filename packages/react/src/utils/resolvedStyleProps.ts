@@ -4,6 +4,7 @@ const resolvedStyleProps = (
   componentProps: any,
   theme: any
 ) => {
+  // console.log(styleProps);
   let resolvedProps = styleProps.map((s) => {
     return (
       (componentProps[propName] && componentProps[propName][s]) ||

@@ -9,6 +9,19 @@ const badgeBaseClasses = {
   textColor: "text-blue-800",
 };
 
+//Grid
+const gridBaseClasses = {
+  grid: "grid",
+  alignment: "",
+  size: "w-full h-full",
+  columns: "grid-cols-3",
+  gap: "gap-4",
+  padding: "p-2",
+  margin: "",
+  backgroundColor: "",
+  border: ""
+}
+
 //Divider
 const dividerBaseClasses = {
   color: "bg-gray-500 w-full",
@@ -197,16 +210,17 @@ const pickerCheckboxSimpleClasses = {
 
 const radioBoxStyleClasses = {
   wrapper: "mt-0",
-  alignment: "",
+  alignment: "appearance-none",
   width: "h-4 w-4",
-  borderRadius: "",
-  border: "border-gray-300 dark:border-gray-600",
-  focus: "focus:border-gray-500 focus:ring-gray-500 checked:bg-gray-500",
+  borderRadius: "rounded-full border-slate-500 border bg-red-100 focus:ring-blue-500 checked:bg-white checked:border-4 checked:border-blue-500",
+  border: " ",
+  focus: " ",
   padding: "",
-  font: "",
-  textColor: "text-gray-900 dark:text-white",
-  backgroundColor: "bg-white dark:bg-gray-900",
-  placeholderColor: "",
+  font: " ",
+  formInput: " ",
+  textColor: " ",
+  backgroundColor: " ",
+  placeholderColor: " ",
 }
 
 // Modals - Confirm
@@ -314,10 +328,11 @@ const tagInputBaseClasses = {
 };
 
 const theme = {
-  dividerBaseClasses,
+  gridBaseClasses,
   labelBaseClasses,
   badgeBaseClasses,
   buttonBaseClasses,
+  dividerBaseClasses,
   textInputBaseClasses,
   textInputBaseErrorClasses,
   pickerSelectBaseClasses,
@@ -325,7 +340,6 @@ const theme = {
   pickerSelectSimpleClasses,
   pickerRadioBaseClasses,
   radioBoxStyleClasses,
-  // pickerRadioAnimatedClasses,
   pickerRadioSimpleClasses,
   pickerCheckboxBaseClasses,
   pickerCheckboxSimpleClasses,

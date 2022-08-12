@@ -20,6 +20,23 @@ const variants = {
       padding: 'pl-7 pr-12',
     },
   },
+  secondary: {
+    gridBaseClasses: {
+      grid: 'grid',
+      alignment: '',
+      size: 'w-full h-full',
+      columns: 'grid-cols-3 grid-rows-3 grid-flow-col',
+      gap: 'gap-2',
+      padding: '',
+      margin: '',
+      backgroundColor: 'bg-cyan-50',
+      border: '',
+    },
+    labelBaseClasses: {
+      color: 'text-black-500',
+      font: 'text-2xl font-bold',
+    },
+  },
   slow: {
     dropdownBaseClasses: {
       wrapper: 'relative inline-block text-left',
