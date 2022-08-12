@@ -226,7 +226,7 @@ const radioBoxStyleClasses = {
 const radioOptionLabelClasses = {
   alignment: "ml-3 block",
   font: "text-sm font-medium",
-  color: "text-orange-800 dark:text-gray-100",
+  color: "text-slate-800 dark:text-gray-100",
 };
 
 // Modals - Confirm
