@@ -77,6 +77,7 @@ export { default as DropdownMulti } from "./molecules/dropdowns/multi";
 
 // Start  ---- Organisms
 export { default as NavigationBase } from "./organisms/navigations/base";
+export { default as FooterBase } from "./organisms/footer/base";
 
 // ******************** End  ---- Organisms *************************
 
