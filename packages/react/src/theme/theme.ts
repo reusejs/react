@@ -19,8 +19,8 @@ const gridBaseClasses = {
   padding: "p-2",
   margin: "",
   backgroundColor: "",
-  border: ""
-}
+  border: "",
+};
 
 //Divider
 const dividerBaseClasses = {
@@ -212,7 +212,8 @@ const radioBoxStyleClasses = {
   wrapper: "mt-0",
   alignment: "appearance-none",
   width: "h-4 w-4",
-  borderRadius: "rounded-full border-slate-500 border bg-white focus:ring-blue-500 checked:bg-white checked:border-4 checked:border-blue-500",
+  borderRadius:
+    "rounded-full border-slate-500 border bg-white focus:ring-blue-500 checked:bg-white checked:border-4 checked:border-blue-500",
   border: " ",
   focus: " ",
   padding: "",
@@ -333,6 +334,20 @@ const tagInputBaseClasses = {
   },
 };
 
+// Accordion
+
+const accordionBaseClasses = {
+  width: "w-full",
+  borderRadius: "rounded-md",
+  padding: "py-3",
+  font: "font-normal sm:text-sm",
+  textColor: "text-gray-900 dark:text-white cursor-pointer",
+  display: "flex justify-between",
+  wrapper:
+    "border rounded-md px-3 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 mb-3",
+  content: "text-gray-900 dark:text-white  py-3",
+};
+
 const theme = {
   gridBaseClasses,
   labelBaseClasses,
@@ -358,6 +373,7 @@ const theme = {
   tagInputBaseClasses,
   textAreaBaseClasses,
   disabledTextAreaStylesClasses,
+  accordionBaseClasses,
 };
 
 export default theme;
