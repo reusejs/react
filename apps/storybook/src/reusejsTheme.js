@@ -99,6 +99,20 @@ const variants = {
         font: 'cursor-pointer',
       },
     },
+    labelBaseClasses: {
+      color: 'text-blue-400',
+    },
+
+    accordionBaseClasses: {
+      width: 'w-full',
+      borderRadius: 'rounded-md',
+      padding: 'py-3',
+      font: 'font-normal sm:text-sm',
+      textColor: 'text-blue-900 cursor-pointer',
+      display: 'flex justify-between',
+      wrapper: 'border rounded-md px-3 border-blue-300 bg-gray-100 mb-3',
+      content: 'text-blue-400 py-3',
+    },
     textAreaBaseClasses: {
       margin: 'mt-2',
       background: 'bg-gray-700 outline-none',
