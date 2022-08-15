@@ -1,5 +1,12 @@
 # @reusejs/react
 
+## 6.11.0
+
+### Minor Changes
+
+- c467118: Introduce accordion
+- 78cf24c: Introduce grid base
+
 ## 6.10.4
 
 ### Patch Changes
