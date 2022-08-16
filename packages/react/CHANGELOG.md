@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.11.1
+
+### Patch Changes
+
+- 58edefd: Make onClick optional
+
 ## 6.11.0
 
 ### Minor Changes
