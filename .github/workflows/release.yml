@@ -42,4 +42,4 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
         with:
-          args: "A new version of @reusejs/react is released! Check here: https://github.com/reusejs/react/releases"
+          args: "A new version of @reusejs/react is released! Check here: https://github.com/reusejs/react/releases/latest"
