@@ -25,7 +25,7 @@ export interface ButtonBaseProps {
     width?: any;
     disabledClasses?: any;
   };
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const ButtonBase = (props: ButtonBaseProps) => {

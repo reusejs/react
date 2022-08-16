@@ -42,6 +42,11 @@ export { default as TextAreaBase } from "./atoms/textArea/base";
 
 // Start  ---- Molecules
 
+// Accordion
+
+export { default as AccordionBase } from "./molecules/accordion/Base";
+export { default as CollapsibleAccordion } from "./molecules/accordion/CollapsibleAccordion";
+
 // Pickers - Select
 
 export { default as PickerSelectBase } from "./molecules/pickers/select/base";

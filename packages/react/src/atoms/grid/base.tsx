@@ -4,7 +4,7 @@ import { useThemeContext } from "../../theme/ThemeProvider";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
 import {
   GridBaseClasses,
-} from "../../../../interfaces/interfaces";
+} from "../../interfaces/interfaces";
 
 export interface GridBaseProps {
   content: JSX.Element[] | React.FC[] | string[];
@@ -13,8 +13,7 @@ export interface GridBaseProps {
 }
 
 const GridBase = (props: GridBaseProps) => {
-  const theme: GridBaseClasses = useThemeContext();
-  console.log(theme);
+  const theme = useThemeContext();
 
   const gridClassName = resolvedStyleProps(
     "gridBaseClasses",
