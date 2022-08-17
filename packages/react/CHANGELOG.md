@@ -1,5 +1,19 @@
 # @reusejs/react
 
+## 6.11.2
+
+### Patch Changes
+
+- 4433b41: Remove logs
+- bb77fb4: Fix build error
+- d2ca990: Make changes to footer
+
+## 6.11.1
+
+### Patch Changes
+
+- 58edefd: Make onClick optional
+
 ## 6.11.0
 
 ### Minor Changes

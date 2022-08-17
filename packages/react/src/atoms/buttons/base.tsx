@@ -25,7 +25,7 @@ export interface ButtonBaseProps {
     width?: any;
     disabledClasses?: any;
   };
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const ButtonBase = (props: ButtonBaseProps) => {
@@ -48,8 +48,6 @@ const ButtonBase = (props: ButtonBaseProps) => {
     props,
     theme
   );
-
-  console.log("This is button component");
 
   return (
     <button
