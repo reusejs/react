@@ -99,7 +99,7 @@ const AccordionBase = (props: AccordionBaseProps) => {
       {/* <AnimatePresence exitBeforeEnter> */}
         {opened && (
           <div
-            // className={contentClassNames}
+            className={contentClassNames}
             // initial={{ scaleY: 0 }}
             // animate={{ scaleY: 1 }}
             // transition={{ duration: 3 }}
