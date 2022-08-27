@@ -6,7 +6,7 @@ import resolvedStyleProps from "../../utils/resolvedStyleProps";
 export interface ButtonBaseProps {
   label: string;
   type?: "submit" | "reset" | "button";
-  disabled?: false;
+  disabled?: false | true | boolean;
   busy?: false;
   busyText?: any;
   buttonStyles?: any;
