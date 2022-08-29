@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.12.3
+
+### Patch Changes
+
+- 4864a09: Build
+
 ## 6.12.2
 
 ### Patch Changes
