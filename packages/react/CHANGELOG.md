@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.12.1
+
+### Patch Changes
+
+- 1cd0203: Add filters for table
+
 ## 6.12.0
 
 ### Minor Changes
