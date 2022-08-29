@@ -1,5 +1,15 @@
 # @reusejs/react
 
+## 6.12.0
+
+### Minor Changes
+
+- 5aa7c34: Introduce Data Tables
+
+### Patch Changes
+
+- 3c15f2f: Add default search to storybook
+
 ## 6.11.2
 
 ### Patch Changes
