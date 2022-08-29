@@ -13,7 +13,7 @@ import { LabelBaseProps } from "../../../atoms/labels/base";
 export interface PickerSelectBaseProps {
   labelBaseProps?: LabelBaseProps;
   scrollableBaseProps?: ScrollableBaseProps;
-  multiple: false;
+  multiple: false | true;
   disabled?: boolean;
   variant?: string;
   selectInputBottom?: any;

@@ -2,6 +2,7 @@ import React, { forwardRef } from "react";
 import TextFilter from "./TextFilter";
 import CheckboxFilter from "./checkboxFilter";
 import RadioFilter from "./RadioFilter";
+import PickerSelectSimple from "../../pickers/select/simple";
 
 const Filter = forwardRef(function Filter(
   { item, applyFilter }: { item: any; applyFilter: any },
@@ -19,26 +20,29 @@ const Filter = forwardRef(function Filter(
         />
       )}
 
-      {/* {filterable && filterable.type === "checkbox" && (
-        <CheckboxFilter
-          selected={filterable.selected}
-          options={filterable.options}
-          onChange={(e: any) => {
-            applyFilter(e);
-          }}
-        />
+      {filterable && filterable.type === "checkbox" && (
+        <>
+          <CheckboxFilter
+            selected={filterable.selected}
+            options={filterable.options}
+            onChange={(e: any) => {
+              applyFilter(e);
+            }}
+          />
+        </>
       )}
 
       {filterable && filterable.type === "radio" && (
-        <RadioFilter
-          selected={filterable.selected}
-          options={filterable.options}
-          onChange={(e) => {
-            console.log("Radio filter changed", e);
-            applyFilter(e);
-          }}
-        />
-      )} */}
+        <>
+          <RadioFilter
+            selected={filterable.selected}
+            options={filterable.options}
+            onChange={(e: any) => {
+              applyFilter(e);
+            }}
+          />
+        </>
+      )}
 
       {filterable && filterable.type === "clear" && (
         <div className="pr-6 text-right">

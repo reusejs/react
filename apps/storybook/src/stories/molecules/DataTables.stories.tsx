@@ -89,6 +89,17 @@ Default.args = {
           return d.package.version;
         },
         sortable: false,
+        filterable: {
+          type: 'checkbox',
+          options: [
+            { label: 'Email', value: 'email' },
+            { label: 'SMS', value: 'sms' },
+            { label: 'Firebase', value: 'firebase' },
+            { label: 'JSON', value: 'json' },
+            { label: 'Partial', value: 'partial' },
+          ],
+          selected: [],
+        },
       },
       {
         label: '',
