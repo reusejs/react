@@ -273,23 +273,11 @@ const TableBase = React.forwardRef(
           <div className={wrapper2ClassNames}>
             <div className={wrapper3ClassNames}>
               <table className={tableWrapperClassNames}>
-                {!config.disableHeader && <THead config={config} />}
+                {!config.disableHeader && (
+                  <THead config={config} applyFilter={applyFilter} />
+                )}
 
                 <tbody className={bodyWrapperClassNames}>
-                  {config.filterable && (
-                    <tr className={filterRowClassNames}>
-                      {config.columns.map((row: any, i: any) => (
-                        <Filter
-                          item={row}
-                          key={`filter${i}`}
-                          applyFilter={(v: any) => {
-                            applyFilter(row, v);
-                          }}
-                        />
-                      ))}
-                    </tr>
-                  )}
-
                   {loading &&
                     [1, 2, 3].map((row, j) => (
                       <tr className={loadingTrClassNames} key={`loading-${j}`}>

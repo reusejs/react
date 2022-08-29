@@ -12,6 +12,7 @@ const Filter = forwardRef(function Filter(
     <td className="px-6 py-3">
       {filterable && filterable.type === "text" && (
         <TextFilter
+          item={item}
           onChange={(e: any) => {
             applyFilter(e);
           }}

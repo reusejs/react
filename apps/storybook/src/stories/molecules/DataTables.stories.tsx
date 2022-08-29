@@ -6,6 +6,7 @@ import {
   ChevronRightIcon,
   CheckCircleIcon,
 } from '@heroicons/react/solid';
+import { ArrowRightIcon, PlusIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Molecules/DataTableBase',
@@ -14,6 +15,8 @@ export default {
 } as ComponentMeta<typeof DataTableBase>;
 
 const fetchPackages = async (params: any) => {
+  console.log('filters', params.filters);
+
   return new Promise(async (resolve, reject) => {
     try {
       let response: any = await fetch(
@@ -47,6 +50,7 @@ Default.args = {
   sortColumn: 0,
   perPage: 5,
   config: {
+    filterable: true,
     columns: [
       {
         label: 'Package Name',
@@ -57,6 +61,49 @@ Default.args = {
         sortable: false,
         filterable: {
           type: 'text',
+        },
+      },
+      {
+        label: 'Publisher',
+        identifier: 'publisher',
+        resolver: (d: any) => {
+          return d.package.publisher.username;
+        },
+        sortable: false,
+        filterable: {
+          type: 'radio',
+          options: [
+            { label: 'Email', value: 'email' },
+            { label: 'SMS', value: 'sms' },
+            { label: 'Firebase', value: 'firebase' },
+            { label: 'JSON', value: 'json' },
+            { label: 'Partial', value: 'partial' },
+          ],
+          selected: [],
+        },
+      },
+      {
+        label: 'Version',
+        identifier: 'last_used_human',
+        resolver: (d: any) => {
+          return d.package.version;
+        },
+        sortable: false,
+      },
+      {
+        label: '',
+        filterable: {
+          type: 'clear',
+        },
+        resolver: (d: any) => {
+          return (
+            <div className='text-right text-sm font-medium'>
+              <ArrowRightIcon
+                className='h-4 w-4 font-semibold text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-500'
+                aria-hidden='true'
+              />
+            </div>
+          );
         },
       },
     ],

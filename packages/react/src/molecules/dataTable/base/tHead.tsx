@@ -1,6 +1,25 @@
 import React, { forwardRef, useState } from "react";
+import { useThemeContext } from "../../../theme/ThemeProvider";
+import Filter from "./Filter";
+import resolvedStyleProps from "../../../utils/resolvedStyleProps";
 
-const THead = ({ config }: { config: any }) => {
+const THead = ({
+  config,
+  applyFilter,
+  ...props
+}: {
+  config: any;
+  applyFilter: any;
+}) => {
+  const theme: any = useThemeContext();
+
+  const filterRowClassNames = resolvedStyleProps(
+    "dataTableBaseClasses",
+    ["filterRow"],
+    props,
+    theme
+  );
+
   return (
     <thead className="bg-gray-50 dark:bg-[#192130]">
       <tr>
@@ -14,6 +33,19 @@ const THead = ({ config }: { config: any }) => {
           </th>
         ))}
       </tr>
+      {config.filterable && (
+        <tr className={filterRowClassNames}>
+          {config.columns.map((row: any, i: any) => (
+            <Filter
+              item={row}
+              key={`filter${i}`}
+              applyFilter={(v: any) => {
+                applyFilter(row, v);
+              }}
+            />
+          ))}
+        </tr>
+      )}
     </thead>
   );
 };
