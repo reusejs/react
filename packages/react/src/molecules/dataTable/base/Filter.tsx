@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
-import TextFilter from "./TextFilter";
-import CheckboxFilter from "./CheckboxFilter";
-import RadioFilter from "./RadioFilter";
+import TextFilter from "./textFilter";
+import CheckboxFilter from "./checkboxFilter";
+import RadioFilter from "./radioFilter";
 
 const Filter = forwardRef(function Filter(
   { item, applyFilter }: { item: any; applyFilter: any },

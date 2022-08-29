@@ -2,10 +2,10 @@ import React, { useState, useEffect, useImperativeHandle } from "react";
 import "../../../../tailwind.css";
 import { useThemeContext } from "../../../theme/ThemeProvider";
 import useDataTable from "../../../hooks/useDataTable";
-import THead from "./THead";
-import TRow from "./TRow";
-import Filter from "./Filter";
-import PrevNextFullPaginator from "./PrevNextFullPaginator";
+import THead from "./tHead";
+import TRow from "./tRow";
+import Filter from "./filter";
+import PrevNextFullPaginator from "./prevNextFullPaginator";
 import classNames from "../../../utils/classNames";
 
 export interface DataTableBaseProps {
