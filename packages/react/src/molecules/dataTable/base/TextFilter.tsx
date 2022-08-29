@@ -21,7 +21,7 @@ const TextFilter = forwardRef(function TextFilter(
     setFilterText("");
   };
 
-  const handleOnChange = (value) => {
+  const handleOnChange = (value: any) => {
     onChange(value);
     setFilterText(value);
   };

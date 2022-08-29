@@ -78,8 +78,7 @@ const AccordionBase = (props: AccordionBaseProps) => {
   }, [props.isExpanded]);
 
   return (
-    <div className={wrappersClassNames + " transition-all duration-1000"} 
-    >
+    <div className={wrappersClassNames + " transition-all duration-1000"}>
       <div
         className={titleClassNames}
         onClick={(e) => {
@@ -97,18 +96,18 @@ const AccordionBase = (props: AccordionBaseProps) => {
         )}
       </div>
       {/* <AnimatePresence exitBeforeEnter> */}
-        {opened && (
-          <div
-            className={contentClassNames}
-            // initial={{ scaleY: 0 }}
-            // animate={{ scaleY: 1 }}
-            // transition={{ duration: 3 }}
-            // exit={{ scaleY: 0 }}
-            // style={{ originY: 0 }}
-          >
-            <props.content {...props.contentProps} />
-          </div>
-        )}
+      {opened && (
+        <div
+          className={contentClassNames}
+          // initial={{ scaleY: 0 }}
+          // animate={{ scaleY: 1 }}
+          // transition={{ duration: 3 }}
+          // exit={{ scaleY: 0 }}
+          // style={{ originY: 0 }}
+        >
+          <props.content {...props.contentProps} />
+        </div>
+      )}
       {/* </AnimatePresence> */}
     </div>
   );
