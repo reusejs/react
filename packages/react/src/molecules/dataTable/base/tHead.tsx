@@ -1,6 +1,6 @@
 import React, { forwardRef, useState } from "react";
 import { useThemeContext } from "../../../theme/ThemeProvider";
-import Filter from "./Filter";
+import Filter from "./filter";
 import resolvedStyleProps from "../../../utils/resolvedStyleProps";
 
 const THead = ({
