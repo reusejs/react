@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.12.2
+
+### Patch Changes
+
+- da64ab7: Fix filenames
+
 ## 6.12.1
 
 ### Patch Changes
