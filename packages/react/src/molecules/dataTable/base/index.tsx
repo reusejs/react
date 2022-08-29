@@ -4,7 +4,7 @@ import { useThemeContext } from "../../../theme/ThemeProvider";
 import useDataTable from "../../../hooks/useDataTable";
 import THead from "./tHead";
 import TRow from "./tRow";
-import Filter from "./Filter";
+import Filter from "./filter";
 import PrevNextFullPaginator from "./prevNextFullPaginator";
 import classNames from "../../../utils/classNames";
 import resolvedStyleProps from "../../../utils/resolvedStyleProps";
