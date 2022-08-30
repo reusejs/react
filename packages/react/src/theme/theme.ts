@@ -404,11 +404,8 @@ const theme = {
   textAreaBaseClasses,
   disabledTextAreaStylesClasses,
   accordionBaseClasses,
-<<<<<<< HEAD
   toolTipBaseStyleProps,
-=======
   dataTableBaseClasses,
->>>>>>> b86945ca47c6135c3557ed68a977d4d11d59eab3
 };
 
 export default theme;
