@@ -38,6 +38,9 @@ export { default as TagInputBase } from "./molecules/tags/base";
 
 export { default as TextAreaBase } from "./atoms/textArea/base";
 
+//ToolTip
+export { default as ToolTipBase } from "./atoms/tooltip/base";
+
 // ******************** End  ---- Atoms *************************
 
 // Start  ---- Molecules

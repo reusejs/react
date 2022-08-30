@@ -124,6 +124,20 @@ const disabledTextAreaStylesClasses = {
   opacity: "opacity-70",
 };
 
+//ToolTip
+
+const toolTipBaseStyleProps = {
+  positioning: "absolute -top-12 left-12 z-10 ",
+  layout: "flex h-fit w-fit items-center justify-center",
+  border: "border border-white",
+  borderRadius: "rounded-lg",
+  margin: "",
+  padding: "px-4 py-2",
+  backgroundColor: "bg-black",
+  textColor: "text-white",
+  opacity: "opacity-90",
+};
+
 // Picket Select
 
 const pickerSelectBaseClasses = {
@@ -374,6 +388,7 @@ const theme = {
   textAreaBaseClasses,
   disabledTextAreaStylesClasses,
   accordionBaseClasses,
+  toolTipBaseStyleProps,
 };
 
 export default theme;
