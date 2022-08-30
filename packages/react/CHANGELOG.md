@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.12.4
+
+### Patch Changes
+
+- 0fe58aa: Remove unused props in data table
+
 ## 6.12.3
 
 ### Patch Changes
