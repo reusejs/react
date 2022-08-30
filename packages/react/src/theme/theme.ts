@@ -364,6 +364,22 @@ const dataTableBaseClasses = {
   loadingLoader: "rounded-xs h-6 bg-gray-100 dark:bg-gray-800",
 };
 
+// Navigation Page Heading
+
+const navigationPageHeadingClasses = {
+  wrapper1: "border border-gray-100 dark:border-gray-700 rounded-md",
+  wrapper2: "px-6 py-4",
+  wrapper3: "md:flex md:items-center md:justify-between",
+  actionsWrapper: "flex-shrink-0 flex mt-4 md:mt-0 md:ml-4",
+  tableWrapper: "min-w-full",
+  bodyWrapper:
+    "divide-y divide-gray-100 bg-white dark:divide-gray-800 dark:bg-gray-900",
+  filterRow: "bg-gray-50 dark:bg-gray-800",
+  loadingTr: "bg-white dark:bg-gray-900",
+  loadingTd: "animate-pulse whitespace-nowrap px-6 py-4 text-sm",
+  loadingLoader: "rounded-xs h-6 bg-gray-100 dark:bg-gray-800",
+};
+
 const theme = {
   gridBaseClasses,
   labelBaseClasses,
@@ -391,6 +407,7 @@ const theme = {
   disabledTextAreaStylesClasses,
   accordionBaseClasses,
   dataTableBaseClasses,
+  navigationPageHeadingClasses,
 };
 
 export default theme;
