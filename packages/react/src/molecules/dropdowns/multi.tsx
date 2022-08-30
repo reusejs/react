@@ -22,8 +22,9 @@ export interface DropdownMultiProps {
     transition?: any;
     itemsWrapper?: any;
     containerClasses?: any;
+    childContainerClasses?: any;
   };
-  onClick?: (item: any) => void;
+  onClick?: (item: any, itemIndex: any) => void;
 }
 
 const DropdownMulti = (props: DropdownMultiProps) => {
@@ -109,6 +110,9 @@ const DropdownMulti = (props: DropdownMultiProps) => {
               <div
                 className={itemClasses}
                 onClick={() => {
+                  if (props.onClick) {
+                    props.onClick(item, `item-${firstLevelIndex}`);
+                  }
                   setLevel2(`item-${firstLevelIndex}`);
                 }}
                 key={`item-${firstLevelIndex}`}
@@ -143,6 +147,12 @@ const DropdownMulti = (props: DropdownMultiProps) => {
                             className={itemClasses}
                             key={`child-${secondLevelIndex}`}
                             onClick={() => {
+                              if (props.onClick) {
+                                props.onClick(
+                                  child,
+                                  `child-${secondLevelIndex}`
+                                );
+                              }
                               setLevel3(`child-${secondLevelIndex}`);
                             }}
                           >
@@ -182,6 +192,14 @@ const DropdownMulti = (props: DropdownMultiProps) => {
                                       <div
                                         className={itemClasses}
                                         key={`grand-child-${thirdLevelIndex}`}
+                                        onClick={() => {
+                                          if (props.onClick) {
+                                            props.onClick(
+                                              grandChild,
+                                              `grand-child-${thirdLevelIndex}`
+                                            );
+                                          }
+                                        }}
                                       >
                                         {grandChild.label}
                                       </div>

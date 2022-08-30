@@ -57,12 +57,12 @@ const OptionsRenderer = ({
     <div className="flex items-center">
       <TextInputBase
         labelBaseProps={{
-          label:""
+          label: "",
         }}
         htmlFor=""
         id={value.value}
         name={name}
-        type="checkbox"
+        type="radio"
         checked={found === true}
         onChange={() => {}}
         textInputBaseClasses={{

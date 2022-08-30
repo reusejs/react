@@ -59,7 +59,7 @@ const PrevNextFullPaginator = React.forwardRef(function PrevNextFullPaginator(
               </p>
               {/* Current: {currentPage} */}
             </div>
-            <div className="flex flex-1 justify-between sm:justify-end">
+            <div className="flex flex-1 justify-between space-x-4 sm:justify-end">
               <ButtonBase
                 onClick={() => {
                   gotoPage(currentPage - 1);

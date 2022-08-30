@@ -1,11 +1,14 @@
 import React, { forwardRef, useState } from "react";
 import { XIcon } from "@heroicons/react/outline";
 import eventBus from "../../../utils/eventBus";
+import TextInputBase from "../../../atoms/textInputs/base";
 
 const TextFilter = forwardRef(function TextFilter(
   {
+    item,
     onChange,
   }: {
+    item: any;
     onChange: any;
   },
   ref
@@ -21,7 +24,7 @@ const TextFilter = forwardRef(function TextFilter(
     setFilterText("");
   };
 
-  const handleOnChange = (value) => {
+  const handleOnChange = (value: any) => {
     onChange(value);
     setFilterText(value);
   };
@@ -45,18 +48,19 @@ const TextFilter = forwardRef(function TextFilter(
 
   return (
     <div className="flex items-center">
-      {/* <TextInput
+      <TextInputBase
+        type="text"
+        name={item.identifier}
+        htmlFor={item.identifier}
         onChange={(v: any) => {
           handleOnChange(v);
         }}
-        defaultValue={filterText}
-        basicInputClasses="block w-full rounded text-sm px-2 py-1 dark:bg-gray-900 bg-white focus:ring-blue-400 focus:border-blue-400 outline-none"
-        noErrorClasses="border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white"
+        value={filterText}
       />
 
       <div className="ml-3">
         <ClearIcon />
-      </div> */}
+      </div>
     </div>
   );
 });
