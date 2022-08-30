@@ -103,8 +103,8 @@ const ActiveLabel = () => {
 export const Default = Template.bind({});
 Default.args = {
   label: Label,
-  onClick: (item, active) => {
-    console.log('clicked', item, active);
+  onClick: (item: any, index: any) => {
+    console.log('clicked', item, index);
   },
   activeLabel: ActiveLabel,
   itemRenderer: ItemRenderer,

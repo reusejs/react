@@ -45,6 +45,10 @@ export { default as ToolTipBase } from "./atoms/tooltip/base";
 
 // Start  ---- Molecules
 
+// Data Tables
+
+export { default as DataTableBase } from "./molecules/dataTable/base";
+
 // Accordion
 
 export { default as AccordionBase } from "./molecules/accordion/Base";

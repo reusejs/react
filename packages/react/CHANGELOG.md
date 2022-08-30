@@ -1,5 +1,33 @@
 # @reusejs/react
 
+## 6.12.3
+
+### Patch Changes
+
+- 4864a09: Build
+
+## 6.12.2
+
+### Patch Changes
+
+- da64ab7: Fix filenames
+
+## 6.12.1
+
+### Patch Changes
+
+- 1cd0203: Add filters for table
+
+## 6.12.0
+
+### Minor Changes
+
+- 5aa7c34: Introduce Data Tables
+
+### Patch Changes
+
+- 3c15f2f: Add default search to storybook
+
 ## 6.11.2
 
 ### Patch Changes

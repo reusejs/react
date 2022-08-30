@@ -13,12 +13,12 @@ export default function ({
   perPage,
   params = {},
 }: {
-  config: any;
-  sortOrder: any;
-  sortColumn: any;
-  dataSource: any;
-  perPage: number;
-  params: any;
+  config?: any;
+  sortOrder?: any;
+  sortColumn?: any;
+  dataSource?: any;
+  perPage?: number;
+  params?: any;
 }) {
   const [orderBy, setOrderBy] = useState({
     sortOrder: sortOrder,

@@ -362,6 +362,22 @@ const accordionBaseClasses = {
   content: "text-gray-900 dark:text-white  py-3",
 };
 
+// Data Table
+
+const dataTableBaseClasses = {
+  wrapper1: "flex flex-col",
+  wrapper2: "inline-block min-w-full align-middle",
+  wrapper3:
+    "initial:md:rounded-md initial:border initial:dark:border overflow-hidden border-gray-200 ring-1 ring-black ring-opacity-5 dark:border-gray-700",
+  tableWrapper: "min-w-full",
+  bodyWrapper:
+    "divide-y divide-gray-100 bg-white dark:divide-gray-800 dark:bg-gray-900",
+  filterRow: "bg-gray-50 dark:bg-gray-800",
+  loadingTr: "bg-white dark:bg-gray-900",
+  loadingTd: "animate-pulse whitespace-nowrap px-6 py-4 text-sm",
+  loadingLoader: "rounded-xs h-6 bg-gray-100 dark:bg-gray-800",
+};
+
 const theme = {
   gridBaseClasses,
   labelBaseClasses,
@@ -388,7 +404,11 @@ const theme = {
   textAreaBaseClasses,
   disabledTextAreaStylesClasses,
   accordionBaseClasses,
+<<<<<<< HEAD
   toolTipBaseStyleProps,
+=======
+  dataTableBaseClasses,
+>>>>>>> b86945ca47c6135c3557ed68a977d4d11d59eab3
 };
 
 export default theme;
