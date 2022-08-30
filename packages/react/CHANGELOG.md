@@ -1,5 +1,21 @@
 # @reusejs/react
 
+## 6.13.0
+
+### Minor Changes
+
+- b006aad: Add navigation page heading with breadcrumbs and actions
+
+### Patch Changes
+
+- bf1894d: Fix issue with checkbox
+
+## 6.12.4
+
+### Patch Changes
+
+- 0fe58aa: Remove unused props in data table
+
 ## 6.12.3
 
 ### Patch Changes

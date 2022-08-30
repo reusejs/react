@@ -13,13 +13,12 @@ import extractStyleProps from "../../../utils/extractStyleProps";
 export interface DataTableBaseProps {
   variant?: string;
   config: any;
-  sortColumn: any;
+  sortColumn?: any;
   dataSource: any;
   perPage: any;
-  params: any;
-  sortOrder: any;
+  params?: any;
+  sortOrder?: any;
   emptyStateComponent?: any;
-  LoadingState: any;
 }
 
 const TableBase = React.forwardRef(

@@ -62,7 +62,7 @@ const OptionsRenderer = ({
         htmlFor=""
         id={value.value}
         name={name}
-        type="radio"
+        type="checkbox"
         checked={found === true}
         onChange={() => {}}
         textInputBaseClasses={{

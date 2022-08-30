@@ -85,6 +85,10 @@ export { default as ModalConfirm } from "./molecules/modals/confirm";
 export { default as DropdownBase } from "./molecules/dropdowns/base";
 export { default as DropdownMulti } from "./molecules/dropdowns/multi";
 
+// Navigations
+
+export { default as NavigationPageHeading } from "./molecules/navigations/heading/base";
+
 // ******************** End  ---- Molecules *************************
 
 // Start  ---- Organisms
