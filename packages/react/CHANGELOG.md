@@ -1,5 +1,15 @@
 # @reusejs/react
 
+## 6.13.0
+
+### Minor Changes
+
+- b006aad: Add navigation page heading with breadcrumbs and actions
+
+### Patch Changes
+
+- bf1894d: Fix issue with checkbox
+
 ## 6.12.4
 
 ### Patch Changes
