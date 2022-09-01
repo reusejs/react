@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.14.0
+
+### Minor Changes
+
+- 4fc35df: Add navigation dropdown browser
+
 ## 6.13.0
 
 ### Minor Changes
