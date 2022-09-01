@@ -68,7 +68,7 @@ Default.args = {
       color: 'text-yellow-800 dark:text-yellow-100',
     },
   },
-  enableSearch:true,
+  enableSearch: true,
   valueKey: 'value',
   multiple: false,
   dataSource: (q: any) => {

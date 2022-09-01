@@ -24,8 +24,8 @@ const Left = () => (
 );
 
 const Middle = () => (
-  <div>
-    <div className='flex h-full justify-center space-x-8'>
+  <div className='hidden md:flex'>
+    <div className='hidden h-full justify-center space-x-8 md:flex'>
       <div className='flex'>
         <div className='relative flex'>
           <DropdownMulti
@@ -134,15 +134,85 @@ const Middle = () => (
   </div>
 );
 
-const Right = () => (
-  <div className='flex items-center'>
-    <div className='flex space-x-8'>
-      <div className='hidden lg:flex'>
-        <a href='#' className='-m-2 p-2 text-gray-400 hover:text-gray-500'>
-          <span className='sr-only'>Search</span>
-          {/* Heroicon name: outline/search */}
+const Bars3Icon = () => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    viewBox='0 0 20 20'
+    fill='currentColor'
+    className='h-5 w-5'
+  >
+    <path
+      fillRule='evenodd'
+      d='M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z'
+      clipRule='evenodd'
+    />
+  </svg>
+);
+
+const CloseIcon = () => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    viewBox='0 0 20 20'
+    fill='currentColor'
+    className='h-5 w-5'
+  >
+    <path d='M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z' />
+  </svg>
+);
+
+const Right = (props: any) => (
+  <>
+    <div className='hidden items-center md:flex'>
+      <div className='flex space-x-8'>
+        <div className='hidden lg:flex'>
+          <a href='#' className='-m-2 p-2 text-gray-400 hover:text-gray-500'>
+            <span className='sr-only'>Search</span>
+            {/* Heroicon name: outline/search */}
+            <svg
+              className='h-6 w-6'
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth={2}
+              stroke='currentColor'
+              aria-hidden='true'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
+              />
+            </svg>
+          </a>
+        </div>
+        <div className='flex'>
+          <a href='#' className='-m-2 p-2 text-gray-400 hover:text-gray-500'>
+            <span className='sr-only'>Account</span>
+            {/* Heroicon name: outline/user */}
+            <svg
+              className='h-6 w-6'
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth={2}
+              stroke='currentColor'
+              aria-hidden='true'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z'
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <span className='mx-4 h-6 w-px bg-gray-200 lg:mx-6' aria-hidden='true' />
+      <div className='flow-root'>
+        <a href='#' className='group -m-2 flex items-center p-2'>
+          {/* Heroicon name: outline/shopping-cart */}
           <svg
-            className='h-6 w-6'
+            className='h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500'
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
             viewBox='0 0 24 24'
@@ -153,59 +223,29 @@ const Right = () => (
             <path
               strokeLinecap='round'
               strokeLinejoin='round'
-              d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
+              d='M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z'
             />
           </svg>
-        </a>
-      </div>
-      <div className='flex'>
-        <a href='#' className='-m-2 p-2 text-gray-400 hover:text-gray-500'>
-          <span className='sr-only'>Account</span>
-          {/* Heroicon name: outline/user */}
-          <svg
-            className='h-6 w-6'
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            strokeWidth={2}
-            stroke='currentColor'
-            aria-hidden='true'
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              d='M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z'
-            />
-          </svg>
+          <span className='ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800'>
+            0
+          </span>
+          <span className='sr-only'>items in cart, view bag</span>
         </a>
       </div>
     </div>
-    <span className='mx-4 h-6 w-px bg-gray-200 lg:mx-6' aria-hidden='true' />
-    <div className='flow-root'>
-      <a href='#' className='group -m-2 flex items-center p-2'>
-        {/* Heroicon name: outline/shopping-cart */}
-        <svg
-          className='h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500'
-          xmlns='http://www.w3.org/2000/svg'
-          fill='none'
-          viewBox='0 0 24 24'
-          strokeWidth={2}
-          stroke='currentColor'
-          aria-hidden='true'
-        >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            d='M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z'
-          />
-        </svg>
-        <span className='ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800'>
-          0
-        </span>
-        <span className='sr-only'>items in cart, view bag</span>
-      </a>
+    <div className='md:hidden'>
+      <span className='sr-only'>Open main menu</span>
+      <button
+        type='button'
+        onClick={() => {
+          props.toggleSidebar();
+        }}
+      >
+        {props.sidebar === true && <CloseIcon />}
+        {props.sidebar === false && <Bars3Icon />}
+      </button>
     </div>
-  </div>
+  </>
 );
 
 export const Default = Template.bind({});
