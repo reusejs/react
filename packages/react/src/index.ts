@@ -91,6 +91,7 @@ export { default as NavigationPageHeading } from "./molecules/navigations/headin
 // Start  ---- Organisms
 export { default as NavigationBase } from "./organisms/navigations/base";
 export { default as FooterBase } from "./organisms/footer/base";
+export { default as SectionHeaderBase } from "./organisms/sectionHeader/base";
 
 // ******************** End  ---- Organisms *************************
 
