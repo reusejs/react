@@ -8,6 +8,7 @@ export interface NavigationBaseProps {
   left?: any;
   middle?: any;
   right?: any;
+  sidebar?: any;
   leftArrangement?: string;
   middleArrangement?: string;
   rightArrangement?: string;
@@ -85,6 +86,12 @@ const NavigationBase = (props: NavigationBaseProps) => {
             )}
           </div>
         </div>
+
+        {props.sidebar !== undefined && (
+          <>
+            {<props.sidebar sidebar={sidebar} toggleSidebar={toggleSidebar} />}
+          </>
+        )}
       </div>
     </div>
   );

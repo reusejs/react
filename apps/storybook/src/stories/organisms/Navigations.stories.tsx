@@ -1,6 +1,13 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { NavigationBase, DropdownMulti, DropdownBase } from '@reusejs/react';
+import {
+  NavigationBase,
+  DropdownMulti,
+  DropdownBase,
+  DropdownBrowser,
+} from '@reusejs/react';
+import { Popover, Transition } from '@headlessui/react';
+import { Fragment } from 'react';
 
 export default {
   title: 'Organisms/Navigations',
@@ -248,11 +255,96 @@ const Right = (props: any) => (
   </>
 );
 
+function classNames(...classes: any) {
+  return classes.filter(Boolean).join(' ');
+}
+
+const items = [
+  { label: 'Long Long String Number 1', href: '#', active: false },
+  {
+    label: 'Number 2',
+    href: '#',
+    active: true,
+    children: [
+      {
+        label: 'Number 2.1',
+        href: '#',
+        active: false,
+      },
+      { label: 'Long Long String Number 2.2', href: '#', active: false },
+      { label: 'Number 2.3', href: '#', active: false },
+    ],
+  },
+  { label: 'Number 3', href: '#', active: false },
+  {
+    label: 'Number 4',
+    href: '#',
+    active: false,
+    children: [
+      {
+        label: 'Number 4.1',
+        href: '#',
+        active: false,
+      },
+      { label: 'Long Long String Number 4.2', href: '#', active: false },
+      { label: 'Number 4.3', href: '#', active: false },
+      {
+        label: 'Long Long String Number 4.4',
+        href: '#',
+        active: false,
+        children: [
+          { label: 'Number 4.1.1', href: '#', active: false },
+          { label: 'Number 4.1.2', href: '#', active: false },
+        ],
+      },
+      { label: 'Number 4.5', href: '#', active: false },
+      {
+        label: 'Number 4.6',
+        href: '#',
+        active: false,
+        children: [
+          {
+            label: 'Long Long String Number 4.6.1',
+            href: '#',
+            active: false,
+          },
+          { label: 'Number 4.6.2', href: '#', active: false },
+        ],
+      },
+    ],
+  },
+];
+
+const ItemRenderer = (props: any) => {
+  let { href, label, active } = props.item;
+
+  return (
+    <div
+      className={classNames(
+        'relative block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-gray-700'
+      )}
+    >
+      <div className='flex items-center justify-between'>
+        <div>{props.item.label}</div>
+      </div>
+    </div>
+  );
+};
+
+const Sidebar = (props: any) => (
+  <>
+    {props.sidebar === true && (
+      <DropdownBrowser items={items} itemRenderer={ItemRenderer} />
+    )}
+  </>
+);
+
 export const Default = Template.bind({});
 Default.args = {
   left: Left,
   middle: Middle,
   right: Right,
+  sidebar: Sidebar,
   leftArrangement: 'bg-red-50',
   middleArrangement: 'bg-green-50 flex-1 justify-center',
   rightArrangement: 'bg-blue-50',

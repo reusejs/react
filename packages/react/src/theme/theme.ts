@@ -311,6 +311,26 @@ const dropdownMultiClasses = {
   activeItemClasses: "text-blue-500 font-semibold",
 };
 
+const dropdownBrowserClasses = {
+  wrapper: "relative cursor-pointer",
+  transition: {
+    enter: "transition ease-out duration-200",
+    enterFrom: "transform opacity-0 scale-95",
+    enterTo: "transform opacity-100 scale-100",
+    leave: "transition ease-in duration-75",
+    leaveFrom: "transform opacity-100 scale-100",
+    leaveTo: "transform opacity-0 scale-95",
+  },
+  containerClasses:
+    "border dark:border-gray-800 bg-white dark:bg-gray-900 focus:outline-none  rounded-md",
+  childContainerClasses: "py-2",
+  itemClasses:
+    "relative block w-full cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-gray-700 hover:font-semibold",
+  childItemClasses:
+    "relative block w-full cursor-pointer py-2 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-gray-700 hover:font-semibold",
+  activeItemClasses: "text-blue-500 font-semibold",
+};
+
 // Tags
 
 const tagInputBaseClasses = {
@@ -402,6 +422,7 @@ const theme = {
   modalConfirmClasses,
   dropdownBaseClasses,
   dropdownMultiClasses,
+  dropdownBrowserClasses,
   tagInputBaseClasses,
   textAreaBaseClasses,
   disabledTextAreaStylesClasses,
