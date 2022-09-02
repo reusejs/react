@@ -36,6 +36,27 @@ const labelBaseClasses = {
   color: "text-gray-800 dark:text-gray-100",
 };
 
+// Toggle
+
+const toggleBaseClasses = {
+  enabled: "bg-green-600",
+  disabled: "bg-gray-200 dark:bg-gray-700",
+  alignment:
+    "relative inline-flex flex-shrink-0 cursor-pointer rounded-full transition-colors duration-200 ease-in-out",
+  focus:
+    "focus:ring-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2",
+  size: "h-6 w-11",
+  border: "border-2 border-transparent",
+  circleSizeClasses: "h-5 w-5",
+  circleColorClasses: "bg-white dark:bg-gray-900",
+  circleAlignmentClasses:
+    "pointer-events-none inline-block transform rounded-full shadow ring-0 transition duration-200 ease-in-out",
+  circleEnabledClasses: "translate-x-5",
+  circleDisabledClasses: "translate-x-0",
+  label: "ml-3 text-gray-900 dark:text-white",
+  description: "text-sm text-gray-500 dark:text-gray-400",
+};
+
 // Scrollable
 
 const scrollableBaseClasses = {
@@ -428,6 +449,7 @@ const navigationPageHeadingClasses = {
 const theme = {
   gridBaseClasses,
   labelBaseClasses,
+  toggleBaseClasses,
   badgeBaseClasses,
   buttonBaseClasses,
   dividerBaseClasses,

@@ -60,19 +60,8 @@ WithErrorText.args = {
   name: 'price',
   type: 'text',
   placeholder: '0.00',
-  CheckboxBaseClasses: {
-    wrapper: 'relative mt-1',
-  },
   error: <ErrorText />,
   textInputBottom: <HelperText />,
-  textInputSuffix: (
-    <div className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3'>
-      <ExclamationCircleIcon
-        className='h-5 w-5 text-red-500'
-        aria-hidden='true'
-      />
-    </div>
-  ),
 };
 
 export const WithHelperText = Template.bind({});
@@ -84,8 +73,5 @@ WithHelperText.args = {
   name: 'price',
   type: 'text',
   placeholder: '0.00',
-  CheckboxBaseClasses: {
-    wrapper: 'relative mt-1',
-  },
   textInputBottom: <HelperText />,
 };

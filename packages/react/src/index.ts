@@ -34,6 +34,10 @@ export { default as PasswordTextInputBase } from "./atoms/textInputs/password";
 
 export { default as CheckboxBase } from "./atoms/checkbox/base";
 
+// Toggle
+
+export { default as ToggleBase } from "./atoms/toggles/base";
+
 // Tags
 
 export { default as TagInputBase } from "./molecules/tags/base";
