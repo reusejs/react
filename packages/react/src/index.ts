@@ -30,6 +30,10 @@ export { default as GridBase } from "./atoms/grid/base";
 export { default as TextInputBase } from "./atoms/textInputs/base";
 export { default as PasswordTextInputBase } from "./atoms/textInputs/password";
 
+// Checkbox
+
+export { default as CheckboxBase } from "./atoms/checkbox/base";
+
 // Tags
 
 export { default as TagInputBase } from "./molecules/tags/base";

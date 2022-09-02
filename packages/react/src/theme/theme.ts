@@ -89,6 +89,31 @@ const textInputBaseErrorClasses = {
   placeholderColor: "placeholder-red-300",
 };
 
+// Checkbox
+
+const checkboxBaseClasses = {
+  wrapper: "flex items-center",
+  margin: "ml-2",
+  backgroundColor: "bg-white dark:bg-gray-900",
+  alignment: "block",
+  width: "h-4 w-4",
+  borderRadius: "rounded",
+  border: "border-gray-300 dark:border-gray-600",
+  focus: "focus:border-gray-500",
+  padding: "",
+  font: "font-normal sm:text-sm",
+  textColor: "text-gray-900 dark:text-white",
+  placeholderColor: "",
+};
+
+const checkboxBaseErrorClasses = {
+  border: "border-red-300 dark:border-red-600",
+  focus: "focus:ring-red-500 focus:border-red-500",
+  textColor: "text-red-900 dark:text-red-300",
+  backgroundColor: "bg-white dark:bg-gray-900",
+  placeholderColor: "placeholder-red-300",
+};
+
 // Text Area
 
 const textAreaBaseClasses = {
@@ -408,6 +433,8 @@ const theme = {
   dividerBaseClasses,
   textInputBaseClasses,
   textInputBaseErrorClasses,
+  checkboxBaseClasses,
+  checkboxBaseErrorClasses,
   pickerSelectBaseClasses,
   scrollableBaseClasses,
   pickerSelectSimpleClasses,
