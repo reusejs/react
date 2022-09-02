@@ -374,7 +374,7 @@ const dataTableBaseClasses = {
   wrapper1: "flex flex-col",
   wrapper2: "inline-block min-w-full align-middle",
   wrapper3:
-    "initial:md:rounded-md initial:border initial:dark:border overflow-hidden border-gray-200 ring-1 ring-black ring-opacity-5 dark:border-gray-700",
+    "initial:md:rounded-md initial:border initial:dark:border overflow-auto border-gray-200 ring-1 ring-black ring-opacity-5 dark:border-gray-700",
   tableWrapper: "min-w-full",
   bodyWrapper:
     "divide-y divide-gray-100 bg-white dark:divide-gray-800 dark:bg-gray-900",
