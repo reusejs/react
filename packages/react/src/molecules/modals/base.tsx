@@ -1,13 +1,11 @@
-import { CheckIcon } from "@heroicons/react/solid";
 import React, { useRef } from "react";
 import "../../../tailwind.css";
-import ButtonBase from "../../atoms/buttons/base.js";
+import useOutsideClicker from "../../hooks/useOutsideClicker";
 import theme from "../../theme/theme.js";
 import Closable from "../../utils/closable";
 import mountComponent from "../../utils/mountComponent.js";
-import ModalWrapper from "./wrapper";
-import useOutsideClicker from "../../hooks/useOutsideClicker";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
+import ModalWrapper from "./wrapper";
 
 export interface ModalBaseProps {
   visible?: any;

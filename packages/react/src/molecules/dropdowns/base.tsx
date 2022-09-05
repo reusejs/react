@@ -1,10 +1,8 @@
-import React, { Fragment, ReactNode } from "react";
+import { Menu, Transition } from "@headlessui/react";
+import React, { Fragment } from "react";
 import "../../../tailwind.css";
 import { useThemeContext } from "../../theme/ThemeProvider";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
-import { Menu, Transition } from "@headlessui/react";
-import { CheckCircleIcon } from "@heroicons/react/outline";
-import { ChevronDownIcon, ChevronRightIcon } from "@heroicons/react/solid";
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");

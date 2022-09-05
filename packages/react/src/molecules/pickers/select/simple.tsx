@@ -1,10 +1,10 @@
+import { ArrowSmDownIcon, CheckIcon, XIcon } from "@heroicons/react/solid";
 import React from "react";
-import SelectBase, { PickerSelectBaseProps } from "./base";
-import { CheckIcon, XIcon, ArrowSmDownIcon } from "@heroicons/react/solid";
 import TextInputBase from "../../../atoms/textInputs/base";
 import { useThemeContext } from "../../../theme/ThemeProvider";
-import resolvedStyleProps from "../../../utils/resolvedStyleProps";
 import pickAndMergeVariants from "../../../utils/pickAndMergeVariants";
+import resolvedStyleProps from "../../../utils/resolvedStyleProps";
+import SelectBase, { PickerSelectBaseProps } from "./base";
 
 export interface PickerSelectSimpleProps extends PickerSelectBaseProps {
   enableClear: boolean;
