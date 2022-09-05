@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.16.0
+
+### Minor Changes
+
+- 916e3f9: Add sliders
+
 ## 6.15.0
 
 ### Minor Changes
