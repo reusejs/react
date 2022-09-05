@@ -17,6 +17,7 @@ export interface GallerySliderProps {
     imageSize?: string;
     imagePointer?: string;
     imageSpacing?: string;
+    imageActive?: string;
   };
 }
 
@@ -34,8 +35,14 @@ export const GallerySlider = (props: GallerySliderProps) => {
     props,
     theme
   );
+  const imageActiveClassName = resolvedStyleProps(
+    "gallerySliderBaseClasses",
+    ["imageActive"],
+    props,
+    theme
+  );
 
-  console.log("Styling for IMgae>>>>>", imageClassName);
+  console.log("Styling for IMgae>>>>>", imageActiveClassName);
 
   const init = () => {
     const element = document.getElementById(props.current.toString());
@@ -54,7 +61,7 @@ export const GallerySlider = (props: GallerySliderProps) => {
             key={index}
             id={index.toString()}
             className={
-              imageClassName + (index === props.current ? " scale-110 " : "")
+              imageClassName + (index === props.current ? " "+imageActiveClassName : "")
             }
             onClick={() => {
               props.setIndex(index);

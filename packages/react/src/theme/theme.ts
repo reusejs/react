@@ -530,6 +530,7 @@ const gallerySliderBaseClasses = {
   imageSize: "h-24 w-36",
   imagePointer: "cursor-pointer",
   imageSpacing: "my-4",
+  imageActive: "scale-125",
 }
 
 const galleryArrowBaseClasses = {

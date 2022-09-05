@@ -138,7 +138,7 @@ Screen.args = {
     gap: 'gap-x-10',
     height: 'h-[200px]',
     alignment: 'mt-20',
-    backgroundColor: 'bg-lime-400',
+    backgroundColor: 'bg-blue-400',
   },
 };
 
