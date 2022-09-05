@@ -5,7 +5,7 @@ import { useThemeContext } from "../../theme/ThemeProvider";
 import "../../../tailwind.css";
 import { LabelBaseProps } from "../../atoms/labels/base";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/solid";
-import { motion, AnimatePresence } from "framer-motion";
+// import { motion, AnimatePresence } from "framer-motion";
 
 const AccordionAnimationVariant = {
   initial: {
