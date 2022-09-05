@@ -92,6 +92,8 @@ export { default as NavigationPageHeading } from "./molecules/navigations/headin
 export { default as NavigationBase } from "./organisms/navigations/base";
 export { default as FooterBase } from "./organisms/footer/base";
 export { default as SectionHeaderBase } from "./organisms/sectionHeader/base";
+export { default as AutoGridSectionBase } from "./organisms/autoGridSection/base";
+export { default as LogoDescriptionCard } from "./organisms/cards/LogoDescriptionCard";
 
 // ******************** End  ---- Organisms *************************
 
@@ -100,6 +102,12 @@ export { default as SectionHeaderBase } from "./organisms/sectionHeader/base";
 export { default as BetaForm } from "./utils/form";
 
 // ******************** End  ---- Utils *************************
+
+/* Start Templates */
+export { default as TwoColumnGridExampleOne } from "./templates/TwoColumnGrid/index";
+export { default as CenteredGrid } from "./templates/GridSectionLayout/centeredGrid";
+
+/* End Templates */
 
 export {
   default as ThemeProvider,
