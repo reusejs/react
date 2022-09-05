@@ -94,6 +94,7 @@ export { default as DropdownBrowser } from "./molecules/dropdowns/browser";
 // Navigations
 
 export { default as NavigationPageHeading } from "./molecules/navigations/heading/base";
+export { default as LazyLoadedImage } from "./molecules/lazyLoadedImage/Base"
 
 // ******************** End  ---- Molecules *************************
 
