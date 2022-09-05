@@ -32,7 +32,7 @@ const ToopTipBase = (props: ToolTipBaseProps) => {
   const tooltipStyleClasses = resolvedStyleProps(
     "toolTipBaseStyleProps",
     [
-      "positioning",
+      // "positioning",
       "layout",
       "border",
       "borderRadius",
@@ -90,7 +90,7 @@ const ToopTipBase = (props: ToolTipBaseProps) => {
       <AnimatePresence>
         {showToolTip && (
           <motion.div
-            className={tooltipStyleClasses}
+            className={tooltipStyleClasses + " absolute -top-10 left-1/2"}
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}

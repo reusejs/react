@@ -89,11 +89,16 @@ export { default as DropdownMulti } from "./molecules/dropdowns/multi";
 
 export { default as NavigationPageHeading } from "./molecules/navigations/heading/base";
 
+//Slider
+
+export { default as SliderBase } from "./molecules/slider/base";
+
 // ******************** End  ---- Molecules *************************
 
 // Start  ---- Organisms
 export { default as NavigationBase } from "./organisms/navigations/base";
 export { default as FooterBase } from "./organisms/footer/base";
+export { default as GalleryBase } from "./organisms/gallery/base";
 
 // ******************** End  ---- Organisms *************************
 
