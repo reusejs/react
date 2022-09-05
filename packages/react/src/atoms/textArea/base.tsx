@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../../../tailwind.css";
 import { useThemeContext } from "../../theme/ThemeProvider";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
@@ -7,6 +7,7 @@ import LabelBase from "../labels/base";
 import pickAndMergeVariants from "../../utils/pickAndMergeVariants";
 import { LabelBaseProps } from "../labels/base";
 import classNames from "../../utils/classNames";
+import useAutoGrow from "../../hooks/useAutoGrow";
 
 export interface TextAreaBaseProps {
   labelBaseProps?: LabelBaseProps;
@@ -20,6 +21,7 @@ export interface TextAreaBaseProps {
   error?: any;
   textInputBottom?: any;
   disabled?: boolean;
+  autoGrow?: boolean;
   disabledTextAreaStylesClasses?: {
     display: string;
     border: string;
@@ -56,6 +58,14 @@ export interface TextAreaBaseProps {
 const TextAreaBase = (props: TextAreaBaseProps) => {
   const theme: any = useThemeContext();
   let allProps = Object.assign({}, props);
+  const textareaRef = useRef<any>();
+
+  const { handleChange } = useAutoGrow(
+    props.onChange,
+    props.value,
+    props.autoGrow,
+    textareaRef
+  );
 
   if (props.error) {
     const errorStyleProps = extractStyleProps(
@@ -139,13 +149,18 @@ const TextAreaBase = (props: TextAreaBaseProps) => {
         )}
       >
         <textarea
+          ref={textareaRef}
           placeholder={props.placeholder}
           className={props.disabled ? disableStyleAddons : finalClassNames}
           rows={props.rows || 4}
           cols={props.cols || 50}
           name={props.name || "Textarea input"}
           id={props.id || "Textarea input"}
-          onChange={(e) => props.onChange?.(e.target.value)}
+          onChange={(e) => {
+            props.autoGrow === true
+              ? handleChange(e.target.value)
+              : props.onChange?.(e.target.value);
+          }}
           disabled={props.disabled}
           value={props.value}
         />

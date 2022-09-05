@@ -10,5 +10,6 @@ module.exports = {
     function ({ addVariant }) {
       addVariant("initial", "html :where(&)");
     },
+    require("tailwind-scrollbar-hide"),
   ],
 };
