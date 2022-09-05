@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.17.0
+
+### Minor Changes
+
+- 434fb73: Add image component
+
 ## 6.16.0
 
 ### Minor Changes
