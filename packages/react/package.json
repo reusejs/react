@@ -1,6 +1,6 @@
 {
   "name": "@reusejs/react",
-  "version": "6.15.0",
+  "version": "6.16.0",
   "author": "Rajiv Seelam",
   "license": "MIT",
   "main": "dist/index.cjs.js",
@@ -49,7 +49,9 @@
   "homepage": "https://github.com/reusejs/react",
   "dependencies": {
     "@headlessui/react": "^1.6.6",
+    "framer-motion": "^7.2.1",
     "lodash": "^4.17.21",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "validate.js": "^0.13.1"
   }
 }

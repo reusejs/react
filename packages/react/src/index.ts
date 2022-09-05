@@ -46,6 +46,9 @@ export { default as TagInputBase } from "./molecules/tags/base";
 
 export { default as TextAreaBase } from "./atoms/textArea/base";
 
+//ToolTip
+export { default as ToolTipBase } from "./atoms/tooltip/base";
+
 // ******************** End  ---- Atoms *************************
 
 // Start  ---- Molecules
@@ -95,11 +98,16 @@ export { default as DropdownBrowser } from "./molecules/dropdowns/browser";
 
 export { default as NavigationPageHeading } from "./molecules/navigations/heading/base";
 
+//Slider
+
+export { default as SliderBase } from "./molecules/slider/base";
+
 // ******************** End  ---- Molecules *************************
 
 // Start  ---- Organisms
 export { default as NavigationBase } from "./organisms/navigations/base";
 export { default as FooterBase } from "./organisms/footer/base";
+export { default as GalleryBase } from "./organisms/gallery/base";
 
 // ******************** End  ---- Organisms *************************
 
