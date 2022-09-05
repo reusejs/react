@@ -170,6 +170,20 @@ const disabledTextAreaStylesClasses = {
   opacity: "opacity-70",
 };
 
+//ToolTip
+
+const toolTipBaseStyleProps = {
+  positioning: "absolute -top-12 left-12 z-10 ",
+  layout: "flex h-fit w-fit items-center justify-center",
+  border: "border border-white",
+  borderRadius: "rounded-lg",
+  margin: "",
+  padding: "px-4 py-2",
+  backgroundColor: "bg-black",
+  textColor: "text-white",
+  opacity: "opacity-90",
+};
+
 // Picket Select
 
 const pickerSelectBaseClasses = {
@@ -320,6 +334,57 @@ const modalConfirmClasses = {
   },
 };
 
+// Slider
+const dotWrapperClasses = {
+  layout: "absolute",
+  bottom: "bottom-3",
+  position: "flex justify-center items-center w-full",
+}
+
+const dotItemClasses = {
+  size: "w-3 h-3",
+  radius: "rounded-full",
+  margin: "mx-1",
+  cursor: "cursor-pointer",
+}
+
+const baseArrowClasses = {
+  position: "absolute flex justify-center items-center top-1/2 -translate-y-1/2",
+  size: "w-12 h-12",
+  backgroundColor: "bg-black opacity-50 hover:opacity-90",
+  borderRadius: "rounded-full",
+  cursor: "cursor-pointer",
+  textStyle: "text-white text-xl",
+  left: "left-3",
+  right: "right-3",
+}
+
+const sliderPageClasses = {
+  width: "w-full",
+  height: "h-full",
+  display: "inline-block",
+  flex: "none",
+}
+
+const sliderBaseClasses = {
+  display: "flex items-center justify-center",
+  height: "h-[500px]",
+  width: "w-full",
+  margin: "mx-auto",
+  // dotWrapStyleClasses: {
+  //   layout: "absolute",
+  //   bottom: "bottom-3",
+  //   position: "flex justify-center items-center w-full",
+  // },
+  // dotItemStyleClasses: {
+  //   size: "w-3 h-3",
+  //   radius: "rounded-full",
+  //   margin: "mx-1",
+  //   cursor: "cursor-pointer",
+  //   dotColor: "default"
+  // }
+}
+
 // Dropdowns
 
 const dropdownBaseClasses = {
@@ -446,6 +511,39 @@ const navigationPageHeadingClasses = {
   loadingLoader: "rounded-xs h-6 bg-gray-100 dark:bg-gray-800",
 };
 
+//Gallery Base class
+const galleryBaseClasses = {
+  wrapper: "flex flex-col justify-between",
+  display: "flex items-center justify-center",
+  height: "h-[300px]",
+  width: "w-[500px]",
+  margin: "mx-auto",
+}
+
+const gallerySliderBaseClasses = {
+  scroll: "grid w-full auto-cols-max grid-flow-col overflow-x-scroll scroll scroll-smooth scrollbar-hide whitespace-nowrap",
+  gap: "gap-x-5",
+  height: "h-full",
+  alignment: "mt-4 px-10",
+  backgroundColor: "bg-black",
+  opacity: "opacity-90",
+  imageSize: "h-24 w-36",
+  imagePointer: "cursor-pointer",
+  imageSpacing: "my-4",
+  imageActive: "scale-125",
+}
+
+const galleryArrowBaseClasses = {
+  position: "absolute flex justify-center items-center top-1/2 -translate-y-1/2",
+  size: "w-12 h-12",
+  backgroundColor: "opacity-50 hover:opacity-90",
+  borderRadius: "rounded-full",
+  cursor: "cursor-pointer",
+  textStyle: "text-black text-xl",
+  left: "left-3",
+  right: "right-3",
+}
+
 const theme = {
   gridBaseClasses,
   labelBaseClasses,
@@ -463,7 +561,6 @@ const theme = {
   pickerRadioBaseClasses,
   radioBoxStyleClasses,
   radioOptionLabelClasses,
-  // pickerRadioAnimatedClasses,
   pickerRadioSimpleClasses,
   pickerCheckboxBaseClasses,
   pickerCheckboxSimpleClasses,
@@ -476,8 +573,17 @@ const theme = {
   textAreaBaseClasses,
   disabledTextAreaStylesClasses,
   accordionBaseClasses,
+  toolTipBaseStyleProps,
   dataTableBaseClasses,
   navigationPageHeadingClasses,
+  dotWrapperClasses,
+  dotItemClasses,
+  baseArrowClasses,
+  sliderPageClasses,
+  sliderBaseClasses,
+  galleryBaseClasses,
+  galleryArrowBaseClasses,
+  gallerySliderBaseClasses,
 };
 
 export default theme;
