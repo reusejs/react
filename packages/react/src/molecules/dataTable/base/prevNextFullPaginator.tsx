@@ -2,6 +2,8 @@ import React, { useState, useEffect, useImperativeHandle } from "react";
 import classNames from "../../../utils/classNames";
 import usePaginator from "../../../hooks/usePaginator";
 import ButtonBase from "../../../atoms/buttons/base";
+import { useThemeContext } from "../../../theme/ThemeProvider";
+import resolvedStyleProps from "../../../utils/resolvedStyleProps";
 
 const PrevNextFullPaginator = React.forwardRef(function PrevNextFullPaginator(
   {
@@ -9,11 +11,13 @@ const PrevNextFullPaginator = React.forwardRef(function PrevNextFullPaginator(
     onPageChanged,
     totalRecords,
     pageNeighbours,
+    ...props
   }: {
     pageLimit: any;
     onPageChanged: any;
     totalRecords: any;
     pageNeighbours: any;
+    variant?: string;
   },
   ref
 ) {
@@ -34,16 +38,27 @@ const PrevNextFullPaginator = React.forwardRef(function PrevNextFullPaginator(
   //   };
   // });
 
+  const theme: any = useThemeContext();
+
+  const navClassNames = resolvedStyleProps(
+    "dataTableBaseClasses",
+    ["navClasses"],
+    props,
+    theme
+  );
+  const navTextClassNames = resolvedStyleProps(
+    "dataTableBaseClasses",
+    ["navTextClasses"],
+    props,
+    theme
+  );
   return (
     <>
       {totalRecords > pageLimit && (
         <div className="sticky bottom-0 left-0 right-0 h-16 w-full">
-          <nav
-            className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 dark:border-gray-800 dark:bg-[#192130] sm:px-6"
-            aria-label="Pagination"
-          >
+          <nav className={navClassNames} aria-label="Pagination">
             <div className="hidden sm:block">
-              <p className="text-sm text-gray-700 dark:text-gray-200">
+              <p className={navTextClassNames}>
                 Showing{" "}
                 <span className="font-medium">
                   {(parseInt(currentPage) - 1) * pageLimit + 1}
@@ -66,12 +81,14 @@ const PrevNextFullPaginator = React.forwardRef(function PrevNextFullPaginator(
                 }}
                 disabled={currentPage === 1}
                 label="Previous"
+                variant={props.variant}
               />
               <ButtonBase
                 onClick={() => {
                   gotoPage(currentPage + 1);
                 }}
                 label="Next"
+                variant={props.variant}
               />
             </div>
           </nav>
