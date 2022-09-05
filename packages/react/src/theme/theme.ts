@@ -36,6 +36,27 @@ const labelBaseClasses = {
   color: "text-gray-800 dark:text-gray-100",
 };
 
+// Toggle
+
+const toggleBaseClasses = {
+  enabled: "bg-green-600",
+  disabled: "bg-gray-200 dark:bg-gray-700",
+  alignment:
+    "relative inline-flex flex-shrink-0 cursor-pointer rounded-full transition-colors duration-200 ease-in-out",
+  focus:
+    "focus:ring-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2",
+  size: "h-6 w-11",
+  border: "border-2 border-transparent",
+  circleSizeClasses: "h-5 w-5",
+  circleColorClasses: "bg-white dark:bg-gray-900",
+  circleAlignmentClasses:
+    "pointer-events-none inline-block transform rounded-full shadow ring-0 transition duration-200 ease-in-out",
+  circleEnabledClasses: "translate-x-5",
+  circleDisabledClasses: "translate-x-0",
+  label: "ml-3 text-gray-900 dark:text-white",
+  description: "text-sm text-gray-500 dark:text-gray-400",
+};
+
 // Scrollable
 
 const scrollableBaseClasses = {
@@ -82,6 +103,31 @@ const textInputBaseClasses = {
 };
 
 const textInputBaseErrorClasses = {
+  border: "border-red-300 dark:border-red-600",
+  focus: "focus:ring-red-500 focus:border-red-500",
+  textColor: "text-red-900 dark:text-red-300",
+  backgroundColor: "bg-white dark:bg-gray-900",
+  placeholderColor: "placeholder-red-300",
+};
+
+// Checkbox
+
+const checkboxBaseClasses = {
+  wrapper: "flex items-center",
+  margin: "ml-2",
+  backgroundColor: "bg-white dark:bg-gray-900",
+  alignment: "block",
+  width: "h-4 w-4",
+  borderRadius: "rounded",
+  border: "border-gray-300 dark:border-gray-600",
+  focus: "focus:border-gray-500",
+  padding: "",
+  font: "font-normal sm:text-sm",
+  textColor: "text-gray-900 dark:text-white",
+  placeholderColor: "",
+};
+
+const checkboxBaseErrorClasses = {
   border: "border-red-300 dark:border-red-600",
   focus: "focus:ring-red-500 focus:border-red-500",
   textColor: "text-red-900 dark:text-red-300",
@@ -376,6 +422,26 @@ const dropdownMultiClasses = {
   activeItemClasses: "text-blue-500 font-semibold",
 };
 
+const dropdownBrowserClasses = {
+  wrapper: "relative cursor-pointer",
+  transition: {
+    enter: "transition ease-out duration-200",
+    enterFrom: "transform opacity-0 scale-95",
+    enterTo: "transform opacity-100 scale-100",
+    leave: "transition ease-in duration-75",
+    leaveFrom: "transform opacity-100 scale-100",
+    leaveTo: "transform opacity-0 scale-95",
+  },
+  containerClasses:
+    "border dark:border-gray-800 bg-white dark:bg-gray-900 focus:outline-none  rounded-md",
+  childContainerClasses: "py-2",
+  itemClasses:
+    "relative block w-full cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-gray-700 hover:font-semibold",
+  childItemClasses:
+    "relative block w-full cursor-pointer py-2 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-gray-700 hover:font-semibold",
+  activeItemClasses: "text-blue-500 font-semibold",
+};
+
 // Tags
 
 const tagInputBaseClasses = {
@@ -419,7 +485,7 @@ const dataTableBaseClasses = {
   wrapper1: "flex flex-col",
   wrapper2: "inline-block min-w-full align-middle",
   wrapper3:
-    "initial:md:rounded-md initial:border initial:dark:border overflow-hidden border-gray-200 ring-1 ring-black ring-opacity-5 dark:border-gray-700",
+    "initial:md:rounded-md initial:border initial:dark:border overflow-auto border-gray-200 ring-1 ring-black ring-opacity-5 dark:border-gray-700",
   tableWrapper: "min-w-full",
   bodyWrapper:
     "divide-y divide-gray-100 bg-white dark:divide-gray-800 dark:bg-gray-900",
@@ -480,11 +546,14 @@ const galleryArrowBaseClasses = {
 const theme = {
   gridBaseClasses,
   labelBaseClasses,
+  toggleBaseClasses,
   badgeBaseClasses,
   buttonBaseClasses,
   dividerBaseClasses,
   textInputBaseClasses,
   textInputBaseErrorClasses,
+  checkboxBaseClasses,
+  checkboxBaseErrorClasses,
   pickerSelectBaseClasses,
   scrollableBaseClasses,
   pickerSelectSimpleClasses,
@@ -498,6 +567,7 @@ const theme = {
   modalConfirmClasses,
   dropdownBaseClasses,
   dropdownMultiClasses,
+  dropdownBrowserClasses,
   tagInputBaseClasses,
   textAreaBaseClasses,
   disabledTextAreaStylesClasses,

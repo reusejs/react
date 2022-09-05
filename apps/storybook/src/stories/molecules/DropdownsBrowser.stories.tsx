@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { DropdownMulti, LabelBase } from '@reusejs/react';
+import { DropdownBrowser, LabelBase } from '@reusejs/react';
 import {
   ChevronDownIcon,
   ChevronRightIcon,
@@ -8,14 +8,14 @@ import {
 } from '@heroicons/react/solid';
 
 export default {
-  title: 'Molecules/Dropdowns Multi',
-  component: DropdownMulti,
+  title: 'Molecules/Dropdowns Browser',
+  component: DropdownBrowser,
   argTypes: {},
-} as ComponentMeta<typeof DropdownMulti>;
+} as ComponentMeta<typeof DropdownBrowser>;
 
-const Template: ComponentStory<typeof DropdownMulti> = (args) => (
-  <div className='w-64'>
-    <DropdownMulti {...args} />
+const Template: ComponentStory<typeof DropdownBrowser> = (args) => (
+  <div className='w-64 bg-red-50 p-2'>
+    <DropdownBrowser {...args} />
   </div>
 );
 
@@ -67,11 +67,9 @@ const ActiveLabel = () => {
 
 export const Default = Template.bind({});
 Default.args = {
-  label: Label,
   onClick: (item: any, index: any) => {
     console.log('clicked', item, index);
   },
-  activeLabel: ActiveLabel,
   itemRenderer: ItemRenderer,
   items: [
     { label: 'Long Long String Number 1', href: '#', active: false },

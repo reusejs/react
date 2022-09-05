@@ -22,7 +22,7 @@
     "chromatic": "npx chromatic --exit-zero-on-changes --auto-accept-changes"
   },
   "dependencies": {
-    "@heroicons/react": "^1.0.6",
+    "@heroicons/react": "v1",
     "@reusejs/react": "*",
     "@storybook/react": "^6.5.9",
     "clsx": "^1.2.1",
