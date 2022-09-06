@@ -242,21 +242,3 @@ WithDiv.args = {
     right: 'right-1',
   },
 };
-
-export const Test = Template.bind({});
-Test.args = {
-  children: CONTENT2,
-  interval: 2000,
-  thumbnailArray: [
-    'https://media.istockphoto.com/photos/network-security-cyber-security-digital-protection-computer-hack-picture-id1290938044?b=1&k=20&m=1290938044&s=170667a&w=0&h=BliJ8-BSACYb88MrrNSThr4aMV0Owq2WWM-5hBB4jeQ=',
-    'https://media.istockphoto.com/photos/network-security-cyber-security-digital-protection-computer-hack-picture-id1290938044?b=1&k=20&m=1290938044&s=170667a&w=0&h=BliJ8-BSACYb88MrrNSThr4aMV0Owq2WWM-5hBB4jeQ=',
-    'https://media.istockphoto.com/photos/network-security-cyber-security-digital-protection-computer-hack-picture-id1290938044?b=1&k=20&m=1290938044&s=170667a&w=0&h=BliJ8-BSACYb88MrrNSThr4aMV0Owq2WWM-5hBB4jeQ=',
-    'https://media.istockphoto.com/photos/network-security-cyber-security-digital-protection-computer-hack-picture-id1290938044?b=1&k=20&m=1290938044&s=170667a&w=0&h=BliJ8-BSACYb88MrrNSThr4aMV0Owq2WWM-5hBB4jeQ=',
-    'https://media.istockphoto.com/photos/network-security-cyber-security-digital-protection-computer-hack-picture-id1290938044?b=1&k=20&m=1290938044&s=170667a&w=0&h=BliJ8-BSACYb88MrrNSThr4aMV0Owq2WWM-5hBB4jeQ=',
-    'https://media.istockphoto.com/photos/network-security-cyber-security-digital-protection-computer-hack-picture-id1290938044?b=1&k=20&m=1290938044&s=170667a&w=0&h=BliJ8-BSACYb88MrrNSThr4aMV0Owq2WWM-5hBB4jeQ=',
-    'https://media.istockphoto.com/photos/network-security-cyber-security-digital-protection-computer-hack-picture-id1290938044?b=1&k=20&m=1290938044&s=170667a&w=0&h=BliJ8-BSACYb88MrrNSThr4aMV0Owq2WWM-5hBB4jeQ=',
-    'https://media.istockphoto.com/photos/network-security-cyber-security-digital-protection-computer-hack-picture-id1290938044?b=1&k=20&m=1290938044&s=170667a&w=0&h=BliJ8-BSACYb88MrrNSThr4aMV0Owq2WWM-5hBB4jeQ=',
-    'https://media.istockphoto.com/photos/network-security-cyber-security-digital-protection-computer-hack-picture-id1290938044?b=1&k=20&m=1290938044&s=170667a&w=0&h=BliJ8-BSACYb88MrrNSThr4aMV0Owq2WWM-5hBB4jeQ=',
-    'https://media.istockphoto.com/photos/network-security-cyber-security-digital-protection-computer-hack-picture-id1290938044?b=1&k=20&m=1290938044&s=170667a&w=0&h=BliJ8-BSACYb88MrrNSThr4aMV0Owq2WWM-5hBB4jeQ=',
-  ],
-};

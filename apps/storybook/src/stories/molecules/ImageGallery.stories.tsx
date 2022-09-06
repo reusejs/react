@@ -82,6 +82,9 @@ const CONTENT = [
 export const Default = Template.bind({});
 Default.args = {
   images: CONTENT,
-  autoPlay: false,
   interval: 2,
+  gallerySliderBaseClasses: {
+    imageActive: "scale-110",
+    backgroundColor: "bg-blue-300",
+  }
 };
