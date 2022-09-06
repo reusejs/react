@@ -36,6 +36,27 @@ const labelBaseClasses = {
   color: "text-gray-800 dark:text-gray-100",
 };
 
+// Toggle
+
+const toggleBaseClasses = {
+  enabled: "bg-green-600",
+  disabled: "bg-gray-200 dark:bg-gray-700",
+  alignment:
+    "relative inline-flex flex-shrink-0 cursor-pointer rounded-full transition-colors duration-200 ease-in-out",
+  focus:
+    "focus:ring-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2",
+  size: "h-6 w-11",
+  border: "border-2 border-transparent",
+  circleSizeClasses: "h-5 w-5",
+  circleColorClasses: "bg-white dark:bg-gray-900",
+  circleAlignmentClasses:
+    "pointer-events-none inline-block transform rounded-full shadow ring-0 transition duration-200 ease-in-out",
+  circleEnabledClasses: "translate-x-5",
+  circleDisabledClasses: "translate-x-0",
+  label: "ml-3 text-gray-900 dark:text-white",
+  description: "text-sm text-gray-500 dark:text-gray-400",
+};
+
 // Scrollable
 
 const scrollableBaseClasses = {
@@ -89,6 +110,31 @@ const textInputBaseErrorClasses = {
   placeholderColor: "placeholder-red-300",
 };
 
+// Checkbox
+
+const checkboxBaseClasses = {
+  wrapper: "flex items-center",
+  margin: "ml-2",
+  backgroundColor: "bg-white dark:bg-gray-900",
+  alignment: "block",
+  width: "h-4 w-4",
+  borderRadius: "rounded",
+  border: "border-gray-300 dark:border-gray-600",
+  focus: "focus:border-gray-500",
+  padding: "",
+  font: "font-normal sm:text-sm",
+  textColor: "text-gray-900 dark:text-white",
+  placeholderColor: "",
+};
+
+const checkboxBaseErrorClasses = {
+  border: "border-red-300 dark:border-red-600",
+  focus: "focus:ring-red-500 focus:border-red-500",
+  textColor: "text-red-900 dark:text-red-300",
+  backgroundColor: "bg-white dark:bg-gray-900",
+  placeholderColor: "placeholder-red-300",
+};
+
 // Text Area
 
 const textAreaBaseClasses = {
@@ -122,6 +168,20 @@ const disabledTextAreaStylesClasses = {
   textColor: "text-slate-700 dark:text-white",
   placeholderColor: "",
   opacity: "opacity-70",
+};
+
+//ToolTip
+
+const toolTipBaseStyleProps = {
+  positioning: "absolute -top-12 left-12 z-10 ",
+  layout: "flex h-fit w-fit items-center justify-center",
+  border: "border border-white",
+  borderRadius: "rounded-lg",
+  margin: "",
+  padding: "px-4 py-2",
+  backgroundColor: "bg-black",
+  textColor: "text-white",
+  opacity: "opacity-90",
 };
 
 // Picket Select
@@ -274,6 +334,57 @@ const modalConfirmClasses = {
   },
 };
 
+// Slider
+const dotWrapperClasses = {
+  layout: "absolute",
+  bottom: "bottom-3",
+  position: "flex justify-center items-center w-full",
+}
+
+const dotItemClasses = {
+  size: "w-3 h-3",
+  radius: "rounded-full",
+  margin: "mx-1",
+  cursor: "cursor-pointer",
+}
+
+const baseArrowClasses = {
+  position: "absolute flex justify-center items-center top-1/2 -translate-y-1/2",
+  size: "w-12 h-12",
+  backgroundColor: "bg-black opacity-50 hover:opacity-90",
+  borderRadius: "rounded-full",
+  cursor: "cursor-pointer",
+  textStyle: "text-white text-xl",
+  left: "left-3",
+  right: "right-3",
+}
+
+const sliderPageClasses = {
+  width: "w-full",
+  height: "h-full",
+  display: "inline-block",
+  flex: "none",
+}
+
+const sliderBaseClasses = {
+  display: "flex items-center justify-center",
+  height: "h-[500px]",
+  width: "w-full",
+  margin: "mx-auto",
+  // dotWrapStyleClasses: {
+  //   layout: "absolute",
+  //   bottom: "bottom-3",
+  //   position: "flex justify-center items-center w-full",
+  // },
+  // dotItemStyleClasses: {
+  //   size: "w-3 h-3",
+  //   radius: "rounded-full",
+  //   margin: "mx-1",
+  //   cursor: "cursor-pointer",
+  //   dotColor: "default"
+  // }
+}
+
 // Dropdowns
 
 const dropdownBaseClasses = {
@@ -308,6 +419,26 @@ const dropdownMultiClasses = {
     "absolute top-0 left-1 w-40 origin-top-left translate-x-full border dark:border-gray-800 bg-white dark:bg-gray-900 py-1 rounded-md",
   itemClasses:
     "relative block w-full cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-gray-700",
+  activeItemClasses: "text-blue-500 font-semibold",
+};
+
+const dropdownBrowserClasses = {
+  wrapper: "relative cursor-pointer",
+  transition: {
+    enter: "transition ease-out duration-200",
+    enterFrom: "transform opacity-0 scale-95",
+    enterTo: "transform opacity-100 scale-100",
+    leave: "transition ease-in duration-75",
+    leaveFrom: "transform opacity-100 scale-100",
+    leaveTo: "transform opacity-0 scale-95",
+  },
+  containerClasses:
+    "border dark:border-gray-800 bg-white dark:bg-gray-900 focus:outline-none  rounded-md",
+  childContainerClasses: "py-2",
+  itemClasses:
+    "relative block w-full cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-gray-700 hover:font-semibold",
+  childItemClasses:
+    "relative block w-full cursor-pointer py-2 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-gray-700 hover:font-semibold",
   activeItemClasses: "text-blue-500 font-semibold",
 };
 
@@ -354,7 +485,7 @@ const dataTableBaseClasses = {
   wrapper1: "flex flex-col",
   wrapper2: "inline-block min-w-full align-middle",
   wrapper3:
-    "initial:md:rounded-md initial:border initial:dark:border overflow-hidden border-gray-200 ring-1 ring-black ring-opacity-5 dark:border-gray-700",
+    "initial:md:rounded-md initial:border initial:dark:border overflow-auto border-gray-200 ring-1 ring-black ring-opacity-5 dark:border-gray-700",
   tableWrapper: "min-w-full",
   bodyWrapper:
     "divide-y divide-gray-100 bg-white dark:divide-gray-800 dark:bg-gray-900",
@@ -362,6 +493,12 @@ const dataTableBaseClasses = {
   loadingTr: "bg-white dark:bg-gray-900",
   loadingTd: "animate-pulse whitespace-nowrap px-6 py-4 text-sm",
   loadingLoader: "rounded-xs h-6 bg-gray-100 dark:bg-gray-800",
+  headerClasses:
+    "sticky top-0 z-10 border-b border-gray-300 bg-gray-50 bg-opacity-75 px-6 py-3 text-left text-xs font-normal uppercase tracking-wider text-gray-500 backdrop-blur backdrop-filter dark:border-gray-700 dark:bg-[#192130] dark:text-gray-300",
+  navClasses:
+    "flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 dark:border-gray-800 dark:bg-[#192130] sm:px-6",
+  navTextClasses: "text-sm text-gray-700 dark:text-gray-200",
+  headerWrapperClasses: "bg-gray-50 dark:bg-[#192130]",
 };
 
 // Navigation Page Heading
@@ -380,21 +517,68 @@ const navigationPageHeadingClasses = {
   loadingLoader: "rounded-xs h-6 bg-gray-100 dark:bg-gray-800",
 };
 
+//Gallery Base class
+const galleryBaseClasses = {
+  wrapper: "flex flex-col justify-between",
+  display: "flex items-center justify-center",
+  height: "h-[300px]",
+  width: "w-[500px]",
+  margin: "mx-auto",
+}
+
+const gallerySliderBaseClasses = {
+  scroll: "grid w-full auto-cols-max grid-flow-col overflow-x-scroll scroll scroll-smooth scrollbar-hide whitespace-nowrap",
+  gap: "gap-x-5",
+  height: "h-full",
+  alignment: "mt-4 px-10",
+  backgroundColor: "bg-black",
+  opacity: "opacity-90",
+  imageSize: "h-24 w-36",
+  imagePointer: "cursor-pointer",
+  imageSpacing: "my-4",
+  imageActive: "scale-125",
+}
+
+const galleryArrowBaseClasses = {
+  position: "absolute flex justify-center items-center top-1/2 -translate-y-1/2",
+  size: "w-12 h-12",
+  backgroundColor: "opacity-50 hover:opacity-90",
+  borderRadius: "rounded-full",
+  cursor: "cursor-pointer",
+  textStyle: "text-black text-xl",
+  left: "left-3",
+  right: "right-3",
+}
+
+const centeredGridBaseClasses = {
+  backgroundColor: 'bg-white',
+  verticalWrapperPadding: "py-12",
+  horizontalMargin: "mx-auto",
+  horizontalPadding: "px-4 sm:px-6 lg:px-8",
+  width: "max-w-7xl",
+  gridWrapperMarginTop: "mt-10",
+  gridWrapperMarginBottom: "0",
+  gridClasses: "space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:space-y-0",
+  sectionHeadingAlignmentClasses: "lg:text-center",
+}
+
 const theme = {
   gridBaseClasses,
   labelBaseClasses,
+  toggleBaseClasses,
   badgeBaseClasses,
   buttonBaseClasses,
   dividerBaseClasses,
   textInputBaseClasses,
   textInputBaseErrorClasses,
+  checkboxBaseClasses,
+  checkboxBaseErrorClasses,
   pickerSelectBaseClasses,
   scrollableBaseClasses,
   pickerSelectSimpleClasses,
   pickerRadioBaseClasses,
   radioBoxStyleClasses,
   radioOptionLabelClasses,
-  // pickerRadioAnimatedClasses,
   pickerRadioSimpleClasses,
   pickerCheckboxBaseClasses,
   pickerCheckboxSimpleClasses,
@@ -402,12 +586,23 @@ const theme = {
   modalConfirmClasses,
   dropdownBaseClasses,
   dropdownMultiClasses,
+  dropdownBrowserClasses,
   tagInputBaseClasses,
   textAreaBaseClasses,
   disabledTextAreaStylesClasses,
   accordionBaseClasses,
+  toolTipBaseStyleProps,
   dataTableBaseClasses,
   navigationPageHeadingClasses,
+  dotWrapperClasses,
+  dotItemClasses,
+  baseArrowClasses,
+  sliderPageClasses,
+  sliderBaseClasses,
+  galleryBaseClasses,
+  galleryArrowBaseClasses,
+  gallerySliderBaseClasses,
+  centeredGridBaseClasses
 };
 
 export default theme;

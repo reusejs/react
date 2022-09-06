@@ -1,5 +1,33 @@
 # @reusejs/react
 
+## 6.17.0
+
+### Minor Changes
+
+- 434fb73: Add image component
+
+## 6.16.0
+
+### Minor Changes
+
+- 916e3f9: Add sliders
+
+## 6.15.0
+
+### Minor Changes
+
+- 6ebc156: Add toggles and single checkbox
+
+### Patch Changes
+
+- b442378: Enable autoGrow on textarea
+
+## 6.14.0
+
+### Minor Changes
+
+- 4fc35df: Add navigation dropdown browser
+
 ## 6.13.0
 
 ### Minor Changes

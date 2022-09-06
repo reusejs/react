@@ -92,7 +92,9 @@ Default.args = {
   sectionHeading: <SectionTitle title='Need help?' />,
   sectionDescription: <SectionDescription />,
   sectionContentData: SectionContent,
-  textAlignmentClasses: 'text-left',
+  centeredGridBaseClasses: {
+    sectionHeadingAlignmentClasses: 'text-right',
+  },
 };
 
 export const OneItemGrid = Template.bind({});
@@ -100,9 +102,9 @@ OneItemGrid.args = {
   sectionHeading: <SectionTitle title='Need help?' />,
   sectionDescription: <SectionDescription />,
   sectionContentData: SectionContent,
-  gridColumnClasses:
-    'space-y-10 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-10 md:space-y-0',
-  textAlignmentClasses: 'text-right',
+  centeredGridBaseClasses: {
+    sectionHeadingAlignmentClasses: 'text-right',
+  },
 };
 
 export const ThreeItemGrid = Template.bind({});
@@ -110,9 +112,9 @@ ThreeItemGrid.args = {
   sectionHeading: <SectionTitle title='Need help?' />,
   sectionDescription: <SectionDescription />,
   sectionContentData: SectionContent,
-  gridColumnClasses:
-    'space-y-10 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10 md:space-y-0',
-  textAlignmentClasses: 'sm:text-left lg:text-center',
+  centeredGridBaseClasses: {
+    sectionHeadingAlignmentClasses: 'sm:text-left lg:text-center',
+  },
 };
 
 export const FourItemGrid = Template.bind({});
@@ -120,6 +122,7 @@ FourItemGrid.args = {
   sectionHeading: <SectionTitle title='Need help?' />,
   sectionDescription: <SectionDescription />,
   sectionContentData: SectionContent,
-  gridColumnClasses:
-    'space-y-10 md:grid md:grid-cols-4 md:gap-x-8 md:gap-y-10 md:space-y-0',
+  centeredGridBaseClasses: {
+    sectionHeadingAlignmentClasses: 'sm:text-left lg:text-center',
+  },
 };

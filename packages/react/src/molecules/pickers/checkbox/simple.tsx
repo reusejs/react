@@ -1,11 +1,8 @@
 import React from "react";
-import CheckboxBase, { PickerCheckboxBaseProps } from "./base";
-import { CheckIcon, XIcon } from "@heroicons/react/solid";
-import TextInputBase from "../../../atoms/textInputs/base";
-import { useThemeContext } from "../../../theme/ThemeProvider";
-import resolvedStyleProps from "../../../utils/resolvedStyleProps";
 import LabelBase from "../../../atoms/labels/base";
+import TextInputBase from "../../../atoms/textInputs/base";
 import theme from "../../../theme/theme";
+import CheckboxBase, { PickerCheckboxBaseProps } from "./base";
 
 const PickerCheckboxSimple = (props: PickerCheckboxBaseProps) => {
   return (

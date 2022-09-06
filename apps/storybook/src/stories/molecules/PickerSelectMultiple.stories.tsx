@@ -13,14 +13,14 @@ const fetchContinents = (q = '') => {
     'Europe',
     'North America',
     'South America',
-    "Japan",
-    "Korea",
-    "Spain",
-    "France",
-    "England",
-    "India",
-    "China",
-    "SomeRandomCountry",
+    'Japan',
+    'Korea',
+    'Spain',
+    'France',
+    'England',
+    'India',
+    'China',
+    'SomeRandomCountry',
   ];
   let newContinents = continents.map((c) => {
     return {
@@ -98,7 +98,7 @@ Selected.args = {
   ],
   pickerSelectSimpleClasses: {
     selectedDataClasses: {
-      spanBaseClasses: " ",
-    }
-  }
+      spanBaseClasses: ' ',
+    },
+  },
 };

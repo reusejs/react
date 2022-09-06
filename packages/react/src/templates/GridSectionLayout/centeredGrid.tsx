@@ -1,27 +1,73 @@
 import React from "react";
+import resolvedStyleProps from "../../utils/resolvedStyleProps";
+import { useThemeContext } from "../../theme/ThemeProvider";
 
 export interface CenteredGridInterface {
   sectionHeading?: any;
   sectionDescription?: any;
   sectionContentData?: any;
-  gridColumnClasses?: string;
-  textAlignmentClasses?: string;
+  centeredGridBaseClasses?: {
+    backgroundColor?: string;
+    verticalWrapperPadding?: string;
+    horizontalMargin?: string;
+    horizontalPadding?: string;
+    width?: string;
+    gridWrapper?: string;
+    gridClasses?: string;
+    sectionHeadingAlignmentClasses?: string;
+  };
 }
 
 const CenteredGrid = (props: CenteredGridInterface) => {
+  const theme: any = useThemeContext();
+
+  const backgroundWrapperContainer = resolvedStyleProps(
+    "centeredGridBaseClasses",
+    ["backgroundColor", "verticalWrapperPadding"],
+    props,
+    theme
+  );
+
+  const innerContainer = resolvedStyleProps(
+    "centeredGridBaseClasses",
+    ["horizontalMargin", "horizontalPadding", "width"],
+    props,
+    theme
+  );
+
+  const gridWrapper = resolvedStyleProps(
+    "centeredGridBaseClasses",
+    ["gridWrapperMarginTop"],
+    props,
+    theme
+  );
+
+  const gridStyles = resolvedStyleProps(
+    "centeredGridBaseClasses",
+    ["gridClasses"],
+    props,
+    theme
+  );
+
+  const sectionHeadingTextAlignment = resolvedStyleProps(
+    "centeredGridBaseClasses",
+    ["sectionHeadingAlignmentClasses"],
+    props,
+    theme
+  );
+
   return (
-    <div className="bg-white py-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className={props.textAlignmentClasses}>
+    <div className={backgroundWrapperContainer}>
+      <div className={innerContainer}>
+        <div className={sectionHeadingTextAlignment}>
           {props.sectionHeading}
 
           {props.sectionDescription ? props.sectionDescription : null}
         </div>
 
-        <div className="mt-10">
-          <dl className={props.gridColumnClasses}>
+        <div className={gridWrapper}>
+          <dl className={gridStyles}>
             {props.sectionContentData.map((el: any, index: any) => {
-              console.log("render section data");
               return <span key={index}>{el}</span>;
             })}
           </dl>
@@ -29,12 +75,6 @@ const CenteredGrid = (props: CenteredGridInterface) => {
       </div>
     </div>
   );
-};
-
-CenteredGrid.defaultProps = {
-  gridColumnClasses:
-    "space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:space-y-0",
-  textAlignmentClasses: "lg:text-center",
 };
 
 export default CenteredGrid;

@@ -30,6 +30,14 @@ export { default as GridBase } from "./atoms/grid/base";
 export { default as TextInputBase } from "./atoms/textInputs/base";
 export { default as PasswordTextInputBase } from "./atoms/textInputs/password";
 
+// Checkbox
+
+export { default as CheckboxBase } from "./atoms/checkbox/base";
+
+// Toggle
+
+export { default as ToggleBase } from "./atoms/toggles/base";
+
 // Tags
 
 export { default as TagInputBase } from "./molecules/tags/base";
@@ -37,6 +45,9 @@ export { default as TagInputBase } from "./molecules/tags/base";
 // TextArea
 
 export { default as TextAreaBase } from "./atoms/textArea/base";
+
+//ToolTip
+export { default as ToolTipBase } from "./atoms/tooltip/base";
 
 // ******************** End  ---- Atoms *************************
 
@@ -81,10 +92,16 @@ export { default as ModalConfirm } from "./molecules/modals/confirm";
 
 export { default as DropdownBase } from "./molecules/dropdowns/base";
 export { default as DropdownMulti } from "./molecules/dropdowns/multi";
+export { default as DropdownBrowser } from "./molecules/dropdowns/browser";
 
 // Navigations
 
 export { default as NavigationPageHeading } from "./molecules/navigations/heading/base";
+export { default as LazyLoadedImage } from "./molecules/lazyLoadedImage/Base"
+
+//Slider
+
+export { default as SliderBase } from "./molecules/slider/base";
 
 // ******************** End  ---- Molecules *************************
 
@@ -94,6 +111,7 @@ export { default as FooterBase } from "./organisms/footer/base";
 export { default as SectionHeaderBase } from "./organisms/sectionHeader/base";
 export { default as AutoGridSectionBase } from "./organisms/autoGridSection/base";
 export { default as IconTitleDescriptionCard } from "./organisms/cards/IconTitleDescriptionCard";
+export { default as GalleryBase } from "./organisms/gallery/base";
 
 // ******************** End  ---- Organisms *************************
 
