@@ -110,6 +110,7 @@ export { default as SliderBase } from "./molecules/slider/base";
 export { default as NavigationBase } from "./organisms/navigations/base";
 export { default as FooterBase } from "./organisms/footer/base";
 export { default as GalleryBase } from "./organisms/gallery/base";
+export { default as ImageGallery } from "./organisms/imageGallery/base";
 
 // ******************** End  ---- Organisms *************************
 
