@@ -11,6 +11,7 @@ export interface LazyLoadedImageProps {
   delayMethod?: "debounce" | "throttle" | undefined;
   delayTime?: number;
   effect?: "blur" | "black-and-white" | "opacity";
+  placeholder?: any;
   placeholderSrc?: string;
   threshold?: number;
   visibleByDefault?: boolean;
@@ -22,6 +23,7 @@ export interface LazyLoadedImageProps {
   scrollPosition?: { x: 0; y: 0 } | undefined;
   style?: any;
   useIntersectionObserver?: boolean;
+  placeholderComponent?: any;
 }
 
 const LazyLoadedImage = (props: LazyLoadedImageProps) => {
@@ -29,6 +31,8 @@ const LazyLoadedImage = (props: LazyLoadedImageProps) => {
   const [loaded, setLoaded] = useState<Boolean>(false);
 
   function onImageLoad() {
+    console.log("check here loaded", loaded);
+
     if (loaded) {
       return null;
     }
@@ -46,6 +50,7 @@ const LazyLoadedImage = (props: LazyLoadedImageProps) => {
       delayMethod,
       delayTime,
       effect,
+      placeholder,
       placeholderSrc,
       scrollPosition,
       threshold,
@@ -66,7 +71,14 @@ const LazyLoadedImage = (props: LazyLoadedImageProps) => {
         delayMethod={props.delayMethod}
         delayTime={props.delayTime}
         // height={props.height}
-        // placeholder={props.placeholderSrc}
+        placeholder={
+          <div
+            style={{ width: props.width, height: props.height }}
+            className="animate-pulse"
+          >
+            {props.placeholder}
+          </div>
+        }
         scrollPosition={props.scrollPosition}
         style={props.style}
         threshold={props.threshold}
