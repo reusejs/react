@@ -93,7 +93,7 @@ export { default as NavigationBase } from "./organisms/navigations/base";
 export { default as FooterBase } from "./organisms/footer/base";
 export { default as SectionHeaderBase } from "./organisms/sectionHeader/base";
 export { default as AutoGridSectionBase } from "./organisms/autoGridSection/base";
-export { default as LogoDescriptionCard } from "./organisms/cards/LogoDescriptionCard";
+export { default as IconTitleDescriptionCard } from "./organisms/cards/IconTitleDescriptionCard";
 
 // ******************** End  ---- Organisms *************************
 
