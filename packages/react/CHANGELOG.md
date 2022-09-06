@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.17.1
+
+### Patch Changes
+
+- 90bdbea: Add file browser
+
 ## 6.17.0
 
 ### Minor Changes
