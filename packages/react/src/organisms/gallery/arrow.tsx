@@ -24,8 +24,6 @@ export interface GalleryArrowProps {
 const Arrow = (props: GalleryArrowProps) => {
   const theme = useThemeContext();
 
-  console.log("Props for Arrow are as follows>>>>", props);
-
   const baseArrowClassName = resolvedStyleProps(
     "galleryArrowBaseClasses",
     [
