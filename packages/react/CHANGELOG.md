@@ -1,5 +1,23 @@
 # @reusejs/react
 
+## 6.17.1
+
+### Patch Changes
+
+- 90bdbea: Add file browser
+
+## 6.17.0
+
+### Minor Changes
+
+- 434fb73: Add image component
+
+## 6.16.0
+
+### Minor Changes
+
+- 916e3f9: Add sliders
+
 ## 6.15.0
 
 ### Minor Changes

@@ -24,6 +24,9 @@ Default.args = {
   labelBaseProps: {
     label: 'Verified?',
   },
+  toggleBaseClasses: {
+    enabled: 'bg-green-700',
+  },
 };
 
 export const TurnedOn = Template.bind({});

@@ -10,6 +10,7 @@ const THead = ({
 }: {
   config: any;
   applyFilter: any;
+  variant?: string;
 }) => {
   const theme: any = useThemeContext();
 
@@ -20,15 +21,25 @@ const THead = ({
     theme
   );
 
+  const headerClassNames = resolvedStyleProps(
+    "dataTableBaseClasses",
+    ["headerClasses"],
+    props,
+    theme
+  );
+
+  const headerWrapperClassNames = resolvedStyleProps(
+    "dataTableBaseClasses",
+    ["headerWrapperClasses"],
+    props,
+    theme
+  );
+
   return (
-    <thead className="bg-gray-50 dark:bg-[#192130]">
+    <thead className={headerWrapperClassNames}>
       <tr>
         {config.columns.map((row: any, i: any) => (
-          <th
-            key={`th-${i}`}
-            scope="col"
-            className="sticky top-0 z-10 border-b border-gray-300 bg-gray-50 bg-opacity-75 px-6 py-3 text-left text-xs font-normal uppercase tracking-wider text-gray-500 backdrop-blur backdrop-filter dark:border-gray-700 dark:bg-[#192130] dark:text-gray-300"
-          >
+          <th key={`th-${i}`} scope="col" className={headerClassNames}>
             {row.label}
           </th>
         ))}

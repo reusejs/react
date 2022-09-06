@@ -129,3 +129,89 @@ Default.args = {
     };
   },
 };
+
+export const Variant = Template.bind({});
+Variant.args = {
+  sortColumn: 0,
+  perPage: 5,
+  config: {
+    filterable: true,
+    columns: [
+      {
+        label: 'Package Name',
+        identifier: 'name',
+        resolver: (d: any) => {
+          return d.package.name;
+        },
+        sortable: false,
+        filterable: {
+          type: 'text',
+        },
+      },
+      {
+        label: 'Publisher',
+        identifier: 'publisher',
+        resolver: (d: any) => {
+          return d.package.publisher.username;
+        },
+        sortable: false,
+        filterable: {
+          type: 'radio',
+          options: [
+            { label: 'Email', value: 'email' },
+            { label: 'SMS', value: 'sms' },
+            { label: 'Firebase', value: 'firebase' },
+            { label: 'JSON', value: 'json' },
+            { label: 'Partial', value: 'partial' },
+          ],
+          selected: [],
+        },
+      },
+      {
+        label: 'Version',
+        identifier: 'last_used_human',
+        resolver: (d: any) => {
+          return d.package.version;
+        },
+        sortable: false,
+        filterable: {
+          type: 'checkbox',
+          options: [
+            { label: 'Email', value: 'email' },
+            { label: 'SMS', value: 'sms' },
+            { label: 'Firebase', value: 'firebase' },
+            { label: 'JSON', value: 'json' },
+            { label: 'Partial', value: 'partial' },
+          ],
+          selected: [],
+        },
+      },
+      {
+        label: '',
+        filterable: {
+          type: 'clear',
+        },
+        resolver: (d: any) => {
+          return (
+            <div className='text-right text-sm font-medium'>
+              <ArrowRightIcon
+                className='h-4 w-4 font-semibold text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-500'
+                aria-hidden='true'
+              />
+            </div>
+          );
+        },
+      },
+    ],
+  },
+  dataSource: async (params: any) => {
+    let response: any = await fetchPackages(params);
+    return {
+      data: response.results,
+      pagination: {
+        total: response.total,
+      },
+    };
+  },
+  variant: 'dark',
+};

@@ -51,6 +51,30 @@ const variants = {
     },
   },
   dark: {
+    dataTableBaseClasses: {
+      headerWrapperClasses: 'bg-[#242645]',
+      filterRow: 'bg-[#242645]',
+      bodyWrapper: 'bg-[#242645] text-white',
+      loadingTr: 'bg-[#242645]',
+      loadingTd: 'animate-pulse whitespace-nowrap px-6 py-4 text-sm',
+      loadingLoader: 'rounded-xs h-6 bg-gray-100',
+      headerClasses:
+        'sticky top-0 z-10 border-b border-[#2C2D51] bg-[#242645] bg-opacity-75 px-6 py-4 text-left text-xs font-normal tracking-wider text-white',
+      navClasses:
+        'flex items-center justify-between border-t border-[#2C2D51] bg-[#242645] px-4 py-3 sm:px-6',
+      navTextClasses: 'text-sm text-white',
+    },
+    buttonBaseClasses: {
+      alignment: 'inline-flex justify-center items-center',
+      focus: 'focus:outline-none',
+      font: 'font-normal text-sm',
+      backgroundColor: 'bg-red-500',
+      textColor: 'text-white',
+      borderRadius: 'rounded-md',
+      padding: 'px-4 py-2',
+      border: 'border border-transparent',
+      disabledClasses: 'disabled:opacity-50',
+    },
     pickerSelectSimpleClasses: {
       selectedDataClasses: {
         background: 'bg-red-500',
