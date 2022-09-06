@@ -561,6 +561,17 @@ const centeredGridBaseClasses = {
   gridClasses: "space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:space-y-0",
 }
 
+const itemTitleDescriptionCardBaseClasses = {
+  wrapper: 'relative',
+  iconWrapper: 'flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white',
+  titleWrapper: 'mt-2',
+  titleStyles: 'text-3xl font-extrabold tracking-tight sm:text-4xl',
+  descriptionWrapper: 'mt-2',
+  descriptionStyles: 'text-gray-500',
+  actionWrapper: 'mt-2',
+}
+
+
 const theme = {
   gridBaseClasses,
   labelBaseClasses,
@@ -601,7 +612,8 @@ const theme = {
   galleryBaseClasses,
   galleryArrowBaseClasses,
   gallerySliderBaseClasses,
-  centeredGridBaseClasses
+  centeredGridBaseClasses,
+  itemTitleDescriptionCardBaseClasses
 };
 
 export default theme;

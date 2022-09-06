@@ -13,7 +13,6 @@ export interface CenteredGridBaseInterface {
 
 const CenteredGridBase = (props: CenteredGridBaseInterface) => {
   const theme: any = useThemeContext();
-
   
   const gridWrapper = resolvedStyleProps(
     "centeredGridBaseClasses",

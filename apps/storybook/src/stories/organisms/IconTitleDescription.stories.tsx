@@ -1,31 +1,16 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { IconTitleDescriptionCard } from '@reusejs/react';
+import { IconTitleDescriptionActionCard } from '@reusejs/react';
 
 export default {
-  title: 'Organisms/IconTitleDescriptionCard',
-  component: IconTitleDescriptionCard,
+  title: 'Organisms/IconTitleDescriptionActionCard',
+  component: IconTitleDescriptionActionCard,
   argTypes: {},
-} as ComponentMeta<typeof IconTitleDescriptionCard>;
+} as ComponentMeta<typeof IconTitleDescriptionActionCard>;
 
-const Template: ComponentStory<typeof IconTitleDescriptionCard> = (args) => (
-  <IconTitleDescriptionCard {...args} />
-);
-
-const Title = () => {
-  return (
-    <div className='mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl'>
-      Why Choose Us
-    </div>
-  );
-};
-
-const SubTitle = () => (
-  <div className='mt-2 text-gray-500'>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.
-  </div>
-);
+const Template: ComponentStory<typeof IconTitleDescriptionActionCard> = (
+  args
+) => <IconTitleDescriptionActionCard {...args} />;
 
 const Logo = () => {
   return (
@@ -47,20 +32,41 @@ const Logo = () => {
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  logo: <Logo />,
-  title: <Title />,
-  description: <SubTitle />,
-  logoPosition: 'left',
-  logoToTitleGapClass: 'ml-16',
+const Actions = () => {
+  return (
+    <a
+      href='#'
+      className='inline-flex rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700'
+    >
+      Get started
+    </a>
+  );
 };
 
-export const LogoOnTop = Template.bind({});
-LogoOnTop.args = {
-  logo: <Logo />,
-  title: <Title />,
-  description: <SubTitle />,
-  logoPosition: 'top-left',
-  logoToTitleGapClass: 'mt-2',
+export const Default = Template.bind({});
+Default.args = {};
+Default.args = {
+  title: 'Why Choose Us',
+  description:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+};
+
+export const WithIconOnLeft = Template.bind({});
+WithIconOnLeft.args = {
+  icon: <Logo />,
+  title: 'Why Choose Us',
+  description:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  iconPosition: 'left',
+  actions: <Actions />,
+};
+
+export const WithIconOnRight = Template.bind({});
+WithIconOnRight.args = {
+  icon: <Logo />,
+  title: 'Why Choose Us',
+  description:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  iconPosition: 'top-left',
+  actions: <Actions />,
 };
