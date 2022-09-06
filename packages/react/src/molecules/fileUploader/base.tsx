@@ -8,9 +8,9 @@ export interface FileUploaderBaseProps {
   multiple?: boolean;
   accept?: string;
   autoUpload?: boolean;
-  selectedFiles: (files: any) => void;
-  beforeUpload: (files: any) => void;
-  afterUpload: (files: any) => void;
+  selectedFiles?: (files: any) => void;
+  beforeUpload?: (files: any) => void;
+  afterUpload?: (files: any) => void;
   openFileUploader: (callback?: any) => void;
   upload: (files: any) => void;
 }
