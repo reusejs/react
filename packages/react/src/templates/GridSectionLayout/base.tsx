@@ -6,13 +6,8 @@ export interface CenteredGridBaseInterface {
   items?: any;
   itemsRenderer?: any;
   centeredGridBaseClasses?: {
-    verticalWrapperPadding?: string;
-    horizontalMargin?: string;
-    horizontalPadding?: string;
-    width?: string;
     gridWrapper?: string;
     gridClasses?: string;
-    sectionHeadingAlignmentClasses?: string;
   };
 }
 
@@ -20,17 +15,9 @@ const CenteredGridBase = (props: CenteredGridBaseInterface) => {
   const theme: any = useThemeContext();
 
   
-
-  const innerContainer = resolvedStyleProps(
-    "centeredGridBaseClasses",
-    ["horizontalMargin", "horizontalPadding", "width"],
-    props,
-    theme
-  );
-
   const gridWrapper = resolvedStyleProps(
     "centeredGridBaseClasses",
-    ["gridWrapperMarginTop"],
+    ["gridWrapperMarginTop", "gridWrapperMarginBottom"],
     props,
     theme
   );
@@ -53,16 +40,11 @@ const CenteredGridBase = (props: CenteredGridBaseInterface) => {
   }
 
   return (
-    // <div className={backgroundWrapperContainer}>
-    //   <div className={innerContainer}>
-
-        <div className={gridWrapper}>
-          <dl className={gridStyles}>
-            {renderItem()}
-          </dl>
-        </div>
-    //   </div>
-    // </div>
+    <div className={gridWrapper}>
+      <dl className={gridStyles}>
+        {renderItem()}
+      </dl>
+    </div>
   );
 };
 
