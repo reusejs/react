@@ -1,26 +1,26 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import {
-  CenteredGrid,
+  CenteredGridWithHeading,
   IconTitleDescriptionCard,
   CenteredGridBase,
 } from '@reusejs/react';
 
 export default {
   title: 'Templates/NColumnCenteredGrid',
-  component: CenteredGrid,
+  component: CenteredGridWithHeading,
   argTypes: {},
-} as ComponentMeta<typeof CenteredGrid>;
+} as ComponentMeta<typeof CenteredGridWithHeading>;
 
-const Template: ComponentStory<typeof CenteredGrid> = (args) => (
-  <CenteredGrid {...args} />
+const Template: ComponentStory<typeof CenteredGridWithHeading> = (args) => (
+  <CenteredGridWithHeading {...args} />
 );
 
 const BaseTemplate: ComponentStory<typeof CenteredGridBase> = (args) => (
   <CenteredGridBase {...args} />
 );
 
-const SectionTitle = (props) => {
+const SectionTitle = (props?: any) => {
   return (
     <p className='mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl'>
       {props.title}
@@ -28,11 +28,10 @@ const SectionTitle = (props) => {
   );
 };
 
-const SectionDescription = () => {
+const SectionDescription = (props?: any) => {
   return (
     <p className='mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto'>
-      Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam
-      voluptatum cupiditate veritatis in accusamus quisquam.
+      {props.description}
     </p>
   );
 };
@@ -56,44 +55,6 @@ const Logo = () => {
     </svg>
   );
 };
-
-const SectionContent = [
-  <IconTitleDescriptionCard
-    title={
-      <p className='text-lg font-medium leading-6 text-gray-900'>
-        24/7 Chat Support
-      </p>
-    }
-    logo={<Logo />}
-    description={
-      <p className='mt-2 text-base text-gray-500'>
-        Chat support with our friendly customer service agents at your service.
-      </p>
-    }
-    logoWrapperClasses='absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600'
-  />,
-  <IconTitleDescriptionCard
-    title={<p className='text-lg font-medium leading-6 text-gray-900'>FAQs</p>}
-    logo={<Logo />}
-    description={
-      <p className='mt-2 text-base text-gray-500'>
-        View FAQs for detailed instructions on specific features.
-      </p>
-    }
-    logoWrapperClasses='absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600'
-  />,
-  <IconTitleDescriptionCard
-    title={<p className='text-lg font-medium leading-6 text-gray-900'>Blogs</p>}
-    logo={<Logo />}
-    description={
-      <p className='mt-2 text-base text-gray-500'>
-        Stay up to date with the latest stories and commentary.
-      </p>
-    }
-    logoWrapperClasses='absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600'
-  />,
-  // <IconTitleDescriptionCard />,
-];
 
 const items = [
   {
@@ -121,8 +82,6 @@ const items = [
 ];
 
 const ItemRendererComponent = (props?: any) => {
-  console.log('props=11223344', props);
-
   return (
     <>
       {props.items.map((item?: any, index?: number) => {
@@ -146,6 +105,16 @@ const ItemRendererComponent = (props?: any) => {
   );
 };
 
+const HeadingSection = (props?: any) => {
+  return (
+    <div className={props.headingWrapper}>
+      <SectionTitle title={props.heading} />
+
+      <SectionDescription description={props.description} />
+    </div>
+  );
+};
+
 export const Base = BaseTemplate.bind({});
 Base.args = {
   items: items,
@@ -154,40 +123,64 @@ Base.args = {
 
 export const Default = Template.bind({});
 Default.args = {
-  sectionHeading: <SectionTitle title='Need help?' />,
-  sectionDescription: <SectionDescription />,
-  sectionContentData: SectionContent,
-  centeredGridBaseClasses: {
-    sectionHeadingAlignmentClasses: 'text-right',
-  },
+  headingSection: (
+    <HeadingSection
+      heading='Need help?'
+      description='Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.'
+      headingWrapper='text-center'
+    />
+  ),
+  sectionContentData: items,
+  itemsRenderer: ItemRendererComponent,
 };
 
 export const OneItemGrid = Template.bind({});
 OneItemGrid.args = {
-  sectionHeading: <SectionTitle title='Need help?' />,
-  sectionDescription: <SectionDescription />,
-  sectionContentData: SectionContent,
+  headingSection: (
+    <HeadingSection
+      heading='Need help?'
+      description='Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.'
+      headingWrapper='text-center'
+    />
+  ),
+  sectionContentData: items,
   centeredGridBaseClasses: {
-    sectionHeadingAlignmentClasses: 'text-right',
+    gridClasses:
+      'space-y-10 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-10 md:space-y-0',
   },
+  itemsRenderer: ItemRendererComponent,
 };
 
 export const ThreeItemGrid = Template.bind({});
 ThreeItemGrid.args = {
-  sectionHeading: <SectionTitle title='Need help?' />,
-  sectionDescription: <SectionDescription />,
-  sectionContentData: SectionContent,
+  headingSection: (
+    <HeadingSection
+      heading='Need help?'
+      description='Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.'
+      headingWrapper='text-center'
+    />
+  ),
+  sectionContentData: items,
   centeredGridBaseClasses: {
-    sectionHeadingAlignmentClasses: 'sm:text-left lg:text-center',
+    gridClasses:
+      'space-y-10 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10 md:space-y-0',
   },
+  itemsRenderer: ItemRendererComponent,
 };
 
 export const FourItemGrid = Template.bind({});
 FourItemGrid.args = {
-  sectionHeading: <SectionTitle title='Need help?' />,
-  sectionDescription: <SectionDescription />,
-  sectionContentData: SectionContent,
+  headingSection: (
+    <HeadingSection
+      heading='Need help?'
+      description='Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.'
+      headingWrapper='text-center'
+    />
+  ),
+  sectionContentData: items,
   centeredGridBaseClasses: {
-    sectionHeadingAlignmentClasses: 'sm:text-left lg:text-center',
+    gridClasses:
+      'space-y-10 md:grid md:grid-cols-4 md:gap-x-8 md:gap-y-10 md:space-y-0',
   },
+  itemsRenderer: ItemRendererComponent,
 };

@@ -29,8 +29,6 @@ const CenteredGridBase = (props: CenteredGridBaseInterface) => {
     theme
   );
 
-  
-
 
   const renderItem = () => {
     const ItemRenderer = props.itemsRenderer;

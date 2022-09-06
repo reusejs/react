@@ -559,7 +559,6 @@ const centeredGridBaseClasses = {
   gridWrapperMarginTop: "mt-10",
   gridWrapperMarginBottom: "0",
   gridClasses: "space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:space-y-0",
-  sectionHeadingAlignmentClasses: "lg:text-center",
 }
 
 const theme = {

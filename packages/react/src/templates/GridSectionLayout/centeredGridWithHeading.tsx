@@ -1,11 +1,14 @@
 import React from "react";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
 import { useThemeContext } from "../../theme/ThemeProvider";
+import CenteredGridBase from "./base";
 
 export interface CenteredGridInterface {
   sectionHeading?: any;
   sectionDescription?: any;
+  headingSection?:any;
   sectionContentData?: any;
+  itemsRenderer?: any;
   centeredGridBaseClasses?: {
     backgroundColor?: string;
     verticalWrapperPadding?: string;
@@ -14,11 +17,10 @@ export interface CenteredGridInterface {
     width?: string;
     gridWrapper?: string;
     gridClasses?: string;
-    sectionHeadingAlignmentClasses?: string;
   };
 }
 
-const CenteredGrid = (props: CenteredGridInterface) => {
+const CenteredGridWithHeading = (props: CenteredGridInterface) => {
   const theme: any = useThemeContext();
 
   const backgroundWrapperContainer = resolvedStyleProps(
@@ -35,7 +37,7 @@ const CenteredGrid = (props: CenteredGridInterface) => {
     theme
   );
 
-  const gridWrapper = resolvedStyleProps(
+  const gridWrapperStyles = resolvedStyleProps(
     "centeredGridBaseClasses",
     ["gridWrapperMarginTop"],
     props,
@@ -49,32 +51,27 @@ const CenteredGrid = (props: CenteredGridInterface) => {
     theme
   );
 
-  const sectionHeadingTextAlignment = resolvedStyleProps(
-    "centeredGridBaseClasses",
-    ["sectionHeadingAlignmentClasses"],
-    props,
-    theme
-  );
-
   return (
     <div className={backgroundWrapperContainer}>
       <div className={innerContainer}>
-        <div className={sectionHeadingTextAlignment}>
-          {props.sectionHeading}
+        <>
+          {props.headingSection}
+        </>
 
-          {props.sectionDescription ? props.sectionDescription : null}
-        </div>
-
-        <div className={gridWrapper}>
-          <dl className={gridStyles}>
-            {props.sectionContentData.map((el: any, index: any) => {
-              return <span key={index}>{el}</span>;
-            })}
-          </dl>
-        </div>
+        <>
+          <CenteredGridBase
+            items={props.sectionContentData}
+            itemsRenderer={props.itemsRenderer}
+            centeredGridBaseClasses={{
+              gridWrapper: gridWrapperStyles,
+              gridClasses:gridStyles
+            }}
+          />
+        </>
+        
       </div>
     </div>
   );
 };
 
-export default CenteredGrid;
+export default CenteredGridWithHeading;
