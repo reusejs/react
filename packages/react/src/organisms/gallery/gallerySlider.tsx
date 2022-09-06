@@ -7,6 +7,7 @@ export interface GallerySliderProps {
   setIndex: React.Dispatch<React.SetStateAction<number>>;
   children: JSX.Element[];
   variant?: string;
+  thumbnailArrayFlag?: boolean;
   gallerySliderBaseClasses?: {
     scroll?: string;
     gap?: string;
@@ -42,8 +43,6 @@ export const GallerySlider = (props: GallerySliderProps) => {
     theme
   );
 
-  console.log("Styling for IMgae>>>>>", imageActiveClassName);
-
   const init = () => {
     const element = document.getElementById(props.current.toString());
     element?.scrollIntoView();
@@ -67,7 +66,7 @@ export const GallerySlider = (props: GallerySliderProps) => {
               props.setIndex(index);
             }}
           >
-            {child}
+            {props.thumbnailArrayFlag ? <img key={index} className="w-full h-full" src={child as unknown as string} alt=""/> : child}
           </div>
         );
       })}
