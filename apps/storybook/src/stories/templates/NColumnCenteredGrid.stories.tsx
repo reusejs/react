@@ -1,6 +1,10 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { CenteredGrid, IconTitleDescriptionCard } from '@reusejs/react';
+import {
+  CenteredGrid,
+  IconTitleDescriptionCard,
+  CenteredGridBase,
+} from '@reusejs/react';
 
 export default {
   title: 'Templates/NColumnCenteredGrid',
@@ -10,6 +14,10 @@ export default {
 
 const Template: ComponentStory<typeof CenteredGrid> = (args) => (
   <CenteredGrid {...args} />
+);
+
+const BaseTemplate: ComponentStory<typeof CenteredGridBase> = (args) => (
+  <CenteredGridBase {...args} />
 );
 
 const SectionTitle = (props) => {
@@ -86,6 +94,63 @@ const SectionContent = [
   />,
   // <IconTitleDescriptionCard />,
 ];
+
+const items = [
+  {
+    title: '24/7 Chat Support',
+    logo: <Logo />,
+    description:
+      'Chat support with our friendly customer service agents at your service.',
+    logoWrapperClasses:
+      'absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600',
+  },
+  {
+    title: 'FAQs',
+    logo: <Logo />,
+    description: 'View FAQs for detailed instructions on specific features.',
+    logoWrapperClasses:
+      'absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600',
+  },
+  {
+    title: 'Blogs',
+    logo: <Logo />,
+    description: 'Stay up to date with the latest stories and commentary.',
+    logoWrapperClasses:
+      'absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600',
+  },
+];
+
+const ItemRendererComponent = (props?: any) => {
+  console.log('props=11223344', props);
+
+  return (
+    <>
+      {props.items.map((item?: any, index?: number) => {
+        return (
+          <IconTitleDescriptionCard
+            key={index}
+            title={
+              <p className='text-lg font-medium leading-6 text-gray-900'>
+                {item.title}
+              </p>
+            }
+            logo={item.logo}
+            description={
+              <p className='mt-2 text-base text-gray-500'>{item.description}</p>
+            }
+            logoWrapperClasses={item.logoWrapperClasses}
+          />
+        );
+      })}
+    </>
+  );
+};
+
+export const Base = BaseTemplate.bind({});
+Base.args = {
+  items: items,
+  itemsRenderer: ItemRendererComponent,
+};
 
 export const Default = Template.bind({});
 Default.args = {

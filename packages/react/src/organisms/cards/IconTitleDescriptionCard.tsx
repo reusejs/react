@@ -11,13 +11,13 @@ export interface IconTitleDescriptionCardInterface {
 }
 
 const IconTitleDescriptionCard = (props: IconTitleDescriptionCardInterface) => {
-  React.useEffect(() => {
-    console.log("LOG_PROPS", props);
-  }, [props]);
+  // React.useEffect(() => {
+  //   console.log("LOG_PROPS", props);
+  // }, [props]);
 
-  React.useEffect(() => {
-    console.log("MOUNTED", props);
-  }, []);
+  // React.useEffect(() => {
+  //   console.log("MOUNTED", props);
+  // }, []);
 
   // const defaultLogoWrapperClasses =
   //   "flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white";

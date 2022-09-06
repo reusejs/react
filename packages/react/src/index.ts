@@ -124,6 +124,7 @@ export { default as BetaForm } from "./utils/form";
 /* Start Templates */
 export { default as TwoColumnGridExampleOne } from "./templates/TwoColumnGrid/index";
 export { default as CenteredGrid } from "./templates/GridSectionLayout/centeredGrid";
+export { default as CenteredGridBase } from "./templates/GridSectionLayout/base";
 
 /* End Templates */
 
