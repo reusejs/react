@@ -141,7 +141,11 @@ const TableBase = React.forwardRef(
             <div className={wrapper3ClassNames}>
               <table className={tableWrapperClassNames}>
                 {!config.disableHeader && (
-                  <THead config={config} applyFilter={applyFilter} />
+                  <THead
+                    config={config}
+                    applyFilter={applyFilter}
+                    variant={props.variant}
+                  />
                 )}
 
                 <tbody className={bodyWrapperClassNames}>
@@ -191,6 +195,7 @@ const TableBase = React.forwardRef(
                 onPageChanged={(data: any) => {
                   setCurrentPage(data.currentPage);
                 }}
+                variant={props.variant}
               />
             </div>
           </div>

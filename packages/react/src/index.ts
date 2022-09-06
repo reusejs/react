@@ -82,6 +82,7 @@ export { default as PickerCheckboxSimple } from "./molecules/pickers/checkbox/si
 // File Uploaders
 
 export { default as FileUploaderBase } from "./molecules/fileUploader/base";
+export { default as FileBrowser } from "./molecules/fileBrowser/base";
 
 // File Modals
 
@@ -97,6 +98,7 @@ export { default as DropdownBrowser } from "./molecules/dropdowns/browser";
 // Navigations
 
 export { default as NavigationPageHeading } from "./molecules/navigations/heading/base";
+export { default as LazyLoadedImage } from "./molecules/lazyLoadedImage/Base";
 
 //Slider
 

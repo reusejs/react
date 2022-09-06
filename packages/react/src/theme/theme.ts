@@ -493,6 +493,12 @@ const dataTableBaseClasses = {
   loadingTr: "bg-white dark:bg-gray-900",
   loadingTd: "animate-pulse whitespace-nowrap px-6 py-4 text-sm",
   loadingLoader: "rounded-xs h-6 bg-gray-100 dark:bg-gray-800",
+  headerClasses:
+    "sticky top-0 z-10 border-b border-gray-300 bg-gray-50 bg-opacity-75 px-6 py-3 text-left text-xs font-normal uppercase tracking-wider text-gray-500 backdrop-blur backdrop-filter dark:border-gray-700 dark:bg-[#192130] dark:text-gray-300",
+  navClasses:
+    "flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 dark:border-gray-800 dark:bg-[#192130] sm:px-6",
+  navTextClasses: "text-sm text-gray-700 dark:text-gray-200",
+  headerWrapperClasses: "bg-gray-50 dark:bg-[#192130]",
 };
 
 // Navigation Page Heading
