@@ -42,11 +42,15 @@ const FileUploaderBase = React.forwardRef(
     };
 
     useEffect(() => {
-      props.selectedFiles(files);
+      if (props.selectedFiles !== undefined) {
+        props.selectedFiles(files);
+      }
     }, [files]);
 
     const uploadFiles = async (filesToUpload: any) => {
-      props.beforeUpload(filesToUpload);
+      if (props.beforeUpload !== undefined) {
+        props.beforeUpload(filesToUpload);
+      }
 
       try {
         let uploadedFiles = await Promise.all(
@@ -56,7 +60,9 @@ const FileUploaderBase = React.forwardRef(
           })
         );
 
-        props.afterUpload(uploadedFiles);
+        if (props.afterUpload !== undefined) {
+          props.afterUpload(uploadedFiles);
+        }
       } catch (error) {
         throw error;
       }
