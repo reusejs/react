@@ -565,9 +565,9 @@ const itemTitleDescriptionCardBaseClasses = {
   wrapper: 'relative',
   iconWrapper: 'flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white',
   titleWrapper: 'mt-2',
-  titleStyles: 'text-3xl font-extrabold tracking-tight sm:text-4xl',
+  titleStyles: 'text-lg font-medium leading-6 text-gray-900',
   descriptionWrapper: 'mt-2',
-  descriptionStyles: 'text-gray-500',
+  descriptionStyles: 'text-base text-gray-500',
   actionWrapper: 'mt-2',
 }
 

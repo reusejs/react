@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import {
   CenteredGridWithHeading,
-  IconTitleDescriptionCard,
+  IconTitleDescriptionActionCard,
   CenteredGridBase,
 } from '@reusejs/react';
 
@@ -59,7 +59,7 @@ const Logo = () => {
 const items = [
   {
     title: '24/7 Chat Support',
-    logo: <Logo />,
+    icon: <Logo />,
     description:
       'Chat support with our friendly customer service agents at your service.',
     logoWrapperClasses:
@@ -67,14 +67,14 @@ const items = [
   },
   {
     title: 'FAQs',
-    logo: <Logo />,
+    icon: <Logo />,
     description: 'View FAQs for detailed instructions on specific features.',
     logoWrapperClasses:
       'absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600',
   },
   {
     title: 'Blogs',
-    logo: <Logo />,
+    icon: <Logo />,
     description: 'Stay up to date with the latest stories and commentary.',
     logoWrapperClasses:
       'absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600',
@@ -86,18 +86,11 @@ const ItemRendererComponent = (props?: any) => {
     <>
       {props.items.map((item?: any, index?: number) => {
         return (
-          <IconTitleDescriptionCard
+          <IconTitleDescriptionActionCard
             key={index}
-            title={
-              <p className='text-lg font-medium leading-6 text-gray-900'>
-                {item.title}
-              </p>
-            }
-            logo={item.logo}
-            description={
-              <p className='mt-2 text-base text-gray-500'>{item.description}</p>
-            }
-            logoWrapperClasses={item.logoWrapperClasses}
+            title={item.title}
+            icon={item.icon}
+            description={item.description}
           />
         );
       })}
