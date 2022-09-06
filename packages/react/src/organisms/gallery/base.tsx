@@ -18,6 +18,7 @@ export interface GalleryBaseProps {
   autoPlay?: boolean;
   interval?: number;
   loop?: boolean;
+  thumbnailArray?: any;
   baseArrowClasses?: BaseArrowProps;
   sliderPageClasses?: any;
   sliderBaseClasses?: any;
@@ -37,7 +38,6 @@ export interface GalleryBaseProps {
 const GalleryBase = (props: GalleryBaseProps) => {
   const [index, setIndex] = React.useState(0);
 
-  console.log("###########Props are>>>", props);
   const theme = useThemeContext();
   const finalClassName = resolvedStyleProps(
     "galleryBaseClasses",
@@ -62,14 +62,14 @@ const GalleryBase = (props: GalleryBaseProps) => {
           </div>
         ))}
       </Carousel>
-      {/* gallerySliderBaseClasses={props.gallerySliderBaseClasses} variant={props.variant}> */}
       <GallerySlider
         current={index}
         setIndex={setIndex}
+        thumbnailArrayFlag={(props.thumbnailArray && props.thumbnailArray.length === props.children.length)}
         gallerySliderBaseClasses={props.gallerySliderBaseClasses}
         {...props}
       >
-        {props.children}
+        { (props.thumbnailArray && props.thumbnailArray.length === props.children.length) ? props.thumbnailArray : props.children}
       </GallerySlider>
     </div>
   );
