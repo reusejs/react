@@ -3,50 +3,45 @@ import CenteredGridWithHeading from "../GridSectionLayout/centeredGridWithHeadin
 import IconTitleDescriptionActionCard from "../../organisms/cards/IconTitleDescriptionActionCard/base"
 
 let sectionDetails = {
-  title: "Stats that matter",
-  description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  title: "Need Help",
 }
 
 const items = [
   {
-    title: '7000+',
-    description: 'Investors using platform',
+    title: 'Expert Consultation',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   },
   {
-    title: '45 Years+',
-    description: 'of real estate experience',
+    title: 'Financing Assistance',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   },
   {
-    title: '100 Cr+',
-    description: 'worth of transactions',
-  },
-  {
-    title: '800+',
-    description: 'Investment options',
+    title: 'Dedicated Relationship Managers',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   },
 ]
 
-const SectionsExampleOne = () => {
+const SectionsExampleThree = () => {
+
   return (
     <div>
       <CenteredGridWithHeading
         headingSection={<Heading />}
         sectionContentData={items}
-        itemsRenderer={ItemRendererComponent} // should be an object and not <Component />
+        itemsRenderer={ItemRendererComponent} // should be an object
         centeredGridBaseClasses={{
-          gridClasses: "space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 md:grid-cols-4 sm:gap-x-8 sm:gap-y-10"
+          gridClasses: "sm:grid sm:grid-cols-2 md:grid-cols-4 sm:gap-x-8 sm:gap-y-10"
         }}
       />
     </div>
   )
 }
 
-
 const Heading = () => {
   return (
     <IconTitleDescriptionActionCard
       title={sectionDetails.title}
-      description={sectionDetails.description}
+      // description={sectionDetails.description}
       itemTitleDescriptionCardBaseClasses={{
         titleWrapper: "text-center",
         titleStyles: "text-3xl font-extrabold text-blue-900 sm:text-4xl",
@@ -56,7 +51,6 @@ const Heading = () => {
     />
   )
 }
-
 
 const ItemRendererComponent = (props?: any) => {
   return (
@@ -69,10 +63,10 @@ const ItemRendererComponent = (props?: any) => {
             icon={item.icon}
             description={item.description}
             itemTitleDescriptionCardBaseClasses={{
-              titleWrapper: "text-center",
+              titleWrapper: "text-left",
               titleStyles: "order-1 text-2xl font-extrabold text-blue-900",
-              descriptionWrapper: "text-center",
-              descriptionStyles: "order-2 mt-2 text-sm leading-6 text-gray-500"
+              descriptionWrapper: "text-left",
+              descriptionStyles: "order-2 mt-2 text-base leading-6"
             }}
           />
         );
@@ -81,4 +75,6 @@ const ItemRendererComponent = (props?: any) => {
   );
 }
 
-export default SectionsExampleOne;
+
+
+export default SectionsExampleThree;

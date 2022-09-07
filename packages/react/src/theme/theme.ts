@@ -558,7 +558,7 @@ const centeredGridBaseClasses = {
   width: "max-w-7xl",
   gridWrapperMarginTop: "mt-10",
   gridWrapperMarginBottom: "0",
-  gridClasses: "space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:space-y-0",
+  gridClasses: "md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10",
 }
 
 const itemTitleDescriptionCardBaseClasses = {
@@ -569,6 +569,11 @@ const itemTitleDescriptionCardBaseClasses = {
   descriptionWrapper: 'mt-2',
   descriptionStyles: 'text-base text-gray-500',
   actionWrapper: 'mt-2',
+}
+
+const sectionContainerBaseClasses = {
+  outerContainerStyles: 'py-4',
+  innerContainerStyles: 'max-w-7xl mx-auto',
 }
 
 
@@ -613,7 +618,8 @@ const theme = {
   galleryArrowBaseClasses,
   gallerySliderBaseClasses,
   centeredGridBaseClasses,
-  itemTitleDescriptionCardBaseClasses
+  itemTitleDescriptionCardBaseClasses,
+  sectionContainerBaseClasses
 };
 
 export default theme;

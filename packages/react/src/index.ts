@@ -111,6 +111,7 @@ export { default as FooterBase } from "./organisms/footer/base";
 export { default as SectionHeaderBase } from "./organisms/sectionHeader/base";
 export { default as IconTitleDescriptionActionCard } from "./organisms/cards/IconTitleDescriptionActionCard/base"
 export { default as GalleryBase } from "./organisms/gallery/base";
+export { default as SectionContainerBase } from "./organisms/sectionContainer/base";
 
 // ******************** End  ---- Organisms *************************
 

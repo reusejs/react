@@ -61,12 +61,29 @@ WithIconOnLeft.args = {
   actions: <Actions />,
 };
 
-export const WithIconOnRight = Template.bind({});
-WithIconOnRight.args = {
+export const WithIconOnTopLeft = Template.bind({});
+WithIconOnTopLeft.args = {
   icon: <Logo />,
   title: 'Why Choose Us',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   iconPosition: 'top-left',
   actions: <Actions />,
+};
+
+export const WithIconOnCenter = Template.bind({});
+WithIconOnCenter.args = {
+  icon: <Logo />,
+  title: 'Why Choose Us',
+  description:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  iconPosition: 'center',
+  actions: <Actions />,
+  itemTitleDescriptionCardBaseClasses: {
+    iconWrapper:
+      'flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white mx-auto',
+    titleWrapper: 'mt-2 text-center',
+    descriptionWrapper: 'mt-2 text-center',
+    actionWrapper: 'mt-2 text-center',
+  },
 };

@@ -62,22 +62,16 @@ const items = [
     icon: <Logo />,
     description:
       'Chat support with our friendly customer service agents at your service.',
-    logoWrapperClasses:
-      'absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600',
   },
   {
     title: 'FAQs',
     icon: <Logo />,
     description: 'View FAQs for detailed instructions on specific features.',
-    logoWrapperClasses:
-      'absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600',
   },
   {
     title: 'Blogs',
     icon: <Logo />,
     description: 'Stay up to date with the latest stories and commentary.',
-    logoWrapperClasses:
-      'absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600',
   },
 ];
 
@@ -138,8 +132,7 @@ OneItemGrid.args = {
   ),
   sectionContentData: items,
   centeredGridBaseClasses: {
-    gridClasses:
-      'space-y-10 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-10 md:space-y-0',
+    gridClasses: 'md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-10',
   },
   itemsRenderer: ItemRendererComponent,
 };
@@ -155,8 +148,7 @@ ThreeItemGrid.args = {
   ),
   sectionContentData: items,
   centeredGridBaseClasses: {
-    gridClasses:
-      'space-y-10 md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10 md:space-y-0',
+    gridClasses: 'md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10',
   },
   itemsRenderer: ItemRendererComponent,
 };
@@ -172,8 +164,7 @@ FourItemGrid.args = {
   ),
   sectionContentData: items,
   centeredGridBaseClasses: {
-    gridClasses:
-      'space-y-10 md:grid md:grid-cols-4 md:gap-x-8 md:gap-y-10 md:space-y-0',
+    gridClasses: 'md:grid md:grid-cols-4 md:gap-x-8 md:gap-y-10',
   },
   itemsRenderer: ItemRendererComponent,
 };
