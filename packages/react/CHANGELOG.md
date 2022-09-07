@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.17.4
+
+### Patch Changes
+
+- 1f264f8: Add props for gallery
+
 ## 6.17.3
 
 ### Patch Changes
