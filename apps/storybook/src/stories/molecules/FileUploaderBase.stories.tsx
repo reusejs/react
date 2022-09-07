@@ -21,6 +21,9 @@ const Template: ComponentStory<typeof FileUploaderBase> = (args) => {
         <FileUploaderBase
           {...args}
           ref={callerRef}
+          selectedFiles={(selectedFiles: any) => {
+            console.log('selectedFiles', selectedFiles);
+          }}
           beforeUpload={(uploadedFiles: any) => {
             setBeforeUploadedFiles(uploadedFiles);
             console.log('beforeUpload', uploadedFiles);

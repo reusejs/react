@@ -82,6 +82,7 @@ export { default as PickerCheckboxSimple } from "./molecules/pickers/checkbox/si
 // File Uploaders
 
 export { default as FileUploaderBase } from "./molecules/fileUploader/base";
+export { default as FileBrowser } from "./molecules/fileBrowser/base";
 
 // File Modals
 
@@ -97,7 +98,7 @@ export { default as DropdownBrowser } from "./molecules/dropdowns/browser";
 // Navigations
 
 export { default as NavigationPageHeading } from "./molecules/navigations/heading/base";
-export { default as LazyLoadedImage } from "./molecules/lazyLoadedImage/Base"
+export { default as LazyLoadedImage } from "./molecules/lazyLoadedImage/Base";
 
 //Slider
 
@@ -111,6 +112,7 @@ export { default as FooterBase } from "./organisms/footer/base";
 export { default as IconTitleDescriptionActionCard } from "./organisms/cards/IconTitleDescriptionActionCard/base"
 export { default as GalleryBase } from "./organisms/gallery/base";
 export { default as SectionContainerBase } from "./organisms/sectionContainer/base";
+export { default as ImageGallery } from "./organisms/imageGallery/base";
 
 // ******************** End  ---- Organisms *************************
 

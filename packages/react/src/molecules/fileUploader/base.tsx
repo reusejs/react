@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import "../../../tailwind.css";
 import { useThemeContext } from "../../theme/ThemeProvider";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
@@ -8,8 +8,9 @@ export interface FileUploaderBaseProps {
   multiple?: boolean;
   accept?: string;
   autoUpload?: boolean;
-  beforeUpload: (files: any) => void;
-  afterUpload: (files: any) => void;
+  selectedFiles?: (files: any) => void;
+  beforeUpload?: (files: any) => void;
+  afterUpload?: (files: any) => void;
   openFileUploader: (callback?: any) => void;
   upload: (files: any) => void;
 }
@@ -40,8 +41,16 @@ const FileUploaderBase = React.forwardRef(
       return filesList;
     };
 
+    useEffect(() => {
+      if (props.selectedFiles !== undefined) {
+        props.selectedFiles(files);
+      }
+    }, [files]);
+
     const uploadFiles = async (filesToUpload: any) => {
-      props.beforeUpload(filesToUpload);
+      if (props.beforeUpload !== undefined) {
+        props.beforeUpload(filesToUpload);
+      }
 
       try {
         let uploadedFiles = await Promise.all(
@@ -51,7 +60,9 @@ const FileUploaderBase = React.forwardRef(
           })
         );
 
-        props.afterUpload(uploadedFiles);
+        if (props.afterUpload !== undefined) {
+          props.afterUpload(uploadedFiles);
+        }
       } catch (error) {
         throw error;
       }
@@ -59,7 +70,9 @@ const FileUploaderBase = React.forwardRef(
 
     const onFilesAdded = async (evt: React.ChangeEvent<HTMLInputElement>) => {
       const addedFiles = fileListToArray(evt.target.files);
-      await setFiles(addedFiles);
+      await setFiles((prev) => {
+        return [...addedFiles];
+      });
       try {
         if (props.autoUpload) {
           await uploadFiles(addedFiles);
