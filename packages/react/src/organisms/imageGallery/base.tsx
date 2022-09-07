@@ -11,10 +11,15 @@ export interface ImageGalleryProps {
   height: number;
   interval: number; //Interval in seconds
   loop?: boolean;
+  gallerySliderBaseClasses?: any;
+  galleryBaseClasses?: any;
+  galleryArrowBaseClasses?: any;
+  renderArrowLeft?: any;
+  renderArrowRight?: any;
+  placeholderSrc?: string;
 }
 
 const ImageGallery = (props: ImageGalleryProps) => {
-
   const renderContent = (): any => {
     const imageArray: string[] = [];
     const thumbnailArray: string[] = [];
