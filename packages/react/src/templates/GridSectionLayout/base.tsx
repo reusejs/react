@@ -16,7 +16,7 @@ const CenteredGridBase = (props: CenteredGridBaseInterface) => {
   
   const gridWrapper = resolvedStyleProps(
     "centeredGridBaseClasses",
-    ["gridWrapperMarginTop", "gridWrapperMarginBottom"],
+    ["gridWrapper"],
     props,
     theme
   );

@@ -7,6 +7,7 @@ export interface CenteredGridInterface {
   sectionHeading?: any;
   sectionDescription?: any;
   headingSection?:any;
+  footerSection?:any;
   sectionContentData?: any;
   itemsRenderer?: any;
   centeredGridBaseClasses?: {
@@ -39,7 +40,7 @@ const CenteredGridWithHeading = (props: CenteredGridInterface) => {
 
   const gridWrapperStyles = resolvedStyleProps(
     "centeredGridBaseClasses",
-    ["gridWrapperMarginTop"],
+    ["gridWrapper"],
     props,
     theme
   );
@@ -47,6 +48,13 @@ const CenteredGridWithHeading = (props: CenteredGridInterface) => {
   const gridStyles = resolvedStyleProps(
     "centeredGridBaseClasses",
     ["gridClasses"],
+    props,
+    theme
+  );
+
+  const footerSectionWrapperStyles = resolvedStyleProps(
+    "centeredGridBaseClasses",
+    ["footerSection"],
     props,
     theme
   );
@@ -68,6 +76,13 @@ const CenteredGridWithHeading = (props: CenteredGridInterface) => {
             }}
           />
         </>
+
+        {props.footerSection && (
+          <div className={footerSectionWrapperStyles}>
+            {props.footerSection}
+          </div>
+        )}
+
         
       </div>
     </div>

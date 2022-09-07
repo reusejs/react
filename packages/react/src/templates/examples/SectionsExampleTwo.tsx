@@ -67,7 +67,7 @@ const SectionsExampleTwo = () => {
     <SectionContainerBase
       sectionContainerBaseClasses= {{
         outerContainerStyles: 'py-10 bg-yellow-500',
-        innerContainerStyles: 'max-w-3xl mx-auto bg-green-500',
+        innerContainerStyles: 'max-w-7xl mx-auto bg-green-500',
       }}
     >
       <CenteredGridWithHeading

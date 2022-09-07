@@ -29,11 +29,13 @@ const SectionContainerBase = (props: SectionContainerBaseProps) => {
   );
 
   return (
-    <div className={outerContainerWrapper}>
-      <div className={innerContainerWrapper}>
-        {props.children}
+    <section>
+      <div className={outerContainerWrapper}>
+        <div className={innerContainerWrapper}>
+          {props.children}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
