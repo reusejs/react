@@ -17,8 +17,8 @@ export interface LazyLoadedImageProps {
   visibleByDefault?: boolean;
   wrapperClassName?: string;
   src?: string;
-  width?: number;
-  height?: number;
+  width: number;
+  height: number;
   wrapperProps?: any;
   scrollPosition?: { x: 0; y: 0 } | undefined;
   style?: any;
@@ -31,8 +31,6 @@ const LazyLoadedImage = (props: LazyLoadedImageProps) => {
   const [loaded, setLoaded] = useState<Boolean>(false);
 
   function onImageLoad() {
-    console.log("check here loaded", loaded);
-
     if (loaded) {
       return null;
     }
