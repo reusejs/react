@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.17.5
+
+### Patch Changes
+
+- 8163938: Add sections and centered grid
+
 ## 6.17.4
 
 ### Patch Changes
