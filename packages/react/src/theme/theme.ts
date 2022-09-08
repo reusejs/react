@@ -552,12 +552,10 @@ const galleryArrowBaseClasses = {
 
 const centeredGridBaseClasses = {
   backgroundColor: 'bg-white',
-  verticalWrapperPadding: "py-12",
+  verticalWrapperPadding: "py-0", // keep default as py-0, user should provide this.
   horizontalMargin: "mx-auto",
   horizontalPadding: "px-4 sm:px-6 lg:px-8",
   width: "max-w-7xl",
-  // gridWrapperMarginTop: "mt-10",
-  // gridWrapperMarginBottom: "0",
   gridClasses: "md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10",
   gridWrapper: 'mt-10',
   footerSection: ''

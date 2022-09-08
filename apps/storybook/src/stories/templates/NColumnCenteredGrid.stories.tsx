@@ -62,16 +62,19 @@ const items = [
     icon: <Logo />,
     description:
       'Chat support with our friendly customer service agents at your service.',
+    iconPosition: 'left',
   },
   {
     title: 'FAQs',
     icon: <Logo />,
     description: 'View FAQs for detailed instructions on specific features.',
+    iconPosition: 'left',
   },
   {
     title: 'Blogs',
     icon: <Logo />,
     description: 'Stay up to date with the latest stories and commentary.',
+    iconPosition: 'left',
   },
 ];
 
@@ -85,6 +88,7 @@ const ItemRendererComponent = (props?: any) => {
             title={item.title}
             icon={item.icon}
             description={item.description}
+            iconPosition={item.iconPosition}
           />
         );
       })}
