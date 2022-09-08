@@ -116,8 +116,8 @@ const IconTitleDescriptionActionCard = (props: IconTitleDescriptionCardInterface
     );
 };
 
-IconTitleDescriptionActionCard.defaultProps = {
-  iconPosition: "left", // top-left, left
-};
+// IconTitleDescriptionActionCard.defaultProps = {
+//   iconPosition: "left", // top-left, left
+// };
 
 export default IconTitleDescriptionActionCard;
