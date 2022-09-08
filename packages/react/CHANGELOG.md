@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.17.6
+
+### Patch Changes
+
+- 246129c: Append dummy classes for easier debugging
+
 ## 6.17.5
 
 ### Patch Changes
