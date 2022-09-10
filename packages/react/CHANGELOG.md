@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.17.7
+
+### Patch Changes
+
+- 56ae3c1: Make label as any rather than string
+
 ## 6.17.6
 
 ### Patch Changes
