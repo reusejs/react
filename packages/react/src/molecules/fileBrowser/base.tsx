@@ -3,6 +3,8 @@ import "../../../tailwind.css";
 import { useThemeContext } from "../../theme/ThemeProvider";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
 import classNames from "../../utils/classNames";
+import { ScrollableBaseProps } from "../../atoms/scrollables/base";
+import ScrollableBase from "../../atoms/scrollables/base";
 
 export interface FileBrowserProps {
   files?: any;
@@ -10,6 +12,7 @@ export interface FileBrowserProps {
   onView?: (item: any) => void;
   onDelete?: (item: any) => void;
   onEdit?: (item: any) => void;
+  scrollableBaseProps?: ScrollableBaseProps;
 }
 
 const ViewIcon = ({ size = "h-4 w-4" }) => {
@@ -81,62 +84,66 @@ const FileBrowser = (props: FileBrowserProps) => {
   //   );
 
   return (
-    <ul
-      role="list"
-      className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
-    >
-      {props.files.map((file: any) => (
-        <li key={file.source} className="relative">
-          <div className="overflow-hidden rounded-lg bg-white shadow">
-            <div className="px-4 py-5 sm:p-6">
-              <div className="h-32 bg-gray-50"></div>
+    <ScrollableBase {...props.scrollableBaseProps}>
+      <ul
+        role="list"
+        className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
+      >
+        {props.files.map((file: any, index: number) => (
+          <li key={`${file.uuid}-${index}`} className="relative">
+            <div className="overflow-hidden rounded-lg bg-white shadow">
+              <div className="px-4 py-5 sm:p-6">
+                <div className="flex h-32 items-center justify-center bg-gray-50 text-xs text-gray-400">
+                  {file.mimeType}
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="mt-2 flex items-center justify-between">
-            <div className="w-40">
-              <p className="pointer-events-none block truncate text-sm font-medium text-gray-900">
-                {file.title}
-              </p>
+            <div className="mt-2 flex items-center justify-between">
+              <div className="w-40">
+                <p className="pointer-events-none block truncate text-xs font-medium text-gray-700">
+                  {file.title}
+                </p>
+              </div>
+
+              <div className="flex items-center space-x-1">
+                {props.onView !== undefined && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      props.onView && props.onView(file);
+                    }}
+                  >
+                    <ViewIcon size={props.size} />
+                  </button>
+                )}
+
+                {props.onEdit !== undefined && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      props.onEdit && props.onEdit(file);
+                    }}
+                  >
+                    <EditIcon size={props.size} />
+                  </button>
+                )}
+
+                {props.onDelete !== undefined && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      props.onDelete && props.onDelete(file);
+                    }}
+                  >
+                    <DeleteIcon size={props.size} />
+                  </button>
+                )}
+              </div>
             </div>
-
-            <div className="flex items-center space-x-1">
-              {props.onView !== undefined && (
-                <button
-                  type="button"
-                  onClick={() => {
-                    props.onView && props.onView(file);
-                  }}
-                >
-                  <ViewIcon size={props.size} />
-                </button>
-              )}
-
-              {props.onEdit !== undefined && (
-                <button
-                  type="button"
-                  onClick={() => {
-                    props.onEdit && props.onEdit(file);
-                  }}
-                >
-                  <EditIcon size={props.size} />
-                </button>
-              )}
-
-              {props.onDelete !== undefined && (
-                <button
-                  type="button"
-                  onClick={() => {
-                    props.onDelete && props.onDelete(file);
-                  }}
-                >
-                  <DeleteIcon size={props.size} />
-                </button>
-              )}
-            </div>
-          </div>
-        </li>
-      ))}
-    </ul>
+          </li>
+        ))}
+      </ul>
+    </ScrollableBase>
   );
 };
 
