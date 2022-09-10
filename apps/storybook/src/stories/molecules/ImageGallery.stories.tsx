@@ -84,7 +84,25 @@ Default.args = {
   images: CONTENT,
   interval: 2,
   gallerySliderBaseClasses: {
-    imageActive: "scale-110",
-    backgroundColor: "bg-blue-300",
-  }
+    imageActive: 'scale-110',
+    backgroundColor: 'bg-blue-300',
+  },
+};
+
+export const FullScreen = Template.bind({});
+FullScreen.args = {
+  images: CONTENT,
+  interval: 0,
+  gallerySliderBaseClasses: {
+    imageActive: 'scale-110',
+    backgroundColor: 'bg-black',
+    height: "h-fit py-3",
+  },
+  galleryBaseClasses: {
+    wrapper: "h-full flex flex-col justify-between",
+    display: "flex items-center justify-center",
+    height: "h-[600px]",
+    width: "w-[800px]",
+    margin: "mx-auto",
+  },
 };
