@@ -1,5 +1,36 @@
 # @reusejs/react
 
+## 6.17.6
+
+### Patch Changes
+
+- 246129c: Append dummy classes for easier debugging
+
+## 6.17.5
+
+### Patch Changes
+
+- 8163938: Add sections and centered grid
+
+## 6.17.4
+
+### Patch Changes
+
+- 1f264f8: Add props for gallery
+
+## 6.17.3
+
+### Patch Changes
+
+- 7e37ee8: Introduce lazy image loader, file browser, image gallery
+- a269ed2: Make props temp
+
+## 6.17.2
+
+### Patch Changes
+
+- 90b40fc: Add selectedfile callback to file uploader
+
 ## 6.17.1
 
 ### Patch Changes

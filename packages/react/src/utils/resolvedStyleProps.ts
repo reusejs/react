@@ -17,6 +17,8 @@ const resolvedStyleProps = (
     );
   });
 
+  resolvedProps.push(`${propName}_${styleProps.join("_")}`);
+
   return resolvedProps.filter(Boolean).join(" ");
 };
 

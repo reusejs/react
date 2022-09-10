@@ -550,6 +550,39 @@ const galleryArrowBaseClasses = {
   right: "right-3",
 }
 
+const centeredGridBaseClasses = {
+  backgroundColor: 'bg-white',
+  verticalWrapperPadding: "py-0", // keep default as py-0, user should provide this.
+  horizontalMargin: "mx-auto",
+  horizontalPadding: "px-4 sm:px-6 lg:px-8",
+  width: "max-w-7xl",
+  gridClasses: "md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10",
+  gridWrapper: 'mt-10',
+  footerSection: ''
+}
+
+const itemTitleDescriptionCardBaseClasses = {
+  wrapper: 'relative',
+  iconWrapper: 'flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white',
+  titleWrapper: 'mt-2',
+  titleStyles: 'text-lg font-medium leading-6 text-gray-900',
+  descriptionWrapper: 'mt-2',
+  descriptionStyles: 'text-base text-gray-500',
+  actionWrapper: 'mt-2',
+}
+
+const sectionContainerBaseClasses = {
+  outerContainerStyles: 'py-4',
+  innerContainerStyles: 'max-w-7xl mx-auto',
+}
+
+const twoColumnSectionBaseClasses = {
+  columnsFlexWrapperStyles: 'flex items-center justify-between flex-col md:flex-row',
+  firstElWrapperStyles: 'w-1/2',
+  secondElWrapperStyles: 'w-1/2',
+}
+
+
 const theme = {
   gridBaseClasses,
   labelBaseClasses,
@@ -590,6 +623,10 @@ const theme = {
   galleryBaseClasses,
   galleryArrowBaseClasses,
   gallerySliderBaseClasses,
+  centeredGridBaseClasses,
+  itemTitleDescriptionCardBaseClasses,
+  sectionContainerBaseClasses,
+  twoColumnSectionBaseClasses
 };
 
 export default theme;
