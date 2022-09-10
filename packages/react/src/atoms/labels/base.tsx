@@ -4,7 +4,7 @@ import { useThemeContext } from "../../theme/ThemeProvider";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
 
 export interface LabelBaseProps {
-  label?: string;
+  label?: any;
   htmlFor?: string;
   labelStyles?: any;
   variant?: string;
