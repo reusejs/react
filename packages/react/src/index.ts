@@ -49,6 +49,8 @@ export { default as TextAreaBase } from "./atoms/textArea/base";
 //ToolTip
 export { default as ToolTipBase } from "./atoms/tooltip/base";
 
+export { default as SimpleSliderBase } from "./atoms/simpleSlider/base";
+
 // ******************** End  ---- Atoms *************************
 
 // Start  ---- Molecules
@@ -103,6 +105,9 @@ export { default as LazyLoadedImage } from "./molecules/lazyLoadedImage/Base";
 //Slider
 
 export { default as SliderBase } from "./molecules/slider/base";
+
+//Tabs
+export { default as TabsBase } from "./molecules/tabs/base";
 
 // ******************** End  ---- Molecules *************************
 

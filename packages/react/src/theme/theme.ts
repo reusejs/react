@@ -582,6 +582,20 @@ const twoColumnSectionBaseClasses = {
   secondElWrapperStyles: 'w-1/2',
 }
 
+//Tab style classes
+const tabsBaseClasses = {
+  wrapperClasses: "pt-2",
+  layout: "flex items-center justify-center",
+  height: "h-full",
+  width: "w-full min-w-fit",
+  backgroundColor: "bg-white text-blue-400",
+  padding: "px-2", 
+  cursor: "cursor-pointer",
+  borderRadius: "",
+  border: "border-b-2",
+  activeTabClasses: "sticky left-0 right-0 border-b-4 scale-y-125 origin-bottom font-bold border-blue-400",
+  inactiveTabClasses: "border-blue-200",
+}
 
 const theme = {
   gridBaseClasses,
@@ -626,7 +640,8 @@ const theme = {
   centeredGridBaseClasses,
   itemTitleDescriptionCardBaseClasses,
   sectionContainerBaseClasses,
-  twoColumnSectionBaseClasses
+  twoColumnSectionBaseClasses,
+  tabsBaseClasses,
 };
 
 export default theme;

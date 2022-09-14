@@ -4,7 +4,7 @@ import { useThemeContext } from "../../theme/ThemeProvider";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
 
 export interface ButtonBaseProps {
-  label: string;
+  label: React.ReactNode;
   type?: "submit" | "reset" | "button";
   disabled?: false | true | boolean;
   busy?: false;
