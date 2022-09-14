@@ -5,7 +5,7 @@ import { useThemeContext } from "../../theme/ThemeProvider";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
 
 export interface TabsBaseClassesProps {
-  wrapperPadding?: string;
+  wrapperClasses?: string;
   layout?: string;
   height?: string;
   width?: string;
