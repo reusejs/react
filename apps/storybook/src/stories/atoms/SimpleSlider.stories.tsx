@@ -125,11 +125,20 @@ Default.args = {
   scrollWidth: 192,
 };
 
-export const Test = Template.bind({});
-Test.args = {
+export const CustomArrows = Template.bind({});
+CustomArrows.args = {
   children: Elements,
   id: 'Slider',
   scrollWidth: 192,
+  renderArrowLeft: leftArrow,
+  renderArrowRight: rightArrow,
+};
+
+export const LargerScrollWidth = Template.bind({});
+LargerScrollWidth.args = {
+  children: Elements,
+  id: 'Slider',
+  scrollWidth: 3*192,
   renderArrowLeft: leftArrow,
   renderArrowRight: rightArrow,
 };

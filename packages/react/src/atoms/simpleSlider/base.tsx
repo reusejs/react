@@ -10,9 +10,17 @@ export interface SimpleSliderBaseProps {
   scrollWidth: number;
   renderArrowLeft?: any;
   renderArrowRight?: any;
+  hideArrow?: boolean;
+  variant?: string;
+  simpleSliderBaseClasses?: {
+    layout?: string;
+    size?: string;
+  }
 }
 
-const SimpleSliderBase = (props: SimpleSliderBaseProps, ref: any) => {
+const SimpleSliderBase = (props: SimpleSliderBaseProps) => {
+  const theme = useThemeContext()
+  const wrapperClassName = resolvedStyleProps("simpleSliderBaseClasses", ["layout", "size"], props, theme);
 
   const slideLeft = (): void => {
     var slider = document.getElementById(props.id) as HTMLElement;
@@ -25,13 +33,14 @@ const SimpleSliderBase = (props: SimpleSliderBaseProps, ref: any) => {
   };
 
   return (
-    <div className="relative">
-      {props.renderArrowLeft ? (
+    <div className={wrapperClassName}>
+    
+      {!props.hideArrow && props.renderArrowLeft ? (
         props.renderArrowLeft({ slideLeft })
       ) : (
         <ChevronLeftIcon className='absolute left-10 top-1/2 -translate-y-1/2 h-10 w-10 text-black cursor-pointer' onClick={slideLeft}/>
       )}
-      {props.renderArrowRight ? (
+      {!props.hideArrow && props.renderArrowRight ? (
         props.renderArrowRight({ slideRight })
       ) : (
         <ChevronRightIcon className='absolute right-10 top-1/2 -translate-y-1/2 h-10 w-10 text-black cursor-pointer' onClick={slideRight}/>
