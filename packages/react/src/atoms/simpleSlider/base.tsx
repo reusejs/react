@@ -1,51 +1,49 @@
-import React, { useEffect } from "react";
+import React, { useImperativeHandle } from "react";
 import "../../../tailwind.css";
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import { useThemeContext } from "../../theme/ThemeProvider";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
 
 export interface SimpleSliderBaseProps {
   children: React.ReactNode[];
-  id: string,
-  scrollWidth: number,
+  id: string;
+  scrollWidth: number;
+  renderArrowLeft?: any;
+  renderArrowRight?: any;
 }
 
-const SimpleSliderBase = (props: SimpleSliderBaseProps) => {
+const SimpleSliderBase = (props: SimpleSliderBaseProps, ref: any) => {
 
-  const useSliderHook = () => {
-    const slideLeft = () => {
-      var slider = document.getElementById(props.id) as HTMLElement;
-      slider.scrollLeft = slider.scrollLeft - props.scrollWidth;
-    };
-    
-    const slideRight = () => {
-      var slider = document.getElementById("slider") as HTMLElement;
-      slider.scrollLeft = slider.scrollLeft + props.scrollWidth;
-    };
+  const slideLeft = (): void => {
+    var slider = document.getElementById(props.id) as HTMLElement;
+    slider.scrollLeft = slider.scrollLeft - props.scrollWidth;
+  };
 
-    return [slideLeft, slideRight];
-  }
-
-  // const slideLeft = () => {
-  //   var slider = document.getElementById(props.id) as HTMLElement;
-  //   slider.scrollLeft = slider.scrollLeft - props.scrollWidth;
-  // };
-  
-  // const slideRight = () => {
-  //   var slider = document.getElementById("slider") as HTMLElement;
-  //   slider.scrollLeft = slider.scrollLeft + props.scrollWidth;
-  // };
-
-  const [slideLeft, slideRight] = useSliderHook();
-
-  // useEffect(()=>{
-  //   return useSliderHook(); 
-  // },[])
+  const slideRight = (): void => {
+    var slider = document.getElementById(props.id) as HTMLElement;
+    slider.scrollLeft = slider.scrollLeft + props.scrollWidth;
+  };
 
   return (
-    <div id={props.id} className="scroll grid h-full w-full auto-cols-max grid-flow-col overflow-x-scroll scroll-smooth whitespace-nowrap scrollbar-hide">
+    <div className="relative">
+      {props.renderArrowLeft ? (
+        props.renderArrowLeft({ slideLeft })
+      ) : (
+        <ChevronLeftIcon className='absolute left-10 top-1/2 -translate-y-1/2 h-10 w-10 text-black cursor-pointer' onClick={slideLeft}/>
+      )}
+      {props.renderArrowRight ? (
+        props.renderArrowRight({ slideRight })
+      ) : (
+        <ChevronRightIcon className='absolute right-10 top-1/2 -translate-y-1/2 h-10 w-10 text-black cursor-pointer' onClick={slideRight}/>
+      )}
+    <div
+      id={props.id}
+      className="scroll grid h-full w-full auto-cols-max grid-flow-col overflow-x-scroll scroll-smooth whitespace-nowrap scrollbar-hide"
+    >
       {props.children}
+    </div>
     </div>
   );
 };
 
-export default SimpleSliderBase;
+export default React.forwardRef(SimpleSliderBase);
