@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.18.0
+
+### Minor Changes
+
+- 61b736a: Add tabs components
+
 ## 6.17.7
 
 ### Patch Changes
