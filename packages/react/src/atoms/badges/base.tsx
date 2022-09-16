@@ -22,8 +22,6 @@ export interface BadgeBaseProps {
 const BadgeBase = (props: BadgeBaseProps) => {
   const theme: any = useThemeContext();
 
-  console.log("badge", props);
-
   const finalClassNames = resolvedStyleProps(
     "badgeBaseClasses",
     [
@@ -37,8 +35,6 @@ const BadgeBase = (props: BadgeBaseProps) => {
     props,
     theme
   );
-
-  console.log("This is badge component");
 
   return (
     <span className={finalClassNames} style={props.badgeStyles}>

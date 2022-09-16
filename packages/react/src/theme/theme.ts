@@ -597,6 +597,15 @@ const tabsBaseClasses = {
   inactiveTabClasses: "border-blue-200",
 }
 
+//Simple Slider
+const simpleSliderBaseClasses = {
+  layout: "relative",
+  size: "w-full",
+}
+const centralizedSliderBaseClasses ={ 
+  layout: "flex items-center justify-center",
+}
+
 const theme = {
   gridBaseClasses,
   labelBaseClasses,
@@ -642,6 +651,8 @@ const theme = {
   sectionContainerBaseClasses,
   twoColumnSectionBaseClasses,
   tabsBaseClasses,
+  simpleSliderBaseClasses,
+  centralizedSliderBaseClasses,
 };
 
 export default theme;

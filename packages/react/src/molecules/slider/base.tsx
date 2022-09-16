@@ -30,7 +30,6 @@ export interface SliderBaseProps {
 }
 
 const SliderBase = (props: SliderBaseProps) => {
-  // console.log("###########Props are>>>", props);
   const theme = useThemeContext();
   const finalClassName = resolvedStyleProps("sliderBaseClasses", ["display","height","width","margin"], props,theme);
 
