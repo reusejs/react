@@ -109,6 +109,9 @@ export { default as SliderBase } from "./molecules/slider/base";
 //Tabs
 export { default as TabsBase } from "./molecules/tabs/base";
 
+//Centeralized Slider
+export { default as CentralizedSliderBase } from "./molecules/centralizedSlider/base";
+
 // ******************** End  ---- Molecules *************************
 
 // Start  ---- Organisms

@@ -602,6 +602,9 @@ const simpleSliderBaseClasses = {
   layout: "relative",
   size: "w-full",
 }
+const centralizedSliderBaseClasses ={ 
+  layout: "flex items-center justify-center",
+}
 
 const theme = {
   gridBaseClasses,
@@ -649,6 +652,7 @@ const theme = {
   twoColumnSectionBaseClasses,
   tabsBaseClasses,
   simpleSliderBaseClasses,
+  centralizedSliderBaseClasses,
 };
 
 export default theme;

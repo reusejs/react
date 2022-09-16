@@ -55,4 +55,4 @@ const SimpleSliderBase = (props: SimpleSliderBaseProps) => {
   );
 };
 
-export default React.forwardRef(SimpleSliderBase);
+export default SimpleSliderBase;
