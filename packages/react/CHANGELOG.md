@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.0
+
+### Minor Changes
+
+- 376135e: Improve sliders
+
 ## 6.18.0
 
 ### Minor Changes
