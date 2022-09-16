@@ -204,12 +204,3 @@ NoDots.args = {
   hideDots: true,
   autoPlay: false,
 };
-export const Test = Template.bind({});
-Test.args = {
-  children: TESTCONTENT,
-  autoPlay: false,
-  baseArrowClasses: {
-    left: 'left-10',
-    right: 'right-10',
-  },
-};
