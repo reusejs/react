@@ -11,8 +11,8 @@ import "swiper/css/pagination";
 
 export interface CentralizedSliderBaseProps {
   children: React.ReactNode[];
-  gap: number;
   slidesPerView: number;
+  gap?: number;
   centeredSlides?: boolean;
   renderArrowLeft?: any;
   renderArrowRight?: any;
@@ -21,8 +21,8 @@ export interface CentralizedSliderBaseProps {
   pagination?: boolean;
   autoPlay?: number;
   loop?: boolean;
-  centralizedSliderBaseClasses: {
-    layout: string;
+  centralizedSliderBaseClasses?: {
+    layout?: string;
   };
 }
 
