@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.2
+
+### Patch Changes
+
+- 6e3a792: Copy swiper.css to vendors
+
 ## 6.19.1
 
 ### Patch Changes
