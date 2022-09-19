@@ -1,5 +1,12 @@
 # @reusejs/react
 
+## 6.19.1
+
+### Patch Changes
+
+- 587da88: Use swiper css
+- 68721de: Add rowStyles function
+
 ## 6.19.0
 
 ### Minor Changes

@@ -31,7 +31,7 @@ const TRow = ({
           key={`${uniqueKey}-td-${i}`}
           className={classNames(
             "whitespace-nowrap px-6 py-4 text-sm",
-            row.rowStyles ? row.rowStyles : ""
+            row.rowStyles ? row.rowStyles(dataItem) : ""
           )}
         >
           {row.resolver(dataItem)}
