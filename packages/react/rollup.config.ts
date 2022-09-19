@@ -39,34 +39,34 @@ export default [{
     // terser(),
   ],
 },
-{
-  input: "src/swiper.css",
-  output: [
-    {
-      file: pkg.main,
-      format: "cjs",
-    },
-    {
-      file: pkg.module,
-      format: "es",
-    },
-  ],
-  external: ["react", "react-dom"],
-  plugins: [
-    resolve(),
-    commonjs(),
-    postcss({
-      extract:"swiper.css",
-      config: {
-        path: "./postcss.config.js",
-        ctx: null,
-      },
-      extensions: [".css"],
-      minimize: true,
-      inject: {
-        insertAt: "top",
-      },
-    }),
-  ],
-}
+// {
+//   input: "src/swiper.css",
+//   output: [
+//     {
+//       file: pkg.main,
+//       format: "cjs",
+//     },
+//     {
+//       file: pkg.module,
+//       format: "es",
+//     },
+//   ],
+//   external: ["react", "react-dom"],
+//   plugins: [
+//     resolve(),
+//     commonjs(),
+//     postcss({
+//       extract: "swiper.css",
+//       config: {
+//         path: "./postcss.config.js",
+//         ctx: null,
+//       },
+//       extensions: [".css"],
+//       minimize: true,
+//       // inject: {
+//       //   insertAt: "top",
+//       // },
+//     }),
+//   ],
+// }
 ];
