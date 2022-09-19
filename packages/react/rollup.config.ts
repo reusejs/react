@@ -5,7 +5,7 @@ import postcss from "rollup-plugin-postcss";
 import { terser } from "rollup-plugin-terser";
 import pkg from "./package.json";
 
-export default {
+export default [{
   input: "src/index.ts",
   output: [
     {
@@ -25,6 +25,7 @@ export default {
       extract: "styles.css",
       config: {
         path: "./postcss.config.js",
+        ctx: null,
       },
       extensions: [".css"],
       minimize: true,
@@ -37,4 +38,35 @@ export default {
     }),
     // terser(),
   ],
-};
+},
+{
+  input: "src/swiper.css",
+  output: [
+    {
+      file: pkg.main,
+      format: "cjs",
+    },
+    {
+      file: pkg.module,
+      format: "es",
+    },
+  ],
+  external: ["react", "react-dom"],
+  plugins: [
+    resolve(),
+    commonjs(),
+    postcss({
+      extract:"swiper.css",
+      config: {
+        path: "./postcss.config.js",
+        ctx: null,
+      },
+      extensions: [".css"],
+      minimize: true,
+      inject: {
+        insertAt: "top",
+      },
+    }),
+  ],
+}
+];
