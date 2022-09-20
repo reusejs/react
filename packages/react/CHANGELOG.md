@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.3
+
+### Patch Changes
+
+- 5dfdb9f: Add check for typeof row.rowStyles
+
 ## 6.19.2
 
 ### Patch Changes
