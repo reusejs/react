@@ -23,6 +23,7 @@ export default [
     plugins: [
       copy({
         targets: [{ src: "swiper.css", dest: "dist/vendors" }],
+        copyOnce: true,
       }),
       resolve(),
       commonjs(),
