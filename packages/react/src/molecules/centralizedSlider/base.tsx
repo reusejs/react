@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 import "../../../tailwind.css";
+import "../../../swiper.css";
 import { useThemeContext } from "../../theme/ThemeProvider";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, A11y, Autoplay } from "swiper";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
-import "../../swiper.css";
 // import "swiper/css";
 // import "swiper/css/pagination";
 
@@ -13,8 +13,8 @@ export interface CentralizedSliderBaseProps {
   slidesPerView: number;
   gap?: number;
   centeredSlides?: boolean;
-  renderArrowLeft?: ({})=>React.ReactNode;
-  renderArrowRight?: ({})=>React.ReactNode;
+  renderArrowLeft?: ({}) => React.ReactNode;
+  renderArrowRight?: ({}) => React.ReactNode;
   hideArrow?: boolean;
   variant?: string;
   pagination?: boolean;
