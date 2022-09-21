@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.4
+
+### Patch Changes
+
+- cd25ebb: Rename rowStyles to cellStyles
+
 ## 6.19.3
 
 ### Patch Changes
