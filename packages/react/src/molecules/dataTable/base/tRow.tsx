@@ -31,7 +31,7 @@ const TRow = ({
           key={`${uniqueKey}-td-${i}`}
           className={classNames(
             "whitespace-nowrap px-6 py-4 text-sm",
-            typeof row.rowStyles === "function" ? row.rowStyles(dataItem) : ""
+            typeof row.cellStyles === "function" ? row.cellStyles(dataItem) : ""
           )}
         >
           {row.resolver(dataItem)}
