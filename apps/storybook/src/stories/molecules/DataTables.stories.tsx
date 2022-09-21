@@ -15,7 +15,7 @@ export default {
 } as ComponentMeta<typeof DataTableBase>;
 
 const fetchPackages = async (params: any) => {
-  console.log('filters', params.filters);
+  // console.log('filters', params.filters);
 
   return new Promise(async (resolve, reject) => {
     try {
@@ -55,6 +55,13 @@ Default.args = {
       {
         label: 'Package Name',
         identifier: 'name',
+        cellStyles: (d:any) => {
+          // console.log(d.package.version.includes("3."));
+          if(Number(d.package.version.split("")[0]) < 3){
+            return "bg-red-200";
+          }
+          return "text-left";
+        },
         resolver: (d: any) => {
           return d.package.name;
         },
@@ -66,6 +73,12 @@ Default.args = {
       {
         label: 'Publisher',
         identifier: 'publisher',
+        cellStyles: (d:any) => {
+          if(Number(d.package.version.split("")[0]) < 3){
+            return "bg-red-200";
+          }
+          return "text-left";
+        },
         resolver: (d: any) => {
           return d.package.publisher.username;
         },
@@ -85,6 +98,12 @@ Default.args = {
       {
         label: 'Version',
         identifier: 'last_used_human',
+        cellStyles: (d:any) => {
+          if(Number(d.package.version.split("")[0]) < 3){
+            return "bg-red-200";
+          }
+          return "text-left";
+        },
         resolver: (d: any) => {
           return d.package.version;
         },
@@ -105,6 +124,12 @@ Default.args = {
         label: '',
         filterable: {
           type: 'clear',
+        },
+        cellStyles: (d:any) => {
+          if(Number(d.package.version.split("")[0]) < 3){
+            return "bg-red-200";
+          }
+          return "text-left";
         },
         resolver: (d: any) => {
           return (
