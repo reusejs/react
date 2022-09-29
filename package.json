@@ -5,6 +5,7 @@
     "apps/*"
   ],
   "scripts": {
+    "install:ci": "yarn install --frozen-lockfile",
     "start": "concurrently 'yarn sb' 'yarn build:watch'",
     "build": "turbo run build",
     "build:watch": "cd packages/react && yarn build -w",
