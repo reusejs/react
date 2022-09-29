@@ -24,6 +24,7 @@ export interface ModalBaseProps {
     animation?: string;
   };
   contentProps?: any;
+  timeout: 0;
 }
 
 const ModalBase = (props: ModalBaseProps) => {
@@ -69,11 +70,22 @@ const ModalBase = (props: ModalBaseProps) => {
   );
 };
 
-export const canBeClosed = mountComponent(Closable(ModalBase), 1000);
+// export const canBeClosed = mountComponent(Closable(ModalBase), 1000);
 
-function Exportable(config: any, options = {}) {
-  config.timeout = 0;
-  return canBeClosed({ ...config, ...options });
+function Exportable(
+  config: ModalBaseProps,
+  unmountDelay = 1000,
+  mountingNode?: any
+) {
+  if (config.timeout === undefined) {
+    config.timeout = 0;
+  }
+
+  return mountComponent(
+    Closable(ModalBase),
+    unmountDelay,
+    mountingNode
+  )(config);
 }
 
 export default Exportable;
