@@ -33,9 +33,10 @@ export interface PickerCheckboxBaseProps {
   dataSource: (query?: string) => void;
   defaultSelected?: any;
   valueKey: "value";
-  defaultOpen?: boolean;
-  defaultQuery?: string;
+  defaultOpen?: false;
+  defaultQuery?: "";
   optionsRenderer?: any;
+  refresh?: string;
 }
 
 const PickerCheckboxBase = React.forwardRef(
@@ -69,7 +70,11 @@ const PickerCheckboxBase = React.forwardRef(
     const { options, addOrRemove, selected } = useSelect(
       props.onChange,
       props.dataSource,
-      props.defaultSelected
+      props.defaultSelected,
+      props.valueKey,
+      props.defaultOpen,
+      props.defaultQuery,
+      props.refresh
     );
 
     return (

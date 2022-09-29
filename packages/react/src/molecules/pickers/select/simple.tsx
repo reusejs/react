@@ -26,6 +26,7 @@ const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
       closeComponent={props.enableClose ? CloseComponent : undefined}
       noDataComponent={NoDataComponent}
       onChange={props.onChange}
+      onOpenClose={props.onOpenClose}
       scrollableBaseProps={
         props.scrollableBaseProps || {
           scrollableBaseClasses: {
