@@ -1,5 +1,12 @@
 # @reusejs/react
 
+## 6.19.5
+
+### Patch Changes
+
+- e445764: Add open close listener and refresh to checkbox
+- f74c635: Implement mountingNode in modal
+
 ## 6.19.4
 
 ### Patch Changes
