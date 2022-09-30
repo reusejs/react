@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import "../../../tailwind.css";
 import useOutsideClicker from "../../hooks/useOutsideClicker";
-import theme from "../../theme/theme.js";
+import theme from "../../theme/theme.ts";
 import Closable from "../../utils/closable";
-import mountComponent from "../../utils/mountComponent.js";
+import mountComponent from "../../utils/mountComponent.tsx";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
 import ModalWrapper from "./wrapper";
 
