@@ -9,12 +9,15 @@
   "sideEffects": false,
   "scripts": {
     "tw": "npx tailwindcss -i ./input.css -o ./tailwind.css --watch",
-    "build": "rollup -c rollup.config.ts"
+    "build": "rollup -c rollup.config.ts",
+    "dev": "rollup -c rollup.dev.config.ts --watch",
+    "tsc": "tsc src/index.ts"
   },
   "files": [
     "dist/**"
   ],
   "devDependencies": {
+    "@mprt/rollup-plugin-incremental": "^0.1.0",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.3",
@@ -55,6 +58,7 @@
     "framer-motion": "^7.2.1",
     "lodash": "^4.17.21",
     "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "swiper": "^8.4.2",
     "tailwind-scrollbar-hide": "^1.1.7",
     "ts-luxon": "^3.4.0",

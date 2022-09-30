@@ -1,6 +1,11 @@
 const path = require('path');
 
 module.exports = {
+  typescript: {
+    check: false,
+    checkOptions: {},
+    reactDocgen: false,
+  },
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   staticDirs: ['../public'],
   addons: [
@@ -22,7 +27,14 @@ module.exports = {
   core: {
     builder: 'webpack5',
   },
+  exclude: [
+    /node_modules/,
+    '../src/**/*/*.test.ts',
+    '../src/**/*/*.test.tsx',
+    '../../../node_modules',
+  ],
   webpackFinal: (config) => {
+    console.log('config', config);
     /**
      * Add support for alias-imports
      * @see https://github.com/storybookjs/storybook/issues/11989#issuecomment-715524391
