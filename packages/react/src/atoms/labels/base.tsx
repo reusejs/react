@@ -33,7 +33,6 @@ const LabelBase = (props: LabelBaseProps) => {
       className={finalClassNames}
       style={props.labelStyles}
     >
-      <h1>hi</h1>
       {props.label}
     </label>
   );
