@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.6
+
+### Patch Changes
+
+- d87b599: Add date picker
+
 ## 6.19.5
 
 ### Patch Changes
