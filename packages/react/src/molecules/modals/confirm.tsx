@@ -1,10 +1,10 @@
 import { CheckIcon } from "@heroicons/react/solid";
 import React, { useRef } from "react";
 import "../../../tailwind.css";
-import ButtonBase from "../../atoms/buttons/base.tsx";
-import theme from "../../theme/theme.ts";
+import ButtonBase from "../../atoms/buttons/base";
+import theme from "../../theme/theme";
 import Closable from "../../utils/closable";
-import mountComponent from "../../utils/mountComponent.tsx";
+import mountComponent from "../../utils/mountComponent";
 import ModalWrapper from "./wrapper";
 import { ModalBaseProps } from "./base";
 
