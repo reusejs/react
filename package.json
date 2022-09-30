@@ -8,7 +8,7 @@
     "install:ci": "yarn install --frozen-lockfile",
     "start": "concurrently 'yarn sb' 'yarn build:watch'",
     "build": "turbo run build",
-    "build:watch": "cd packages/react && yarn tsc",
+    "build:watch": "cd packages/react && yarn dev",
     "docs:dev": "turbo run docs#dev",
     "sb": "turbo run storybook#run",
     "dev": "turbo run dev --no-cache --parallel --continue",

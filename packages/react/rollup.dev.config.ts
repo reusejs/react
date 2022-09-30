@@ -6,6 +6,7 @@ import { terser } from "rollup-plugin-terser";
 import pkg from "./package.json";
 import copy from "rollup-plugin-copy";
 import external from "rollup-plugin-peer-deps-external";
+import ts from "@wessberg/rollup-plugin-ts";
 
 export default [
   {
