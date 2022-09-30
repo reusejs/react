@@ -5,7 +5,7 @@ import { CheckIcon, XIcon } from '@heroicons/react/solid';
 import { Dialog, Transition } from '@headlessui/react';
 
 const Content = React.forwardRef((props: any, ref) => {
-  console.log('base props', props);
+  // console.log('base props', props);
   return (
     <div ref={ref}>
       <div className='absolute top-0 right-0 hidden pt-4 pr-4 sm:block'>
@@ -47,24 +47,33 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof ModalBase>;
 
-const Template: ComponentStory<typeof ModalBase> = (args) => {
+const Template: ComponentStory<typeof ModalBase> = (args: any) => {
   const openModal = async () => {
-    let result = await ModalBase({
-      content: Content,
-    });
+    let result = await ModalBase(
+      {
+        content: Content,
+      },
+      args.unmountDelay
+    );
     console.log('Result', result);
   };
 
   return (
-    <div className='flex min-h-screen w-full items-center justify-center '>
-      <button
-        className='bg-blue-600 p-2 text-white hover:bg-gray-700'
-        onClick={() => {
-          openModal();
-        }}
+    <div>
+      <div
+        id='main_div'
+        className='flex min-h-screen w-full items-center justify-center'
       >
-        Click me
-      </button>
+        <button
+          className='bg-blue-600 p-2 text-white hover:bg-gray-700'
+          onClick={() => {
+            openModal();
+          }}
+        >
+          Click me
+        </button>
+      </div>
+      <div id='child_div'></div>
     </div>
   );
 };

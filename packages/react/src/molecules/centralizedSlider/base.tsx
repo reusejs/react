@@ -1,28 +1,27 @@
-import React, { useEffect, useImperativeHandle, useRef } from "react";
+import React, { useRef } from "react";
 import "../../../tailwind.css";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
+import "../../../swiper.css";
 import { useThemeContext } from "../../theme/ThemeProvider";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { Navigation, Pagination, A11y, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, A11y, Autoplay } from "swiper";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+// import "swiper/css";
+// import "swiper/css/pagination";
 
 export interface CentralizedSliderBaseProps {
   children: React.ReactNode[];
-  gap: number;
   slidesPerView: number;
+  gap?: number;
   centeredSlides?: boolean;
-  renderArrowLeft?: any;
-  renderArrowRight?: any;
+  renderArrowLeft?: ({}) => React.ReactNode;
+  renderArrowRight?: ({}) => React.ReactNode;
   hideArrow?: boolean;
   variant?: string;
   pagination?: boolean;
   autoPlay?: number;
   loop?: boolean;
-  centralizedSliderBaseClasses: {
-    layout: string;
+  centralizedSliderBaseClasses?: {
+    layout?: string;
   };
 }
 
@@ -35,7 +34,7 @@ const CentralizedSliderBase = (props: CentralizedSliderBaseProps) => {
     theme
   );
 
-  const swiperRef: any = useRef();
+  const swiperRef = useRef<any>(null!);
 
   const LeftArrow = () => {
     return (
@@ -100,7 +99,6 @@ const CentralizedSliderBase = (props: CentralizedSliderBaseProps) => {
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
-        // autoplay={del}
         {...pagination}
         {...autoplay}
         {...loop}

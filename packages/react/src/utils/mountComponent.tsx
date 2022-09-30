@@ -1,18 +1,25 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 
-const createConfirmation = (
+const mountComponent = (
   Component: any,
   unmountDelay = 1000,
   mountingNode?: any
 ) => {
+  console.log("mountComponent", unmountDelay, mountingNode);
+
   return (props: any) => {
     let wrapper: any;
 
     if (mountingNode === undefined) {
       wrapper = document.body.appendChild(document.createElement("div"));
     } else {
-      wrapper = mountingNode.appendChild(document.createElement("div"));
+      if (document !== null && document !== undefined) {
+        let existingNode = document.getElementById(mountingNode);
+        if (existingNode !== null) {
+          wrapper = existingNode.appendChild(document.createElement("div"));
+        }
+      }
     }
 
     const root = createRoot(wrapper);
@@ -56,4 +63,4 @@ const createConfirmation = (
   };
 };
 
-export default createConfirmation;
+export default mountComponent;

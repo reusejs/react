@@ -9,6 +9,7 @@ const PickerCheckboxSimple = (props: PickerCheckboxBaseProps) => {
     <CheckboxBase
       name={props.name}
       dataSource={props.dataSource}
+      refresh={props.refresh}
       optionsRenderer={OptionsRenderer}
       onChange={props.onChange}
       scrollableBaseProps={

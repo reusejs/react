@@ -1,5 +1,37 @@
 # @reusejs/react
 
+## 6.19.5
+
+### Patch Changes
+
+- e445764: Add open close listener and refresh to checkbox
+- f74c635: Implement mountingNode in modal
+
+## 6.19.4
+
+### Patch Changes
+
+- cd25ebb: Rename rowStyles to cellStyles
+
+## 6.19.3
+
+### Patch Changes
+
+- 5dfdb9f: Add check for typeof row.rowStyles
+
+## 6.19.2
+
+### Patch Changes
+
+- 6e3a792: Copy swiper.css to vendors
+
+## 6.19.1
+
+### Patch Changes
+
+- 587da88: Use swiper css
+- 68721de: Add rowStyles function
+
 ## 6.19.0
 
 ### Minor Changes
