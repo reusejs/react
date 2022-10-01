@@ -24,7 +24,7 @@ export interface ModalBaseProps {
     animation?: string;
   };
   contentProps?: any;
-  timeout: 0;
+  timeout?: any;
 }
 
 const ModalBase = (props: ModalBaseProps) => {

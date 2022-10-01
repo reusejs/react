@@ -40,7 +40,7 @@ export const Carousel = ({
   const x = useMotionValue(0);
   const containerRef = React.useRef<HTMLDivElement>(null);
   const [index, setIndex] = React.useState(0);
-  console.log("####Props here are>>>", props);
+  // console.log("####Props here are>>>", props);
 
   const calculateNewX = () => -index * (containerRef.current?.clientWidth || 0);
 
