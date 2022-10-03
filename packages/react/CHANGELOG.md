@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.8
+
+### Patch Changes
+
+- 854f054: Add prop to multi
+
 ## 6.19.7
 
 ### Patch Changes
