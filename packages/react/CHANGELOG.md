@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.7
+
+### Patch Changes
+
+- aab094a: Add image overlay component
+
 ## 6.19.6
 
 ### Patch Changes
