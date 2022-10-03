@@ -1,10 +1,10 @@
 import { CheckIcon } from "@heroicons/react/solid";
 import React, { useRef } from "react";
 import "../../../tailwind.css";
-import ButtonBase from "../../atoms/buttons/base.js";
-import theme from "../../theme/theme.js";
+import ButtonBase from "../../atoms/buttons/base";
+import theme from "../../theme/theme";
 import Closable from "../../utils/closable";
-import mountComponent from "../../utils/mountComponent.js";
+import mountComponent from "../../utils/mountComponent";
 import ModalWrapper from "./wrapper";
 import { ModalBaseProps } from "./base";
 
@@ -50,11 +50,21 @@ const ModalConfirm = (props: ModalConfirmProps) => {
   );
 };
 
-export const canBeClosed = mountComponent(Closable(ModalConfirm), 500);
+// export const canBeClosed = mountComponent(Closable(ModalConfirm), 500);
 
-function Exportable(config: any, options = {}) {
-  config.timeout = 0;
-  return canBeClosed({ ...config, ...options });
+function Exportable(
+  config: ModalConfirmProps,
+  unmountDelay = 1000,
+  mountingNode?: any
+) {
+  if (config.timeout === undefined) {
+    config.timeout = 0;
+  }
+  return mountComponent(
+    Closable(ModalConfirm),
+    unmountDelay,
+    mountingNode
+  )(config);
 }
 
 export default Exportable;

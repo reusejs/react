@@ -1,6 +1,6 @@
 {
   "name": "@reusejs/react",
-  "version": "6.19.3",
+  "version": "6.19.7",
   "author": "Rajiv Seelam",
   "license": "MIT",
   "main": "dist/index.cjs.js",
@@ -9,18 +9,22 @@
   "sideEffects": false,
   "scripts": {
     "tw": "npx tailwindcss -i ./input.css -o ./tailwind.css --watch",
-    "build": "rollup -c rollup.config.ts"
+    "build": "rollup -c rollup.config.ts",
+    "dev": "rollup -c rollup.dev.config.ts --watch",
+    "tsc": "tsc --project tsconfig.dev.json --watch --module amd"
   },
   "files": [
     "dist/**"
   ],
   "devDependencies": {
+    "@mprt/rollup-plugin-incremental": "^0.1.0",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.3",
     "@tailwindcss/forms": "^0.5.2",
     "@types/react": "^18.0.14",
     "@types/react-lazy-load-image-component": "^1.5.2",
+    "@wessberg/rollup-plugin-ts": "^2.0.4",
     "autoprefixer": "^10.4.7",
     "framer-motion": "^7.1.0",
     "postcss": "^8.4.14",
@@ -51,11 +55,14 @@
   "homepage": "https://github.com/reusejs/react",
   "dependencies": {
     "@headlessui/react": "^1.6.6",
+    "dayzed": "^3.2.3",
     "framer-motion": "^7.2.1",
     "lodash": "^4.17.21",
     "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "swiper": "^8.4.2",
     "tailwind-scrollbar-hide": "^1.1.7",
+    "ts-luxon": "^3.4.0",
     "validate.js": "^0.13.1"
   }
 }

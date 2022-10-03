@@ -5,7 +5,7 @@ import { CheckIcon, XIcon } from '@heroicons/react/solid';
 import { Dialog, Transition } from '@headlessui/react';
 
 const Content = React.forwardRef((props: any, ref) => {
-  console.log('base props', props);
+  // console.log('base props', props);
   return (
     <div className=' h-[500px] w-[900px] '>
       <div className='absolute top-0 right-0 hidden pt-4 pr-4 sm:block'>
@@ -48,39 +48,77 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof ModalBase>;
 
-const Template: ComponentStory<typeof ModalBase> = (args) => {
+const Template: ComponentStory<typeof ModalBase> = (args: any) => {
+  console.log('Args', args);
+
   const openModal = async () => {
-    let result = await ModalBase({
-      content: Content,
-      contentProps: {
-        description:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu Why do we use It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+    let result = await ModalBase(
+      {
+        timeout: args.timeout || 0,
+        content: Content,
+        contentProps: {
+          description:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu Why do we use It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+        },
+        backgroundColor: 'bg-blue-700',
+        backgroundOpacity: 'opacity-25',
+        modalBaseClasses: {
+          background: 'bg-[#242645]',
+          border: 'border-white rounded-lg',
+          font: 'text-white',
+          small: ' ',
+        },
       },
-      backgroundColor: 'bg-blue-700',
-      backgroundOpacity: 'opacity-25',
-      modalBaseClasses: {
-        background: 'bg-[#242645]',
-        border: 'border-white rounded-lg',
-        font: 'text-white',
-        small: ' ',
-      },
-    });
+      args.unmountDelay || 1000,
+      args.mountingNode || undefined
+    );
     console.log('Result', result);
   };
 
   return (
-    <div className='flex min-h-screen w-full items-center justify-center '>
-      <button
-        className='bg-blue-600 p-2 text-white hover:bg-gray-700'
-        onClick={() => {
-          openModal();
-        }}
+    <div>
+      <div
+        id='main_div'
+        className='flex min-h-screen w-full items-center justify-center '
       >
-        Click me
-      </button>
+        <button
+          className='bg-blue-600 p-2 text-white hover:bg-gray-700'
+          onClick={() => {
+            openModal();
+          }}
+        >
+          Click me
+        </button>
+      </div>
+      <div id='child_div'></div>
     </div>
   );
 };
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const AutoHide = Template.bind({});
+AutoHide.args = {
+  timeout: 2000,
+  unmountDelay: 10000,
+  mountingNode: 'child_div',
+};
+
+export const WithUnMountDelay = Template.bind({});
+WithUnMountDelay.args = {
+  unmountDelay: 10000,
+  mountingNode: 'child_div',
+};
+
+export const AppendToMainDiv = Template.bind({});
+AppendToMainDiv.args = {
+  unmountDelay: 1000,
+  mountingNode: 'main_div',
+};
+
+export const AppendtoChildDiv = Template.bind({});
+AppendtoChildDiv.args = {
+  unmountDelay: 1000,
+  mountingNode: 'child_div',
+};

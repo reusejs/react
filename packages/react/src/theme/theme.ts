@@ -339,17 +339,18 @@ const dotWrapperClasses = {
   layout: "absolute",
   bottom: "bottom-3",
   position: "flex justify-center items-center w-full",
-}
+};
 
 const dotItemClasses = {
   size: "w-3 h-3",
   radius: "rounded-full",
   margin: "mx-1",
   cursor: "cursor-pointer",
-}
+};
 
 const baseArrowClasses = {
-  position: "absolute flex justify-center items-center top-1/2 -translate-y-1/2",
+  position:
+    "absolute flex justify-center items-center top-1/2 -translate-y-1/2",
   size: "w-12 h-12",
   backgroundColor: "bg-black opacity-50 hover:opacity-90",
   borderRadius: "rounded-full",
@@ -357,14 +358,14 @@ const baseArrowClasses = {
   textStyle: "text-white text-xl",
   left: "left-3",
   right: "right-3",
-}
+};
 
 const sliderPageClasses = {
   width: "w-full",
   height: "h-full",
   display: "inline-block",
   flex: "none",
-}
+};
 
 const sliderBaseClasses = {
   display: "flex items-center justify-center",
@@ -383,7 +384,7 @@ const sliderBaseClasses = {
   //   cursor: "cursor-pointer",
   //   dotColor: "default"
   // }
-}
+};
 
 // Dropdowns
 
@@ -524,10 +525,11 @@ const galleryBaseClasses = {
   height: "h-[300px]",
   width: "w-[500px]",
   margin: "mx-auto",
-}
+};
 
 const gallerySliderBaseClasses = {
-  scroll: "grid w-full auto-cols-max grid-flow-col overflow-x-scroll scroll scroll-smooth scrollbar-hide whitespace-nowrap",
+  scroll:
+    "grid w-full auto-cols-max grid-flow-col overflow-x-scroll scroll scroll-smooth scrollbar-hide whitespace-nowrap",
   gap: "gap-x-5",
   height: "h-full",
   alignment: "mt-4 px-10",
@@ -537,10 +539,11 @@ const gallerySliderBaseClasses = {
   imagePointer: "cursor-pointer",
   imageSpacing: "my-4",
   imageActive: "scale-125",
-}
+};
 
 const galleryArrowBaseClasses = {
-  position: "absolute flex justify-center items-center top-1/2 -translate-y-1/2",
+  position:
+    "absolute flex justify-center items-center top-1/2 -translate-y-1/2",
   size: "w-12 h-12",
   backgroundColor: "opacity-50 hover:opacity-90",
   borderRadius: "rounded-full",
@@ -548,39 +551,41 @@ const galleryArrowBaseClasses = {
   textStyle: "text-black text-xl",
   left: "left-3",
   right: "right-3",
-}
+};
 
 const centeredGridBaseClasses = {
-  backgroundColor: 'bg-white',
+  backgroundColor: "bg-white", // make this transparent
   verticalWrapperPadding: "py-0", // keep default as py-0, user should provide this.
   horizontalMargin: "mx-auto",
   horizontalPadding: "px-4 sm:px-6 lg:px-8",
   width: "max-w-7xl",
   gridClasses: "md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10",
-  gridWrapper: 'mt-10',
-  footerSection: ''
-}
+  gridWrapper: "mt-10",
+  footerSection: "",
+};
 
 const itemTitleDescriptionCardBaseClasses = {
-  wrapper: 'relative',
-  iconWrapper: 'flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white',
-  titleWrapper: 'mt-2',
-  titleStyles: 'text-lg font-medium leading-6 text-gray-900',
-  descriptionWrapper: 'mt-2',
-  descriptionStyles: 'text-base text-gray-500',
-  actionWrapper: 'mt-2',
-}
+  wrapper: "relative",
+  iconWrapper:
+    "flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white",
+  titleWrapper: "mt-2",
+  titleStyles: "text-lg font-medium leading-6 text-gray-900",
+  descriptionWrapper: "mt-2",
+  descriptionStyles: "text-base text-gray-500",
+  actionWrapper: "mt-2",
+};
 
 const sectionContainerBaseClasses = {
-  outerContainerStyles: 'py-4',
-  innerContainerStyles: 'max-w-7xl mx-auto',
-}
+  outerContainerStyles: "py-4",
+  innerContainerStyles: "max-w-7xl mx-auto",
+};
 
 const twoColumnSectionBaseClasses = {
-  columnsFlexWrapperStyles: 'flex items-center justify-between flex-col md:flex-row',
-  firstElWrapperStyles: 'w-1/2',
-  secondElWrapperStyles: 'w-1/2',
-}
+  columnsFlexWrapperStyles:
+    "flex items-center justify-between flex-col md:flex-row",
+  firstElWrapperStyles: "w-1/2",
+  secondElWrapperStyles: "w-1/2",
+};
 
 //Tab style classes
 const tabsBaseClasses = {
@@ -589,22 +594,55 @@ const tabsBaseClasses = {
   height: "h-full",
   width: "w-full min-w-fit",
   backgroundColor: "bg-white text-blue-400",
-  padding: "px-2", 
+  padding: "px-2",
   cursor: "cursor-pointer",
   borderRadius: "",
   border: "border-b-2",
-  activeTabClasses: "sticky left-0 right-0 border-b-4 scale-y-125 origin-bottom font-bold border-blue-400",
+  activeTabClasses:
+    "sticky left-0 right-0 border-b-4 scale-y-125 origin-bottom font-bold border-blue-400",
   inactiveTabClasses: "border-blue-200",
-}
+};
 
 //Simple Slider
 const simpleSliderBaseClasses = {
   layout: "relative",
   size: "w-full",
-}
-const centralizedSliderBaseClasses ={ 
+};
+const centralizedSliderBaseClasses = {
   layout: "flex items-center justify-center",
-}
+};
+
+const calendarBaseClasses = {
+  wrapper: "rounded-lg bg-white dark:bg-gray-900",
+  leftRightIconStyles: "h-5 w-5",
+  iconButtonStyles:
+    "-m-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500 disabled:opacity-50 dark:text-gray-300 dark:hover:text-gray-200",
+  weekDaysWrapperStyles:
+    "mt-3 grid grid-cols-7 bg-white text-xs leading-6 text-gray-500 dark:bg-gray-900 dark:text-gray-300",
+  monthNameStyles: "flex-auto font-semibold",
+  calenderHeaderWrapper:
+    "flex items-center border-b border-t border-gray-200 py-2 text-gray-800 dark:border-gray-800 dark:text-gray-100",
+  singleCalenderSectionWrapper:
+    "text-center lg:col-start-8 lg:col-end-13 lg:row-start-1 xl:col-start-9",
+  weeksWrapper:
+    "isolate mt-2 grid grid-cols-7 gap-px rounded-lg bg-gray-200 text-sm ring-1 ring-gray-200 dark:bg-gray-700 dark:ring-gray-700",
+  dateButtonsDefaultStyles: "py-1.5 focus:z-10 disabled:opacity-50",
+  dateButtonsSelectableStyles:
+    "bg-white hover:bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-800",
+  dateButtonsUnSelectableStyles: "bg-gray-50 dark:bg-gray-800",
+  selectedOrTodayStyles: "font-semibold",
+  selectedTextStyles: "text-white dark:text-gray-900",
+  selectableTextStyles: "text-gray-800 dark:text-gray-100",
+  todayButNotSelectedStyles: "text-blue-600 dark:text-blue-400",
+  topLeftBorderStyles: "rounded-tl-lg",
+  topRightBorderStyles: "rounded-tr-lg",
+  bottomLeftBorderStyles: "rounded-bl-lg",
+  bottomRightBorderStyles: "rounded-br-lg",
+  timeSectionDefaultClasses:
+    "mx-auto flex h-7 w-7 items-center justify-center rounded-full",
+  timeSectionSelectedAndTodayClasses: "bg-blue-600 dark:bg-blue-200",
+  timeSectionSelectedAndNotTodayClasses: "bg-gray-900 dark:bg-gray-50",
+};
 
 const theme = {
   gridBaseClasses,
@@ -653,6 +691,7 @@ const theme = {
   tabsBaseClasses,
   simpleSliderBaseClasses,
   centralizedSliderBaseClasses,
+  calendarBaseClasses,
 };
 
 export default theme;

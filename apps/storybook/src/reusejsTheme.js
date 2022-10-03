@@ -8,7 +8,7 @@ const newTheme = {
 const variants = {
   primary: {
     labelBaseClasses: {
-      color: 'text-cyan-200',
+      color: 'text-red-200',
     },
     badgeBaseClasses: {
       backgroundColor: 'bg-yellow-100',

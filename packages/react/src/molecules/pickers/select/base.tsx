@@ -34,6 +34,7 @@ export interface PickerSelectBaseProps {
     placeholderColor?: string;
   };
   onChange: (value?: string) => void;
+  onOpenClose?: (value?: boolean) => void;
   dataSource: (query?: string) => void;
   defaultSelected: any;
   defaultString?: string;
@@ -99,6 +100,12 @@ const PickerSelectBase = React.forwardRef(
     const visRef = useOutsideClicker(() => {
       setOpen(false);
     });
+
+    useEffect(() => {
+      if (props.onOpenClose) {
+        props.onOpenClose(open);
+      }
+    }, [open]);
 
     return (
       <>

@@ -1,5 +1,30 @@
 # @reusejs/react
 
+## 6.19.7
+
+### Patch Changes
+
+- aab094a: Add image overlay component
+
+## 6.19.6
+
+### Patch Changes
+
+- d87b599: Add date picker
+
+## 6.19.5
+
+### Patch Changes
+
+- e445764: Add open close listener and refresh to checkbox
+- f74c635: Implement mountingNode in modal
+
+## 6.19.4
+
+### Patch Changes
+
+- cd25ebb: Rename rowStyles to cellStyles
+
 ## 6.19.3
 
 ### Patch Changes

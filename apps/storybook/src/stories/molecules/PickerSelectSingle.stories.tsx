@@ -74,6 +74,9 @@ Default.args = {
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
+  onOpenClose: (openClose: any) => {
+    console.log('open close listener', openClose);
+  },
 };
 
 export const Variant = Template.bind({});

@@ -1,5 +1,6 @@
-import '../../../node_modules/@reusejs/react/dist/styles.css';
+// import '../../../node_modules/@reusejs/react/dist/styles.css';
 import '../src/styles/globals.css';
+// import '../src/styles/lexical.css';
 import * as NextImage from 'next/image';
 import { ThemeProvider, theme } from '@reusejs/react';
 import newTheme from '../src/reusejsTheme';
