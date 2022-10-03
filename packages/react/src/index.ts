@@ -101,6 +101,7 @@ export { default as DropdownBrowser } from "./molecules/dropdowns/browser";
 
 export { default as NavigationPageHeading } from "./molecules/navigations/heading/base";
 export { default as LazyLoadedImage } from "./molecules/lazyLoadedImage/Base";
+export { default as ImageOverlay } from "./molecules/ImageOverlay/base";
 
 //Slider
 
