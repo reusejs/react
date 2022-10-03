@@ -96,6 +96,7 @@ export { default as ModalConfirm } from "./molecules/modals/confirm";
 export { default as DropdownBase } from "./molecules/dropdowns/base";
 export { default as DropdownMulti } from "./molecules/dropdowns/multi";
 export { default as DropdownBrowser } from "./molecules/dropdowns/browser";
+export { default as DropdownMultiHover } from "./molecules/dropdowns/multi_hover";
 
 // Navigations
 

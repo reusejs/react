@@ -404,6 +404,25 @@ const dropdownBaseClasses = {
     "absolute left-0 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none",
 };
 
+const dropdownMultiHoverClasses = {
+  wrapper: "relative cursor-pointer",
+  transition: {
+    enter: "transition ease-out duration-200",
+    enterFrom: "transform opacity-0 scale-95",
+    enterTo: "transform opacity-100 scale-100",
+    leave: "transition ease-in duration-75",
+    leaveFrom: "transform opacity-100 scale-100",
+    leaveTo: "transform opacity-0 scale-95",
+  },
+  containerClasses:
+    "absolute left-0 pt-2 w-40 origin-top-left border dark:border-gray-800 bg-white dark:bg-gray-900 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none  rounded-md",
+  childContainerClasses:
+    "absolute top-0 left-0 w-40 origin-top-left translate-x-full border dark:border-gray-800 bg-white dark:bg-gray-900 py-1 rounded-md",
+  itemClasses:
+    "relative block w-full cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-gray-700",
+  activeItemClasses: "text-blue-500 font-semibold",
+};
+
 const dropdownMultiClasses = {
   wrapper: "relative cursor-pointer",
   transition: {
@@ -692,6 +711,7 @@ const theme = {
   simpleSliderBaseClasses,
   centralizedSliderBaseClasses,
   calendarBaseClasses,
+  dropdownMultiHoverClasses,
 };
 
 export default theme;
