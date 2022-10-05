@@ -1,5 +1,17 @@
 # @reusejs/react
 
+## 6.19.9
+
+### Patch Changes
+
+- 4c6b8f2: Introduce multi dropdown with hover
+
+## 6.19.8
+
+### Patch Changes
+
+- 854f054: Add prop to multi
+
 ## 6.19.7
 
 ### Patch Changes
