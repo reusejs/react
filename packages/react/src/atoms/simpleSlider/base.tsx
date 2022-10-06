@@ -47,22 +47,24 @@ const SimpleSliderBase = (props: SimpleSliderBaseProps) => {
 
   return (
     <div className={wrapperClassName}>
-      { !props.hideArrow && (props.renderArrowLeft ? (
-        props.renderArrowLeft({ slideLeft })
-      ) : (
-        <ChevronLeftIcon
-          className="absolute left-10 top-1/2 h-10 w-10 -translate-y-1/2 cursor-pointer text-black"
-          onClick={slideLeft}
-        />
-      ))}
-      { !props.hideArrow && (props.renderArrowRight ? (
-        props.renderArrowRight({ slideRight })
-      ) : (
-        <ChevronRightIcon
-          className="absolute right-10 top-1/2 h-10 w-10 -translate-y-1/2 cursor-pointer text-black"
-          onClick={slideRight}
-        />
-      ))}
+      {!props.hideArrow &&
+        (props.renderArrowLeft ? (
+          props.renderArrowLeft({ slideLeft })
+        ) : (
+          <ChevronLeftIcon
+            className="absolute left-10 top-1/2 h-10 w-10 -translate-y-1/2 cursor-pointer text-black"
+            onClick={slideLeft}
+          />
+        ))}
+      {!props.hideArrow &&
+        (props.renderArrowRight ? (
+          props.renderArrowRight({ slideRight })
+        ) : (
+          <ChevronRightIcon
+            className="absolute right-10 top-1/2 h-10 w-10 -translate-y-1/2 cursor-pointer text-black"
+            onClick={slideRight}
+          />
+        ))}
       <div id={props.id} className={sliderClassName}>
         {props.children}
       </div>
