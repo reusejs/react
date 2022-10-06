@@ -37,6 +37,7 @@ export interface TextInputBaseProps {
     textColor?: string;
     backgroundColor?: string;
     placeholderColor?: string;
+    margin?: string;
     formInput?: string;
   };
   textInputBaseErrorClasses?: {

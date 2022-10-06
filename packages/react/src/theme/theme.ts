@@ -626,6 +626,7 @@ const tabsBaseClasses = {
 const simpleSliderBaseClasses = {
   layout: "relative",
   size: "w-full",
+  sliderClasses: "scroll grid h-full w-full auto-cols-max grid-flow-col overflow-x-scroll scroll-smooth whitespace-nowrap scrollbar-hide",
 };
 const centralizedSliderBaseClasses = {
   layout: "flex items-center justify-center",
