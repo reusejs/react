@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.10
+
+### Patch Changes
+
+- 69c611c: Make changes to slider
+
 ## 6.19.9
 
 ### Patch Changes
