@@ -372,7 +372,7 @@ const sliderBaseClasses = {
   height: "h-[500px]",
   width: "w-full",
   margin: "mx-auto",
-  containerClasses: "relative flex h-full w-full overflow-x-hidden",
+  containerClasses: "relative flex h-full w-full overflow-hidden",
   // dotWrapStyleClasses: {
   //   layout: "absolute",
   //   bottom: "bottom-3",
