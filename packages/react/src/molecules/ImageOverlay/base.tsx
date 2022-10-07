@@ -28,7 +28,12 @@ const ImageOverlay = (props: ImageOverlayProps) => {
       style={{ width: `${props.width}px`, height: `${props.height}px` }}
     >
       <div className="absolute inset-0 h-full w-full object-cover">
-        <LazyLoadedImage {...props} />
+        <LazyLoadedImage
+          src={props.src}
+          width={props.width}
+          height={props.height}
+          placeholderSrc={props.placeholderSrc}
+        />
         <div className={effectClasses} />
         <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
           {props.center}
