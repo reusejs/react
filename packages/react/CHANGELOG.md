@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.12
+
+### Patch Changes
+
+- 2eab9ae: Added animation to accordion, Fix to slider overflow on y axis, added prop to style container element in slider.
+
 ## 6.19.11
 
 ### Patch Changes
