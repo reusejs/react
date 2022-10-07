@@ -166,6 +166,9 @@ Default.args = {
   children: CONTENT,
   autoPlay: false,
   interval: 6000,
+  sliderBaseClasses: {
+    containerClasses:"Hello",
+  }
 };
 
 export const Dark = Template.bind({});

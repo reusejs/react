@@ -6,8 +6,8 @@ import resolvedStyleProps from "../../utils/resolvedStyleProps";
 //{ left = false, children, onClick }
 const Arrow = (props: ArrowProps) => {
   const theme = useThemeContext();
-  console.log("###Props in arrows are>>>>", props);
-  console.log("Arro style classes are>>>", props.baseArrowStyleProps);
+  // console.log("###Props in arrows are>>>>", props);
+  // console.log("Arro style classes are>>>", props.baseArrowStyleProps);
 
 
   const baseArrowClassName = resolvedStyleProps(

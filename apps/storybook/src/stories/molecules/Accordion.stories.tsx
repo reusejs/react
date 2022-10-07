@@ -1,6 +1,6 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { AccordionBase, LabelBase } from '@reusejs/react';
+import { ComponentMeta,ComponentStory } from '@storybook/react';
+import React from 'react';
 
 export default {
   title: 'Molecules/Accordion/Default',
@@ -12,12 +12,13 @@ const Template: ComponentStory<typeof AccordionBase> = (args) => (
   <AccordionBase {...args} />
 );
 
-const ExpandedText = (props: any) => {
+const ExpandedText = (props: {text:React.ReactNode}) => {
   return <div>{props.text}</div>;
 };
 
 export const Default = Template.bind({});
 Default.args = {
+  animationDuration: 0.2,
   labelBaseProps: {
     label: 'Accordion',
   },

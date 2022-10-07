@@ -372,6 +372,7 @@ const sliderBaseClasses = {
   height: "h-[500px]",
   width: "w-full",
   margin: "mx-auto",
+  containerClasses: "relative flex h-full w-full overflow-hidden",
   // dotWrapStyleClasses: {
   //   layout: "absolute",
   //   bottom: "bottom-3",
@@ -496,7 +497,7 @@ const accordionBaseClasses = {
   display: "flex justify-between",
   wrapper:
     "border rounded-md px-3 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 mb-3",
-  content: "text-gray-900 dark:text-white  py-3",
+  content: "text-gray-900 dark:text-white py-3 overflow-hidden",
 };
 
 // Data Table
