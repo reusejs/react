@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.11
+
+### Patch Changes
+
+- 8b1a890: Fix issues
+
 ## 6.19.10
 
 ### Patch Changes
