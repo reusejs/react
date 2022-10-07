@@ -20,9 +20,9 @@ const transition: AnimationOptions<any> = {
 //Container div to render carousel
 const Contaier = React.forwardRef<
   HTMLDivElement,
-  { children: React.ReactNode }
+  { children: React.ReactNode, containerClassName: string }
 >((props, ref) => (
-  <div ref={ref} className="relative flex h-full w-full overflow-x-hidden">
+  <div ref={ref} className={props.containerClassName as string}>
     {props.children}
   </div>
 ));
@@ -35,12 +35,13 @@ export const Carousel = ({
   autoPlay = true,
   interval = 2000,
   loop = true,
+  containerClassName,
   ...props
 }: CarouselProps) => {
   const x = useMotionValue(0);
   const containerRef = React.useRef<HTMLDivElement>(null);
   const [index, setIndex] = React.useState(0);
-  // console.log("####Props here are>>>", props);
+  // console.log("####Container class name here is>>>", containerClassName);
 
   const calculateNewX = () => -index * (containerRef.current?.clientWidth || 0);
 
@@ -84,7 +85,7 @@ export const Carousel = ({
   }, [handleNext, interval]);
 
   return (
-    <Contaier ref={containerRef}>
+    <Contaier ref={containerRef} containerClassName={containerClassName as string}>
       {childrens.map((child, i) => (
         <Slider onDragEnd={handleEndDrag} x={x} i={i} key={i}>
           {child}
