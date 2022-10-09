@@ -51,6 +51,8 @@ export interface TextInputBaseProps {
   onBlur?: (value?: string) => void;
   onFocus?: (value?: string) => void;
   onKeyDown?: (e: any) => void;
+  onWheel?: (e: any) => void;
+  min?: string;
   forceFocus?: string;
 }
 
@@ -158,6 +160,10 @@ const TextInputBase = React.forwardRef((props: TextInputBaseProps, ref) => {
           onKeyDown={(e) => {
             props.onKeyDown?.(e);
           }}
+          onWheel={(e) => {
+            props.onWheel?.(e);
+          }}
+          min={props.min ? props.min : ""}
         />
         {props.textInputSuffix && props.textInputSuffix}
       </div>
