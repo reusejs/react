@@ -9,7 +9,7 @@ export interface ImageOverlayProps {
   src: string;
   width: number;
   height: number;
-  bottomleft?: any;
+  bottomLeft?: any;
   topLeft?: any;
   bottomRight?: any;
   topRight?: any;
@@ -38,11 +38,11 @@ const ImageOverlay = (props: ImageOverlayProps) => {
         <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
           {props.center}
         </div>
-        <div className="absolute bottom-2 flex w-full justify-between px-2 sm:px-4">
-          <div>{props.bottomleft}</div>
+        <div className="absolute bottom-2 flex w-full items-center justify-between px-2 sm:px-4">
+          <div>{props.bottomLeft}</div>
           <div>{props.bottomRight}</div>
         </div>
-        <div className="absolute top-2 flex w-full justify-between px-2 sm:px-4">
+        <div className="absolute top-2 flex w-full items-center justify-between px-2 sm:px-4">
           <div>{props.topLeft}</div>
           <div>{props.topRight}</div>
         </div>
