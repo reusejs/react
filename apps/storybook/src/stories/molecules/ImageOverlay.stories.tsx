@@ -19,7 +19,7 @@ Default.args = {
   src: 'https://images.unsplash.com/photo-1598128558393-70ff21433be0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2889&q=80',
   placeholderSrc:
     'https://i1.wp.com/www.slntechnologies.com/wp-content/uploads/2017/08/ef3-placeholder-image.jpg?ssl=1',
-  bottomleft: <div className='bg-red-100 text-xs sm:text-sm'>Bottom Left</div>,
+  bottomLeft: <div className='bg-red-100 text-xs sm:text-sm'>Bottom Left</div>,
   bottomRight: (
     <div className='flex items-center bg-red-100 text-xs sm:text-sm'>
       Bottom Right
@@ -69,7 +69,7 @@ ContentInBottomLeft.args = {
   src: 'https://images.unsplash.com/photo-1598128558393-70ff21433be0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2889&q=80',
   placeholderSrc:
     'https://i1.wp.com/www.slntechnologies.com/wp-content/uploads/2017/08/ef3-placeholder-image.jpg?ssl=1',
-  bottomleft: <div className='bg-red-100 text-xs sm:text-sm'>Bottom Left</div>,
+  bottomLeft: <div className='bg-red-100 text-xs sm:text-sm'>Bottom Left</div>,
 };
 
 export const ContentInBottomRight = Template.bind({});
@@ -117,7 +117,7 @@ ContentWithEffect.args = {
   src: 'https://images.unsplash.com/photo-1598128558393-70ff21433be0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2889&q=80',
   placeholderSrc:
     'https://i1.wp.com/www.slntechnologies.com/wp-content/uploads/2017/08/ef3-placeholder-image.jpg?ssl=1',
-  bottomleft: <div className='bg-red-100 text-xs sm:text-sm'>Bottom Left</div>,
+  bottomLeft: <div className='bg-red-100 text-xs sm:text-sm'>Bottom Left</div>,
   bottomRight: (
     <div className='flex items-center bg-red-100 text-xs sm:text-sm'>
       Bottom Right
