@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.15
+
+### Patch Changes
+
+- c326361: Changes: stopped propagation in multidropdown, aligned bottom content in image overlay
+
 ## 6.19.14
 
 ### Patch Changes
