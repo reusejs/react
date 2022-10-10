@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.14
+
+### Patch Changes
+
+- 433786b: Made checkbox customisable
+
 ## 6.19.13
 
 ### Patch Changes
