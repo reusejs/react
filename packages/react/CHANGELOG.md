@@ -1,5 +1,12 @@
 # @reusejs/react
 
+## 6.19.13
+
+### Patch Changes
+
+- e963818: Add onWheel props
+- 9434d43: Added onWheel method to TextInput Props
+
 ## 6.19.12
 
 ### Patch Changes
