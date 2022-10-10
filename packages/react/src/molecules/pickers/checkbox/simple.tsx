@@ -28,6 +28,7 @@ const PickerCheckboxSimple = (props: PickerCheckboxBaseProps) => {
       multiple={props.multiple}
       defaultSelected={props.defaultSelected}
       pickerCheckboxBaseClasses={props.pickerCheckboxBaseClasses}
+      textInputBaseClasses={props.textInputBaseClasses}
     />
   );
 };
@@ -36,11 +37,13 @@ const OptionsRenderer = ({
   value,
   selected,
   name,
+  textInputStyles,
   ...props
 }: {
   value: any;
   name: any;
   selected: any;
+  textInputStyles: any;
 }) => {
   const [found, setFound] = React.useState<boolean>(false);
 
@@ -64,18 +67,22 @@ const OptionsRenderer = ({
         checked={found === true}
         onChange={() => {}}
         textInputBaseClasses={{
-          wrapper: "mt-0",
-          alignment: "",
-          width: "h-4 w-4",
-          borderRadius: "",
-          border: "border-gray-300 dark:border-gray-600",
+          wrapper: textInputStyles?.wrapper || "mt-0",
+          alignment: textInputStyles?.alignment || "",
+          width: textInputStyles?.width || "h-4 w-4",
+          borderRadius: textInputStyles?.borderRadius || "",
+          border:
+            textInputStyles?.border || "border-gray-300 dark:border-gray-600",
           focus:
+            textInputStyles?.focus ||
             "focus:border-gray-500 focus:ring-gray-500 checked:bg-gray-500",
-          padding: "",
-          font: "",
-          textColor: "text-gray-900 dark:text-white",
-          backgroundColor: "bg-white dark:bg-gray-900",
-          placeholderColor: "",
+          padding: textInputStyles?.padding || "",
+          font: textInputStyles?.font || "",
+          textColor:
+            textInputStyles?.textColor || "text-gray-900 dark:text-white",
+          backgroundColor:
+            textInputStyles?.backgroundColor || "bg-white dark:bg-gray-900",
+          placeholderColor: textInputStyles?.placeholderColor || "",
           formInput: "none",
         }}
       />
