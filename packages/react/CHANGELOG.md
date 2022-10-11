@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.16
+
+### Patch Changes
+
+- a0c5323: Update: Stopped propagation in multihover dropdown
+
 ## 6.19.15
 
 ### Patch Changes
