@@ -74,7 +74,9 @@ const DropdownMultiHover = (props: DropdownMultiHoverProps) => {
         theme.variants &&
         theme.variants[props.variant] &&
         theme.variants[props.variant]["dropdownMultiHoverClasses"] &&
-        theme.variants[props.variant]["dropdownMultiHoverClasses"]["transition"]) ||
+        theme.variants[props.variant]["dropdownMultiHoverClasses"][
+          "transition"
+        ]) ||
       theme.dropdownMultiHoverClasses.transition),
   };
 
@@ -125,7 +127,8 @@ const DropdownMultiHover = (props: DropdownMultiHoverProps) => {
             {props.items.map((item: any, firstLevelIndex: number) => (
               <div
                 className={itemClasses}
-                onClick={() => {
+                onClick={(e) => {
+                  e.stopPropagation();
                   if (props.onClick) {
                     props.onClick(item, `item-${firstLevelIndex}`);
                   }
@@ -168,7 +171,8 @@ const DropdownMultiHover = (props: DropdownMultiHoverProps) => {
                           <div
                             className={itemClasses}
                             key={`child-${secondLevelIndex}`}
-                            onClick={() => {
+                            onClick={(e) => {
+                              e.stopPropagation();
                               if (props.onClick) {
                                 props.onClick(
                                   child,
@@ -214,7 +218,8 @@ const DropdownMultiHover = (props: DropdownMultiHoverProps) => {
                                       <div
                                         className={itemClasses}
                                         key={`grand-child-${thirdLevelIndex}`}
-                                        onClick={() => {
+                                        onClick={(e) => {
+                                          e.stopPropagation();
                                           if (props.onClick) {
                                             props.onClick(
                                               grandChild,
