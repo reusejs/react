@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.18
+
+### Patch Changes
+
+- d495d85: Changes: Added placeholder classes to picker select simple, Changed button busy prop to boolean
+
 ## 6.19.17
 
 ### Patch Changes
