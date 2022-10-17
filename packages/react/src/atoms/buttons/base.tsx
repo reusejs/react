@@ -7,7 +7,7 @@ export interface ButtonBaseProps {
   label: React.ReactNode;
   type?: "submit" | "reset" | "button";
   disabled?: false | true | boolean;
-  busy?: false;
+  busy?: boolean;
   busyText?: any;
   buttonStyles?: any;
   variant?: string;
