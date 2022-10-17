@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.17
+
+### Patch Changes
+
+- b08864d: Change: browser dropdown changes for stopping propagation
+
 ## 6.19.16
 
 ### Patch Changes
