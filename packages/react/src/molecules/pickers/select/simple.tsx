@@ -111,12 +111,23 @@ const SelectedDataRenderer = (props: any) => {
     pickerSelectSimpleClasses
   );
 
-  const spanFinalClases = resolvedStyleProps(
+  const spanFinalClasses = resolvedStyleProps(
     "selectedDataClasses",
     ["spanBaseClasses"],
     props,
     pickerSelectSimpleClasses
   );
+
+  const placeholderClasses = resolvedStyleProps(
+    "selectedDataClasses",
+    ["placeholderClasses"],
+    props,
+    pickerSelectSimpleClasses
+  );
+
+  const finalTextClasses = [props.defaultString, "None Selected"].includes(text)
+    ? placeholderClasses
+    : spanFinalClasses;
 
   React.useEffect(() => {
     if (props.selected.length > 0) {
@@ -129,7 +140,7 @@ const SelectedDataRenderer = (props: any) => {
 
   return (
     <div className={props.disabled ? disabledStyleClasses : wrappersClassNames}>
-      <span className={spanFinalClases}>{text}</span>
+      <span className={finalTextClasses}>{text}</span>
       <span className={arrowWrapperClasses}>
         <ArrowSmDownIcon className={arrowIconClasses} />
       </span>

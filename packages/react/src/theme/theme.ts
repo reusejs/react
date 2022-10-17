@@ -206,6 +206,8 @@ const pickerSelectSimpleClasses = {
     arrowIconClasses: "h-5 w-5 text-gray-400",
     spanBaseClasses:
       "block overflow-hidden text-ellipsis whitespace-nowrap w-11/12",
+    placeholderClasses:
+      "block overflow-hidden text-ellipsis whitespace-nowrap w-11/12 text-gray-400",
   },
   disabledStyleClasses: {
     alignment: "relative block",
@@ -627,7 +629,8 @@ const tabsBaseClasses = {
 const simpleSliderBaseClasses = {
   layout: "relative",
   size: "w-full",
-  sliderClasses: "scroll grid h-full w-full auto-cols-max grid-flow-col overflow-x-scroll scroll-smooth whitespace-nowrap scrollbar-hide",
+  sliderClasses:
+    "scroll grid h-full w-full auto-cols-max grid-flow-col overflow-x-scroll scroll-smooth whitespace-nowrap scrollbar-hide",
 };
 const centralizedSliderBaseClasses = {
   layout: "flex items-center justify-center",
