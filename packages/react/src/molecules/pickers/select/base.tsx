@@ -48,6 +48,7 @@ export interface PickerSelectBaseProps {
   closeComponent?: any;
   clearComponent?: any;
   noDataComponent?: any;
+  rightTextProps?: LabelBaseProps;
 }
 
 const PickerSelectBase = React.forwardRef(
@@ -112,6 +113,10 @@ const PickerSelectBase = React.forwardRef(
         <div className="flex items-center justify-between">
           {props.labelBaseProps !== undefined && (
             <LabelBase {...props.labelBaseProps} />
+          )}
+
+          {props.rightTextProps !== undefined && (
+            <LabelBase {...props.rightTextProps} />
           )}
 
           {props.clearComponent !== undefined &&

@@ -179,3 +179,32 @@ Disabled.args = {
     return fetchContinents(q);
   },
 };
+
+export const RightText = Template.bind({});
+RightText.args = {
+  labelBaseProps: {
+    label: 'Country',
+  },
+  defaultSelected: [{ label: 'Asia', value: 'asia' }],
+  valueKey: 'value',
+  multiple: false,
+  scrollableBaseProps: {
+    scrollableBaseClasses: {
+      position: 'z-50 block overflow-auto absolute',
+      maxHeight: 'max-h-64',
+    },
+  },
+  dataSource: (q: any) => {
+    return fetchContinents(q);
+  },
+  rightTextProps: {
+    label: 'Add new',
+    onClick: () => {
+      console.log('add new called');
+    },
+    labelBaseClasses: {
+      color: 'text-yellow-800 dark:text-yellow-100',
+      alignment: 'cursor-pointer',
+    },
+  },
+};
