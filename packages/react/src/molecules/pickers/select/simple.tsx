@@ -46,7 +46,7 @@ const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
       pickerSelectSimpleClasses={props.pickerSelectSimpleClasses}
       refresh={props.refresh}
       error={props.error}
-      rightTextProps={props.rightTextProps}
+      customRightComponent={props.customRightComponent}
     />
   );
 };

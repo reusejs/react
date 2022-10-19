@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { PickerSelectSimple } from '@reusejs/react';
+import { PickerSelectSimple, LabelBase } from '@reusejs/react';
 // import { CheckIcon, XIcon } from '@heroicons/react/solid';
 // import { TextInputBase } from '@reusejs/react';
 
@@ -180,6 +180,16 @@ Disabled.args = {
   },
 };
 
+const CustomComponent = () => {
+  return (
+    <LabelBase
+      label='test'
+      onClick={() => {
+        console.log('customRightComponent called');
+      }}
+    />
+  );
+};
 export const RightText = Template.bind({});
 RightText.args = {
   labelBaseProps: {
@@ -197,14 +207,5 @@ RightText.args = {
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
-  rightTextProps: {
-    label: 'Add new',
-    onClick: () => {
-      console.log('add new called');
-    },
-    labelBaseClasses: {
-      color: 'text-yellow-800 dark:text-yellow-100',
-      alignment: 'cursor-pointer',
-    },
-  },
+  customRightComponent: CustomComponent,
 };

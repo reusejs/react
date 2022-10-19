@@ -48,7 +48,7 @@ export interface PickerSelectBaseProps {
   closeComponent?: any;
   clearComponent?: any;
   noDataComponent?: any;
-  rightTextProps?: LabelBaseProps;
+  customRightComponent?: any;
 }
 
 const PickerSelectBase = React.forwardRef(
@@ -115,9 +115,7 @@ const PickerSelectBase = React.forwardRef(
             <LabelBase {...props.labelBaseProps} />
           )}
 
-          {props.rightTextProps !== undefined && (
-            <LabelBase {...props.rightTextProps} />
-          )}
+          {props.customRightComponent && <props.customRightComponent />}
 
           {props.clearComponent !== undefined &&
             props.closeComponent !== undefined && (
