@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.19
+
+### Patch Changes
+
+- 7cabbbb: Component Update: Added rightTextprop to ths picker select simple
+
 ## 6.19.18
 
 ### Patch Changes
