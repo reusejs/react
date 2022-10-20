@@ -13,7 +13,7 @@ export interface LabelBaseProps {
     color?: any;
     font?: any;
   };
-  onClick?: (e: any) => void;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
 const LabelBase = (props: LabelBaseProps) => {

@@ -48,7 +48,7 @@ export interface PickerSelectBaseProps {
   closeComponent?: any;
   clearComponent?: any;
   noDataComponent?: any;
-  customRightComponent?: any;
+  customRightComponent?: React.FC;
 }
 
 const PickerSelectBase = React.forwardRef(

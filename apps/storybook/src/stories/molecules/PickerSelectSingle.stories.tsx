@@ -183,7 +183,7 @@ Disabled.args = {
 const CustomComponent = () => {
   return (
     <LabelBase
-      label='test'
+      label='Right text'
       onClick={() => {
         console.log('customRightComponent called');
       }}
