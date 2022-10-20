@@ -115,12 +115,13 @@ const PickerSelectBase = React.forwardRef(
             <LabelBase {...props.labelBaseProps} />
           )}
 
-          {props.customRightComponent && <props.customRightComponent />}
-
           {props.clearComponent !== undefined &&
-            props.closeComponent !== undefined && (
+            props.closeComponent !== undefined &&
+            props.customRightComponent !== undefined && (
               <span className="invisible">Placeholder to prevent Jerk</span>
             )}
+
+          {props.customRightComponent && <props.customRightComponent />}
 
           {selected.length > 0 && !open && props.clearComponent && (
             <span className="cursor-pointer" onClick={() => setSelected([])}>
