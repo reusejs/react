@@ -48,6 +48,7 @@ export interface PickerSelectBaseProps {
   closeComponent?: any;
   clearComponent?: any;
   noDataComponent?: any;
+  customRightComponent?: React.FC;
 }
 
 const PickerSelectBase = React.forwardRef(
@@ -115,9 +116,12 @@ const PickerSelectBase = React.forwardRef(
           )}
 
           {props.clearComponent !== undefined &&
-            props.closeComponent !== undefined && (
+            props.closeComponent !== undefined &&
+            props.customRightComponent !== undefined && (
               <span className="invisible">Placeholder to prevent Jerk</span>
             )}
+
+          {props.customRightComponent && <props.customRightComponent />}
 
           {selected.length > 0 && !open && props.clearComponent && (
             <span className="cursor-pointer" onClick={() => setSelected([])}>
