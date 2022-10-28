@@ -1,25 +1,27 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { SingleDatetimePicker, DateInputExample } from '@reusejs/react';
+import { DateInput } from '@reusejs/react';
 
 export default {
   title: 'Molecules/Datetime/Single',
-  component: SingleDatetimePicker,
+  component: DateInput,
   argTypes: {},
-} as ComponentMeta<typeof SingleDatetimePicker>;
+} as ComponentMeta<typeof DateInput>;
 
-const Template: ComponentStory<typeof SingleDatetimePicker> = (args) => (
-  <SingleDatetimePicker {...args} />
-);
+const Template: ComponentStory<typeof DateInput> = (args) => {
+  const [dateVal, setDateVal] = useState('2022-09-10');
 
-const DateInputTemplate: ComponentStory<typeof DateInputExample> = (args) => (
-  <DateInputExample />
-);
+  return (
+    <DateInput
+      {...args}
+      defaultValue={dateVal}
+      onChangeCallback={(val: any) => {
+        console.log('val123', val);
+        setDateVal(val);
+      }}
+    />
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {};
-
-let dateVal = '2022-09-10';
-
-export const DateInputEl = DateInputTemplate.bind({});
-DateInputEl.args = {};

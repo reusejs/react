@@ -45,7 +45,7 @@ export interface BaseInputPropsInterface {
   id?: string;
   type?: string;
   placeholder?: string;
-  onChange?: any;
+  onChangeCallback: (value?: string) => void;
   defaultValue?: any;
   disabled?: boolean;
   labelCorner?: () => void;
@@ -59,16 +59,11 @@ export interface BaseInputPropsInterface {
   withErrorClasses?: string;
   errorTextClassess?: string;
   helperTextClassess?: string;
+  inputWidthClass?: string;
 }
 
 export default function BaseInput(props: BaseInputPropsInterface) {
-  const myRef = useRef(null);
   const [enable, setEnable] = useState(false);
-  // const dateValue = []
-
-  React.useEffect(() => {
-    console.log("defaultValue-11", props.defaultValue);
-  }, [props.defaultValue]);
 
   const { getFormattedDate } = useDateHelpers();
 
@@ -77,7 +72,12 @@ export default function BaseInput(props: BaseInputPropsInterface) {
   });
 
   return (
-    <div className="relative" ref={visRef}>
+    <div
+      className={`relative ${
+        props.inputWidthClass ? props.inputWidthClass : ""
+      }`}
+      ref={visRef}
+    >
       {props.label !== null && (
         <FormLabel
           htmlFor={props.id}
@@ -85,8 +85,7 @@ export default function BaseInput(props: BaseInputPropsInterface) {
           errorText={props.errorText}
           formLabelClasses={props.formLabelClasses}
         >
-          {/* {props.label} */}
-          Date
+          {props.label ? props.label : "Date2"}
         </FormLabel>
       )}
       <div
@@ -116,9 +115,9 @@ export default function BaseInput(props: BaseInputPropsInterface) {
         >
           <div className="h-5 flex-1 text-left">
             {getFormattedDate(
-              props.defaultValue,
+              props.defaultValue ? props.defaultValue : new Date(),
               false,
-              "MMM dd, yyyy HH:mm:ss"
+              "MMM dd, yyyy"
             )}
           </div>
           <CalendarIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
@@ -160,7 +159,7 @@ export default function BaseInput(props: BaseInputPropsInterface) {
               selected={props.defaultValue}
               userTimezone={props.userTimezone}
               onChange={(d: any) => {
-                props.onChange(d);
+                props.onChangeCallback(d);
                 setEnable(false);
               }}
             />

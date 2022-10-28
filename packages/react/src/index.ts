@@ -112,9 +112,7 @@ export { default as TabsBase } from "./molecules/tabs/base";
 //Centeralized Slider
 export { default as CentralizedSliderBase } from "./molecules/centralizedSlider/base";
 
-export { default as SingleDatetimePicker } from "./molecules/datetime/single";
 export { default as DateInput } from "./molecules/datetime/dateInput";
-export { default as DateInputExample } from "./molecules/datetime/dateInputExample";
 
 // ******************** End  ---- Molecules *************************
 
