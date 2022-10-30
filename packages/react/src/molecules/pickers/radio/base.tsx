@@ -49,6 +49,7 @@ export interface PickerRadioBaseProps {
     backgroundColor: string;
     placeholderColor: string;
   };
+  refresh?: string;
 }
 
 const PickerRadioBase = React.forwardRef((props: PickerRadioBaseProps, ref) => {
@@ -81,7 +82,11 @@ const PickerRadioBase = React.forwardRef((props: PickerRadioBaseProps, ref) => {
   const { options, addOrRemove, selected } = useSelect(
     props.onChange,
     props.dataSource,
-    props.defaultSelected
+    props.defaultSelected,
+    props.valueKey,
+    false,
+    "",
+    props.refresh
   );
 
   return (
