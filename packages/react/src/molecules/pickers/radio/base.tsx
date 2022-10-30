@@ -84,8 +84,8 @@ const PickerRadioBase = React.forwardRef((props: PickerRadioBaseProps, ref) => {
     props.dataSource,
     props.defaultSelected,
     props.valueKey,
-    false,
-    "",
+    props.defaultOpen,
+    props.defaultQuery,
     props.refresh
   );
 
