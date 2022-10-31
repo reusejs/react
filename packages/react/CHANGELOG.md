@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.20
+
+### Patch Changes
+
+- 9b6148c: Upgrade: Added refresh prop to picker select radio.
+
 ## 6.19.19
 
 ### Patch Changes
