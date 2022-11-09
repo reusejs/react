@@ -597,6 +597,13 @@ const itemTitleDescriptionCardBaseClasses = {
   actionWrapper: "mt-2",
 };
 
+const sidebarBaseClasses = {
+  wrapper: "hidden border-r dark:border-blue-800 md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col",
+  backgroundClasses: "bg-white pt-2 dark:border-blue-800 dark:bg-[#12263f]",
+  navItemClasses: "text-gray-500 hover:bg-blue-200 dark:text-white dark:hover:bg-blue-800 dark:hover:text-white",
+  navItemActiveClasses: "bg-blue-800 text-white hover:bg-blue-800"
+};
+
 const sectionContainerBaseClasses = {
   outerContainerStyles: "py-4",
   innerContainerStyles: "max-w-7xl mx-auto",
@@ -717,6 +724,7 @@ const theme = {
   centralizedSliderBaseClasses,
   calendarBaseClasses,
   dropdownMultiHoverClasses,
+  sidebarBaseClasses
 };
 
 export default theme;
