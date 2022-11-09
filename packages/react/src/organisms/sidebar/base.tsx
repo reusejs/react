@@ -33,7 +33,7 @@ const ItemRenderer = (props: any) => {
           open || item.current
             ? props.navItemActiveClasses
             : props.navItemClasses,
-          "group flex items-center rounded-md px-2 py-2 text-sm font-medium"
+          "group flex cursor-pointer items-center rounded-md px-2 py-2 text-sm font-medium"
         )}
       >
         {item.icon && (
@@ -63,7 +63,7 @@ const ItemRenderer = (props: any) => {
                 element.current
                   ? props.navItemActiveClasses
                   : props.navItemClasses,
-                "block rounded-md p-2 text-sm transition-colors duration-200"
+                "block cursor-pointer rounded-md p-2 text-sm transition-colors duration-200"
               )}
             >
               <span className="ml-3">{element.label}</span>
@@ -78,7 +78,7 @@ const ItemRenderer = (props: any) => {
       onClick={(e) => props.onClick(e, item)}
       className={classNames(
         item.current ? props.navItemActiveClasses : props.navItemClasses,
-        "group flex items-center rounded-md px-2 py-2 text-sm font-medium"
+        "group flex cursor-pointer items-center rounded-md px-2 py-2 text-sm font-medium"
       )}
     >
       {item.icon && (
