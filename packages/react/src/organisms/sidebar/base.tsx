@@ -5,10 +5,24 @@ import { useThemeContext } from "../../theme/ThemeProvider";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 
+export interface NavItem {
+  label?: string;
+  href?: string;
+  current?: boolean;
+}
+export interface nestedNavItem {
+  label?: string;
+  href?: string;
+  current?: boolean;
+  children?: NavItem[];
+}
 export interface SidebarProps {
-  topItem?: any;
-  navigationItems?: any;
-  onClick?: any;
+  topItem?: JSX.Element | React.ReactNode | string;
+  navigationItems?: nestedNavItem[];
+  onClick?: (
+    e: React.MouseEventHandler<HTMLButtonElement>,
+    item: nestedNavItem
+  ) => void;
   sidebarBaseClasses?: {
     wrapper?: string;
     backgroundClasses?: string;
@@ -30,9 +44,7 @@ const ItemRenderer = (props: any) => {
           setOpen(!open);
         }}
         className={classNames(
-          open || item.current
-            ? props.navItemActiveClasses
-            : props.navItemClasses,
+          open ? props.navItemActiveClasses : props.navItemClasses,
           "group flex cursor-pointer items-center rounded-md px-2 py-2 text-sm font-medium"
         )}
       >
@@ -55,7 +67,7 @@ const ItemRenderer = (props: any) => {
           role="menu"
           arial-label={item.label}
         >
-          {item.children.map((element: any, i: any) => (
+          {item.children.map((element: NavItem, i: number) => (
             <div
               key={`${element.label}_${i}`}
               onClick={(e) => props.onClick(e, element)}
@@ -133,16 +145,19 @@ const SidebarBase = (props: SidebarProps) => {
         </div>
         <div className="mt-5 flex flex-1 flex-col">
           <nav className="flex-1 space-y-1 px-2 pb-4">
-            {props.navigationItems.map((item: any, index: any) => (
-              <ItemRenderer
-                key={index}
-                item={item}
-                index={index}
-                navItemClasses={navItemStyles}
-                navItemActiveClasses={navItemActiveStyles}
-                {...props}
-              />
-            ))}
+            {props.navigationItems &&
+              props.navigationItems.map(
+                (item: nestedNavItem, index: number) => (
+                  <ItemRenderer
+                    key={index}
+                    item={item}
+                    index={index}
+                    navItemClasses={navItemStyles}
+                    navItemActiveClasses={navItemActiveStyles}
+                    {...props}
+                  />
+                )
+              )}
           </nav>
         </div>
       </div>

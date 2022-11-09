@@ -56,5 +56,5 @@ Default.args = {
   sidebarBaseClasses: {
     backgroundClasses: 'bg-white pt-5 dark:border-blue-800 dark:bg-[#12263f]',
   },
-  onClick: (e: any, item: any) => console.log('check here item', item),
+  onClick: (e: any, item: any) => console.log('check here item', e, item),
 };
