@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.21
+
+### Patch Changes
+
+- 8675657: Component Added: SideBar
+
 ## 6.19.20
 
 ### Patch Changes
