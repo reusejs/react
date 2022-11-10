@@ -127,6 +127,7 @@ export { default as IconTitleDescriptionActionCard } from "./organisms/cards/Ico
 export { default as GalleryBase } from "./organisms/gallery/base";
 export { default as SectionContainerBase } from "./organisms/sectionContainer/base";
 export { default as ImageGallery } from "./organisms/imageGallery/base";
+export { default as SidebarBase } from "./organisms/sidebar/base";
 
 // ******************** End  ---- Organisms *************************
 
