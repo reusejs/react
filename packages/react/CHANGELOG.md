@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.22
+
+### Patch Changes
+
+- 77c298f: Added Prop to style options label.
+
 ## 6.19.21
 
 ### Patch Changes
