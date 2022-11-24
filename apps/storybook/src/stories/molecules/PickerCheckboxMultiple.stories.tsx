@@ -5,7 +5,7 @@ import { CheckIcon, XIcon } from '@heroicons/react/solid';
 import { TextInputBase } from '@reusejs/react';
 
 const fetchContinents = (q = '') => {
-  let continents = [
+  const continents = [
     'Africa',
     'Antarctica',
     'Asia',
@@ -93,3 +93,31 @@ Selected.args = {
     { label: 'Asia', value: 'asia' },
   ],
 };
+
+export const ColouredLabels = Template.bind({});
+ColouredLabels.args = {
+  labelBaseProps: {
+    label: 'Country',
+    labelBaseClasses: {
+      color: 'text-red-500 dark:text-yellow-100',
+    },
+  },
+  name: 'price',
+  valueKey: 'value',
+  dataSource: (q: any) => {
+    return fetchContinents(q);
+  },
+  defaultSelected: [
+    { label: 'Europe', value: 'europe' },
+    { label: 'Asia', value: 'asia' },
+  ],
+  pickerCheckboxSimpleClasses:{
+    optionClasses:{
+      labelBaseClasses:{
+        color: "text-blue-500",
+        alignment: "ml-4 block "
+      }
+    }
+  }
+};
+

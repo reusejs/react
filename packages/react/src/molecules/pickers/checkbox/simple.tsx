@@ -28,6 +28,7 @@ const PickerCheckboxSimple = (props: PickerCheckboxBaseProps) => {
       multiple={props.multiple}
       defaultSelected={props.defaultSelected}
       pickerCheckboxBaseClasses={props.pickerCheckboxBaseClasses}
+      pickerCheckboxSimpleClasses={props.pickerCheckboxSimpleClasses}
       textInputBaseClasses={props.textInputBaseClasses}
     />
   );
@@ -38,12 +39,14 @@ const OptionsRenderer = ({
   selected,
   name,
   textInputStyles,
+  optionsClasses,
   ...props
 }: {
   value: any;
   name: any;
   selected: any;
   textInputStyles: any;
+  optionsClasses: any;
 }) => {
   const [found, setFound] = React.useState<boolean>(false);
 
@@ -99,7 +102,7 @@ const OptionsRenderer = ({
         htmlFor={value.value}
         label={value.label}
         labelBaseClasses={
-          theme.pickerCheckboxSimpleClasses.optionClasses.labelBaseClasses
+          optionsClasses?.labelBaseClasses || theme.pickerCheckboxSimpleClasses.optionClasses.labelBaseClasses
         }
       />
     </div>
