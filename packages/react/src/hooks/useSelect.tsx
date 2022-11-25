@@ -44,7 +44,7 @@ export default function (
       setOpen(false);
     } else {
       if (
-        !selected.some((current: any) => current[valueKey] === option[valueKey])
+        !selected?.some((current: any) => current[valueKey] === option[valueKey])
       ) {
         if (multiple) {
           onChange([...selected, option]);

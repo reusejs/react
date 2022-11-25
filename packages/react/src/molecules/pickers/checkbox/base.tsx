@@ -103,7 +103,7 @@ const PickerCheckboxBase = React.forwardRef(
                 {options.map((option: any) => (
                   <div
                     onClick={() => {
-                      addOrRemove(props.multiple || false, option);
+                      addOrRemove(props?.multiple || false, option);
                     }}
                     key={`option${option.value}`}
                   >
