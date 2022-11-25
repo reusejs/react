@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.23
+
+### Patch Changes
+
+- 22c94e1: Bug Fix for PickerCheckBox
+
 ## 6.19.22
 
 ### Patch Changes
