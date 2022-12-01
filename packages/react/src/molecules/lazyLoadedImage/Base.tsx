@@ -24,6 +24,7 @@ export interface LazyLoadedImageProps {
   style?: any;
   useIntersectionObserver?: boolean;
   placeholderComponent?: any;
+  alt?: string;
 }
 
 const LazyLoadedImage = (props: LazyLoadedImageProps) => {
