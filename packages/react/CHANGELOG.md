@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.24
+
+### Patch Changes
+
+- fcafa5a: Image Overlay: Alt-String
+
 ## 6.19.23
 
 ### Patch Changes
