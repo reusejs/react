@@ -15,6 +15,7 @@ export interface ImageOverlayProps {
   topRight?: any;
   center?: any;
   effectClasses?: string;
+  altName?: string;
 }
 
 const ImageOverlay = (props: ImageOverlayProps) => {
@@ -33,6 +34,7 @@ const ImageOverlay = (props: ImageOverlayProps) => {
           width={props.width}
           height={props.height}
           placeholderSrc={props.placeholderSrc}
+          alt={props.altName ? props.altName : ""}
         />
         <div className={effectClasses} />
         <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">

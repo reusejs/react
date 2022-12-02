@@ -31,6 +31,7 @@ Default.args = {
       Top Right
     </div>
   ),
+  altName: 'testalt',
   center: (
     <div className='flex justify-center bg-red-100 text-xs sm:text-sm'>
       Center
