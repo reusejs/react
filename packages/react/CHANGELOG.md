@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.25
+
+### Patch Changes
+
+- 30665af: Added tool-tip
+
 ## 6.19.24
 
 ### Patch Changes
