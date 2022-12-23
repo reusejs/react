@@ -37,7 +37,6 @@ const labelBaseClasses = {
 };
 
 // Toggle
-
 const toggleBaseClasses = {
   enabled: "bg-green-600",
   disabled: "bg-gray-200 dark:bg-gray-700",
@@ -85,7 +84,6 @@ const buttonBaseClasses = {
 };
 
 // Text Input
-
 const textInputBaseClasses = {
   wrapper: "relative rounded-md shadow-sm",
   margin: "mt-1",
@@ -173,7 +171,7 @@ const disabledTextAreaStylesClasses = {
 //ToolTip
 
 const toolTipBaseStyleProps = {
-  positioning: "absolute -top-12 left-12 z-10 ",
+  positioning: "-top-12 left-12",
   layout: "flex h-fit w-fit items-center justify-center",
   border: "border border-white",
   borderRadius: "rounded-lg",
