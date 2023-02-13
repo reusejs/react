@@ -83,6 +83,15 @@ const buttonBaseClasses = {
   disabledClasses: "disabled:opacity-50 dark:disabled:opacity-80",
 };
 
+const tiltedBorderButtonBaseClasses = {
+  layout: "absolute top-0 right-0 bottom-0 left-0",
+  zIndex:"-z-10",
+  borderWidth: "border-2",
+  rotation: "rotate-6",
+  borderColor: "border-black",
+  scale: "scale-105",
+}
+
 // Text Input
 const textInputBaseClasses = {
   wrapper: "relative rounded-md shadow-sm",
@@ -679,6 +688,7 @@ const theme = {
   toggleBaseClasses,
   badgeBaseClasses,
   buttonBaseClasses,
+  tiltedBorderButtonBaseClasses,
   dividerBaseClasses,
   textInputBaseClasses,
   textInputBaseErrorClasses,
