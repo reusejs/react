@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.26
+
+### Patch Changes
+
+- 6e7d84b: Added New Extended Burron Component
+
 ## 6.19.25
 
 ### Patch Changes
