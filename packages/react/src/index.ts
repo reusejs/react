@@ -17,6 +17,7 @@ export { default as BadgeBase } from "./atoms/badges/base";
 // Buttons
 
 export { default as ButtonBase } from "./atoms/buttons/base";
+export { default as TiltedBorderButton } from "./atoms/buttons/tiltedBorderButton";
 
 // Dividers
 
