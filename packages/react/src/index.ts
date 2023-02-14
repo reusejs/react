@@ -145,6 +145,7 @@ export { default as SectionsExampleOne } from "./templates/examples/SectionsExam
 export { default as SectionsExampleTwo } from "./templates/examples/SectionsExampleTwo";
 export { default as TwoColumnSectionBase } from "./templates/Layouts/TwoSectionLayout/base";
 export { default as SectionsExampleThree } from "./templates/examples/SectionsExampleThree";
+export { default as HighlightedText } from "./templates/HighlightedText/base";
 
 /* End Templates */
 
