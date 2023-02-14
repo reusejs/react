@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.27
+
+### Patch Changes
+
+- c972f2a: Added HighlightedText Template
+
 ## 6.19.26
 
 ### Patch Changes
