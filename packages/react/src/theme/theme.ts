@@ -85,12 +85,12 @@ const buttonBaseClasses = {
 
 const tiltedBorderButtonBaseClasses = {
   layout: "absolute top-0 right-0 bottom-0 left-0",
-  zIndex:"-z-10",
+  zIndex: "-z-10",
   borderWidth: "border-2",
   rotation: "rotate-6",
   borderColor: "border-black",
   scale: "scale-105",
-}
+};
 
 // Text Input
 const textInputBaseClasses = {
@@ -605,10 +605,12 @@ const itemTitleDescriptionCardBaseClasses = {
 };
 
 const sidebarBaseClasses = {
-  wrapper: "hidden border-r dark:border-blue-800 md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col",
+  wrapper:
+    "hidden border-r dark:border-blue-800 md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col",
   backgroundClasses: "bg-white pt-2 dark:border-blue-800 dark:bg-[#12263f]",
-  navItemClasses: "text-gray-500 hover:bg-blue-200 dark:text-white dark:hover:bg-blue-800 dark:hover:text-white",
-  navItemActiveClasses: "bg-blue-800 text-white hover:bg-blue-800"
+  navItemClasses:
+    "text-gray-500 hover:bg-blue-200 dark:text-white dark:hover:bg-blue-800 dark:hover:text-white",
+  navItemActiveClasses: "bg-blue-800 text-white hover:bg-blue-800",
 };
 
 const sectionContainerBaseClasses = {
@@ -682,6 +684,17 @@ const calendarBaseClasses = {
   timeSectionSelectedAndNotTodayClasses: "bg-gray-900 dark:bg-gray-50",
 };
 
+const horizontalListBaseClasses = {
+  layout: "flex w-full overflow-scroll",
+};
+
+const dividerClasses = {
+  layout: "flex shrink-0",
+  margin: "mx-4 my-auto",
+  size: "h-20 w-[1px]",
+  color: "bg-black",
+};
+
 const theme = {
   gridBaseClasses,
   labelBaseClasses,
@@ -732,7 +745,9 @@ const theme = {
   centralizedSliderBaseClasses,
   calendarBaseClasses,
   dropdownMultiHoverClasses,
-  sidebarBaseClasses
+  sidebarBaseClasses,
+  horizontalListBaseClasses,
+  dividerClasses,
 };
 
 export default theme;
