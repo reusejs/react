@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.28
+
+### Patch Changes
+
+- 8ba81d2: Added Store Button Templates
+
 ## 6.19.27
 
 ### Patch Changes
