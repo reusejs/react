@@ -1,5 +1,13 @@
 # @reusejs/react
 
+## 6.19.29
+
+### Patch Changes
+
+- 427cf97: Added Icon List
+- 61f57e2: Change in Storybbok template for icon list
+- 1ee4206: Added HorizontalList with dividers
+
 ## 6.19.28
 
 ### Patch Changes
