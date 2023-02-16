@@ -3,10 +3,6 @@ import resolvedStyleProps from "../../utils/resolvedStyleProps";
 import { useThemeContext } from "../../theme/ThemeProvider";
 import DefaultIcon from "./DefaultIcon";
 
-// export interface AccordionBaseProps {
-//   content?: React.ReactNode[];
-// }
-
 export interface IconListBaseProps {
   content?: React.ReactNode[];
   iconListBaseClasses?: {
@@ -52,12 +48,8 @@ const IconList = (props: IconListBaseProps) => {
     theme
   );
 
-  console.log(">>>>", baseClassName);
-  console.log(">>>>", listElementWrapperClassname);
-  console.log(">>>>", iconWrapperClassname);
-
   const Icon = (
-    <div className="mr-2 shrink-0 ">
+    <div className={iconWrapperClassname}>
       {props?.customIcon ? props.customIcon : <DefaultIcon />}
     </div>
   );
