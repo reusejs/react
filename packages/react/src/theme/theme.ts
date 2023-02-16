@@ -695,6 +695,24 @@ const dividerClasses = {
   color: "bg-black",
 };
 
+const iconListBaseClasses = {
+  layout: "flex flex-col",
+  width: "w-full",
+  margin: "",
+  padding: "",
+};
+
+const listElementWrapperClasses = {
+  layout: "flex items-center",
+  margin: "my-2",
+  padding: "",
+};
+
+const iconWrapperClasses = {
+  layout: "shrink-0",
+  margin: "mr-2",
+};
+
 const theme = {
   gridBaseClasses,
   labelBaseClasses,
@@ -748,6 +766,9 @@ const theme = {
   sidebarBaseClasses,
   horizontalListBaseClasses,
   dividerClasses,
+  iconListBaseClasses,
+  listElementWrapperClasses,
+  iconWrapperClasses
 };
 
 export default theme;

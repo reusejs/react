@@ -116,6 +116,7 @@ Example1.args = {
   dividerClasses: {
     size: 'w-[1px] h-40',
   },
-  customDivider: <div className='w-[2px] h-40 rounded-full mx-4 my-auto bg-red-500'/>
+  customDivider: (
+    <div className='mx-4 my-auto h-40 w-[2px] rounded-full bg-red-500' />
+  ),
 };
-

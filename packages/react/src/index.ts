@@ -119,6 +119,10 @@ export { default as SingleDatetimePicker } from "./molecules/datetime/single";
 export { default as DateInput } from "./molecules/datetime/dateInput";
 export { default as DateInputExample } from "./molecules/datetime/dateInputExample";
 
+export { default as HorizontalList } from "./molecules/horizontalList/base";
+
+export { default as IconList } from "./molecules/IconList/base";
+
 // ******************** End  ---- Molecules *************************
 
 // Start  ---- Organisms
@@ -129,7 +133,6 @@ export { default as GalleryBase } from "./organisms/gallery/base";
 export { default as SectionContainerBase } from "./organisms/sectionContainer/base";
 export { default as ImageGallery } from "./organisms/imageGallery/base";
 export { default as SidebarBase } from "./organisms/sidebar/base";
-export {default as HorizontalList} from "./molecules/horizontalList/base";
 
 // ******************** End  ---- Organisms *************************
 
