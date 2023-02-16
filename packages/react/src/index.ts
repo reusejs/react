@@ -119,6 +119,10 @@ export { default as SingleDatetimePicker } from "./molecules/datetime/single";
 export { default as DateInput } from "./molecules/datetime/dateInput";
 export { default as DateInputExample } from "./molecules/datetime/dateInputExample";
 
+export { default as HorizontalList } from "./molecules/horizontalList/base";
+
+export { default as IconList } from "./molecules/IconList/base";
+
 // ******************** End  ---- Molecules *************************
 
 // Start  ---- Organisms
