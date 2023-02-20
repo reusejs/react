@@ -55,6 +55,7 @@
   "homepage": "https://github.com/reusejs/react",
   "dependencies": {
     "@headlessui/react": "^1.6.6",
+    "@types/faker": "^6.6.9",
     "dayzed": "^3.2.3",
     "framer-motion": "^7.2.1",
     "lodash": "^4.17.21",
