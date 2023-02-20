@@ -26,6 +26,7 @@ This documentation will help you setup graphs(*\`more specifically, bar and line
 - https://react-chartjs-2.js.org/examples/line-chart
 - https://react-chartjs-2.js.org/components/bar
 
+
 > Code Fragment for each sample can be found commented in their respective code section or can be found in Reusejs's Git repository
 
 `;
