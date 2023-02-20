@@ -1,18 +1,11 @@
-import { LabelBase } from '@reusejs/react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+```javascript
 import React from 'react';
 import { useRef, useEffect, useState } from 'react';
-
 import type { ChartData, ChartArea } from 'chart.js';
 import { Chart as ChartJS, registerables } from 'chart.js';
 import { Chart } from 'react-chartjs-2';
 
 ChartJS.register(...registerables);
-
-export default {
-  title: 'Templates/Gradient Line Graph',
-  argTypes: {},
-};
 
 const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
@@ -40,7 +33,7 @@ function createGradient(ctx: CanvasRenderingContext2D, area: ChartArea) {
 }
 
 export const GradientLineGraph = () => {
-  const chartRef = useRef<ChartJS>(null);
+  const chartRef = useRef\<ChartJS\>(null);
   const [chartData, setChartData] = useState<ChartData<'bar'>>({
     datasets: [],
   });
@@ -64,13 +57,12 @@ export const GradientLineGraph = () => {
   }, []);
 
   return (
-    <Chart
+    \<Chart
       className='rounded-lg border border-yellow-700 bg-yellow-200'
       ref={chartRef}
       type='line'
       data={chartData}
-    />
+    /\>
   );
 };
-
-// export const GradientLineGraph = () => <GradientLineGraph />;
+```
