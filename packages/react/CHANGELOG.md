@@ -1,5 +1,13 @@
 # @reusejs/react
 
+## 6.19.30
+
+### Patch Changes
+
+- 499004a: Added Key to tab title mapped divs
+- d98baff: Graphs Added
+- f8ad75b: Added Documentation for Graphs
+
 ## 6.19.29
 
 ### Patch Changes
