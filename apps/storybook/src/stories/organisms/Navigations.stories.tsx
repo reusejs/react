@@ -532,14 +532,14 @@ const Profile = () => {
 
 const NavTabs = () => {
   return (
-    <div className='flex gap-3 px-20 '>
-      <div className='cursor-pointer border-b-2 border-transparent text-black hover:border-b-2 hover:border-blue-700 hover:text-blue-700'>
+    <div className='flex h-full gap-3 px-20 '>
+      <div className='flex cursor-pointer items-center justify-center border-b-2 border-transparent px-2 font-bold text-black hover:border-b-2 hover:border-blue-700 hover:text-blue-700'>
         Credit
       </div>
-      <div className='cursor-pointer border-b-2 border-transparent text-black hover:border-b-2 hover:border-blue-700 hover:text-blue-700'>
+      <div className='flex cursor-pointer items-center justify-center border-b-2 border-transparent px-2 font-bold text-black hover:border-b-2 hover:border-blue-700 hover:text-blue-700'>
         Loan
       </div>
-      <div className='cursor-pointer border-b-2 border-transparent text-black hover:border-b-2 hover:border-blue-700 hover:text-blue-700'>
+      <div className='flex cursor-pointer items-center justify-center border-b-2 border-transparent px-2 font-bold text-black hover:border-b-2 hover:border-blue-700 hover:text-blue-700'>
         Business
       </div>
     </div>
