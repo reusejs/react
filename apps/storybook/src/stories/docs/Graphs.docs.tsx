@@ -12,7 +12,7 @@ This documentation will help you setup graphs(*\`more specifically, bar and line
     - **\`Faker\`** (if you want to populate graphs with some random data, **\`optional\`**)
 
 2. Run following commands to add individual packages:
-	For Chart.js and Reat-chartjs-2
+	For Chart.js and React-chartjs-2
 
 	> yarn add chart.js react-charjs.2 --save-dev
 
