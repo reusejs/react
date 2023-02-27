@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.31
+
+### Patch Changes
+
+- e344459: Solved Build Issue
+
 ## 6.19.30
 
 ### Patch Changes
