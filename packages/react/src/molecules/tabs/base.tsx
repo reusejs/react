@@ -87,7 +87,7 @@ const TabsBase = (props: TabsBaseProps) => {
               onClick={() => {
                 setActiveTabIndex(index);
               }}
-              key={element.title+index}
+              key={"Element"+index}
             >
               {element.title}
               {element.icon && element.icon}
