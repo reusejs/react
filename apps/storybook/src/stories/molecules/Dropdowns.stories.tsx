@@ -100,6 +100,17 @@ const Label = () => {
   );
 };
 
+const Label2 = () => {
+  return (
+    <div className='item-center flex h-16 w-16 justify-center rounded-full bg-slate-500'>
+      <img
+        src='https://media.istockphoto.com/id/950213314/photo/mame-shibainu.jpg?s=1024x1024&w=is&k=20&c=6b9ZgzgzJ9eODNs65fC3VlsCQxeyu2GW3sxcYEuft5c='
+        className='rounded-full'
+      />
+    </div>
+  );
+};
+
 const ActiveLabel = () => {
   return <CheckCircleIcon className='mr-1 h-6 w-6 text-green-500' />;
 };
@@ -139,3 +150,38 @@ Default.args = {
 //   label: Label,
 //   variant: 'slow',
 // };
+
+export const Sample = Template.bind({});
+Sample.args = {
+  label: Label2,
+  onClick: (item, active) => {
+    console.log('clicked', item, active);
+  },
+  dropdownBaseClasses: {
+    menuButton: 'inline-flex w-full',
+    wrapper: 'relative w-full',
+    itemsWrapper:
+      'absolute top-16 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none',
+  },
+  activeLabel: ActiveLabel,
+  itemRenderer: ItemRenderer,
+  sections: [
+    {
+      label: 'Manage Account',
+      items: [
+        { label: 'Your Profile', href: '#', active: false },
+        { label: 'Settings', href: '#', active: false, comp: CustomComponent },
+      ],
+    },
+    {
+      label: 'Team Switcher',
+      items: [
+        { label: 'Beta', href: '#', active: false },
+        { label: 'Betalectic', href: '#', active: true },
+      ],
+    },
+    {
+      items: [{ label: 'Sign Out', href: '#', active: false }],
+    },
+  ],
+};
