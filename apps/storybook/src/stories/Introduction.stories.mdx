@@ -122,14 +122,15 @@ We tried to follow "Atomic Design System", you can use left sidebar to explore c
 
 <h2>How to Run?</h2>
 
-<p>
   <ol>
     <li>
       Install the Package: <code>yarn add @reusejs/react</code>
     </li>
-    <li>Install Tailwind so that you can customize</li>
     <li>
-      Install Theme Provider (Refer Below)
+    Install Tailwind so that you can customize. Add following code to your Tailwind configaration <code>content</code> array to enable styling imports from reusejs themes. <a href="#add_node_modules" title="Node Modules">(Refer Here)</a>
+    </li>
+    <li>
+      Install Theme Provider <a href="#sample_theme_provider" title="Sample Theme Provider">(Refer Here)</a>
     </li>
     <li>
       Explore <code>apps/storybook/src/stories</code> folder for components and
@@ -137,9 +138,8 @@ We tried to follow "Atomic Design System", you can use left sidebar to explore c
     </li>
 
   </ol>
-</p>
 
-<h2>Sample Theme Provider</h2>
+<h2 id='sample_theme_provider'>Sample Theme Provider</h2>
 
 ```jsx
 import { ThemeProvider, theme } from '@reusejs/react';
@@ -154,6 +154,20 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+```
+
+<h2 id='add_node_modules'>Add ReuseJS Template to Tailwind</h2>
+
+```jsx
+//Make sure the Path to node modules is correct based on your framework structure
+module.exports = {
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+    '../../node_modules/@reusejs/react/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {},
+  plugins: [],
+};
 ```
 
 <h2>How to Customise?</h2>
