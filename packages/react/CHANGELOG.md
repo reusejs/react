@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.32
+
+### Patch Changes
+
+- 32ab3a6: Bug Fix for Centralised Slider
+
 ## 6.19.31
 
 ### Patch Changes
