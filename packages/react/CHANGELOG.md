@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.33
+
+### Patch Changes
+
+- 7b157df: Add RefreshPageData to DataTable
+
 ## 6.19.32
 
 ### Patch Changes
