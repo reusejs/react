@@ -44,6 +44,7 @@ const TableBase = React.forwardRef(
       setLoading,
       data,
       setRefresh,
+      setRefreshPageData,
       setCurrentPage,
       totalRecords,
       filters,
@@ -59,6 +60,9 @@ const TableBase = React.forwardRef(
 
     useImperativeHandle(ref, () => {
       return {
+        refreshPageData: () => {
+          setRefreshPageData(true);
+        },
         refresh: () => {
           setRefresh(true);
         },

@@ -29,6 +29,7 @@ export default function ({
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
 
+  const [refreshPageData, setRefreshPageData] = useState(false);
   const [refresh, setRefresh] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalRecords, setTotalRecords] = useState(1);
@@ -36,6 +37,12 @@ export default function ({
   const [pagination, setPagination] = useState({});
 
   const { mounted, isMountedRef } = useMounted();
+
+  useEffect(() => {
+    if (refreshPageData === true) {
+      fetchData();
+    }
+  }, [refreshPageData]);
 
   useEffect(() => {
     if (refresh === true) {
@@ -99,13 +106,15 @@ export default function ({
       // console.log("r.pagination", r.pagination);
 
       setRefresh(false);
+      setRefreshPageData(false);
       setTotalRecords(r.pagination.total);
       setPagination(r.pagination);
       setData(r.data);
       setLoading(false);
     } catch (error) {
-      console.log("error", error);
+      // console.log("error", error);
       setRefresh(false);
+      setRefreshPageData(false);
       setLoading(false);
     }
   };
@@ -173,6 +182,8 @@ export default function ({
     setData,
     refresh,
     setRefresh,
+    refreshPageData,
+    setRefreshPageData,
     currentPage,
     setCurrentPage,
     totalRecords,
