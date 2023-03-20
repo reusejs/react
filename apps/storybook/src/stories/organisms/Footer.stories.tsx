@@ -202,8 +202,6 @@ const Right = () => (
   </>
 );
 
-// order-2
-
 export const Default = Template.bind({});
 Default.args = {
   left: Left,
