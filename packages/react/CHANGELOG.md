@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.34
+
+### Patch Changes
+
+- b6ac13d: Store Button Enhancements
+
 ## 6.19.33
 
 ### Patch Changes
