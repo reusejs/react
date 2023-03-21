@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.19.35
+
+### Patch Changes
+
+- e55a7b0: Added Example for Accordian, Changed Props for accordian
+
 ## 6.19.34
 
 ### Patch Changes
