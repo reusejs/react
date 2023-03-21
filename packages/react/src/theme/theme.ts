@@ -500,6 +500,7 @@ const tagInputBaseClasses = {
 const accordionBaseClasses = {
   width: "w-full",
   borderRadius: "rounded-md",
+  border: "",
   padding: "py-3",
   font: "font-normal sm:text-sm",
   textColor: "text-gray-900 dark:text-white cursor-pointer",
@@ -768,7 +769,7 @@ const theme = {
   dividerClasses,
   iconListBaseClasses,
   listElementWrapperClasses,
-  iconWrapperClasses
+  iconWrapperClasses,
 };
 
 export default theme;
