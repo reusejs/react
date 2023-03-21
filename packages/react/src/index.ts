@@ -152,6 +152,12 @@ export { default as StoreButton } from "./templates/StoreButtonTemplates/storeBu
 
 /* End Templates */
 
+//Start Layouts
+
+export { default as BaseSideDrawer } from "./layouts/BaseSideDrawer";
+
+// End Layouts
+
 export {
   default as ThemeProvider,
   useThemeContext,
