@@ -12,7 +12,7 @@ export interface BaseSideDrawerProps {
   ref?: any;
   effectOn?: "click" | "hover";
   overlap?: boolean;
-  callback?: () => void;
+  callback?: (isActive: boolean) => void;
   sideDrawerContent?: React.ReactNode;
   mainContent?: React.ReactNode;
   baseSideDrawerStyleClasses?: {
@@ -33,7 +33,7 @@ const BaseSideDrawer: FunctionComponent<BaseSideDrawerProps> = React.forwardRef(
   (props, ref) => {
     const handleClick = () => {
       if (props.callback) {
-        props.callback();
+        props.callback?.(isActive);
       }
       setIsActive(!isActive);
     };

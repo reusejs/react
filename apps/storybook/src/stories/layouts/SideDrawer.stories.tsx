@@ -1,7 +1,8 @@
 import { BaseSideDrawer } from '@reusejs/react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import SideDrawerDocs from '../docs/SideDrawer.docs';
+import Menu from '../assets/Menu';
 
 export default {
   title: 'Layouts/SideDrawer',
@@ -103,5 +104,86 @@ HiddenSidedrawer.args = {
     drawerActiveWidth: 'w-5/12 md:w-4/12',
     drawerInActiveWidth: 'w-0',
     contentLeftMargin: 'ml-0',
+  },
+};
+
+export const HiddenSidedrawerNoOverlap = Template.bind({});
+HiddenSidedrawerNoOverlap.args = {
+  effectOn: 'click',
+  overlap: false,
+  baseSideDrawerStyleClasses: {
+    drawerActiveWidth: 'w-5/12 md:w-4/12',
+    drawerInActiveWidth: 'w-0',
+    contentLeftMargin: 'ml-0',
+  },
+};
+
+const Template2: ComponentStory<typeof BaseSideDrawer> = (args) => {
+  const componentRef = useRef<any>();
+  const [state, setState] = useState<boolean>(false);
+
+  const logger = (e: boolean) => {
+    setState(e);
+  };
+
+  const click = () => {
+    if (
+      componentRef &&
+      componentRef.current &&
+      componentRef.current.handleClick
+    ) {
+      componentRef.current.handleClick();
+    }
+  };
+
+  const SideDrawerContent = () => {
+    return (
+      <div className='h-full w-full'>
+        <div className='flex items-center overflow-hidden whitespace-nowrap bg-blue-400 text-white'>
+          <button
+            className='h-12 w-[70px] px-3 py-2 '
+            onClick={() => {
+              click();
+            }}
+          >
+            <Menu />
+          </button>
+          {state ? (
+            <label className='ml-3 font-bold'>Side Drawer Open</label>
+          ) : null}
+        </div>
+      </div>
+    );
+  };
+
+  const MainContent = () => {
+    return (
+      <div className='flex h-full flex-col items-center justify-center bg-yellow-400 md:flex-row'>
+        <label>This is main content</label>
+      </div>
+    );
+  };
+
+  return (
+    <div className='h-[500px] w-full'>
+      <BaseSideDrawer
+        ref={componentRef}
+        sideDrawerContent={<SideDrawerContent />}
+        mainContent={<MainContent />}
+        callback={logger}
+        {...args}
+      />
+    </div>
+  );
+};
+
+export const OpenFromSideDrawer = Template2.bind({});
+OpenFromSideDrawer.args = {
+  effectOn: 'click',
+  overlap: false,
+  baseSideDrawerStyleClasses: {
+    drawerActiveWidth: 'w-5/12 md:w-4/12',
+    drawerInActiveWidth: 'w-[70px]',
+    contentLeftMargin: 'ml-[70px]',
   },
 };
