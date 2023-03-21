@@ -714,6 +714,17 @@ const iconWrapperClasses = {
   margin: "mr-2",
 };
 
+//Layout Themes
+const baseSideDrawerStyleClasses = {
+  wrapper: "flex h-full w-full",
+  drawerLayout: "bg-red-600 transition-all overflow-hidden h-full shrink-0",
+  drawerActiveWidth: "hover:w-6/12 md:hover:w-3/12",
+  drawerInActiveWidth: "w-[70px]",
+  contentLeftMargin: "ml-[70px]",
+  contentWrapper: "h-full w-full bg-blue-200",
+};
+//Layout theme
+
 const theme = {
   gridBaseClasses,
   labelBaseClasses,
@@ -770,6 +781,7 @@ const theme = {
   iconListBaseClasses,
   listElementWrapperClasses,
   iconWrapperClasses,
+  baseSideDrawerStyleClasses,
 };
 
 export default theme;
