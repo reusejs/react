@@ -39,18 +39,29 @@ export interface AccordionBaseProps {
     font?: string;
     textColor?: string;
     backgroundColor?: string;
+    wrapper?: string;
+    content?: string;
   };
 }
 
 const AccordionBase = (props: AccordionBaseProps) => {
   const [opened, setOpened] = useState<boolean>(false);
+
   const theme: any = useThemeContext();
 
   let allProps = Object.assign({}, props);
 
   const titleClassNames = resolvedStyleProps(
     "accordionBaseClasses",
-    ["width", "padding", "font", "textColor", "backgroundColor", "display"],
+    [
+      "width",
+      "border",
+      "padding",
+      "font",
+      "textColor",
+      "backgroundColor",
+      "display",
+    ],
     allProps,
     theme
   );
