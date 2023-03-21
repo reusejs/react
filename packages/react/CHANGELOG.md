@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.20.0
+
+### Minor Changes
+
+- 41075b5: Added Layout Side-Drawer
+
 ## 6.19.35
 
 ### Patch Changes
