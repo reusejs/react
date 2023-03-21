@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import resolvedStyleProps from "../../utils/resolvedStyleProps";
 import LabelBase from "../../atoms/labels/base";
 import { useThemeContext } from "../../theme/ThemeProvider";

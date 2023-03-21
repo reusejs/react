@@ -1,6 +1,6 @@
 import { AccordionBase, LabelBase } from '@reusejs/react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Plus from '../assets/Plus';
 import Minus from '../assets/Minus';
 
