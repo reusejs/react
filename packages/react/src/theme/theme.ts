@@ -675,7 +675,7 @@ const dateInputStyleClasses = {
 
 const calendarBaseClasses = {
   calenderWrapper:
-    "z-50 block w-full overflow-auto rounded-lg bg-white shadow-xl  shadow-gray-200 hover:shadow-xl dark:bg-gray-900 dark:shadow-gray-800",
+    "absolute z-50 block w-full overflow-auto rounded-lg bg-white shadow-xl  shadow-gray-200 hover:shadow-xl dark:bg-gray-900 dark:shadow-gray-800",
   wrapper: "rounded-lg bg-white dark:bg-gray-900",
   leftRightIconStyles: "h-5 w-5",
   iconButtonStyles:

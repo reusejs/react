@@ -179,7 +179,7 @@ export default function BaseInput(props: BaseInputPropsInterface) {
 
   const calenderWrapperClasses = resolvedStyleProps(
     "calendarBaseClasses",
-    ["wrapper"],
+    ["calenderWrapper"],
     props,
     theme
   );

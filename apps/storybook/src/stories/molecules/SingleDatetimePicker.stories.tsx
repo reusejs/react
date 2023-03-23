@@ -16,7 +16,6 @@ const Template: ComponentStory<typeof DateInput> = (args) => {
       {...args}
       defaultValue={dateVal}
       onChangeCallback={(val: any) => {
-        // console.log('Date is>>>>', val);
         setDateVal(val);
       }}
     />
@@ -29,7 +28,7 @@ Default.args = {};
 export const FullScreen = Template.bind({});
 FullScreen.args = {
   screenRelative: true,
-  inputWidthClass: 'w-full',
+  inputWidthClass: 'w-11/12',
 };
 
 export const WithCustomErrorRenderer = Template.bind({});
@@ -71,3 +70,32 @@ RedColoured.args = {
     timeSectionSelectedAndTodayClasses: 'bg-red-900 dark:bg-blue-200',
   },
 };
+
+const Template2: ComponentStory<typeof DateInput> = (args) => {
+  const [startDateVal, setStartDateVal] = useState(new Date());
+  const [endDateVal, setEndDateVal] = useState(new Date());
+
+  return (
+    <div className='flex flex-col md:flex-row md:justify-evenly'>
+      <DateInput
+        {...args}
+        label='Start Date'
+        defaultValue={startDateVal}
+        onChangeCallback={(val: any) => {
+          setStartDateVal(val);
+        }}
+      />
+      <DateInput
+        {...args}
+        label='End Date'
+        defaultValue={endDateVal}
+        onChangeCallback={(val: any) => {
+          setEndDateVal(val);
+        }}
+      />
+    </div>
+  );
+};
+
+export const TwoPickers = Template2.bind({});
+TwoPickers.args = {};
