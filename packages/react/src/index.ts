@@ -17,6 +17,7 @@ export { default as BadgeBase } from "./atoms/badges/base";
 // Buttons
 
 export { default as ButtonBase } from "./atoms/buttons/base";
+export { default as TiltedBorderButton } from "./atoms/buttons/tiltedBorderButton";
 
 // Dividers
 
@@ -96,11 +97,13 @@ export { default as ModalConfirm } from "./molecules/modals/confirm";
 export { default as DropdownBase } from "./molecules/dropdowns/base";
 export { default as DropdownMulti } from "./molecules/dropdowns/multi";
 export { default as DropdownBrowser } from "./molecules/dropdowns/browser";
+export { default as DropdownMultiHover } from "./molecules/dropdowns/multi_hover";
 
 // Navigations
 
 export { default as NavigationPageHeading } from "./molecules/navigations/heading/base";
 export { default as LazyLoadedImage } from "./molecules/lazyLoadedImage/Base";
+export { default as ImageOverlay } from "./molecules/ImageOverlay/base";
 
 //Slider
 
@@ -113,6 +116,8 @@ export { default as TabsBase } from "./molecules/tabs/base";
 export { default as CentralizedSliderBase } from "./molecules/centralizedSlider/base";
 
 export { default as DateInput } from "./molecules/datetime/dateInput";
+export { default as HorizontalList } from "./molecules/horizontalList/base";
+export { default as IconList } from "./molecules/IconList/base";
 
 // ******************** End  ---- Molecules *************************
 
@@ -123,6 +128,7 @@ export { default as IconTitleDescriptionActionCard } from "./organisms/cards/Ico
 export { default as GalleryBase } from "./organisms/gallery/base";
 export { default as SectionContainerBase } from "./organisms/sectionContainer/base";
 export { default as ImageGallery } from "./organisms/imageGallery/base";
+export { default as SidebarBase } from "./organisms/sidebar/base";
 
 // ******************** End  ---- Organisms *************************
 
@@ -139,8 +145,16 @@ export { default as SectionsExampleOne } from "./templates/examples/SectionsExam
 export { default as SectionsExampleTwo } from "./templates/examples/SectionsExampleTwo";
 export { default as TwoColumnSectionBase } from "./templates/Layouts/TwoSectionLayout/base";
 export { default as SectionsExampleThree } from "./templates/examples/SectionsExampleThree";
+export { default as HighlightedText } from "./templates/HighlightedText/base";
+export { default as StoreButton } from "./templates/StoreButtonTemplates/storeButton";
 
 /* End Templates */
+
+//Start Layouts
+
+export { default as BaseSideDrawer } from "./layouts/BaseSideDrawer";
+
+// End Layouts
 
 export {
   default as ThemeProvider,

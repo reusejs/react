@@ -23,6 +23,7 @@ export interface DropdownMultiProps {
     itemsWrapper?: any;
     containerClasses?: any;
     childContainerClasses?: any;
+    itemClasses?: any;
   };
   onClick?: (item: any, itemIndex: any) => void;
 }
@@ -109,7 +110,8 @@ const DropdownMulti = (props: DropdownMultiProps) => {
             {props.items.map((item: any, firstLevelIndex: number) => (
               <div
                 className={itemClasses}
-                onClick={() => {
+                onClick={(e) => {
+                  e.stopPropagation();
                   if (props.onClick) {
                     props.onClick(item, `item-${firstLevelIndex}`);
                   }
@@ -146,7 +148,8 @@ const DropdownMulti = (props: DropdownMultiProps) => {
                           <div
                             className={itemClasses}
                             key={`child-${secondLevelIndex}`}
-                            onClick={() => {
+                            onClick={(e) => {
+                              e.stopPropagation();
                               if (props.onClick) {
                                 props.onClick(
                                   child,
@@ -192,7 +195,8 @@ const DropdownMulti = (props: DropdownMultiProps) => {
                                       <div
                                         className={itemClasses}
                                         key={`grand-child-${thirdLevelIndex}`}
-                                        onClick={() => {
+                                        onClick={(e) => {
+                                          e.stopPropagation();
                                           if (props.onClick) {
                                             props.onClick(
                                               grandChild,

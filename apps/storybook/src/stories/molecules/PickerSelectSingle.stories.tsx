@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { PickerSelectSimple } from '@reusejs/react';
+import { PickerSelectSimple, LabelBase } from '@reusejs/react';
 // import { CheckIcon, XIcon } from '@heroicons/react/solid';
 // import { TextInputBase } from '@reusejs/react';
 
@@ -178,4 +178,34 @@ Disabled.args = {
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
+};
+
+const CustomComponent = () => {
+  return (
+    <LabelBase
+      label='Right text'
+      onClick={() => {
+        console.log('customRightComponent called');
+      }}
+    />
+  );
+};
+export const RightText = Template.bind({});
+RightText.args = {
+  labelBaseProps: {
+    label: 'Country',
+  },
+  defaultSelected: [{ label: 'Asia', value: 'asia' }],
+  valueKey: 'value',
+  multiple: false,
+  scrollableBaseProps: {
+    scrollableBaseClasses: {
+      position: 'z-50 block overflow-auto absolute',
+      maxHeight: 'max-h-64',
+    },
+  },
+  dataSource: (q: any) => {
+    return fetchContinents(q);
+  },
+  customRightComponent: CustomComponent,
 };

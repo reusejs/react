@@ -97,11 +97,11 @@ const AB_ELEMENTS = [
   {
     title: (
       <div tabIndex={0} className='flex items-center px-2'>
-        One  <div  className='text-sm only:text-red-400 group-'>(430)</div>
+        One <div className='text-sm only:text-red-400'>(430)</div>
       </div>
     ),
     content: (
-      <div className='flex h-48 w-full items-center justify-center border-2 border-blue-400 bg-blue-200 mt-3'>
+      <div className='mt-3 flex h-48 w-full items-center justify-center border-2 border-blue-400 bg-blue-200'>
         This is first div
       </div>
     ),
@@ -109,11 +109,14 @@ const AB_ELEMENTS = [
   {
     title: (
       <div className='flex items-center px-2'>
-        Two <span tabIndex={0} className='text-sm text-red-400'>(170)</span>
+        Two{' '}
+        <span tabIndex={0} className='text-sm text-red-400'>
+          (170)
+        </span>
       </div>
     ),
     content: (
-      <div className='flex h-28 w-full items-center justify-center bg-red-400 mt-3'>
+      <div className='mt-3 flex h-28 w-full items-center justify-center bg-red-400'>
         This is SECOND div
       </div>
     ),
@@ -127,6 +130,89 @@ const AB_ELEMENTS = [
     content: (
       <div className='flex h-96 w-full items-center justify-center border-2 border-t-0 border-blue-400'>
         This is THIRD div
+      </div>
+    ),
+  },
+];
+
+const ELEMENTS_SECOND = [
+  {
+    title: <div className='flex items-center px-2'>One</div>,
+    content: (
+      <div
+        key="ONE"
+        className='flex h-96 w-full flex-col items-center justify-center overflow-y-scroll border-2 border-t-0 border-blue-400'
+        onScroll={() => console.log('One')}
+      >
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        This is first div
+      </div>
+    ),
+    icon: <ArrowRightIcon className='h-4 w-4 font-semibold' />,
+  },
+  {
+    title: 'TWO {This is the second div}',
+    content: (
+      <div
+        key="TWO"
+        className='flex h-96 w-full flex-col items-center justify-center overflow-y-scroll border-2 border-t-0 border-blue-400'
+        // onScroll={() => console.log('TWO')}
+
+      >
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        <div>Check</div>
+        This is Second div
+      </div>
+    ),
+  },
+  {
+    title: 'THREE',
+    content: (
+      <div className='flex h-96 w-full items-center justify-center border-2 border-t-0 border-blue-400'>
+        This is third div
       </div>
     ),
   },
@@ -175,10 +261,20 @@ export const ABVariant = Template.bind({});
 ABVariant.args = {
   elements: AB_ELEMENTS,
   tabsBaseClasses: {
-    wrapperClasses: "w-5/12 ",
+    wrapperClasses: 'w-5/12 ',
     backgroundColor: 'bg-white',
-    activeTabClasses:
-      'sticky left-0 right-0 border-b-2 border-blue-500',
+    activeTabClasses: 'sticky left-0 right-0 border-b-2 border-blue-500',
     inactiveTabClasses: 'text-gray-500',
+  },
+};
+
+export const Scrollable = Template.bind({});
+Scrollable.args = {
+  elements: ELEMENTS_SECOND,
+  tabsBaseClasses: {
+    backgroundColor: 'bg-white text-gray-400',
+    activeTabClasses:
+      'sticky left-0 right-0 border-b-2 border-blue-500 text-blue-400',
+    inactiveTabClasses: '',
   },
 };

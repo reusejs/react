@@ -5,7 +5,7 @@ import { useThemeContext } from "../../theme/ThemeProvider";
 import "../../../tailwind.css";
 import { LabelBaseProps } from "../../atoms/labels/base";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/solid";
-// import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const AccordionAnimationVariant = {
   initial: {
@@ -30,6 +30,7 @@ export interface AccordionBaseProps {
   onClick?: (val: boolean) => void;
   isExpanded?: boolean;
   accordionSuffix?: any;
+  animationDuration?: number;
   accordionBaseClasses?: {
     width?: string;
     borderRadius?: string;
@@ -38,18 +39,29 @@ export interface AccordionBaseProps {
     font?: string;
     textColor?: string;
     backgroundColor?: string;
+    wrapper?: string;
+    content?: string;
   };
 }
 
 const AccordionBase = (props: AccordionBaseProps) => {
   const [opened, setOpened] = useState<boolean>(false);
+
   const theme: any = useThemeContext();
 
   let allProps = Object.assign({}, props);
 
   const titleClassNames = resolvedStyleProps(
     "accordionBaseClasses",
-    ["width", "padding", "font", "textColor", "backgroundColor", "display"],
+    [
+      "width",
+      "border",
+      "padding",
+      "font",
+      "textColor",
+      "backgroundColor",
+      "display",
+    ],
     allProps,
     theme
   );
@@ -78,7 +90,7 @@ const AccordionBase = (props: AccordionBaseProps) => {
   }, [props.isExpanded]);
 
   return (
-    <div className={wrappersClassNames + " transition-all duration-1000"}>
+    <motion.div className={wrappersClassNames}>
       <div
         className={titleClassNames}
         onClick={(e) => {
@@ -95,21 +107,65 @@ const AccordionBase = (props: AccordionBaseProps) => {
           <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
         )}
       </div>
-      {/* <AnimatePresence exitBeforeEnter> */}
-      {opened && (
-        <div
-          className={contentClassNames}
-          // initial={{ scaleY: 0 }}
-          // animate={{ scaleY: 1 }}
-          // transition={{ duration: 3 }}
-          // exit={{ scaleY: 0 }}
-          // style={{ originY: 0 }}
-        >
-          <props.content {...props.contentProps} />
-        </div>
-      )}
-      {/* </AnimatePresence> */}
-    </div>
+      <AnimatePresence exitBeforeEnter>
+        {opened && (
+          <motion.div
+            className={contentClassNames}
+            initial={{
+              height: 0,
+              opacity: 0,
+            }}
+            animate={{
+              height: "auto",
+              opacity: 1,
+              transition: {
+                height: {
+                  duration:
+                    props.animationDuration &&
+                    typeof props.animationDuration === "number"
+                      ? props.animationDuration
+                      : 0.4,
+                },
+                opacity: {
+                  duration:
+                    props.animationDuration &&
+                    typeof props.animationDuration === "number"
+                      ? props.animationDuration * 0.625
+                      : 0.25,
+                  delay:
+                    props.animationDuration &&
+                    typeof props.animationDuration === "number"
+                      ? props.animationDuration * 0.375
+                      : 0.15,
+                },
+              },
+            }}
+            exit={{
+              height: 0,
+              opacity: 0,
+              transition: {
+                height: {
+                  duration:
+                    props.animationDuration &&
+                    typeof props.animationDuration === "number"
+                      ? props.animationDuration
+                      : 0.4,
+                },
+                opacity: {
+                  duration:
+                    props.animationDuration &&
+                    typeof props.animationDuration === "number"
+                      ? props.animationDuration * 0.625
+                      : 0.25,
+                },
+              },
+            }}
+          >
+            <props.content {...props.contentProps} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 };
 

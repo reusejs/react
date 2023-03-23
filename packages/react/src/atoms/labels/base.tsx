@@ -13,6 +13,7 @@ export interface LabelBaseProps {
     color?: any;
     font?: any;
   };
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
 const LabelBase = (props: LabelBaseProps) => {
@@ -25,11 +26,14 @@ const LabelBase = (props: LabelBaseProps) => {
     theme
   );
 
+  // hiii
+
   return (
     <label
       htmlFor={props.htmlFor}
       className={finalClassNames}
       style={props.labelStyles}
+      onClick={(e) => props.onClick?.(e)}
     >
       {props.label}
     </label>

@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { CentralizedSliderBase } from '@reusejs/react';
 import { Secondary } from '../atoms/Grid.stories';
+import '../../../../../packages/react/swiper.css';
 
 export default {
   title: 'Molecules/CentralizedSlider',
@@ -97,7 +98,7 @@ const Elements = [
 const ArrowLeft = (props: any) => {
   return (
     <div
-      className='absolute top-1/2 left-1 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white bg-red-600 text-white text-xl opacity-70 hover:bg-blue-500 hover:opacity-100'
+      className='absolute top-1/2 left-1 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white bg-red-600 text-xl text-white opacity-70 hover:bg-blue-500 hover:opacity-100'
       onClick={() => {
         props.swiperRef.current.slidePrev();
       }}
@@ -107,17 +108,17 @@ const ArrowLeft = (props: any) => {
   );
 };
 const ArrowRight = (props: any) => {
-    return (
-      <div
-        className='absolute top-1/2 right-1 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white bg-red-600 text-white text-xl opacity-70 hover:bg-blue-500 hover:opacity-100'
-        onClick={() => {
-          props.swiperRef.current.slideNext();
-        }}
-      >
-        {'>>'}
-      </div>
-    );
-  };
+  return (
+    <div
+      className='absolute top-1/2 right-1 z-10 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white bg-red-600 text-xl text-white opacity-70 hover:bg-blue-500 hover:opacity-100'
+      onClick={() => {
+        props.swiperRef.current.slideNext();
+      }}
+    >
+      {'>>'}
+    </div>
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {
@@ -135,13 +136,13 @@ Variant.args = {
   autoPlay: 2000,
 };
 
-export const CustomArrows = Template.bind({})
+export const CustomArrows = Template.bind({});
 CustomArrows.args = {
-    children: Elements,
-    slidesPerView: 2,
-    centeredSlides: true,
-    loop: true,
-    autoPlay: 2000,
-    renderArrowLeft: ArrowLeft,
-    renderArrowRight: ArrowRight,
-}
+  children: Elements,
+  slidesPerView: 2,
+  centeredSlides: true,
+  loop: true,
+  autoPlay: 2000,
+  renderArrowLeft: ArrowLeft,
+  renderArrowRight: ArrowRight,
+};

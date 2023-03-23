@@ -24,7 +24,13 @@ export interface SliderBaseProps {
   dotItemClasses?: DotItemProps;
   baseArrowClasses?: BaseArrowProps;
   sliderPageClasses?: any;
-  sliderBaseClasses?: any;
+  sliderBaseClasses?: {
+    display?: string,
+    height?: string,
+    width?: string,
+    margin?: string,
+    containerClasses?: string,
+  },
   hideArrows?: boolean;
   hideDots?: boolean;
 }
@@ -32,9 +38,11 @@ export interface SliderBaseProps {
 const SliderBase = (props: SliderBaseProps) => {
   const theme = useThemeContext();
   const finalClassName = resolvedStyleProps("sliderBaseClasses", ["display","height","width","margin"], props,theme);
+  const containerClassName = resolvedStyleProps("sliderBaseClasses", ["containerClasses"], props,theme);
 
   return (
     <Carousel
+      containerClassName = {containerClassName}
       {...props}
     >
       {props.children.map((item, i) => (

@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { PickerCheckboxSimple } from '@reusejs/react';
-import { CheckIcon, XIcon } from '@heroicons/react/solid';
-import { TextInputBase } from '@reusejs/react';
+import { ComponentMeta,ComponentStory } from '@storybook/react';
+import React, { useState } from 'react';
 
 const fetchContinents = (q = '') => {
-  let continents = [
+  const continents = [
     'Africa',
     'Antarctica',
     'Asia',
@@ -88,8 +86,37 @@ Selected.args = {
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
+  multiple: true,
   defaultSelected: [
     { label: 'Europe', value: 'europe' },
     { label: 'Asia', value: 'asia' },
   ],
+};
+
+export const ColouredLabels = Template.bind({});
+ColouredLabels.args = {
+  labelBaseProps: {
+    label: 'Country',
+    labelBaseClasses: {
+      color: 'text-red-500 dark:text-yellow-100',
+    },
+  },
+  name: 'price',
+  valueKey: 'value',
+  dataSource: (q: any) => {
+    return fetchContinents(q);
+  },
+  defaultSelected: [
+    { label: 'Europe', value: 'europe' },
+    { label: 'Asia', value: 'asia' },
+  ],
+  multiple: true,
+  pickerCheckboxSimpleClasses: {
+    optionClasses: {
+      labelBaseClasses: {
+        color: 'text-blue-500',
+        alignment: 'ml-4 block ',
+      },
+    },
+  },
 };

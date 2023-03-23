@@ -31,6 +31,7 @@ const PickerRadioSimple = (props: PickerRadioBaseProps) => {
       pickerRadioBaseClasses={props.pickerRadioBaseClasses}
       radioBoxStyleClasses={props.radioBoxStyleClasses}
       radioOptionLabelClasses={props.radioOptionLabelClasses}
+      refresh={props.refresh}
     />
   );
 };

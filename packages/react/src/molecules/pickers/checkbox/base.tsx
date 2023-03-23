@@ -22,6 +22,20 @@ export interface PickerCheckboxBaseProps {
   pickerCheckboxBaseClasses?: {
     wrapper?: string;
   };
+  textInputBaseClasses?: {
+    wrapper?: string;
+    alignment?: string;
+    width?: string;
+    borderRadius?: string;
+    border?: string;
+    focus?: string;
+    padding?: string;
+    font?: string;
+    textColor?: string;
+    backgroundColor?: string;
+    placeholderColor?: string;
+    formInput?: string;
+  };
   textInputBaseErrorClasses?: {
     border?: string;
     focus?: string;
@@ -89,7 +103,7 @@ const PickerCheckboxBase = React.forwardRef(
                 {options.map((option: any) => (
                   <div
                     onClick={() => {
-                      addOrRemove(props.multiple || false, option);
+                      addOrRemove(props?.multiple || false, option);
                     }}
                     key={`option${option.value}`}
                   >
@@ -101,6 +115,7 @@ const PickerCheckboxBase = React.forwardRef(
                         optionsClasses={
                           props.pickerCheckboxSimpleClasses?.optionClasses || {}
                         }
+                        textInputStyles={props.textInputBaseClasses}
                       />
                     )}
                   </div>

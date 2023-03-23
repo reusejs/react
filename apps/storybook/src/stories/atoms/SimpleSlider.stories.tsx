@@ -142,3 +142,10 @@ LargerScrollWidth.args = {
   renderArrowLeft: leftArrow,
   renderArrowRight: rightArrow,
 };
+
+export const NoArrows = Template.bind({});
+NoArrows.args = {
+  children: Elements,
+  id: 'Slider',
+  hideArrow: true,
+};

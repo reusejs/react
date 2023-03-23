@@ -145,3 +145,15 @@ WithSuffixPrefix.args = {
     </div>
   ),
 };
+
+export const RoundedField = Template.bind({});
+RoundedField.args = {
+  name: 'Name',
+  type: 'text',
+  textInputBaseClasses: {
+    borderRadius: 'rounded-full',
+    border: 'border border-black',
+    padding: 'p-4',
+  },
+  placeholder:"Name",
+};

@@ -500,3 +500,57 @@ ThinRight.args = {
   middleArrangement: 'flex-1 justify-center',
   rightArrangement: 'flex-1 justify-end',
 };
+
+const Profile = () => {
+  return (
+    <DropdownBase
+      dropdownBaseClasses={{
+        menuButton:
+          'relative z-10 -mb-px flex items-center border-b-2 border-transparent pt-px text-sm font-medium text-gray-700 transition-colors duration-200 ease-out hover:text-gray-800',
+        itemsWrapper:
+          'absolute right-0 mt-5 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none',
+      }}
+      label={() => (
+        <div className='item-center flex h-14 w-14 justify-center rounded-full bg-slate-500'>
+          <img
+            src='https://media.istockphoto.com/id/950213314/photo/mame-shibainu.jpg?s=1024x1024&w=is&k=20&c=6b9ZgzgzJ9eODNs65fC3VlsCQxeyu2GW3sxcYEuft5c='
+            className='rounded-full'
+          />
+        </div>
+      )}
+      sections={[
+        {
+          items: [
+            { label: 'Profile', href: '#', active: false },
+            { label: 'Settings', href: '#', active: true },
+          ],
+        },
+      ]}
+    />
+  );
+};
+
+const NavTabs = () => {
+  return (
+    <div className='flex h-full gap-3 px-20 '>
+      <div className='flex cursor-pointer items-center justify-center border-b-2 border-transparent px-2 font-bold text-black hover:border-b-2 hover:border-blue-700 hover:text-blue-700'>
+        Credit
+      </div>
+      <div className='flex cursor-pointer items-center justify-center border-b-2 border-transparent px-2 font-bold text-black hover:border-b-2 hover:border-blue-700 hover:text-blue-700'>
+        Loan
+      </div>
+      <div className='flex cursor-pointer items-center justify-center border-b-2 border-transparent px-2 font-bold text-black hover:border-b-2 hover:border-blue-700 hover:text-blue-700'>
+        Business
+      </div>
+    </div>
+  );
+};
+
+export const NavigationDropDown = Template.bind({});
+NavigationDropDown.args = {
+  left: NavTabs,
+  right: Profile,
+  leftArrangement: 'bg-red-50',
+  middleArrangement: 'bg-green-50 ml-8 flex-1',
+  rightArrangement: 'bg-blue-50 flex-1 justify-end',
+};

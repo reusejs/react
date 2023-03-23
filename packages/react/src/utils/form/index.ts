@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useBetaErrors from "./errors.js";
+import useBetaErrors from "./errors";
 import validate from "validate.js";
 import result from "lodash/result";
 

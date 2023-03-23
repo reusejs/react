@@ -37,7 +37,6 @@ const labelBaseClasses = {
 };
 
 // Toggle
-
 const toggleBaseClasses = {
   enabled: "bg-green-600",
   disabled: "bg-gray-200 dark:bg-gray-700",
@@ -84,8 +83,16 @@ const buttonBaseClasses = {
   disabledClasses: "disabled:opacity-50 dark:disabled:opacity-80",
 };
 
-// Text Input
+const tiltedBorderButtonBaseClasses = {
+  layout: "absolute top-0 right-0 bottom-0 left-0",
+  zIndex: "-z-10",
+  borderWidth: "border-2",
+  rotation: "rotate-6",
+  borderColor: "border-black",
+  scale: "scale-105",
+};
 
+// Text Input
 const textInputBaseClasses = {
   wrapper: "relative rounded-md shadow-sm",
   margin: "mt-1",
@@ -173,7 +180,7 @@ const disabledTextAreaStylesClasses = {
 //ToolTip
 
 const toolTipBaseStyleProps = {
-  positioning: "absolute -top-12 left-12 z-10 ",
+  positioning: "-top-12 left-12",
   layout: "flex h-fit w-fit items-center justify-center",
   border: "border border-white",
   borderRadius: "rounded-lg",
@@ -206,6 +213,8 @@ const pickerSelectSimpleClasses = {
     arrowIconClasses: "h-5 w-5 text-gray-400",
     spanBaseClasses:
       "block overflow-hidden text-ellipsis whitespace-nowrap w-11/12",
+    placeholderClasses:
+      "block overflow-hidden text-ellipsis whitespace-nowrap w-11/12 text-gray-400",
   },
   disabledStyleClasses: {
     alignment: "relative block",
@@ -372,6 +381,7 @@ const sliderBaseClasses = {
   height: "h-[500px]",
   width: "w-full",
   margin: "mx-auto",
+  containerClasses: "relative flex h-full w-full overflow-hidden",
   // dotWrapStyleClasses: {
   //   layout: "absolute",
   //   bottom: "bottom-3",
@@ -402,6 +412,25 @@ const dropdownBaseClasses = {
     "inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100",
   itemsWrapper:
     "absolute left-0 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none",
+};
+
+const dropdownMultiHoverClasses = {
+  wrapper: "relative cursor-pointer",
+  transition: {
+    enter: "transition ease-out duration-200",
+    enterFrom: "transform opacity-0 scale-95",
+    enterTo: "transform opacity-100 scale-100",
+    leave: "transition ease-in duration-75",
+    leaveFrom: "transform opacity-100 scale-100",
+    leaveTo: "transform opacity-0 scale-95",
+  },
+  containerClasses:
+    "absolute left-0 pt-2 w-40 origin-top-left border dark:border-gray-800 bg-white dark:bg-gray-900 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none  rounded-md",
+  childContainerClasses:
+    "absolute top-0 left-0 w-40 origin-top-left translate-x-full border dark:border-gray-800 bg-white dark:bg-gray-900 py-1 rounded-md",
+  itemClasses:
+    "relative block w-full cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-100 dark:hover:bg-gray-700",
+  activeItemClasses: "text-blue-500 font-semibold",
 };
 
 const dropdownMultiClasses = {
@@ -471,13 +500,14 @@ const tagInputBaseClasses = {
 const accordionBaseClasses = {
   width: "w-full",
   borderRadius: "rounded-md",
+  border: "",
   padding: "py-3",
   font: "font-normal sm:text-sm",
   textColor: "text-gray-900 dark:text-white cursor-pointer",
   display: "flex justify-between",
   wrapper:
     "border rounded-md px-3 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 mb-3",
-  content: "text-gray-900 dark:text-white  py-3",
+  content: "text-gray-900 dark:text-white py-3 overflow-hidden",
 };
 
 // Data Table
@@ -575,6 +605,15 @@ const itemTitleDescriptionCardBaseClasses = {
   actionWrapper: "mt-2",
 };
 
+const sidebarBaseClasses = {
+  wrapper:
+    "hidden border-r dark:border-blue-800 md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col",
+  backgroundClasses: "bg-white pt-2 dark:border-blue-800 dark:bg-[#12263f]",
+  navItemClasses:
+    "text-gray-500 hover:bg-blue-200 dark:text-white dark:hover:bg-blue-800 dark:hover:text-white",
+  navItemActiveClasses: "bg-blue-800 text-white hover:bg-blue-800",
+};
+
 const sectionContainerBaseClasses = {
   outerContainerStyles: "py-4",
   innerContainerStyles: "max-w-7xl mx-auto",
@@ -607,6 +646,8 @@ const tabsBaseClasses = {
 const simpleSliderBaseClasses = {
   layout: "relative",
   size: "w-full",
+  sliderClasses:
+    "scroll grid h-full w-full auto-cols-max grid-flow-col overflow-x-scroll scroll-smooth whitespace-nowrap scrollbar-hide",
 };
 const centralizedSliderBaseClasses = {
   layout: "flex items-center justify-center",
@@ -644,12 +685,53 @@ const calendarBaseClasses = {
   timeSectionSelectedAndNotTodayClasses: "bg-gray-900 dark:bg-gray-50",
 };
 
+const horizontalListBaseClasses = {
+  layout: "flex w-full overflow-scroll",
+};
+
+const dividerClasses = {
+  layout: "flex shrink-0",
+  margin: "mx-4 my-auto",
+  size: "h-20 w-[1px]",
+  color: "bg-black",
+};
+
+const iconListBaseClasses = {
+  layout: "flex flex-col",
+  width: "w-full",
+  margin: "",
+  padding: "",
+};
+
+const listElementWrapperClasses = {
+  layout: "flex items-center",
+  margin: "my-2",
+  padding: "",
+};
+
+const iconWrapperClasses = {
+  layout: "shrink-0",
+  margin: "mr-2",
+};
+
+//Layout Themes
+const baseSideDrawerStyleClasses = {
+  wrapper: "flex h-full w-full",
+  drawerLayout: "bg-red-600 transition-all overflow-hidden h-full shrink-0",
+  drawerActiveWidth: "hover:w-6/12 md:hover:w-3/12",
+  drawerInActiveWidth: "w-[70px]",
+  contentLeftMargin: "ml-[70px]",
+  contentWrapper: "h-full w-full bg-blue-200",
+};
+//Layout theme
+
 const theme = {
   gridBaseClasses,
   labelBaseClasses,
   toggleBaseClasses,
   badgeBaseClasses,
   buttonBaseClasses,
+  tiltedBorderButtonBaseClasses,
   dividerBaseClasses,
   textInputBaseClasses,
   textInputBaseErrorClasses,
@@ -692,6 +774,14 @@ const theme = {
   simpleSliderBaseClasses,
   centralizedSliderBaseClasses,
   calendarBaseClasses,
+  dropdownMultiHoverClasses,
+  sidebarBaseClasses,
+  horizontalListBaseClasses,
+  dividerClasses,
+  iconListBaseClasses,
+  listElementWrapperClasses,
+  iconWrapperClasses,
+  baseSideDrawerStyleClasses,
 };
 
 export default theme;

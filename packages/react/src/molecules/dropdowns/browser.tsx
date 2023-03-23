@@ -100,7 +100,8 @@ const DropdownBrowser = (props: DropdownBrowserProps) => {
           {props.items.map((item: any, firstLevelIndex: number) => (
             <div
               className={itemClasses}
-              onClick={() => {
+              onClick={(e) => {
+                e.stopPropagation();
                 if (props.onClick) {
                   props.onClick(item, `item-${firstLevelIndex}`);
                 }
@@ -140,7 +141,8 @@ const DropdownBrowser = (props: DropdownBrowserProps) => {
                         <div
                           className={childItemClasses}
                           key={`child-${secondLevelIndex}`}
-                          onClick={() => {
+                          onClick={(e) => {
+                            e.stopPropagation();
                             if (props.onClick) {
                               props.onClick(child, `child-${secondLevelIndex}`);
                             }
@@ -183,7 +185,8 @@ const DropdownBrowser = (props: DropdownBrowserProps) => {
                                     <div
                                       className={childItemClasses}
                                       key={`grand-child-${thirdLevelIndex}`}
-                                      onClick={() => {
+                                      onClick={(e) => {
+                                        e.stopPropagation();
                                         if (props.onClick) {
                                           props.onClick(
                                             grandChild,

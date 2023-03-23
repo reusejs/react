@@ -29,6 +29,7 @@ export type CarouselProps = {
   sliderBaseclasses?: SliderBaseProps;
   hideArrows?: boolean;
   hideDots?: boolean;
+  containerClassName?: string;
 };
 
 export type ArrowProps = {

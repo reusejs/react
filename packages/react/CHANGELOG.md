@@ -1,5 +1,196 @@
 # @reusejs/react
 
+## 6.20.0
+
+### Minor Changes
+
+- 41075b5: Added Layout Side-Drawer
+
+## 6.19.35
+
+### Patch Changes
+
+- e55a7b0: Added Example for Accordian, Changed Props for accordian
+
+## 6.19.34
+
+### Patch Changes
+
+- b6ac13d: Store Button Enhancements
+
+## 6.19.33
+
+### Patch Changes
+
+- 7b157df: Add RefreshPageData to DataTable
+
+## 6.19.32
+
+### Patch Changes
+
+- 32ab3a6: Bug Fix for Centralised Slider
+
+## 6.19.31
+
+### Patch Changes
+
+- e344459: Solved Build Issue
+
+## 6.19.30
+
+### Patch Changes
+
+- 499004a: Added Key to tab title mapped divs
+- d98baff: Graphs Added
+- f8ad75b: Added Documentation for Graphs
+
+## 6.19.29
+
+### Patch Changes
+
+- 427cf97: Added Icon List
+- 61f57e2: Change in Storybbok template for icon list
+- 1ee4206: Added HorizontalList with dividers
+
+## 6.19.28
+
+### Patch Changes
+
+- 8ba81d2: Added Store Button Templates
+
+## 6.19.27
+
+### Patch Changes
+
+- c972f2a: Added HighlightedText Template
+
+## 6.19.26
+
+### Patch Changes
+
+- 6e7d84b: Added New Extended Burron Component
+
+## 6.19.25
+
+### Patch Changes
+
+- 30665af: Added tool-tip
+
+## 6.19.24
+
+### Patch Changes
+
+- fcafa5a: Image Overlay: Alt-String
+
+## 6.19.23
+
+### Patch Changes
+
+- 22c94e1: Bug Fix for PickerCheckBox
+
+## 6.19.22
+
+### Patch Changes
+
+- 77c298f: Added Prop to style options label.
+
+## 6.19.21
+
+### Patch Changes
+
+- 8675657: Component Added: SideBar
+
+## 6.19.20
+
+### Patch Changes
+
+- 9b6148c: Upgrade: Added refresh prop to picker select radio.
+
+## 6.19.19
+
+### Patch Changes
+
+- 7cabbbb: Component Update: Added rightTextprop to ths picker select simple
+
+## 6.19.18
+
+### Patch Changes
+
+- d495d85: Changes: Added placeholder classes to picker select simple, Changed button busy prop to boolean
+
+## 6.19.17
+
+### Patch Changes
+
+- b08864d: Change: browser dropdown changes for stopping propagation
+
+## 6.19.16
+
+### Patch Changes
+
+- a0c5323: Update: Stopped propagation in multihover dropdown
+
+## 6.19.15
+
+### Patch Changes
+
+- c326361: Changes: stopped propagation in multidropdown, aligned bottom content in image overlay
+
+## 6.19.14
+
+### Patch Changes
+
+- 433786b: Made checkbox customisable
+
+## 6.19.13
+
+### Patch Changes
+
+- e963818: Add onWheel props
+- 9434d43: Added onWheel method to TextInput Props
+
+## 6.19.12
+
+### Patch Changes
+
+- 2eab9ae: Added animation to accordion, Fix to slider overflow on y axis, added prop to style container element in slider.
+
+## 6.19.11
+
+### Patch Changes
+
+- 8b1a890: Fix issues
+
+## 6.19.10
+
+### Patch Changes
+
+- 69c611c: Make changes to slider
+
+## 6.19.9
+
+### Patch Changes
+
+- 4c6b8f2: Introduce multi dropdown with hover
+
+## 6.19.8
+
+### Patch Changes
+
+- 854f054: Add prop to multi
+
+## 6.19.7
+
+### Patch Changes
+
+- aab094a: Add image overlay component
+
+## 6.19.6
+
+### Patch Changes
+
+- d87b599: Add date picker
+
 ## 6.19.5
 
 ### Patch Changes

@@ -1,6 +1,6 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { CollapsibleAccordion, LabelBase } from '@reusejs/react';
+import { ComponentMeta,ComponentStory } from '@storybook/react';
+import React from 'react';
 
 export default {
   title: 'Molecules/Accordion/Collapsible',
@@ -12,7 +12,7 @@ const Template: ComponentStory<typeof CollapsibleAccordion> = (args) => (
   <CollapsibleAccordion {...args} />
 );
 
-const ExpandedText = (props: any) => {
+const ExpandedText = (props: {text:React.ReactNode}) => {
   return <div>{props.text}</div>;
 };
 

@@ -7,8 +7,6 @@
  */
 
 import type { LexicalEditor, NodeKey } from 'lexical';
-
-import './index.css';
 import {
   $createCodeNode,
   $isCodeNode,
