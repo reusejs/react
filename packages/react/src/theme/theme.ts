@@ -653,7 +653,29 @@ const centralizedSliderBaseClasses = {
   layout: "flex items-center justify-center",
 };
 
+const dateFormLabelClasses = {
+  wrapper: "relative flex justify-between",
+  style: "block text-sm font-normal",
+  textErrorColor: "text-red-600 dark:text-red-200",
+  textNoErrorColor: "text-gray-900 dark:text-white",
+};
+const dateInputStyleClasses = {
+  wrapper: "relative w-fit",
+  position: "",
+  inputStyles:
+    "flex w-full items-center rounded bg-white px-3 py-2 text-sm outline-none focus:border-blue-400 focus:ring-blue-400 dark:bg-gray-900",
+  noErrorClasses:
+    "border border-gray-400 text-gray-900 dark:border-gray-700 dark:text-white",
+  withErrorClasses:
+    "border border-red-600 text-red-900 placeholder-red-300 dark:border-red-200 dark:text-red-200",
+  dateFormatClasses: "h-5 flex-1 text-left",
+  helperTextClassess: "mt-2 text-sm text-gray-900 dark:text-white",
+  errorTextClassess: "mt-2 text-sm text-red-600 dark:text-red-200",
+};
+
 const calendarBaseClasses = {
+  calenderWrapper:
+    "z-50 block w-full overflow-auto rounded-lg bg-white shadow-xl  shadow-gray-200 hover:shadow-xl dark:bg-gray-900 dark:shadow-gray-800",
   wrapper: "rounded-lg bg-white dark:bg-gray-900",
   leftRightIconStyles: "h-5 w-5",
   iconButtonStyles:
@@ -781,7 +803,9 @@ const theme = {
   iconListBaseClasses,
   listElementWrapperClasses,
   iconWrapperClasses,
+  dateFormLabelClasses,
   baseSideDrawerStyleClasses,
+  dateInputStyleClasses,
 };
 
 export default theme;

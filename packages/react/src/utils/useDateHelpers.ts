@@ -22,7 +22,7 @@ function useDateHelpers() {
     timestamp = false,
     format = "MMM dd, yyyy, hh:mm a"
   ) => {
-    console.log("DATE_VALUE", date);
+    // console.log("DATE_VALUE", date);
     if (timestamp) {
       date = new Date(date * 1000).toISOString();
     }
