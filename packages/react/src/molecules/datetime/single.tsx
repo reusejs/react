@@ -22,17 +22,45 @@ const monthNamesShort = [
   "Dec",
 ];
 
+export interface CalendarBaseClassesProps {
+  calenderWrapper?: string;
+  wrapper?: string;
+  leftRightIconStyles?: string;
+  iconButtonStyles?: string;
+  weekDaysWrapperStyles?: string;
+  monthNameStyles?: string;
+  calenderHeaderWrapper?: string;
+  singleCalenderSectionWrapper?: string;
+  weeksWrapper?: string;
+  dateButtonsDefaultStyles?: string;
+  dateButtonsSelectableStyles?: string;
+  dateButtonsUnSelectableStyles?: string;
+  selectedOrTodayStyles?: string;
+  selectedTextStyles?: string;
+  selectableTextStyles?: string;
+  todayButNotSelectedStyles?: string;
+  topLeftBorderStyles?: string;
+  topRightBorderStyles?: string;
+  bottomLeftBorderStyles?: string;
+  bottomRightBorderStyles?: string;
+  timeSectionDefaultClasses?: string;
+  timeSectionSelectedAndTodayClasses?: string;
+  timeSectionSelectedAndNotTodayClasses?: string;
+}
+
 export interface SingleDatePickerProps {
   onChange?: any;
   userTimezone?: any;
   selected?: any;
+  maxDate?: Date;
+  minDate?: Date;
+  calendarBaseClasses?: CalendarBaseClassesProps;
 }
 
 export default function SingleDatePicker(props: SingleDatePickerProps) {
   const [selectedDate, setSelectedDate] = useState<any>(null);
 
   const convertWithTimezone = (date: any) => {
-    console.log("date-112233", date);
     const datepickerDate = DateTime.fromJSDate(date);
 
     const newDate = DateTime.fromObject(
@@ -62,13 +90,16 @@ export default function SingleDatePicker(props: SingleDatePickerProps) {
 
   let dayzedData = useDayzed({
     date: new Date(),
-    maxDate: new Date(),
+    minDate: props.minDate,
+    maxDate: props.maxDate,
     selected: selectedDate,
     onDateSelected: handleOnDateSelected,
     showOutsideDays: true,
   });
 
-  return <Calendar {...dayzedData} />;
+  return (
+    <Calendar {...dayzedData} calendarBaseClasses={props.calendarBaseClasses} />
+  );
 }
 
 export interface CalenderProps {
@@ -76,10 +107,10 @@ export interface CalenderProps {
   getBackProps?: any;
   getForwardProps?: any;
   getDateProps?: any;
+  calendarBaseClasses?: CalendarBaseClassesProps;
 }
 
 const Calendar = (props: CalenderProps) => {
-  console.log("calendars-1122", props.calendars);
   const theme: any = useThemeContext();
 
   const wrapperStyles = resolvedStyleProps(

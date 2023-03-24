@@ -1,43 +1,72 @@
 import React from "react";
-import { useRef, useState, Fragment } from "react";
+import { useState } from "react";
 import classNames from "../../utils/classNames";
 import SingleDatePicker from "./single";
 import { CalendarIcon } from "@heroicons/react/solid";
-import { Dialog, Transition } from "@headlessui/react";
+import { Transition } from "@headlessui/react";
 import { useDateHelpers } from "../../utils/useDateHelpers";
 import useOutsideClicker from "../../utils/useOutsideClicker";
+import resolvedStyleProps from "../../utils/resolvedStyleProps";
+import { useThemeContext } from "../../theme/ThemeProvider";
+import type { CalendarBaseClassesProps } from "./single";
 
+export interface FormLabelStyleProps {
+  wrapper?: string;
+  style?: string;
+  textErrorColor?: string;
+  textNoErrorColor?: string;
+}
 export interface FormLabelProps {
   children?: any;
   labelCorner?: any;
   htmlFor?: any;
-  formLabelClasses?: any;
+  dateFormLabelClasses?: FormLabelStyleProps;
   errorText?: any;
-  // selected?: any;
+  theme: any;
 }
 
 const FormLabel = (props: FormLabelProps) => {
-  {
-    return (
-      <div className="relative flex justify-between">
-        <label
-          htmlFor={props.htmlFor}
-          className={classNames(
-            props.formLabelClasses || "block text-sm font-normal",
-            props.errorText === undefined
-              ? "text-gray-900 dark:text-white"
-              : "",
-            props.errorText !== undefined
-              ? "text-red-600 dark:text-red-200"
-              : ""
-          )}
-        >
-          {props.children}
-        </label>
-        {props.labelCorner}
-      </div>
-    );
-  }
+  const wrapperClasses = resolvedStyleProps(
+    "dateFormLabelClasses",
+    ["wrapper"],
+    props,
+    props.theme
+  );
+  const styleClasses = resolvedStyleProps(
+    "dateFormLabelClasses",
+    ["style"],
+    props,
+    props.theme
+  );
+  const errorColorClasses = resolvedStyleProps(
+    "dateFormLabelClasses",
+    ["textErrorColor"],
+    props,
+    props.theme
+  );
+  const noErrorColorClasses = resolvedStyleProps(
+    "dateFormLabelClasses",
+    ["textNoErrorColor"],
+    props,
+    props.theme
+  );
+
+  return (
+    <div className={wrapperClasses}>
+      <label
+        htmlFor={props.htmlFor}
+        className={classNames(
+          styleClasses,
+          props.errorText === undefined
+            ? noErrorColorClasses
+            : errorColorClasses
+        )}
+      >
+        {props.children}
+      </label>
+      {props.labelCorner}
+    </div>
+  );
 };
 
 export interface BaseInputPropsInterface {
@@ -45,30 +74,38 @@ export interface BaseInputPropsInterface {
   id?: string;
   type?: string;
   placeholder?: string;
-  onChange?: any;
-  defaultValue?: any;
+  onChangeCallback: (value?: string) => void;
+  defaultValue?: Date;
   disabled?: boolean;
   labelCorner?: () => void;
   errorText?: string;
-  errorTextRenderer?: any;
+  errorTextRenderer?: (text: string) => React.ReactNode;
   helperText?: string;
   userTimezone?: string;
-  FormLabelComponent?: any;
-  formLabelClasses?: string;
-  noErrorClasses?: string;
+  formLabelClasses?: FormLabelStyleProps;
   withErrorClasses?: string;
-  errorTextClassess?: string;
-  helperTextClassess?: string;
+  inputWidthClass?: string;
+  maxDate?: Date;
+  minDate?: Date;
+  screenRelative?: boolean;
+  customCalendarIcon?: React.ReactNode;
+  customHelperSection?: React.ReactNode;
+  dateInputStyleClasses?: {
+    wrapper?: string;
+    position?: string;
+    inputStyles?: string;
+    noErrorClasses?: string;
+    withErrorClasses?: string;
+    dateFormatClasses?: string;
+    helperTextClassess?: string;
+    errorTextClassess?: string;
+  };
+  calendarBaseClasses?: CalendarBaseClassesProps;
 }
 
 export default function BaseInput(props: BaseInputPropsInterface) {
-  const myRef = useRef(null);
   const [enable, setEnable] = useState(false);
-  // const dateValue = []
-
-  React.useEffect(() => {
-    console.log("defaultValue-11", props.defaultValue);
-  }, [props.defaultValue]);
+  const theme = useThemeContext();
 
   const { getFormattedDate } = useDateHelpers();
 
@@ -76,17 +113,88 @@ export default function BaseInput(props: BaseInputPropsInterface) {
     setEnable(false);
   });
 
+  const returnErrorText = () => {
+    if (props.errorTextRenderer && props.errorText) {
+      return props.errorTextRenderer(props.errorText);
+    } else {
+      return props.errorText;
+    }
+  };
+
+  const dateWrapper = resolvedStyleProps(
+    "dateInputStyleClasses",
+    ["wrapper"],
+    props,
+    theme
+  );
+
+  const inputPosition = resolvedStyleProps(
+    "dateInputStyleClasses",
+    ["position"],
+    props,
+    theme
+  );
+
+  const inputClasses = resolvedStyleProps(
+    "dateInputStyleClasses",
+    ["inputStyles"],
+    props,
+    theme
+  );
+
+  const noErrorClasses = resolvedStyleProps(
+    "dateInputStyleClasses",
+    ["noErrorClasses"],
+    props,
+    theme
+  );
+
+  const withErrorClasses = resolvedStyleProps(
+    "dateInputStyleClasses",
+    ["withErrorClasses"],
+    props,
+    theme
+  );
+
+  const dateFormatClasses = resolvedStyleProps(
+    "dateInputStyleClasses",
+    ["dateFormatClasses"],
+    props,
+    theme
+  );
+
+  const helperTextClassess = resolvedStyleProps(
+    "dateInputStyleClasses",
+    ["helperTextClassess"],
+    props,
+    theme
+  );
+
+  const errorTextClassess = resolvedStyleProps(
+    "dateInputStyleClasses",
+    ["errorTextClassess"],
+    props,
+    theme
+  );
+
+  const calenderWrapperClasses = resolvedStyleProps(
+    "calendarBaseClasses",
+    ["calenderWrapper"],
+    props,
+    theme
+  );
+
   return (
-    <div className="relative" ref={visRef}>
+    <div className={!props.screenRelative ? dateWrapper : ""} ref={visRef}>
       {props.label !== null && (
         <FormLabel
           htmlFor={props.id}
           labelCorner={props.labelCorner}
           errorText={props.errorText}
-          formLabelClasses={props.formLabelClasses}
+          dateFormLabelClasses={props.formLabelClasses}
+          theme={theme}
         >
-          {/* {props.label} */}
-          Date
+          {props.label ? props.label : "Select Date"}
         </FormLabel>
       )}
       <div
@@ -97,15 +205,9 @@ export default function BaseInput(props: BaseInputPropsInterface) {
       >
         <button
           className={classNames(
-            "flex w-full items-center rounded bg-white px-3 py-2 text-sm outline-none focus:border-blue-400 focus:ring-blue-400 dark:bg-gray-900",
-            props.errorText === undefined
-              ? props.noErrorClasses ||
-                  "border border-gray-400 text-gray-900 dark:border-gray-700 dark:text-white"
-              : "",
-            props.errorText !== undefined
-              ? props.withErrorClasses ||
-                  "border border-red-600 text-red-900 placeholder-red-300 dark:border-red-200 dark:text-red-200"
-              : ""
+            inputClasses,
+            props.errorText === undefined ? noErrorClasses : "",
+            props.errorText !== undefined ? withErrorClasses : ""
           )}
           onClick={() => {
             setEnable(true);
@@ -114,59 +216,69 @@ export default function BaseInput(props: BaseInputPropsInterface) {
             // setEnable(false);
           }}
         >
-          <div className="h-5 flex-1 text-left">
+          <div className={dateFormatClasses}>
             {getFormattedDate(
-              props.defaultValue,
+              props.defaultValue ? props.defaultValue : new Date(),
               false,
-              "MMM dd, yyyy HH:mm:ss"
+              "MMM dd, yyyy"
             )}
           </div>
-          <CalendarIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+          {props.customCalendarIcon ? (
+            props.customCalendarIcon
+          ) : (
+            <CalendarIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+          )}
         </button>
       </div>
-      {props.helperText !== "" && props.errorText === undefined && (
-        <p
-          className={
-            props.helperTextClassess ||
-            "mt-2 text-sm text-gray-900 dark:text-white"
-          }
-        >
-          {props.helperText}
-        </p>
-      )}
-      {props.errorText !== undefined && (
-        <p
-          className={
-            props.errorTextClassess ||
-            "mt-2 text-sm text-red-600 dark:text-red-200"
-          }
-        >
-          {props.errorTextRenderer(props.errorText)}
-        </p>
-      )}
+      {props.helperText !== "" &&
+        props.errorText === undefined &&
+        (props.customHelperSection ? (
+          props.customHelperSection
+        ) : (
+          <p className={helperTextClassess}>{props.helperText}</p>
+        ))}
+
+      {props.errorText ? (
+        <p className={errorTextClassess}>{returnErrorText()}</p>
+      ) : null}
 
       {enable && (
-        <Transition
-          show={enable}
-          enter="transition duration-100 ease-out"
-          enterFrom="transform scale-95 opacity-0"
-          enterTo="transform scale-100 opacity-100"
-          leave="transition duration-75 ease-out"
-          leaveFrom="transform scale-100 opacity-100"
-          leaveTo="transform scale-95 opacity-0"
+        <div
+          className={`absolute ${props.inputWidthClass} ${
+            props.screenRelative ? inputPosition : ""
+          }`}
         >
-          <div className="absolute z-50 block w-full overflow-auto rounded-lg bg-white shadow-xl  shadow-gray-200 hover:shadow-xl dark:bg-gray-900 dark:shadow-gray-800">
+          <Transition
+            className={calenderWrapperClasses}
+            show={enable}
+            enter="transition duration-1000 ease-out"
+            enterFrom="transform scale-95 opacity-0"
+            enterTo="transform scale-100 opacity-100"
+            leave="transition duration-2000 ease-out"
+            leaveFrom="transform scale-100 opacity-100"
+            leaveTo="transform scale-95 opacity-0"
+          >
             <SingleDatePicker
               selected={props.defaultValue}
               userTimezone={props.userTimezone}
               onChange={(d: any) => {
-                props.onChange(d);
+                props.onChangeCallback(d);
                 setEnable(false);
               }}
+              maxDate={props.maxDate}
+              minDate={props.minDate}
+              calendarBaseClasses={props.calendarBaseClasses}
             />
-          </div>
-        </Transition>
+          </Transition>
+        </div>
       )}
     </div>
   );
 }
+
+BaseInput.defaultProps = {
+  maxDate: undefined,
+  minDate: undefined,
+  inputWidthClass: "w-full",
+  screenRelative: false,
+};
