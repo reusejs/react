@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.21.0
+
+### Minor Changes
+
+- 6a81a5b: Added Date Picker and coresponding Examples in Storybook
+
 ## 6.20.0
 
 ### Minor Changes
