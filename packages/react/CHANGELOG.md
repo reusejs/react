@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.21.1
+
+### Patch Changes
+
+- f43d419: Added onMouseEnter, onMouseLeave, onFocus and onBlur event to ButtonBase
+
 ## 6.21.0
 
 ### Minor Changes
