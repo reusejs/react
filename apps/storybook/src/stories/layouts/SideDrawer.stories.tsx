@@ -107,6 +107,66 @@ HiddenSidedrawer.args = {
   },
 };
 
+const TemplateRight: ComponentStory<typeof BaseSideDrawer> = (args) => {
+  const componentRef = useRef<any>();
+
+  const click = () => {
+    if (
+      componentRef &&
+      componentRef.current &&
+      componentRef.current.handleClick
+    ) {
+      componentRef.current.handleClick();
+    }
+  };
+
+  const SideDrawerContent = () => {
+    return (
+      <div className='h-full w-full '>Hello this is side drawer content</div>
+    );
+  };
+
+  const MainContent = () => {
+    return (
+      <div className='flex h-full flex-col items-center justify-center bg-yellow-400 md:flex-row'>
+        <label className=''>This is main content</label>
+        <button
+          className='h-fit w-fit bg-blue-700 py-2 px-3 md:ml-12 md:px-6 md:py-5'
+          onClick={() => {
+            click();
+          }}
+        >
+          Click Here!!
+        </button>
+      </div>
+    );
+  };
+
+  return (
+    <div className='h-[500px] w-full'>
+      <BaseSideDrawer
+        ref={componentRef}
+        sideDrawerContent={<SideDrawerContent />}
+        mainContent={<MainContent />}
+        {...args}
+      />
+    </div>
+  );
+};
+
+export const HiddenSidedrawerRight = TemplateRight.bind({});
+HiddenSidedrawerRight.args = {
+  effectOn: 'click',
+  overlap: true,
+  baseSideDrawerStyleClasses: {
+    drawerActiveWidth: 'w-5/12 md:w-4/12',
+    drawerInActiveWidth: 'w-0',
+    contentLeftMargin: 'ml-0',
+    drawerLayout:
+      'right-0 bg-red-600 transition-all overflow-hidden h-full shrink-0',
+  },
+};
+
 export const HiddenSidedrawerNoOverlap = Template.bind({});
 HiddenSidedrawerNoOverlap.args = {
   effectOn: 'click',
