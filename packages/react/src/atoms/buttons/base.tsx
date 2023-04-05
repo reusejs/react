@@ -26,6 +26,10 @@ export interface ButtonBaseProps {
     disabledClasses?: any;
   };
   onClick?: () => void;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+  onFocus?: () => void;
+  onBlur?: () => void;
 }
 
 const ButtonBase = (props: ButtonBaseProps) => {
@@ -49,6 +53,8 @@ const ButtonBase = (props: ButtonBaseProps) => {
     theme
   );
 
+  console.log("Props>>>>>>>>", props);
+
   return (
     <button
       type={props.type}
@@ -56,6 +62,10 @@ const ButtonBase = (props: ButtonBaseProps) => {
       style={props.buttonStyles}
       onClick={props.onClick}
       disabled={props.disabled || props.busy}
+      onMouseEnter={props.onMouseEnter}
+      onMouseLeave={props.onMouseLeave}
+      onFocus={props.onFocus}
+      onBlur={props.onBlur}
     >
       {props.buttonPrefix && props.buttonPrefix}
       {props.busy && <>{props.busyText}</>}

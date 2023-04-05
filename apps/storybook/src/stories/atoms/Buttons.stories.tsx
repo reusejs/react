@@ -1,9 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ButtonBase } from '@reusejs/react';
-import {
-  CheckCircleIcon,
-} from '@heroicons/react/solid';
+import { CheckCircleIcon } from '@heroicons/react/solid';
 
 export default {
   title: 'Atoms/Buttons',
