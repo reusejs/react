@@ -96,6 +96,19 @@ ClickWithNoOverlap.args = {
     contentLeftMargin: 'ml-[70px]',
   },
 };
+
+export const ClickWithNoOverlapRight = Template.bind({});
+ClickWithNoOverlapRight.args = {
+  effectOn: 'click',
+  overlap: false,
+  baseSideDrawerStyleClasses: {
+    wrapper: 'flex flex-row-reverse h-full w-full',
+    drawerActiveWidth: 'md:w-4/12 w-6/12',
+    drawerInActiveWidth: 'w-[70px]',
+    contentLeftMargin: 'ml-[70px]',
+  },
+};
+
 export const HiddenSidedrawer = Template.bind({});
 HiddenSidedrawer.args = {
   effectOn: 'click',
