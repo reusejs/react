@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.21.2
+
+### Patch Changes
+
+- 53fa472: Enhancement: Added enableToggle prop to Close picker on Click. #191
+
 ## 6.21.1
 
 ### Patch Changes
