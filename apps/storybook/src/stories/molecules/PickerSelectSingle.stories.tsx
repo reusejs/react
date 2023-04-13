@@ -1,11 +1,9 @@
+import { LabelBase, PickerSelectSimple } from '@reusejs/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React, { useState } from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { PickerSelectSimple, LabelBase } from '@reusejs/react';
-// import { CheckIcon, XIcon } from '@heroicons/react/solid';
-// import { TextInputBase } from '@reusejs/react';
 
 const fetchContinents = (q = '') => {
-  let continents = [
+  const continents = [
     'Africa',
     'Antarctica',
     'Asia',
@@ -125,6 +123,23 @@ DisableSearch.args = {
   dataSource: (q: any) => {
     return fetchContinents(q);
   },
+};
+
+export const ToggledDisableSearch = Template.bind({});
+ToggledDisableSearch.args = {
+  labelBaseProps: {
+    label: 'Country',
+    labelBaseClasses: {
+      color: 'text-yellow-800 dark:text-yellow-100',
+    },
+  },
+  valueKey: 'value',
+  multiple: false,
+  enableSearch: false,
+  dataSource: (q: any) => {
+    return fetchContinents(q);
+  },
+  enableToggle: true,
 };
 
 export const Selected = Template.bind({});

@@ -49,6 +49,7 @@ export interface PickerSelectBaseProps {
   clearComponent?: any;
   noDataComponent?: any;
   customRightComponent?: React.FC;
+  enableToggle?: boolean;
 }
 
 const PickerSelectBase = React.forwardRef(
@@ -153,7 +154,13 @@ const PickerSelectBase = React.forwardRef(
           )}
 
           {open === true && (
-            <div className="relative" ref={visRef}>
+            <div
+              className="relative"
+              ref={visRef}
+              onClick={() => {
+                props.enableToggle && setOpen(false);
+              }}
+            >
               {props.searchRenderer && (
                 <props.searchRenderer
                   variant={props.variant}

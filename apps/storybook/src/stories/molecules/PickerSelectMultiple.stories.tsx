@@ -1,11 +1,9 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { PickerSelectSimple } from '@reusejs/react';
-// import { CheckIcon, XIcon } from '@heroicons/react/solid';
-// import { TextInputBase } from '@reusejs/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import React from 'react';
 
 const fetchContinents = (q = '') => {
-  let continents = [
+  const continents = [
     'Africa',
     'Antarctica',
     'Asia',

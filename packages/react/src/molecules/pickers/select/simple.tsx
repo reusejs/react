@@ -10,6 +10,7 @@ export interface PickerSelectSimpleProps extends PickerSelectBaseProps {
   enableClear: boolean;
   enableClose: boolean;
   enableSearch: boolean;
+  enableToggle?: boolean;
 }
 
 const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
@@ -47,6 +48,7 @@ const PickerSelectSimple = (props: PickerSelectSimpleProps) => {
       refresh={props.refresh}
       error={props.error}
       customRightComponent={props.customRightComponent}
+      enableToggle={props.enableToggle}
     />
   );
 };
@@ -317,6 +319,10 @@ const OptionsRenderer = ({
       )}
     </div>
   );
+};
+
+PickerSelectSimple.defaultProps = {
+  enableToggle: false,
 };
 
 export default PickerSelectSimple;
