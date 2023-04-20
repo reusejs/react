@@ -1,6 +1,6 @@
+import { FooterBase } from '@reusejs/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { FooterBase, DropdownBase } from '@reusejs/react';
 
 export default {
   title: 'Organisms/Footer',
@@ -256,4 +256,17 @@ NoLeftNoRight.args = {
   bottomArrangement: 'bg-yellow-50',
   backgroundClasses: 'bg-blue-50',
   widthClasses: 'mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-8 lg:px-8',
+};
+
+export const ReplaceClasses = Template.bind({});
+ReplaceClasses.args = {
+  left: Left,
+  right: Right,
+  bottom: Bottom,
+  leftArrangement: 'space-y-8 lg:col-span-1 bg-red-50',
+  rightArrangement:
+    'mt-12 lg:mt-0 bg-green-50 grid grid-cols-1 md:grid-cols-2 gap-8 lg:col-span-2',
+  backgroundClasses: 'bg-blue-50',
+  bottomArrangement: 'py-6 mt-12 border-t border-gray-200 bg-yellow-50',
+  replaceClasses: true,
 };
