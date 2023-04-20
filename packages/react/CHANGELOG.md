@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.21.3
+
+### Patch Changes
+
+- f7b0cc9: Added replaceClasses Prop to Footer
+
 ## 6.21.2
 
 ### Patch Changes
