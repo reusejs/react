@@ -1,7 +1,5 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import "../../../tailwind.css";
-import { useThemeContext } from "../../theme/ThemeProvider";
-import resolvedStyleProps from "../../utils/resolvedStyleProps";
 import classNames from "../../utils/classNames";
 
 export interface FooterBaseProps {
@@ -14,6 +12,7 @@ export interface FooterBaseProps {
   rightArrangement?: string;
   backgroundClasses?: string;
   widthClasses?: string;
+  replaceClasses?: boolean;
 }
 
 const FooterBase = (props: FooterBaseProps) => {
@@ -27,18 +26,26 @@ const FooterBase = (props: FooterBaseProps) => {
       <div className={widthClasses}>
         {/* top content */}
         <div
-          className={classNames(
-            "lg:grid lg:grid-cols-3 lg:gap-8",
-            props.topArrangement || ""
-          )}
+          className={
+            props.replaceClasses && props.topArrangement
+              ? props.topArrangement
+              : classNames(
+                  "lg:grid lg:grid-cols-3 lg:gap-8",
+                  props.topArrangement || ""
+                )
+          }
         >
           {/* left content */}
           {props.left && (
             <div
-              className={classNames(
-                "space-y-8 lg:col-span-1",
-                props.leftArrangement || ""
-              )}
+              className={
+                props.replaceClasses && props.leftArrangement
+                  ? props.leftArrangement
+                  : classNames(
+                      "space-y-8 lg:col-span-1",
+                      props.leftArrangement || ""
+                    )
+              }
             >
               <props.left />
             </div>
@@ -46,10 +53,14 @@ const FooterBase = (props: FooterBaseProps) => {
           {/* right content */}
           {props.right && (
             <div
-              className={classNames(
-                " grid grid-cols-2 gap-8 lg:col-span-2",
-                props.rightArrangement || ""
-              )}
+              className={
+                props.replaceClasses && props.rightArrangement
+                  ? props.rightArrangement
+                  : classNames(
+                      " grid grid-cols-2 gap-8 lg:col-span-2",
+                      props.rightArrangement || ""
+                    )
+              }
             >
               <props.right />
             </div>
@@ -57,13 +68,23 @@ const FooterBase = (props: FooterBaseProps) => {
         </div>
         {/* bottom content */}
         {props.bottom && (
-          <div className={classNames("py-6", props.bottomArrangement || "")}>
+          <div
+            className={
+              props.replaceClasses && props.bottomArrangement
+                ? props.bottomArrangement
+                : classNames("py-6", props.bottomArrangement || "")
+            }
+          >
             <props.bottom />
           </div>
         )}
       </div>
     </footer>
   );
+};
+
+FooterBase.defaultProps = {
+  replaceClasses: false,
 };
 
 export default FooterBase;
