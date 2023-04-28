@@ -53,8 +53,6 @@ const ButtonBase = (props: ButtonBaseProps) => {
     theme
   );
 
-  console.log("Props>>>>>>>>", props);
-
   return (
     <button
       type={props.type}
