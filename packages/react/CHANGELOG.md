@@ -1,5 +1,11 @@
 # @reusejs/react
 
+## 6.21.4
+
+### Patch Changes
+
+- b4fc31e: Removed Console.log
+
 ## 6.21.3
 
 ### Patch Changes
